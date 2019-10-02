@@ -1,17 +1,1 @@
-// essays -> on scroll, stick inner nav to top
- function stickyNav(){
-   var sn = document.getElementById("sticky-nav");
-   var sb = document.getElementsByClassName('sticky-btn');
-      if(document.body.scrollTop > 45 || document.documentElement.scrollTop > 45){
-         sn.classList.add("nav-js-scroll");
-         for(var i = 0; i < sb.length; i++) {
-           sb[i].classList.add("btn-js-scroll");
-       }
-      }
-      else{
-         sn.classList.remove("nav-js-scroll");
-         for(var i = 0; i < sb.length; i++) {
-           sb[i].classList.remove("btn-js-scroll");
-       }
-      }
-}
+function stickyNav(){var s=document.getElementById("sticky-nav"),l=document.getElementsByClassName("sticky-btn");if(document.body.scrollTop>45||document.documentElement.scrollTop>45){s.classList.add("nav-js-scroll");for(var t=0;t<l.length;t++)l[t].classList.add("btn-js-scroll")}else{s.classList.remove("nav-js-scroll");for(t=0;t<l.length;t++)l[t].classList.remove("btn-js-scroll")}}

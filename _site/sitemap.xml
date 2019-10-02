@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://0.0.0.0:4321/</loc>
+    <loc>https://refoundable.com/</loc>
     <lastmod>2019-10-01</lastmod>
   </url>
 
   
     
       <url>
-        <loc>http://0.0.0.0:4321/about</loc>
+        <loc>https://refoundable.com/about</loc>
         
           <lastmod>2019-10-01</lastmod>
         
@@ -18,7 +18,7 @@
   
     
       <url>
-        <loc>http://0.0.0.0:4321/</loc>
+        <loc>https://refoundable.com/</loc>
         
           <lastmod>2019-10-01</lastmod>
         
@@ -27,7 +27,7 @@
   
     
       <url>
-        <loc>http://0.0.0.0:4321/mission</loc>
+        <loc>https://refoundable.com/mission</loc>
         
           <lastmod>2019-10-01</lastmod>
         
@@ -36,7 +36,7 @@
   
     
       <url>
-        <loc>http://0.0.0.0:4321/revolutions</loc>
+        <loc>https://refoundable.com/revolutions</loc>
         
           <lastmod>2019-10-01</lastmod>
         
@@ -45,7 +45,7 @@
   
     
       <url>
-        <loc>http://0.0.0.0:4321/terms</loc>
+        <loc>https://refoundable.com/terms</loc>
         
           <lastmod>2019-10-01</lastmod>
         
