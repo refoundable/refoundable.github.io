@@ -1,0 +1,56 @@
+<!-- Post specified styles -->
+<style data-assets-inline>
+  :root {
+    {% if page.scheme-link %}
+    --link-color: {{ page.scheme-link }};
+    {% endif %}
+
+    {% if page.scheme-bg %}
+    --background-color: {{ page.scheme-bg }};
+    {% endif %}
+
+    {% if page.scheme-text %}
+    --text-color: {{ page.scheme-text }};
+    {% endif %}
+
+    {% if page.scheme-code %}
+    --code-color: {{ page.scheme-code }};
+    {% endif %}
+  }
+
+  body {
+    {% if page.scheme-bg-img %}
+      {% assign first = true %}
+      background-image:
+        {% for image in page.scheme-bg-img %}
+          {% unless first %},{% endunless %}
+          {% if page.scheme-bg-img-local == true %}
+            url("{{ amsf_user_assets }}/{{ page.scheme-bg-img[forloop.index0] }}")
+          {% else %}
+            url("{{ site.file }}/{{ page.scheme-bg-img[forloop.index0] }}")
+          {% endif %}
+          {% assign first = false %}
+        {% endfor %}
+      ;
+    {% endif %}
+  }
+
+  {% if page.scheme-hero-bg %}
+  .content header {
+    background: {{ page.scheme-hero-bg }};
+  }
+  {% endif %}
+  {% if page.scheme-hero-text %}
+  .content header {
+    color: {{ page.scheme-hero-text }};
+  }
+  {% endif %}
+    {% if page.scheme-hero-link %}
+    .content header a {
+      color: {{ page.scheme-hero-link }};
+    }
+    .content header .external .dot {
+      background: {{ page.scheme-hero-link }};
+    }
+    {% endif %}
+</style>

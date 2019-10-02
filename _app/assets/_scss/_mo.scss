@@ -1,0 +1,204 @@
+// Common Media Queries across all mobile views
+// VARIABLES: Media Query
+$mo:    799px !default;
+
+@mixin media-query($device) {
+  	@media screen and (max-width: $device) {
+    	@content;
+  	}
+}
+
+@include media-query($mo) {
+
+
+
+	// GENERAL -> NAVIGATION //
+
+
+	.navigation	li {
+		padding: .6em .3em;
+		margin: 0 .5em 0 0;
+	}
+
+	// HOMEPAGE -> ANNOUNCEMENT //
+
+
+	.new {top: 3em;} // = sm, md =! xs
+
+
+
+	// HOMEPAGE -> HEADER //
+
+
+	header.hero {padding: 25% 0 5%;}
+	.hero {
+		h2 {margin: 0.2rem auto 0 !important;}
+		.p-arrow {margin-bottom: 1px;}
+		img {width: 100%;}
+	}
+
+
+
+	// ESSAYS -> ESSAY-NAVIGATION //	
+
+
+	.essay-nav {display: none;}
+	
+
+
+	// ESSAYS -> ESSAY-CONTENT //
+
+  
+	.essay {
+
+		.section-content {max-width: 640px;}
+		p, blockquote, ol li {max-width: 96%;}
+		ol, p {margin-bottom: 1.2em;}
+		ol {margin-left: 0 !important;}
+
+
+
+		// ESSAY -> CALLOUT //
+
+
+		.callout {
+			margin: 0 auto 6vw !important;
+			padding: 20% 0;
+		}
+
+
+
+		// ESSAY -> ASIDE // 
+
+
+		aside {
+			margin-bottom: 8%;
+			left: -0.2em;
+		}
+
+
+
+		// ESSAY -> SECTION-DARK // 
+
+
+		.section-content-dark {
+			margin: -6vh var(--full-wid) var(--nil);
+			figure {width: 50%;} // = xs, sm =! md
+			p {
+				padding-left: 0.55em;
+				max-width: 50%;
+			}
+		}
+
+
+
+		// ESSAY -> IMAGES //
+
+
+		figure {
+			margin: 11% auto 10%;
+			img {
+				width: 110%; // = xs, sm =! md
+				margin-bottom: 0;
+			}
+			figcaption {max-width: 80%;}
+		}
+		.about-portrait {
+			width: 80%;
+			margin: 0 auto;
+			border-radius: 20px;
+		}
+		
+
+
+		// ESSAY -> FAQ //
+
+		// = sm & md; =! xs
+		.question-answer {
+			.question {
+				max-width: 101%;
+				margin-right: -2%;
+			}
+		}
+
+
+
+		// ESSAY -> NOTICE //
+
+
+		.notice {
+			p {
+				max-width: 88%;
+				margin: 0 auto 1.2em;
+			}
+			ul.list-inline {
+				max-width: 90%;
+				margin: 0 2.5em 1em;
+				li {display: block;}
+			} // ul.list-inline
+		} // .notice
+
+
+
+		// ESSAY -> POST-SCRIPT //
+
+
+		.ps-light, .ps-dark {max-width: 50%;}
+
+
+		
+		// ESSAY -> FOOTNOTES //
+		
+
+		.fn-btn {border-radius: 4px;}
+
+		.fn-txt {
+			margin-top: -0.8em;
+			p {
+				margin-left: 0.3em;
+				max-width: 98%;
+			}
+			ol {
+				li {
+					font-size: 70%;
+					padding-top: 50vh;
+					margin-top: -50vh;
+				}
+				li::before {
+					font-size: 130%; // = xs, sm =! md
+					margin-left: -3.85em;
+				}
+			} // ol
+		} // .fn-txt
+
+
+
+		// ESSAY -> CUSTOM MAX-WIDTH //
+
+		// = xs, sm =! md
+		// Callout -> deck
+		#deck-mission     	{max-width: 90%;}
+		#deck-about      	{max-width: 95%;}
+		#deck-revolutions 	{max-width: 96%;}
+
+		//  = xs, sm =! md
+		// img -> mission
+		#img6		{margin-left: -6.5%;}
+
+		//  = xs, sm =! md
+		// Figcaption -> revolutions
+		#cap-rv1		{max-width: 80%;}
+
+	} // .essay
+
+
+
+	// FOOTER //
+
+
+	.footer {
+		p, a {padding: 0.2em 0.3em !important;}
+	}
+
+
+} // mo

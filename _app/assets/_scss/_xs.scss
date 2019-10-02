@@ -1,0 +1,142 @@
+// VARIABLES: Media Query
+$xs:         400px !default;
+
+@mixin media-query($device) {
+  	@media screen and (max-width: $device) {
+    	@content;
+  	}
+}
+
+@include media-query($xs) {
+
+
+
+	// GENERAL -> NAVIGATION //
+
+
+	.navigation {font-size: 100%;}
+
+
+
+	// HOMEPAGE -> ANNOUNCEMENT //
+
+
+	.new {top: 2em;}
+	.new a .headline { font-size: 70%;}
+
+
+
+	// HOMEPAGE -> HEADER //
+
+
+	.hero {
+		h1 {font-size: 160% !important;}
+		h2 {font-size: 260%;}
+		h4.cta {font-size: 100%;}
+	}
+
+
+
+	// ESSAYS -> ESSAY-CONTENT //
+
+
+	.essay {
+
+		p, blockquote, ol li {font-size: 100%;}
+
+
+
+		// ESSAY -> CALLOUT //
+
+
+		.callout {
+			h1 {font-size: 160%;}
+			h2 {font-size: 260%;}
+			h4.cta {font-size: 100%;}
+			h4.cta a {letter-spacing: -0.2px;}
+			h5.teaser {font-size: 60%;}
+		}
+
+
+
+		// ESSAY -> ASIDE // 
+
+
+		aside {
+			h1 a {font-size: 140%;}
+			h2 {font-size: 260% !important;}
+		}
+
+
+
+		// ESSAY -> IMAGES //
+
+
+		figure figcaption {font-size: 85%;}
+		
+
+
+		// ESSAY -> FAQ //
+
+
+		.question-answer {
+			.question {
+				max-width: 105%;
+				margin-right: -5%;
+			}
+		} // .question-answer
+
+
+
+		// ESSAY -> MID-SECTION SUBHEAD //
+
+
+		h4.subhead {font-size: 150%;}
+
+
+
+		// ESSAY -> NOTICE //
+
+
+		.notice {
+			h4 a {font-size: 95%;}
+			ul.list-inline {font-size: 115%;}
+		}
+
+
+
+		// ESSAY -> POST-SCRIPT //
+
+
+		.ps p {font-size: 90%;}
+
+
+		
+		// ESSAY -> FOOTNOTES //
+		
+
+		.fn-btn {border-radius: 4px;}
+		.fn-txt p {font-size: 115%;}
+
+
+
+		// ESSAY -> CUSTOM MAX-WIDTH //
+
+
+		// Figcaption -> mission
+		#cap5  		{max-width: 90%;}
+		#cap8  		{max-width: 76%;}
+		#cap9  		{max-width: 85%;}
+		#cap10 		{max-width: 77%;}
+
+	} // .essay
+
+
+
+	// FOOTER //
+
+
+	.footer-dark {font-size: 100%;}
+
+
+} // xs

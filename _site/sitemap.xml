@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://0.0.0.0:4321/</loc>
+    <lastmod>2019-10-01</lastmod>
+  </url>
+
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/about</loc>
+        
+          <lastmod>2014-12-21</lastmod>
+        
+      </url>
+    
+  
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/</loc>
+        
+          <lastmod>2019-02-18</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/mission</loc>
+        
+          <lastmod>2019-10-01</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/revolutions</loc>
+        
+          <lastmod>2019-10-01</lastmod>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://0.0.0.0:4321/terms</loc>
+        
+          <lastmod>2019-09-26</lastmod>
+        
+      </url>
+    
+  
+
+  
+
+</urlset>

@@ -1,0 +1,15 @@
+{
+  "name": "Refoundable",
+  "short_name": "Ref",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#fff",
+  "background_color": "#111",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

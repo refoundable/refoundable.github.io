@@ -1,0 +1,272 @@
+// VARIABLES: Media Query
+$lg:         800px !default;
+
+@mixin media-query($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
+
+@include media-query($lg) {
+
+
+
+	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////
+	//////////////	//////////////	//////////////	// GENERAL //	//////////////	//////////////	//////////////
+	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////
+
+
+
+	// GENERAL -> NAVIGATION //
+
+
+	.navigation {
+		li {
+			padding: .5em 0;
+			a {
+				padding: .3em 1em;
+				margin: 0 2.5em;
+			}
+		}
+		#logomark {
+			margin-left: 3%; // centering adjustment
+			a img {
+				width: 1.2em;
+			}
+		}
+	} // .navigation
+
+
+
+	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////
+	//////////////	//////////////	//////////////	// HOMEPAGE //	//////////////	//////////////	//////////////
+	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////
+
+
+
+	// HOMEPAGE -> ANNOUNCEMENT //
+
+
+	.new {
+		margin: var(--nil) var(--full-wid) 4em;
+		padding: 0.3rem 0 0;
+		top: 2em;
+		a .headline {font-size: 75%;}
+	}
+
+
+	
+	// HOMEPAGE -> HEADER //
+
+
+	header.hero {
+		padding: 10% 0 0;
+		--header-height: unset;
+	}
+	.hero {
+		h1 {font-size: 230% !important;}
+		h2 {
+			font-size: 430%;
+			margin: 0.2rem auto .3rem !important;
+		}
+		h4.cta {font-size: 130%;}
+		.p-arrow {margin-bottom: 0.2%;}
+		img {width: 55%;}
+	} // .hero
+
+
+
+	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////
+	//////////////	//////////////	//////////////	// ESSAYS //	//////////////	//////////////	//////////////
+	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////
+
+
+
+	// ESSAYS -> ESSAY-NAVIGATION //	
+
+
+
+	// ESSAYS -> ESSAY-CONTENT //
+
+  
+	.essay {
+		.section-content {max-width: 86%;}
+		p, blockquote, ol li {
+			font-size: 140%;
+			max-width: 86%;
+			margin-left: 5%;
+		}
+
+		// ESSAY -> CALLOUT //
+
+		.callout {
+			margin: 0 auto !important;
+			padding: 10% 0;
+			h1 {font-size: 230%;}
+			h2 {font-size: 430%;}
+			h4.cta {font-size: 130%;}
+			h5.teaser {font-size: 70%;}
+		}
+
+
+
+		// ESSAY -> ASIDE // 
+
+
+		aside {
+			margin-bottom: 5vw;
+			left: -1.5em;
+			h1 a {font-size: 230%;}
+			h2 {font-size: 430%;}
+		}
+	
+
+
+		// ESSAY -> SECTION-DARK // 
+
+
+		.section-content-dark {
+			figure {width: 60%;}
+			figure img {max-width: 100%;}
+			p {
+				padding-left: 1.5%;
+				max-width: 38%;
+			}
+		}
+
+
+
+		// ESSAY -> IMAGES //
+
+
+		figure {
+			margin: 10% auto 9%;
+			img {      
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+				border-radius: 20px;
+			}
+			figcaption {
+				font-size: 85%;
+				max-width: 450px;
+			}
+		} // figure
+		.about-portrait {width: 70%;}
+		
+		
+
+		// ESSAY -> FAQ //
+
+
+		.question-answer p {max-width: 99%;}
+
+
+
+		// ESSAY -> MID-SECTION SUBHEAD //
+
+
+		h4.subhead {font-size: 150%;}
+
+
+
+		// ESSAY -> NOTICE //
+
+
+		.notice {
+			max-width: 90%;
+			margin: 3.5em auto 0;
+			h4 a {font-size: 110%;}
+			p {
+				max-width: 82%;
+				margin: 0 auto 4%;
+			}
+			ul.list-inline {
+				font-size: 140%;
+				margin-left: 9%;
+				li {
+					display: inline;
+					margin-right: 1em;
+				}
+			} // ul.list-inline
+		} // .notice
+
+
+
+		// ESSAY -> POST-SCRIPT //
+
+
+		.ps p {font-size: 90%;}
+		.ps-light, .ps-dark {max-width: 40%;}
+
+
+		
+		// ESSAY -> FOOTNOTES //
+		
+
+		.fn-btn {border-radius: 7px;}
+
+		.fn-txt {
+			margin-top: -2em;
+			max-width: 93%;
+			margin: auto;
+			p {margin-left: 1.5em;}
+			ol {
+				li {
+					font-size: 70%;
+					padding-top: 70vh;
+					margin-top: -70vh;
+				}
+				li:before {
+					font-size: 130%;
+					margin-left: -3.25em;
+				}
+			} // ol
+		} // .fn-txt
+
+
+
+		// ESSAY -> CUSTOM MAX-WIDTH //
+
+
+		// Callout -> deck
+		#deck-mission     {max-width: 74%;}
+		#deck-about       {max-width: 75%;}
+		#deck-revolutions {max-width: 85%;}
+
+		// Figcaption -> mission
+		#cap1  {max-width: 68%;}
+		#cap2  {max-width: 62%;}
+		#cap5  {max-width: 73%;}
+		#cap6  {max-width: 55%;}
+		#cap8  {max-width: 70%;}
+		#cap9  {max-width: 55%;}
+		#cap10 {max-width: 44%;}
+
+		// Figcaption -> revolutions
+		#cap-rv1		{max-width: 50%;}
+
+	} // .essay
+
+
+
+	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////
+	//////////////	//////////////	//////////////	// FOOTER //	//////////////	//////////////	//////////////
+	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////	//////////////
+
+
+
+	// FOOTER //
+
+
+	.footer {
+		p, a {padding: 0.2em !important;}
+	}
+	.footer-light ul {padding-left: 0.8%;}
+	.footer-dark { 
+		font-size: 100%;
+		ul {padding-left: 0.4%;}
+	}
+
+} // lg

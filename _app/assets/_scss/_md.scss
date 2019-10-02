@@ -1,0 +1,160 @@
+// VARIABLES: Media Query
+$md:         640px !default;
+
+@mixin media-query($device) {
+  @media screen and (min-width: $device) and (max-width: 799px) {
+    @content;
+  }
+}
+
+@include media-query($md) {
+
+
+
+	// GENERAL -> NAVIGATION //
+
+
+  	.navigation {font-size: 120%;}
+
+
+
+	// HOMEPAGE -> ANNOUNCEMENT //
+
+
+	.new a .headline { font-size: 95%;}
+
+
+
+	// HOMEPAGE -> HEADER //
+
+
+	.hero {
+		h1 {font-size: 320% !important;}
+		h2 {font-size: 510%;}
+		h4.cta {font-size: 210%;}
+	}
+
+
+
+	// ESSAYS -> ESSAY-CONTENT //
+
+
+	.essay {
+
+		p, blockquote, ol li {font-size: 200%;}
+
+
+
+		// ESSAY -> CALLOUT //
+
+
+		.callout {
+			h1 {font-size: 320%;}
+			h2 {font-size: 510%;}
+			h4.cta {font-size: 210%;}
+			h5.teaser {font-size: 125%;}
+		}
+
+
+
+		// ESSAY -> ASIDE // 
+
+
+		aside {
+			h1 a {font-size: 320%;}
+			h2 {font-size: 510% !important;}
+		}
+		
+
+
+		// ESSAY -> SECTION-DARK // 
+
+
+		.section-content-dark figure {width: 60%;}
+
+
+
+		// ESSAY -> IMAGES //
+
+
+		figure {
+			img {      
+				width: 100%;
+				margin: 0 auto;
+				border-radius: 20px;
+			}
+			figcaption {font-size: 150%;}
+		} // figure
+
+
+
+		// ESSAY -> MID-SECTION SUBHEAD //
+
+
+		h4.subhead {font-size: 260%;}
+
+
+
+		// ESSAY -> NOTICE //
+
+
+		.notice {
+			h4 a {font-size: 190%;}
+			ul.list-inline {font-size: 200%;}
+		}
+
+
+
+		// ESSAY -> POST-SCRIPT //
+
+
+		.ps p {font-size: 135%;}
+
+		
+
+		// ESSAY -> FOOTNOTES //
+		
+
+		.fn-btn {border-radius: 4px;}
+
+		.fn-txt {
+			p {font-size: 240%;}
+			ol li::before {
+				font-size: 200%;
+				margin-top: .2em;
+			}
+		} // .fn-txt
+
+
+
+		// ESSAY -> CUSTOM MAX-WIDTH //
+
+
+		// Callout -> deck
+		#deck-mission     	{max-width: 88%;}
+		#deck-about      	{max-width: 90%;}
+		#deck-revolutions 	{max-width: 95%;}
+
+		// Figcaption -> mission
+		#cap1		{max-width: 73%;}
+		#cap2  		{max-width: 70%;}
+		#cap5  		{max-width: 85%;}
+		#cap8  		{max-width: 67%;}
+		#cap9  		{max-width: 77%;}
+		#cap10 		{max-width: 56%;}
+
+		// Figcaption -> revolutions
+		#cap-rv1		{max-width: 76%;}
+
+	} // .essay
+
+
+
+	// FOOTER //
+
+
+	.footer-light {font-size: 140%;}	
+	.footer-dark {font-size: 170%;}
+
+
+} // md
