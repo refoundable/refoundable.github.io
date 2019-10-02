@@ -1,9 +1,15 @@
 <!-- Footer section -->
 {% unless page.permalink == '/' and site.data.curtana.clean_homepage %}
-  <footer id="footer-main" class="footer footer-light">
-    <div class="return-top"><a href="#top">↑</a></div>
+  <footer class="footer">
     <ul>
-        
+      <li><a href="{{ '/' | relative_url }}">{{ amsf_site_name }}</a></li>
+
+      {% if site.credits %}
+        <li>
+          <a href="https://sparanoid.com/lab/amsf/" title="Almace Scaffolding with theme {{ site.data.curtana.meta.name }}">AMSF</a>
+        </li>
+      {% endif %}
+
       {% for item in site.data.footer %}
         {%- include amsf/relative_url url=item.url -%}
         {%- assign item_url = amsf_relative_url -%}
@@ -13,7 +19,6 @@
         </li>
       {% endfor %}
     </ul>
-    <p>© 2019 Refoundable LP</p>
   </footer>
 {% endunless %}
 

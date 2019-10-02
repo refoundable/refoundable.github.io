@@ -1,9 +1,6 @@
-<!-- Main navigation with current page / category highlighted -->
-<nav id="top" class="navigation">
+<!-- Main navigation with current page / categoriy highlighted -->
+<nav class="navigation">
   <ul>
-    <li id="logomark">
-      <a href="/"><img src="/assets/img/log-1.png"></a>
-    </li>
     {% for item in site.data.header %}
       {%- include amsf/relative_url url=item.url -%}
       {%- assign item_url = amsf_relative_url -%}

@@ -8,7 +8,7 @@ meta:
 
 # Hide footer from your homepage, example: sparanoid.com
 # Default:      false
-clean_homepage: True
+clean_homepage: true
 
 # Style post link color (if defined) for article list
 # Default:      false
