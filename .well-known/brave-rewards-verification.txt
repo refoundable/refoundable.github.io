@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: refoundable.com
-Token: a30c21a0166c8d406e4943749f5e5c0a962ebecf7a378a4b8a8bbe435e299fe4
