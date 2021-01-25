@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-25T09:12:00-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-25T08:40:33-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-25T10:57:08-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-25T10:38:36-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
           
-            &lt;!--permalink: /eroom-private-1--&gt;
-&lt;!--regular link: /research/:title.html--&gt;
-
-&lt;!--h2 &amp; h3 Headings--&gt;
+            &lt;!--h2 &amp; h3 Headings--&gt;
 
 &lt;div class=&quot;section-headings&quot;&gt;
     
         
         &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s1&quot;&gt;Introduction&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;Looking past&lt;br /&gt;the end.&lt;/h3&gt;
+        &lt;h3 class=&quot;head&quot;&gt;Looking past the end.&lt;/h3&gt;
         
     
         
@@ -53,13 +50,11 @@
     
     
         
-        &lt;img class=&quot;ful-img&quot; alt=&quot;A graph of Eroom’s law shows that the cost of developing a new drug roughly doubled every nine years from 1950 through the 2010.&quot; id=&quot;img-res-int-scannell-1&quot; src=&quot;/assets/img/buf.png&quot; data-echo=&quot;/assets/img/posts/res-int-scannell/res-int-scannell-1.png&quot; /&gt;
+        &lt;img class=&quot;ful-img&quot; alt=&quot;A graph of Eroom’s law shows that the cost of developing a new drug roughly doubled every nine years from 1950 through the 2010.&quot; id=&quot;img-res-int-scannell-1&quot; src=&quot;/assets/img/posts/res-int-scannell/res-int-scannell-1.png&quot; /&gt;
         &lt;figcaption id=&quot;img-cap-res-int-scannell-1&quot;&gt;By 2010, the total R&amp;amp;D spend per drug approved was about a&amp;nbsp;hundred times higher, in real dollars, than it was in 1950.&amp;nbsp;&lt;span class=&quot;credits credits-blk&quot;&gt;Graph by Jack Scannell&lt;/span&gt;&lt;/figcaption&gt;
         
     
 &lt;/figure&gt;
-&lt;!-- img class=&quot;inl-img&quot; and &quot;ful-img&quot; --&gt;
-&lt;!-- crdt class=&quot;inl-crdt&quot; and &quot;blk-crdt&quot; --&gt;
 
 &lt;p&gt;Although some aspects of this disturbing trend line were known since the 1980s, Eroom’s law was formally articulated in 2012, at the tail end of the long decline, in a seminal paper published in &lt;em&gt;Nature Reviews Drug Discovery&lt;/em&gt; by four co-authors led by Jack Scannell.&lt;sup&gt;&lt;a href=&quot;#fn3&quot; id=&quot;r3&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
@@ -83,13 +78,13 @@
     
         
         &lt;li id=&quot;fn2&quot;&gt;
-            &lt;p&gt;Between 1998&amp;#8211;2018, overall U.S. inflation was 56 percent, while the cost of medical care services rose by about 120 percent, and hospital services by close to 210 percent. &amp;#8212; &lt;em&gt;Chart of the day…or century?&lt;/em&gt;, American Enterprise Institute, 2019 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://www.aei.org/carpe-diem/chart-of-the-day-or-century/&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r2&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Between 1998&amp;#8211;2018, overall U.S. inflation was 56 percent, while the cost of medical care services rose by about 120 percent, and hospital services by close to 210 percent. &amp;#8212; &lt;em&gt;Chart of the day…or century?&lt;/em&gt;, American Enterprise Institute, 2019 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://www.aei.org/carpe-diem/chart-of-the-day-or-century/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r2&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
         
         &lt;li id=&quot;fn3&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Diagnosing the decline in pharmaceutical R&amp;amp;D efficiency&lt;/em&gt;, Jack Scannell et al., Nature Reviews Drug Discovery, 2012 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/nrd3681&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r3&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Diagnosing the decline in pharmaceutical R&amp;amp;D efficiency&lt;/em&gt;, Jack Scannell et al., Nature Reviews Drug Discovery, 2012 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/nrd3681&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r3&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
@@ -123,7 +118,7 @@
             
         
         &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s2&quot;&gt;Beginnings&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;Opposites&lt;br /&gt;attract&amp;nbsp;attention.&lt;/h3&gt;
+        &lt;h3 class=&quot;head&quot;&gt;Opposites attract attention.&lt;/h3&gt;
         
     
         
@@ -136,7 +131,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q1&quot;&gt;Your 2012 paper diagnosed the decline in drug R&amp;amp;D productivity over the preceding six decades. What moved you to write it? And how did you land on the term Eroom’s law?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q1&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q1&quot;&gt;Your 2012 paper diagnosed the decline in drug R&amp;amp;D productivity over the preceding six decades. What moved you to write it? And how did you land on the term Eroom’s law?&lt;/p&gt;
 
 &lt;p&gt;There was this nagging puzzle: Since the 1950s, lots of important R&amp;amp;D inputs had got tens, hundreds, or even billions of times cheaper, while the number of drugs approved per $1 billion spent on R&amp;amp;D had fallen by roughly two orders of magnitude. That struck me as an ugly contrast.&lt;/p&gt;
 
@@ -146,7 +141,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q2&quot;&gt;The drug industry already knew it had an R&amp;amp;D productivity problem, so what was missing in previous attempts to diagnose the issue?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q2&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q2&quot;&gt;The drug industry already knew it had an R&amp;amp;D productivity problem, so what was missing in previous attempts to diagnose the issue?&lt;/p&gt;
 
 &lt;p&gt;As long ago as 1980, there was a great paper on the R&amp;amp;D slowdown by Fred Steward and George Wibberley, which we cited along with some other good work in our &lt;span class=&quot;txt-wrap&quot;&gt;paper.&lt;sup&gt;&lt;a href=&quot;#fn4&quot; id=&quot;r4&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -164,7 +159,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q3&quot;&gt;Eroom’s law was widely adopted after your paper came out. What was the general reaction you saw after you published?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q3&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q3&quot;&gt;Eroom’s law was widely adopted after your paper came out. What was the general reaction you saw after you published?&lt;/p&gt;
 
 &lt;p&gt;People were certainly glad that someone had put names to things that they knew, or suspected, were happening already. Apart from Eroom’s law itself, people liked something else we talked about in the paper, which I called the “Better than the Beatles” problem.&lt;/p&gt;
 
@@ -190,13 +185,13 @@
             
         
         &lt;li id=&quot;fn4&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Drug innovation&amp;#8212;what’s slowing it down?&lt;/em&gt;, Fred Steward and George Wibberley, Nature, 1980 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/284118a0&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r4&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Drug innovation&amp;#8212;what’s slowing it down?&lt;/em&gt;, Fred Steward and George Wibberley, Nature, 1980 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/284118a0&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r4&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
         
         &lt;li id=&quot;fn5&quot;&gt;
-            &lt;p&gt;See &lt;em&gt;Politician’s syllogism&lt;/em&gt;, Wikipedia &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Politician’s_syllogism&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r5&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;See &lt;em&gt;Politician’s syllogism&lt;/em&gt;, Wikipedia &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Politician’s_syllogism&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r5&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
@@ -228,7 +223,7 @@
             
         
         &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s3&quot;&gt;Stasis&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;Pay&amp;nbsp;more.&lt;br /&gt;Get&amp;nbsp;less.&lt;/h3&gt;
+        &lt;h3 class=&quot;head&quot;&gt;Pay more. Get less.&lt;/h3&gt;
         
     
         
@@ -239,7 +234,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q4&quot;&gt;The standard fixes to raise drug R&amp;amp;D productivity tend to focus on process efficiency and cost-cutting. Why haven’t these solutions been enough to stop and reverse Eroom’s law?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q4&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q4&quot;&gt;The standard fixes to raise drug R&amp;amp;D productivity tend to focus on process efficiency and cost-cutting. Why haven’t these solutions been enough to stop and reverse Eroom’s law?&lt;/p&gt;
 
 &lt;p&gt;Simply put, they’re addressing the wrong class of problems. Suppose we were looking at the oil industry, and we found that it cost a hundred times more to produce a barrel of oil today than it did in 1950, despite the fact that your technology for pumping oil out of the ground got billions of times cheaper.&lt;/p&gt;
 
@@ -255,7 +250,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q5&quot;&gt;Drug R&amp;amp;D spending grew for decades, even as drug companies lost money on their investments. How did competition factor in? At what point does R&amp;amp;D spending turn into a race to outspend everyone else?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q5&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q5&quot;&gt;Drug R&amp;amp;D spending grew for decades, even as drug companies lost money on their investments. How did competition factor in? At what point does R&amp;amp;D spending turn into a race to outspend everyone else?&lt;/p&gt;
 
 &lt;p&gt;Returns on R&amp;amp;D are stochastic and very skewed. The industry makes a disproportionate amount of its profits from a few very big drugs. And if you believe that you have one of them in your pipeline, then you expect your returns on R&amp;amp;D to be high.&lt;/p&gt;
 
@@ -279,7 +274,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q6&quot;&gt;Your paper anticipated that Eroom’s law would not continue to hold, and indeed, we’ve seen an uptick in the number of new drug approvals in the last decade. Has the industry turned a corner?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q6&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q6&quot;&gt;Your paper anticipated that Eroom’s law would not continue to hold, and indeed, we’ve seen an uptick in the number of new drug approvals in the last decade. Has the industry turned a corner?&lt;/p&gt;
 
 &lt;p&gt;FDA approvals have almost doubled in the last decade. Where we were getting 20-25 drug approvals a year before 2010, we’re running 40-50 approvals a year at the &lt;span class=&quot;txt-wrap&quot;&gt;moment.&lt;sup&gt;&lt;a href=&quot;#fn7&quot; id=&quot;r7&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -313,13 +308,13 @@
             
         
         &lt;li id=&quot;fn6&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Valeant&amp;#58; A timeline of the big Pharma scandal&lt;/em&gt;, Fortune, 2015 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://fortune.com/2015/10/31/valeant-scandal/&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r6&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Valeant&amp;#58; A timeline of the big Pharma scandal&lt;/em&gt;, Fortune, 2015 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://fortune.com/2015/10/31/valeant-scandal/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r6&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
         
         &lt;li id=&quot;fn7&quot;&gt;
-            &lt;p&gt;For more on the factors driving the uptick in drug approvals, see &lt;em&gt;Breaking Eroom’s Law&lt;/em&gt;, Michael Ringel, Jack Scannell, Mathias Baedeker, and Ulrik Schulze, Nature Reviews Drug Discovery, 2020 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/d41573-020-00059-3&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r7&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;For more on the factors driving the uptick in drug approvals, see &lt;em&gt;Breaking Eroom’s Law&lt;/em&gt;, Michael Ringel, Jack Scannell, Mathias Baedeker, and Ulrik Schulze, Nature Reviews Drug Discovery, 2020 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/d41573-020-00059-3&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r7&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
@@ -349,7 +344,7 @@
             
         
         &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s4&quot;&gt;Frontier&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;In&amp;nbsp;search&amp;nbsp;of&lt;br /&gt;a&amp;nbsp;better&amp;nbsp;model.&lt;/h3&gt;
+        &lt;h3 class=&quot;head&quot;&gt;In search of a better model.&lt;/h3&gt;
         
     
         
@@ -358,7 +353,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q7&quot;&gt;Despite sifting through enormous compound libraries, drug R&amp;amp;D labs often have a hard time discovering good drug candidates. What do you think is holding back drug discovery today?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q7&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q7&quot;&gt;Despite sifting through enormous compound libraries, drug R&amp;amp;D labs often have a hard time discovering good drug candidates. What do you think is holding back drug discovery today?&lt;/p&gt;
 
 &lt;p&gt;The rate-limiting step in drug R&amp;amp;D has to do with what people in the drug industry call “target validation” and what I would call “screening and disease model validity.”&lt;/p&gt;
 
@@ -374,7 +369,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q8&quot;&gt;If marginal differences in model quality can be orders of magnitude more predictive, why haven’t we seen enough investment in better target validation tools?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q8&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q8&quot;&gt;If marginal differences in model quality can be orders of magnitude more predictive, why haven’t we seen enough investment in better target validation tools?&lt;/p&gt;
 
 &lt;p&gt;It used to be that medicinal chemistry was the difficult bit in drug R&amp;amp;D, and patents were a great way to protect unique chemical compounds. Today, it’s target validation that’s difficult, and drug companies don’t have a great way of appropriating much of the value of incremental R&amp;amp;D investment on target validation.&lt;/p&gt;
 
@@ -388,7 +383,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q9&quot;&gt;People often find unexpected uses for drugs once they’re released, yet field discovery is still underexplored by the industry. Could it be rehabilitated as a valid method for drug discovery?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q9&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q9&quot;&gt;People often find unexpected uses for drugs once they’re released, yet field discovery is still underexplored by the industry. Could it be rehabilitated as a valid method for drug discovery?&lt;/p&gt;
 
 &lt;p&gt;A 2006 study that looked at this found that nearly 60 percent of new medical uses for drugs approved in a single year were discovered by practicing doctors who had little or nothing to do with drug companies or &lt;span class=&quot;txt-wrap&quot;&gt;universities.&lt;sup&gt;&lt;a href=&quot;#fn9&quot; id=&quot;r9&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
@@ -430,13 +425,13 @@
             
         
         &lt;li id=&quot;fn8&quot;&gt;
-            &lt;p&gt; &lt;em&gt;When Quality Beats Quantity&amp;#58; Decision Theory, Drug Discovery, and the Reproducibility Crisis&lt;/em&gt;, Jack Scannell and Jim Bosley, PLoS One, 2016 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1371/journal.pone.0147215&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r8&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;When Quality Beats Quantity&amp;#58; Decision Theory, Drug Discovery, and the Reproducibility Crisis&lt;/em&gt;, Jack Scannell and Jim Bosley, PLoS One, 2016 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1371/journal.pone.0147215&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r8&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
         
         &lt;li id=&quot;fn9&quot;&gt;
-            &lt;p&gt;The study tracked every drug approved by the FDA in 1998, looking at new medical uses discovered for those 30-or-so drugs since they came on the market. And of the 150 new medical uses reported, the study found that close to 60 percent were discovered by doctors unaffiliated with any research organization. &amp;#8212; &lt;em&gt;The major role of clinicians in the discovery of off-label drug therapies&lt;/em&gt;, Harold J. DeMonaco, Ayfer Ali, and Eric Von Hippel, Pharmacotherapy, 2006 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1592/phco.26.3.323&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r9&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;The study tracked every drug approved by the FDA in 1998, looking at new medical uses discovered for those 30-or-so drugs since they came on the market. And of the 150 new medical uses reported, the study found that close to 60 percent were discovered by doctors unaffiliated with any research organization. &amp;#8212; &lt;em&gt;The major role of clinicians in the discovery of off-label drug therapies&lt;/em&gt;, Harold J. DeMonaco, Ayfer Ali, and Eric Von Hippel, Pharmacotherapy, 2006 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1592/phco.26.3.323&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r9&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
@@ -465,14 +460,14 @@
             
         
         &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s5&quot;&gt;Pandemic&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;To&amp;nbsp;stop&lt;br /&gt;a&amp;nbsp;viral&amp;nbsp;loop.&lt;/h3&gt;
+        &lt;h3 class=&quot;head&quot;&gt;To stop a viral loop.&lt;/h3&gt;
         
     
 &lt;/div&gt;
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q10&quot;&gt;We’ve seen conflicting reports on promising treatments for COVID-19. When do you think we’ll start having definitive answers?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q10&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q10&quot;&gt;We’ve seen conflicting reports on promising treatments for COVID-19. When do you think we’ll start having definitive answers?&lt;/p&gt;
 
 &lt;p&gt;COVID-19 has certainly triggered a frenzy of activity in drug testing, but we have to guard against dumb luck contaminating the results of trials.&lt;/p&gt;
 
@@ -488,7 +483,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q11&quot;&gt;Can pharma companies develop new anti-infectives against COVID-19 within a reasonable timeframe?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q11&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q11&quot;&gt;Can pharma companies develop new anti-infectives against COVID-19 within a reasonable timeframe?&lt;/p&gt;
 
 &lt;p&gt;For new drugs that haven’t yet been tested in humans, I expect fairly rapid progress by drug R&amp;amp;D standards, which is to say, a very small number of years.&lt;/p&gt;
 
@@ -504,7 +499,7 @@
 
 &lt;!--Question--&gt;
 &lt;!--Section Question--&gt;
-&lt;p class=&quot;qst&quot; id=&quot;q12&quot;&gt;With viral diseases, there’s a tendency to fight the last war, only to be taken by surprise when a new virus hits. What systematic preemptive steps can we take to prevent future viral epidemics?&lt;a class=&quot;qst-lnk&quot; href=&quot;#q12&quot;&gt;&lt;svg viewBox=&quot;0 0 512 512&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;path d=&quot;M476.85 35.15c-46.86-46.87-122.84-46.87-169.7 0l-100.3 100.3c-48.47 48.47-43.98 125.7 0 169.7a114.2 114.2 0 0024.13 18.3l18.3-18.3c12-12.01 7.78-26.05 7.56-36.18a57.92 57.92 0 01-7.56-6.25c-22.57-22.57-23.59-61.27 0-84.85l100.3-100.3a60.06 60.06 0 0184.85 0 60.06 60.06 0 010 84.86l-66.3 66.3c1.92 10.6 13.42 35.72 7.5 77.17.3-.28.64-.46.93-.75l100.3-100.3c46.86-46.86 46.86-122.84 0-169.7z&quot; /&gt;&lt;path d=&quot;M312.92 199.08a114.22 114.22 0 00-24.12-18.3l-18.3 18.3c-12.02 12-7.79 26.04-7.57 36.17a57.8 57.8 0 017.56 6.26c22.58 22.57 23.6 61.26 0 84.85L162.43 434.42a60.06 60.06 0 01-84.86 0 60.06 60.06 0 010-84.85l74.07-74.07c-1.92-10.6-13.42-35.73-7.5-77.18-.3.29-.64.47-.93.76L35.15 307.15c-46.87 46.86-46.87 122.84 0 169.7 46.86 46.86 122.84 46.86 169.7 0L312.92 368.8c47.57-47.58 44.97-124.73 0-169.7z&quot; /&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;qst&quot; id=&quot;q12&quot;&gt;With viral diseases, there’s a tendency to fight the last war, only to be taken by surprise when a new virus hits. What systematic preemptive steps can we take to prevent future viral epidemics?&lt;/p&gt;
 
 &lt;p&gt;I think that places like Taiwan, Singapore, and South Korea have shown us how you can control pandemics without the need for novel drugs, and without locking everyone in their home for months on end.&lt;/p&gt;
 
@@ -542,19 +537,19 @@
             
         
         &lt;li id=&quot;fn10&quot;&gt;
-            &lt;p&gt;According to Wikipedia, the Proteus phenomenon is the tendency for early replications of a scientific work to contradict the original findings, a consequence of publication bias.  &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Proteus_phenomenon&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r10&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;According to Wikipedia, the Proteus phenomenon is the tendency for early replications of a scientific work to contradict the original findings, a consequence of publication bias.  &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Proteus_phenomenon&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r10&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
         
         &lt;li id=&quot;fn11&quot;&gt;
-            &lt;p&gt; &lt;em&gt;The development of antimicrobial drugs and diagnostics&lt;/em&gt;, Jack Scannell, The Review on Antimicrobial Resistance, 2014 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://amr-review.org/sites/default/files/AMR_Supplement_Industry_View%20_141215-150511r.pdf&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r11&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;The development of antimicrobial drugs and diagnostics&lt;/em&gt;, Jack Scannell, The Review on Antimicrobial Resistance, 2014 &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://amr-review.org/sites/default/files/AMR_Supplement_Industry_View%20_141215-150511r.pdf&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r11&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
         
         &lt;li id=&quot;fn12&quot;&gt;
-            &lt;p&gt;The Coalition for Epidemic Preparedness Innovations (CEPI) describes itself as “a global alliance financing and coordinating the development of vaccines against emerging infectious diseases.“  &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://cepi.net/&quot;&gt;Learn more&lt;/a&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;icon-fn-external-lnk&quot; viewBox=&quot;0 0 341 341&quot;&gt;&lt;defs /&gt;&lt;path d=&quot;M325 0H69v32h217L0 318l23 23L309 55v201h32V16c0-9-7-16-16-16z&quot; /&gt;&lt;/svg&gt;&lt;/span&gt;&lt;a href=&quot;#r12&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;The Coalition for Epidemic Preparedness Innovations (CEPI) describes itself as “a global alliance financing and coordinating the development of vaccines against emerging infectious diseases.“  &lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://cepi.net/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;#r12&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     
@@ -565,4 +560,4 @@
           
         
       
-        </content><summary></summary></entry></feed>
+        </content><summary>                    Introduction        Looking past the end.                                                                                            </summary></entry></feed>
