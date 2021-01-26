@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T01:07:36-08:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T00:55:16-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T03:17:57-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T00:55:16-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
           
             &lt;!--Header--&gt;
-&lt;div class=&quot;essay-header&quot;&gt;
-    &lt;div class=&quot;callout&quot;&gt;
-        &lt;!--header img--&gt;
-        
-        &lt;div class=&quot;rubric&quot;&gt;Interview&lt;time datetime=&quot;2020-03-27T00:00:00-07:00&quot;&gt;&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;Mar 27, 2020&lt;/time&gt;&lt;/div&gt;
-        &lt;h1 class=&quot;head&quot;&gt;Life after Eroom’s law.&lt;/h1&gt;
-        &lt;p class=&quot;deck&quot; id=&quot;deck-res-int-scannell&quot;&gt;Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.&lt;/p&gt;
-    &lt;/div&gt;
+&lt;div&gt;
+    
+    &lt;div&gt;Interview&lt;time datetime=&quot;2020-03-27T00:00:00-07:00&quot;&gt;&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;Mar 27, 2020&lt;/time&gt;&lt;/div&gt;
+    &lt;h1&gt;Life after Eroom’s law.&lt;/h1&gt;
+    &lt;p&gt;Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
-&lt;div class=&quot;section-headings&quot;&gt;
+&lt;div&gt;
     
         
-        &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s1&quot;&gt;Introduction&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;Looking past the end.&lt;/h3&gt;
+        &lt;h2&gt;Introduction&lt;/h2&gt;
+        &lt;h3&gt;Looking past the end.&lt;/h3&gt;
         
     
         
@@ -32,9 +29,9 @@
 
 &lt;p&gt;One of our founding beliefs is that too many people are making the rational choice to look for secrets in a handful of technology areas, in particular, those areas which have seen the most progress over the last half-century, namely computers and finance, with the possible addition of shale oil in the last decade.&lt;/p&gt;
 
-&lt;p&gt;The necessary and counterintuitive approach at this point, we believe, is to start with the technology areas worst hit by neglect, stagnation, and rising costs, and figure out how to restart their &lt;span class=&quot;txt-wrap&quot;&gt;progress.&lt;sup&gt;&lt;a href=&quot;#fn1&quot; id=&quot;r1&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The necessary and counterintuitive approach at this point, we believe, is to start with the technology areas worst hit by neglect, stagnation, and rising costs, and figure out how to restart their &lt;span class=&quot;txt-wrap&quot;&gt;progress.&lt;sup&gt;&lt;a href=&quot;#fn1&quot; id=&quot;r1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Take healthcare for example. While computers got faster and cheaper year after year for the last five decades, healthcare costs shot three to four times higher than inflation in the last two decades &lt;span class=&quot;txt-wrap&quot;&gt;alone.&lt;sup&gt;&lt;a href=&quot;#fn2&quot; id=&quot;r2&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Take healthcare for example. While computers got faster and cheaper year after year for the last five decades, healthcare costs shot three to four times higher than inflation in the last two decades &lt;span class=&quot;txt-wrap&quot;&gt;alone.&lt;sup&gt;&lt;a href=&quot;#fn2&quot; id=&quot;r2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;And if the recent coronavirus pandemic that swept the globe in a few short weeks has shown us anything, it’s how close our healthcare systems truly are to their breaking point.&lt;/p&gt;
 
@@ -61,13 +58,13 @@
     
     
         
-        &lt;img class=&quot;ful-img&quot; alt=&quot;A graph of Eroom’s law shows that the cost of developing a new drug roughly doubled every nine years from 1950 through the 2010.&quot; id=&quot;img-res-int-scannell-1&quot; src=&quot;/assets/img/posts/res-int-scannell/res-int-scannell-1.png&quot; /&gt;
-        &lt;figcaption id=&quot;img-cap-res-int-scannell-1&quot;&gt;By 2010, the total R&amp;amp;D spend per drug approved was about a&amp;nbsp;hundred times higher, in real dollars, than it was in 1950.&amp;nbsp;&lt;span class=&quot;credits credits-blk&quot;&gt;Graph by Jack Scannell&lt;/span&gt;&lt;/figcaption&gt;
+        &lt;img width=&quot;600px&quot; alt=&quot;A graph of Eroom’s law shows that the cost of developing a new drug roughly doubled every nine years from 1950 through the 2010.&quot; src=&quot;/assets/img/posts/res-int-scannell/res-int-scannell-1.png&quot; /&gt;
+        &lt;figcaption&gt;By 2010, the total R&amp;amp;D spend per drug approved was about a&amp;nbsp;hundred times higher, in real dollars, than it was in 1950.&amp;nbsp;&lt;span&gt;Graph by Jack Scannell&lt;/span&gt;&lt;/figcaption&gt;
         
     
 &lt;/figure&gt;
 
-&lt;p&gt;Although some aspects of this disturbing trend line were known since the 1980s, Eroom’s law was formally articulated in 2012, at the tail end of the long decline, in a seminal paper published in &lt;em&gt;Nature Reviews Drug Discovery&lt;/em&gt; by four co-authors led by Jack Scannell.&lt;sup&gt;&lt;a href=&quot;#fn3&quot; id=&quot;r3&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Although some aspects of this disturbing trend line were known since the 1980s, Eroom’s law was formally articulated in 2012, at the tail end of the long decline, in a seminal paper published in &lt;em&gt;Nature Reviews Drug Discovery&lt;/em&gt; by four co-authors led by Jack Scannell.&lt;sup&gt;&lt;a href=&quot;#fn3&quot; id=&quot;r3&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;In a field plagued by narrow specialization, Jack Scannell is something of a renaissance man, having seen the industry from a distance and up close  while working in drug research, private consulting, pharma and biotech investing, and policy advising.&lt;/p&gt;
 
@@ -79,13 +76,13 @@
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
-&lt;div class=&quot;section-headings&quot;&gt;
+&lt;div&gt;
     
         
             
         
-        &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s2&quot;&gt;Beginnings&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;Opposites attract attention.&lt;/h3&gt;
+        &lt;h2&gt;Beginnings&lt;/h2&gt;
+        &lt;h3&gt;Opposites attract attention.&lt;/h3&gt;
         
     
         
@@ -97,8 +94,7 @@
 &lt;/div&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q1&quot;&gt;&lt;span&gt;1. &lt;/span&gt;Your 2012 paper diagnosed the decline in drug R&amp;amp;D productivity over the preceding six decades. What moved you to write it? And how did you land on the term Eroom’s law?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q1&quot;&gt;&lt;span&gt;1. &lt;/span&gt;Your 2012 paper diagnosed the decline in drug R&amp;amp;D productivity over the preceding six decades. What moved you to write it? And how did you land on the term Eroom’s law?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;There was this nagging puzzle: Since the 1950s, lots of important R&amp;amp;D inputs had got tens, hundreds, or even billions of times cheaper, while the number of drugs approved per $1 billion spent on R&amp;amp;D had fallen by roughly two orders of magnitude. That struck me as an ugly contrast.&lt;/p&gt;
 
@@ -107,10 +103,9 @@
 &lt;p&gt;I remember talking about the contrast with a friend of mine, William Bains. We chatted that drug industry productivity looked like Moore’s law backwards, and that’s how the term “Eroom’s law” was born.&lt;/p&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q2&quot;&gt;&lt;span&gt;2. &lt;/span&gt;The drug industry already knew it had an R&amp;amp;D productivity problem, so what was missing in previous attempts to diagnose the issue?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q2&quot;&gt;&lt;span&gt;2. &lt;/span&gt;The drug industry already knew it had an R&amp;amp;D productivity problem, so what was missing in previous attempts to diagnose the issue?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;As long ago as 1980, there was a great paper on the R&amp;amp;D slowdown by Fred Steward and George Wibberley, which we cited along with some other good work in our &lt;span class=&quot;txt-wrap&quot;&gt;paper.&lt;sup&gt;&lt;a href=&quot;#fn4&quot; id=&quot;r4&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;As long ago as 1980, there was a great paper on the R&amp;amp;D slowdown by Fred Steward and George Wibberley, which we cited along with some other good work in our &lt;span class=&quot;txt-wrap&quot;&gt;paper.&lt;sup&gt;&lt;a href=&quot;#fn4&quot; id=&quot;r4&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;However, in general, I thought there were two problems:&lt;/p&gt;
 
@@ -125,8 +120,7 @@
 &lt;p&gt;On the whole, I think lots of people would’ve been better qualified to write the paper, but their day jobs meant they couldn’t write it.&lt;/p&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q3&quot;&gt;&lt;span&gt;3. &lt;/span&gt;Eroom’s law was widely adopted after your paper came out. What was the general reaction you saw after you published?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q3&quot;&gt;&lt;span&gt;3. &lt;/span&gt;Eroom’s law was widely adopted after your paper came out. What was the general reaction you saw after you published?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;People were certainly glad that someone had put names to things that they knew, or suspected, were happening already. Apart from Eroom’s law itself, people liked something else we talked about in the paper, which I called the “Better than the Beatles” problem.&lt;/p&gt;
 
@@ -136,21 +130,21 @@
 
 &lt;p&gt;So in many therapy areas, you end up with this ever-expanding back catalog of virtually free and very good medicine, against which new medicine would have to compete. That reduces the value of as-yet-undiscovered drugs, and pushes drug R&amp;amp;D towards areas where we don’t have a catalog of good cheap drugs, which also tend to be areas where R&amp;amp;D is likely to be harder.&lt;/p&gt;
 
-&lt;p&gt;Inevitably, people also appropriated Eroom’s law to justify what they wanted to do anyway. That reminds me of a line from a famous British TV comedy, &lt;em&gt;Yes, Prime Minister&lt;/em&gt;, which is about a hapless politician who is ruthlessly managed by his civil servants: “Something must be done. This is something. Therefore, we must do it.” I do occasionally see papers that make the same kind of &lt;span class=&quot;txt-wrap&quot;&gt;argument.&lt;sup&gt;&lt;a href=&quot;#fn5&quot; id=&quot;r5&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Inevitably, people also appropriated Eroom’s law to justify what they wanted to do anyway. That reminds me of a line from a famous British TV comedy, &lt;em&gt;Yes, Prime Minister&lt;/em&gt;, which is about a hapless politician who is ruthlessly managed by his civil servants: “Something must be done. This is something. Therefore, we must do it.” I do occasionally see papers that make the same kind of &lt;span class=&quot;txt-wrap&quot;&gt;argument.&lt;sup&gt;&lt;a href=&quot;#fn5&quot; id=&quot;r5&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;However, to be honest, apart from a few people in the drug industry telling me that the paper became required reading, and aside from seeing the Eroom graph in lots of presentations, it’s not clear to me that anything different was done after the paper was read.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
-&lt;div class=&quot;section-headings&quot;&gt;
+&lt;div&gt;
     
         
             
         
             
         
-        &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s3&quot;&gt;Stasis&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;Pay more. Get less.&lt;/h3&gt;
+        &lt;h2&gt;Stasis&lt;/h2&gt;
+        &lt;h3&gt;Pay more. Get less.&lt;/h3&gt;
         
     
         
@@ -160,8 +154,7 @@
 &lt;/div&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q4&quot;&gt;&lt;span&gt;4. &lt;/span&gt;The standard fixes to raise drug R&amp;amp;D productivity tend to focus on process efficiency and cost-cutting. Why haven’t these solutions been enough to stop and reverse Eroom’s law?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q4&quot;&gt;&lt;span&gt;4. &lt;/span&gt;The standard fixes to raise drug R&amp;amp;D productivity tend to focus on process efficiency and cost-cutting. Why haven’t these solutions been enough to stop and reverse Eroom’s law?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Simply put, they’re addressing the wrong class of problems. Suppose we were looking at the oil industry, and we found that it cost a hundred times more to produce a barrel of oil today than it did in 1950, despite the fact that your technology for pumping oil out of the ground got billions of times cheaper.&lt;/p&gt;
 
@@ -176,8 +169,7 @@
 &lt;p&gt;After all, the fruit ain’t gonna get any lower. If firms insist that they’re running out of tractable opportunities, despite all the efficiency gains, they’re almost telling their shareholders that they should be doing a lot less R&amp;amp;D.&lt;/p&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q5&quot;&gt;&lt;span&gt;5. &lt;/span&gt;Drug R&amp;amp;D spending grew for decades, even as drug companies lost money on their investments. How did competition factor in? At what point does R&amp;amp;D spending turn into a race to outspend everyone else?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q5&quot;&gt;&lt;span&gt;5. &lt;/span&gt;Drug R&amp;amp;D spending grew for decades, even as drug companies lost money on their investments. How did competition factor in? At what point does R&amp;amp;D spending turn into a race to outspend everyone else?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Returns on R&amp;amp;D are stochastic and very skewed. The industry makes a disproportionate amount of its profits from a few very big drugs. And if you believe that you have one of them in your pipeline, then you expect your returns on R&amp;amp;D to be high.&lt;/p&gt;
 
@@ -195,15 +187,14 @@
 
 &lt;p&gt;At the same time, and away from the spotlight, Valeant was ruthless in ramping up the prices of the drugs that came under its control. It was also quietly buying up pharmacy companies to make it easier to force insurance companies to cough up the cash for its newly-inflated drug prices.&lt;/p&gt;
 
-&lt;p&gt;Valeant looked untouchable until things started to unravel very quickly in 2014–2015. The company’s behavior caught the attention of a few short sellers and journalists at first, and finally of U.S. politicians. Its pricing practices came under scrutiny, the growth evaporated, the firm was left with too much debt, and the stock price &lt;span class=&quot;txt-wrap&quot;&gt;cratered.&lt;sup&gt;&lt;a href=&quot;#fn6&quot; id=&quot;r6&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Valeant looked untouchable until things started to unravel very quickly in 2014–2015. The company’s behavior caught the attention of a few short sellers and journalists at first, and finally of U.S. politicians. Its pricing practices came under scrutiny, the growth evaporated, the firm was left with too much debt, and the stock price &lt;span class=&quot;txt-wrap&quot;&gt;cratered.&lt;sup&gt;&lt;a href=&quot;#fn6&quot; id=&quot;r6&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;So while the financial returns on R&amp;amp;D may be poor, the idea that you brag about slashing R&amp;amp;D costs has been largely discredited. No one wants to look like Valeant.&lt;/p&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q6&quot;&gt;&lt;span&gt;6. &lt;/span&gt;Your paper anticipated that Eroom’s law would not continue to hold, and indeed, we’ve seen an uptick in the number of new drug approvals in the last decade. Has the industry turned a corner?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q6&quot;&gt;&lt;span&gt;6. &lt;/span&gt;Your paper anticipated that Eroom’s law would not continue to hold, and indeed, we’ve seen an uptick in the number of new drug approvals in the last decade. Has the industry turned a corner?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;FDA approvals have almost doubled in the last decade. Where we were getting 20-25 drug approvals a year before 2010, we’re running 40-50 approvals a year at the &lt;span class=&quot;txt-wrap&quot;&gt;moment.&lt;sup&gt;&lt;a href=&quot;#fn7&quot; id=&quot;r7&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;FDA approvals have almost doubled in the last decade. Where we were getting 20-25 drug approvals a year before 2010, we’re running 40-50 approvals a year at the &lt;span class=&quot;txt-wrap&quot;&gt;moment.&lt;sup&gt;&lt;a href=&quot;#fn7&quot; id=&quot;r7&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;A very large proportion of those drugs have been for oncology and for rare diseases. These two therapy areas have become attractive for a number of reasons:&lt;/p&gt;
 
@@ -221,7 +212,7 @@
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
-&lt;div class=&quot;section-headings&quot;&gt;
+&lt;div&gt;
     
         
             
@@ -230,8 +221,8 @@
         
             
         
-        &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s4&quot;&gt;Frontier&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;In search of a better model.&lt;/h3&gt;
+        &lt;h2&gt;Frontier&lt;/h2&gt;
+        &lt;h3&gt;In search of a better model.&lt;/h3&gt;
         
     
         
@@ -239,8 +230,7 @@
 &lt;/div&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q7&quot;&gt;&lt;span&gt;7. &lt;/span&gt;Despite sifting through enormous compound libraries, drug R&amp;amp;D labs often have a hard time discovering good drug candidates. What do you think is holding back drug discovery today?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q7&quot;&gt;&lt;span&gt;7. &lt;/span&gt;Despite sifting through enormous compound libraries, drug R&amp;amp;D labs often have a hard time discovering good drug candidates. What do you think is holding back drug discovery today?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The rate-limiting step in drug R&amp;amp;D has to do with what people in the drug industry call “target validation” and what I would call “screening and disease model validity.”&lt;/p&gt;
 
@@ -248,15 +238,14 @@
 
 &lt;p&gt;You can only easily experiment on the biological machinery outside of humans, whether in a test tube, in a rat, or with a bit of tissue in a dish. The logical basis of using any one of these “models” is the assumption that the performance of drug candidates in the model is correlated with their performance in sick humans.&lt;/p&gt;
 
-&lt;p&gt;Of course, everyone in the drug industry knows that good models are better than bad models, but until you run the decision-theoretic maths, which too few people have done, you don’t realize that a marginally better model is 10 or even 100 times more productive than a marginally worse &lt;span class=&quot;txt-wrap&quot;&gt;model.&lt;sup&gt;&lt;a href=&quot;#fn8&quot; id=&quot;r8&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Of course, everyone in the drug industry knows that good models are better than bad models, but until you run the decision-theoretic maths, which too few people have done, you don’t realize that a marginally better model is 10 or even 100 times more productive than a marginally worse &lt;span class=&quot;txt-wrap&quot;&gt;model.&lt;sup&gt;&lt;a href=&quot;#fn8&quot; id=&quot;r8&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Yet, it turns out to be deceptively difficult to get people to act on the idea that something they already believe to be important—model validity—is, in fact, far more important than they already believe.&lt;/p&gt;
 
 &lt;p&gt;Nonetheless, I’m optimistic. British cycling has been very successful in recent years under coach Dave Brailsford, whose philosophy is that if you make enough marginal gains, they eventually add up to a sizable improvement. Likewise, if I’m right about the link between model validity and R&amp;amp;D productivity, then there should be lots of small things that could be done by drug companies that would cumulatively have a substantial effect.&lt;/p&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q8&quot;&gt;&lt;span&gt;8. &lt;/span&gt;If marginal differences in model quality can be orders of magnitude more predictive, why haven’t we seen enough investment in better target validation tools?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q8&quot;&gt;&lt;span&gt;8. &lt;/span&gt;If marginal differences in model quality can be orders of magnitude more predictive, why haven’t we seen enough investment in better target validation tools?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;It used to be that medicinal chemistry was the difficult bit in drug R&amp;amp;D, and patents were a great way to protect unique chemical compounds. Today, it’s target validation that’s difficult, and drug companies don’t have a great way of appropriating much of the value of incremental R&amp;amp;D investment on target validation.&lt;/p&gt;
 
@@ -269,10 +258,9 @@
 &lt;p&gt;The present situation makes no sense. In therapy areas like metastatic cancer and Alzheimer’s, you have expensive, low-probability, chemical roulette played by lots of companies using the same kinds of disease models that they all know are lousy.&lt;/p&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q9&quot;&gt;&lt;span&gt;9. &lt;/span&gt;People often find unexpected uses for drugs once they’re released, yet field discovery is still underexplored by the industry. Could it be rehabilitated as a valid method for drug discovery?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q9&quot;&gt;&lt;span&gt;9. &lt;/span&gt;People often find unexpected uses for drugs once they’re released, yet field discovery is still underexplored by the industry. Could it be rehabilitated as a valid method for drug discovery?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;A 2006 study that looked at this found that nearly 60 percent of new medical uses for drugs approved in a single year were discovered by practicing doctors who had little or nothing to do with drug companies or &lt;span class=&quot;txt-wrap&quot;&gt;universities.&lt;sup&gt;&lt;a href=&quot;#fn9&quot; id=&quot;r9&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;A 2006 study that looked at this found that nearly 60 percent of new medical uses for drugs approved in a single year were discovered by practicing doctors who had little or nothing to do with drug companies or &lt;span class=&quot;txt-wrap&quot;&gt;universities.&lt;sup&gt;&lt;a href=&quot;#fn9&quot; id=&quot;r9&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;This is interesting for a number of reasons:&lt;/p&gt;
 
@@ -294,7 +282,7 @@
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
-&lt;div class=&quot;section-headings&quot;&gt;
+&lt;div&gt;
     
         
             
@@ -305,19 +293,18 @@
         
             
         
-        &lt;h2 class=&quot;title&quot;&gt;&lt;a id=&quot;s5&quot;&gt;Pandemic&lt;/a&gt;&lt;/h2&gt;
-        &lt;h3 class=&quot;head&quot;&gt;To stop a viral loop.&lt;/h3&gt;
+        &lt;h2&gt;Pandemic&lt;/h2&gt;
+        &lt;h3&gt;To stop a viral loop.&lt;/h3&gt;
         
     
 &lt;/div&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q10&quot;&gt;&lt;span&gt;10. &lt;/span&gt;We’ve seen conflicting reports on promising treatments for COVID-19. When do you think we’ll start having definitive answers?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q10&quot;&gt;&lt;span&gt;10. &lt;/span&gt;We’ve seen conflicting reports on promising treatments for COVID-19. When do you think we’ll start having definitive answers?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;COVID-19 has certainly triggered a frenzy of activity in drug testing, but we have to guard against dumb luck contaminating the results of trials.&lt;/p&gt;
 
-&lt;p&gt;When people are running lots of clinical studies—in particular smaller ones—with lots of drug candidates, a few drugs might end up looking good through nothing more than sheer luck. Those hit the headlines, and we quietly ignore the unlucky drugs. In science, that’s related to what’s called the Proteus &lt;span class=&quot;txt-wrap&quot;&gt;phenomenon.&lt;sup&gt;&lt;a href=&quot;#fn10&quot; id=&quot;r10&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;When people are running lots of clinical studies—in particular smaller ones—with lots of drug candidates, a few drugs might end up looking good through nothing more than sheer luck. Those hit the headlines, and we quietly ignore the unlucky drugs. In science, that’s related to what’s called the Proteus &lt;span class=&quot;txt-wrap&quot;&gt;phenomenon.&lt;sup&gt;&lt;a href=&quot;#fn10&quot; id=&quot;r10&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;So the next step is to confirm the results in more trials, but I think we’ll still get to the truth very quickly. Governments and drug companies will throw money at the problem. The regulatory barriers will be low. And the drugs won’t have to be better than safe and effective old drugs.&lt;/p&gt;
 
@@ -328,12 +315,11 @@
 &lt;p&gt;With COVID-19, which is pretty mild in most patients, that means that the drugs would have to be very safe if they’re to be widely distributed. If they look a bit toxic or intolerable, you might only use them in high-risk patients.&lt;/p&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q11&quot;&gt;&lt;span&gt;11. &lt;/span&gt;Can pharma companies develop new anti-infectives against COVID-19 within a reasonable timeframe?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q11&quot;&gt;&lt;span&gt;11. &lt;/span&gt;Can pharma companies develop new anti-infectives against COVID-19 within a reasonable timeframe?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;For new drugs that haven’t yet been tested in humans, I expect fairly rapid progress by drug R&amp;amp;D standards, which is to say, a very small number of years.&lt;/p&gt;
 
-&lt;p&gt;Anti-infectives haven’t been a big focus of the drug industry, due to the Better than the Beatles problem. By the 1980s, there were lots of good low-cost ways of treating or preventing the infectious diseases that had been a massive problem fifty years earlier. I summarized some of the causes of the decline in antibiotic R&amp;amp;D in a 2014 &lt;span class=&quot;txt-wrap&quot;&gt;paper.&lt;sup&gt;&lt;a href=&quot;#fn11&quot; id=&quot;r11&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Anti-infectives haven’t been a big focus of the drug industry, due to the Better than the Beatles problem. By the 1980s, there were lots of good low-cost ways of treating or preventing the infectious diseases that had been a massive problem fifty years earlier. I summarized some of the causes of the decline in antibiotic R&amp;amp;D in a 2014 &lt;span class=&quot;txt-wrap&quot;&gt;paper.&lt;sup&gt;&lt;a href=&quot;#fn11&quot; id=&quot;r11&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;However, COVID-19 has no specific treatment and is causing chaos to healthcare systems, so the Better than the Beatles problem doesn’t apply. Any pharma company that comes up with something good will be hailed as heroes.&lt;/p&gt;
 
@@ -344,14 +330,13 @@
 &lt;p&gt;What could hamper the effort to develop new drugs would be either the rapid development and deployment of a really good vaccine, or the discovery of an existing drug that works extremely well. Then we’d be back to the Better than the Beatles problem.&lt;/p&gt;
 
 &lt;!--Question--&gt;
-&lt;!--Section Question--&gt;
-&lt;p&gt;&lt;strong class=&quot;qst&quot; id=&quot;q12&quot;&gt;&lt;span&gt;12. &lt;/span&gt;With viral diseases, there’s a tendency to fight the last war, only to be taken by surprise when a new virus hits. What systematic preemptive steps can we take to prevent future viral epidemics?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong id=&quot;q12&quot;&gt;&lt;span&gt;12. &lt;/span&gt;With viral diseases, there’s a tendency to fight the last war, only to be taken by surprise when a new virus hits. What systematic preemptive steps can we take to prevent future viral epidemics?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;I think that places like Taiwan, Singapore, and South Korea have shown us how you can control pandemics without the need for novel drugs, and without locking everyone in their home for months on end.&lt;/p&gt;
 
 &lt;p&gt;Their experiences with the SARs virus in the early 2000s meant they built the public health infrastructure that could deal with this kind of problem. And the public health lessons they learned then are indeed working well with COVID-19; certainly much better than the U.S. and Europe. The approach calls for widespread viral testing, tracing the contacts of infected people, and applying rigorous quarantine.&lt;/p&gt;
 
-&lt;p&gt;Turning to anti-viral treatments, in 2017, an organisation called CEPI was launched with the specific aim of improving the world’s ability to develop new vaccines against potential global pathogens, like SARS, MERS, Zika, Ebola, &lt;span class=&quot;txt-wrap&quot;&gt;etc.&lt;sup&gt;&lt;a href=&quot;#fn12&quot; id=&quot;r12&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Turning to anti-viral treatments, in 2017, an organisation called CEPI was launched with the specific aim of improving the world’s ability to develop new vaccines against potential global pathogens, like SARS, MERS, Zika, Ebola, &lt;span class=&quot;txt-wrap&quot;&gt;etc.&lt;sup&gt;&lt;a href=&quot;#fn12&quot; id=&quot;r12&quot;&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;The area is beyond my expertise, so I don’t know what people have done already, but it doesn’t seem a great stretch to imagine a similar organization cataloging the kinds of viruses that have the capacity to jump the species barrier and cause new human pandemics.&lt;/p&gt;
 
@@ -362,55 +347,55 @@
 &lt;!--footnotes--&gt;
 &lt;hr /&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div&gt;
     &lt;ol&gt;
         
         &lt;li id=&quot;fn1&quot;&gt;
-            &lt;p&gt;A fair question to ask is&amp;#58; What constitutes a technology field? Taking for a start a very simple definition of technology as &lt;em&gt;doing more with less&lt;/em&gt;, we believe that any field where some R&amp;amp;D effort gets undertaken to improve productivity counts as a technology area. By this definition, it’s not surprising to find that Education for example, which accounts for over 5 percent of U.S. GDP spending at this point, would hardly qualify as a technology field since so little of that spending goes to R&amp;amp;D efforts to raise its productivity. &amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r1&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;A fair question to ask is&amp;#58; What constitutes a technology field? Taking for a start a very simple definition of technology as &lt;em&gt;doing more with less&lt;/em&gt;, we believe that any field where some R&amp;amp;D effort gets undertaken to improve productivity counts as a technology area. By this definition, it’s not surprising to find that Education for example, which accounts for over 5 percent of U.S. GDP spending at this point, would hardly qualify as a technology field since so little of that spending goes to R&amp;amp;D efforts to raise its productivity. &amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r1&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn2&quot;&gt;
-            &lt;p&gt;Between 1998&amp;#8211;2018, overall U.S. inflation was 56 percent, while the cost of medical care services rose by about 120 percent, and hospital services by close to 210 percent. &amp;#8212; &lt;em&gt;Chart of the day…or century?&lt;/em&gt;, American Enterprise Institute, 2019&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://www.aei.org/carpe-diem/chart-of-the-day-or-century/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r2&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Between 1998&amp;#8211;2018, overall U.S. inflation was 56 percent, while the cost of medical care services rose by about 120 percent, and hospital services by close to 210 percent. &amp;#8212; &lt;em&gt;Chart of the day…or century?&lt;/em&gt;, American Enterprise Institute, 2019&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.aei.org/carpe-diem/chart-of-the-day-or-century/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r2&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn3&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Diagnosing the decline in pharmaceutical R&amp;amp;D efficiency&lt;/em&gt;, Jack Scannell et al., Nature Reviews Drug Discovery, 2012&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/nrd3681&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r3&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Diagnosing the decline in pharmaceutical R&amp;amp;D efficiency&lt;/em&gt;, Jack Scannell et al., Nature Reviews Drug Discovery, 2012&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/nrd3681&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r3&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn4&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Drug innovation&amp;#8212;what’s slowing it down?&lt;/em&gt;, Fred Steward and George Wibberley, Nature, 1980&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/284118a0&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r4&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Drug innovation&amp;#8212;what’s slowing it down?&lt;/em&gt;, Fred Steward and George Wibberley, Nature, 1980&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/284118a0&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r4&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn5&quot;&gt;
-            &lt;p&gt;See &lt;em&gt;Politician’s syllogism&lt;/em&gt;, Wikipedia&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Politician’s_syllogism&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r5&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;See &lt;em&gt;Politician’s syllogism&lt;/em&gt;, Wikipedia&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Politician’s_syllogism&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r5&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn6&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Valeant&amp;#58; A timeline of the big Pharma scandal&lt;/em&gt;, Fortune, 2015&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://fortune.com/2015/10/31/valeant-scandal/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r6&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Valeant&amp;#58; A timeline of the big Pharma scandal&lt;/em&gt;, Fortune, 2015&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://fortune.com/2015/10/31/valeant-scandal/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r6&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn7&quot;&gt;
-            &lt;p&gt;For more on the factors driving the uptick in drug approvals, see &lt;em&gt;Breaking Eroom’s Law&lt;/em&gt;, Michael Ringel, Jack Scannell, Mathias Baedeker, and Ulrik Schulze, Nature Reviews Drug Discovery, 2020&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/d41573-020-00059-3&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r7&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;For more on the factors driving the uptick in drug approvals, see &lt;em&gt;Breaking Eroom’s Law&lt;/em&gt;, Michael Ringel, Jack Scannell, Mathias Baedeker, and Ulrik Schulze, Nature Reviews Drug Discovery, 2020&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/d41573-020-00059-3&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r7&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn8&quot;&gt;
-            &lt;p&gt; &lt;em&gt;When Quality Beats Quantity&amp;#58; Decision Theory, Drug Discovery, and the Reproducibility Crisis&lt;/em&gt;, Jack Scannell and Jim Bosley, PLoS One, 2016&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1371/journal.pone.0147215&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r8&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;When Quality Beats Quantity&amp;#58; Decision Theory, Drug Discovery, and the Reproducibility Crisis&lt;/em&gt;, Jack Scannell and Jim Bosley, PLoS One, 2016&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://doi.org/10.1371/journal.pone.0147215&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r8&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn9&quot;&gt;
-            &lt;p&gt;The study tracked every drug approved by the FDA in 1998, looking at new medical uses discovered for those 30-or-so drugs since they came on the market. And of the 150 new medical uses reported, the study found that close to 60 percent were discovered by doctors unaffiliated with any research organization. &amp;#8212; &lt;em&gt;The major role of clinicians in the discovery of off-label drug therapies&lt;/em&gt;, Harold J. DeMonaco, Ayfer Ali, and Eric Von Hippel, Pharmacotherapy, 2006&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1592/phco.26.3.323&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r9&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;The study tracked every drug approved by the FDA in 1998, looking at new medical uses discovered for those 30-or-so drugs since they came on the market. And of the 150 new medical uses reported, the study found that close to 60 percent were discovered by doctors unaffiliated with any research organization. &amp;#8212; &lt;em&gt;The major role of clinicians in the discovery of off-label drug therapies&lt;/em&gt;, Harold J. DeMonaco, Ayfer Ali, and Eric Von Hippel, Pharmacotherapy, 2006&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://doi.org/10.1592/phco.26.3.323&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r9&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn10&quot;&gt;
-            &lt;p&gt;According to Wikipedia, the Proteus phenomenon is the tendency for early replications of a scientific work to contradict the original findings, a consequence of publication bias. &amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Proteus_phenomenon&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r10&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;According to Wikipedia, the Proteus phenomenon is the tendency for early replications of a scientific work to contradict the original findings, a consequence of publication bias. &amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Proteus_phenomenon&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r10&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn11&quot;&gt;
-            &lt;p&gt; &lt;em&gt;The development of antimicrobial drugs and diagnostics&lt;/em&gt;, Jack Scannell, The Review on Antimicrobial Resistance, 2014&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://amr-review.org/sites/default/files/AMR_Supplement_Industry_View%20_141215-150511r.pdf&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r11&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;The development of antimicrobial drugs and diagnostics&lt;/em&gt;, Jack Scannell, The Review on Antimicrobial Resistance, 2014&amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://amr-review.org/sites/default/files/AMR_Supplement_Industry_View%20_141215-150511r.pdf&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r11&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn12&quot;&gt;
-            &lt;p&gt;The Coalition for Epidemic Preparedness Innovations (CEPI) describes itself as “a global alliance financing and coordinating the development of vaccines against emerging infectious diseases.“ &amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://cepi.net/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r12&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;The Coalition for Epidemic Preparedness Innovations (CEPI) describes itself as “a global alliance financing and coordinating the development of vaccines against emerging infectious diseases.“ &amp;nbsp;&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://cepi.net/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r12&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     &lt;/ol&gt;
@@ -420,4 +405,4 @@
           
         
       
-        </content><summary>                            Interview&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;Mar 27, 2020        Life after Eroom’s law.        Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.    </summary></entry></feed>
+        </content><summary>        Interview&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;Mar 27, 2020    Life after Eroom’s law.    Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.</summary></entry></feed>
