@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T07:02:04-08:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T06:10:14-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T07:09:13-08:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T06:10:14-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
           
             &lt;!--Header--&gt;
 
@@ -6,7 +6,6 @@
 &lt;hr /&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;div&gt;
     
@@ -23,7 +22,6 @@
         
             
 &lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;One of our founding beliefs is that too many people are making the rational choice to look for secrets in a handful of technology areas, in particular, those areas which have seen the most progress over the last half-century, namely computers and finance, with the possible addition of shale oil in the last decade.&lt;/p&gt;
 
@@ -73,8 +71,8 @@
 &lt;p&gt;So, we sit down with Jack Scannell to discuss the beginning and end of Eroom’s law, the technical frontier of drug discovery, and whether drug R&amp;amp;D can help win the fight against COVID-19 and prevent future pandemics.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div&gt;
     
         
@@ -90,7 +88,6 @@
         
             
 &lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;!--Question--&gt;
 &lt;p&gt;&lt;strong id=&quot;q1&quot;&gt;&lt;span&gt;1. &lt;/span&gt;Your 2012 paper diagnosed the decline in drug R&amp;amp;D productivity over the preceding six decades. What moved you to write it? And how did you land on the term Eroom’s law?&lt;/strong&gt;&lt;/p&gt;
@@ -134,8 +131,8 @@
 &lt;p&gt;However, to be honest, apart from a few people in the drug industry telling me that the paper became required reading, and aside from seeing the Eroom graph in lots of presentations, it’s not clear to me that anything different was done after the paper was read.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div&gt;
     
         
@@ -151,7 +148,6 @@
         
             
 &lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;!--Question--&gt;
 &lt;p&gt;&lt;strong id=&quot;q4&quot;&gt;&lt;span&gt;4. &lt;/span&gt;The standard fixes to raise drug R&amp;amp;D productivity tend to focus on process efficiency and cost-cutting. Why haven’t these solutions been enough to stop and reverse Eroom’s law?&lt;/strong&gt;&lt;/p&gt;
@@ -211,8 +207,8 @@
 &lt;p&gt;Although lots of rare diseases may prove tractable, my suspicion is that things like Alzheimer’s and metastatic solid cancers will continue to be difficult to treat well with drugs. So, while the post-2010 doubling in drug approvals is unambiguously good news, it may not ultimately have the broad health impact of the great drugs discovered from the 1940s through the 1970s.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div&gt;
     
         
@@ -228,7 +224,6 @@
         
             
 &lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;!--Question--&gt;
 &lt;p&gt;&lt;strong id=&quot;q7&quot;&gt;&lt;span&gt;7. &lt;/span&gt;Despite sifting through enormous compound libraries, drug R&amp;amp;D labs often have a hard time discovering good drug candidates. What do you think is holding back drug discovery today?&lt;/strong&gt;&lt;/p&gt;
@@ -282,8 +277,8 @@
 &lt;p&gt;Of course, it’s possible that new technologies could shift the balance. A world in which the response of patients to real-world pharmacology is more systematically captured and analyzed could do great things for user-led innovation.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div&gt;
     
         
@@ -299,7 +294,6 @@
         
     
 &lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;!--Question--&gt;
 &lt;p&gt;&lt;strong id=&quot;q10&quot;&gt;&lt;span&gt;10. &lt;/span&gt;We’ve seen conflicting reports on promising treatments for COVID-19. When do you think we’ll start having definitive answers?&lt;/strong&gt;&lt;/p&gt;
