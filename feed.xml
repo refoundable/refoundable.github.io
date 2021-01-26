@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T03:48:40-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T00:55:16-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T03:57:56-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T03:50:22-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
           
             &lt;!--Header--&gt;
 &lt;div&gt;
@@ -13,8 +13,8 @@
 &lt;div&gt;
     
         
-        &lt;h3&gt;Introduction&lt;/h3&gt;
-        &lt;h2&gt;Looking past the end.&lt;/h2&gt;
+        &lt;h2&gt;Introduction&lt;/h2&gt;
+        &lt;h3&gt;Looking past the end.&lt;/h3&gt;
         
     
         
@@ -47,7 +47,7 @@
 
 &lt;p&gt;To cut the Gordian knot of pharma’s long stasis, we must turn to the one robust measure of progress the industry has, known simply as Eroom’s law. The name is already very suggestive, as it’s quite literally an ironic backward spelling of Moore’s law—the computer industry’s relentless benchmark of progress—which makes it a fitting place to start.&lt;/p&gt;
 
-&lt;p class=&quot;subheading&quot;&gt;Race to the bottom&lt;/p&gt;
+&lt;p class=&quot;subheading&quot;&gt;&lt;strong&gt;Race to the bottom&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Eroom’s law is the observation that the cost of developing a new drug roughly doubled every nine years from 1950 through 2010. All in all, it shows a roughly 80-fold decline in the productivity of drug R&amp;amp;D.&lt;/p&gt;
 
@@ -81,8 +81,8 @@
         
             
         
-        &lt;h3&gt;Beginnings&lt;/h3&gt;
-        &lt;h2&gt;Opposites attract attention.&lt;/h2&gt;
+        &lt;h2&gt;Beginnings&lt;/h2&gt;
+        &lt;h3&gt;Opposites attract attention.&lt;/h3&gt;
         
     
         
@@ -143,8 +143,8 @@
         
             
         
-        &lt;h3&gt;Stasis&lt;/h3&gt;
-        &lt;h2&gt;Pay more. Get less.&lt;/h2&gt;
+        &lt;h2&gt;Stasis&lt;/h2&gt;
+        &lt;h3&gt;Pay more. Get less.&lt;/h3&gt;
         
     
         
@@ -221,8 +221,8 @@
         
             
         
-        &lt;h3&gt;Frontier&lt;/h3&gt;
-        &lt;h2&gt;In search of a better model.&lt;/h2&gt;
+        &lt;h2&gt;Frontier&lt;/h2&gt;
+        &lt;h3&gt;In search of a better model.&lt;/h3&gt;
         
     
         
@@ -293,8 +293,8 @@
         
             
         
-        &lt;h3&gt;Pandemic&lt;/h3&gt;
-        &lt;h2&gt;To stop a viral loop.&lt;/h2&gt;
+        &lt;h2&gt;Pandemic&lt;/h2&gt;
+        &lt;h3&gt;To stop a viral loop.&lt;/h3&gt;
         
     
 &lt;/div&gt;
