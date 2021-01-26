@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T06:03:32-08:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T04:08:52-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T06:10:32-08:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T06:10:14-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
           
             &lt;!--Header--&gt;
 &lt;div&gt;
     
     &lt;p&gt;&lt;em&gt;Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.&lt;/em&gt;&lt;/p&gt;
-    &lt;hr /&gt;
 &lt;/div&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
+&lt;hr /&gt;
 
 &lt;div&gt;
     
         
-        &lt;h4&gt;INTRODUCTION&lt;/h4&gt;
-        &lt;h3&gt;Looking past the end.&lt;/h3&gt;
+        &lt;h5&gt;INTRODUCTION&lt;/h5&gt;
+        &lt;h3&gt;Looking past the end&lt;/h3&gt;
         
     
         
@@ -74,14 +74,15 @@
 &lt;p&gt;So, we sit down with Jack Scannell to discuss the beginning and end of Eroom’s law, the technical frontier of drug discovery, and whether drug R&amp;amp;D can help win the fight against COVID-19 and prevent future pandemics.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
+&lt;hr /&gt;
 
 &lt;div&gt;
     
         
             
         
-        &lt;h4&gt;BEGINNINGS&lt;/h4&gt;
-        &lt;h3&gt;Opposites attract attention.&lt;/h3&gt;
+        &lt;h5&gt;BEGINNINGS&lt;/h5&gt;
+        &lt;h3&gt;Opposites attract attention&lt;/h3&gt;
         
     
         
@@ -134,6 +135,7 @@
 &lt;p&gt;However, to be honest, apart from a few people in the drug industry telling me that the paper became required reading, and aside from seeing the Eroom graph in lots of presentations, it’s not clear to me that anything different was done after the paper was read.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
+&lt;hr /&gt;
 
 &lt;div&gt;
     
@@ -142,7 +144,7 @@
         
             
         
-        &lt;h4&gt;STASIS&lt;/h4&gt;
+        &lt;h5&gt;STASIS&lt;/h5&gt;
         &lt;h3&gt;Pay more. Get less.&lt;/h3&gt;
         
     
@@ -210,6 +212,7 @@
 &lt;p&gt;Although lots of rare diseases may prove tractable, my suspicion is that things like Alzheimer’s and metastatic solid cancers will continue to be difficult to treat well with drugs. So, while the post-2010 doubling in drug approvals is unambiguously good news, it may not ultimately have the broad health impact of the great drugs discovered from the 1940s through the 1970s.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
+&lt;hr /&gt;
 
 &lt;div&gt;
     
@@ -220,8 +223,8 @@
         
             
         
-        &lt;h4&gt;FRONTIER&lt;/h4&gt;
-        &lt;h3&gt;In search of a better model.&lt;/h3&gt;
+        &lt;h5&gt;FRONTIER&lt;/h5&gt;
+        &lt;h3&gt;In search of a better model&lt;/h3&gt;
         
     
         
@@ -280,6 +283,7 @@
 &lt;p&gt;Of course, it’s possible that new technologies could shift the balance. A world in which the response of patients to real-world pharmacology is more systematically captured and analyzed could do great things for user-led innovation.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
+&lt;hr /&gt;
 
 &lt;div&gt;
     
@@ -292,8 +296,8 @@
         
             
         
-        &lt;h4&gt;PANDEMIC&lt;/h4&gt;
-        &lt;h3&gt;To stop a viral loop.&lt;/h3&gt;
+        &lt;h5&gt;PANDEMIC&lt;/h5&gt;
+        &lt;h3&gt;To stop a viral loop&lt;/h3&gt;
         
     
 &lt;/div&gt;
@@ -404,4 +408,4 @@
           
         
       
-        </content><summary>        Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.    </summary></entry></feed>
+        </content><summary>        Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.</summary></entry></feed>
