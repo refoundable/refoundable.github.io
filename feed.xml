@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T03:17:57-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T00:55:16-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T03:48:40-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T00:55:16-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
           
             &lt;!--Header--&gt;
 &lt;div&gt;
     
-    &lt;div&gt;Interview&lt;time datetime=&quot;2020-03-27T00:00:00-07:00&quot;&gt;&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;Mar 27, 2020&lt;/time&gt;&lt;/div&gt;
+    &lt;h4&gt;Interview&lt;/h4&gt;
     &lt;h1&gt;Life after Eroom’s law.&lt;/h1&gt;
-    &lt;p&gt;Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.&lt;/p&gt;
+    &lt;p&gt;&lt;em&gt;Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
@@ -13,8 +13,8 @@
 &lt;div&gt;
     
         
-        &lt;h2&gt;Introduction&lt;/h2&gt;
-        &lt;h3&gt;Looking past the end.&lt;/h3&gt;
+        &lt;h3&gt;Introduction&lt;/h3&gt;
+        &lt;h2&gt;Looking past the end.&lt;/h2&gt;
         
     
         
@@ -81,8 +81,8 @@
         
             
         
-        &lt;h2&gt;Beginnings&lt;/h2&gt;
-        &lt;h3&gt;Opposites attract attention.&lt;/h3&gt;
+        &lt;h3&gt;Beginnings&lt;/h3&gt;
+        &lt;h2&gt;Opposites attract attention.&lt;/h2&gt;
         
     
         
@@ -143,8 +143,8 @@
         
             
         
-        &lt;h2&gt;Stasis&lt;/h2&gt;
-        &lt;h3&gt;Pay more. Get less.&lt;/h3&gt;
+        &lt;h3&gt;Stasis&lt;/h3&gt;
+        &lt;h2&gt;Pay more. Get less.&lt;/h2&gt;
         
     
         
@@ -221,8 +221,8 @@
         
             
         
-        &lt;h2&gt;Frontier&lt;/h2&gt;
-        &lt;h3&gt;In search of a better model.&lt;/h3&gt;
+        &lt;h3&gt;Frontier&lt;/h3&gt;
+        &lt;h2&gt;In search of a better model.&lt;/h2&gt;
         
     
         
@@ -293,8 +293,8 @@
         
             
         
-        &lt;h2&gt;Pandemic&lt;/h2&gt;
-        &lt;h3&gt;To stop a viral loop.&lt;/h3&gt;
+        &lt;h3&gt;Pandemic&lt;/h3&gt;
+        &lt;h2&gt;To stop a viral loop.&lt;/h2&gt;
         
     
 &lt;/div&gt;
@@ -405,4 +405,4 @@
           
         
       
-        </content><summary>        Interview&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;Mar 27, 2020    Life after Eroom’s law.    Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.</summary></entry></feed>
+        </content><summary>        Interview    Life after Eroom’s law.    Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.</summary></entry></feed>
