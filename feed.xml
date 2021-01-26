@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T00:24:09-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T00:23:05-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T00:55:29-08:00</updated><id>https://refoundable.com/</id><generator uri="https://sparanoid.com/lab/amsf/" version="2.0.18">Almace Scaffolding</generator><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T00:55:16-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
           
             &lt;!--Header--&gt;
 &lt;div class=&quot;essay-header&quot;&gt;
     &lt;div class=&quot;callout&quot;&gt;
         &lt;!--header img--&gt;
         
+        &lt;div class=&quot;rubric&quot;&gt;Interview&lt;time datetime=&quot;2020-03-27T00:00:00-07:00&quot;&gt;&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;Mar 27, 2020&lt;/time&gt;&lt;/div&gt;
         &lt;h1 class=&quot;head&quot;&gt;Life after Eroom’s law.&lt;/h1&gt;
         &lt;p class=&quot;deck&quot; id=&quot;deck-res-int-scannell&quot;&gt;Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.&lt;/p&gt;
     &lt;/div&gt;
@@ -78,8 +79,6 @@
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
-&lt;hr /&gt;
-
 &lt;div class=&quot;section-headings&quot;&gt;
     
         
@@ -142,8 +141,6 @@
 &lt;p&gt;However, to be honest, apart from a few people in the drug industry telling me that the paper became required reading, and aside from seeing the Eroom graph in lots of presentations, it’s not clear to me that anything different was done after the paper was read.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
-
-&lt;hr /&gt;
 
 &lt;div class=&quot;section-headings&quot;&gt;
     
@@ -224,8 +221,6 @@
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
-&lt;hr /&gt;
-
 &lt;div class=&quot;section-headings&quot;&gt;
     
         
@@ -299,8 +294,6 @@
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
-&lt;hr /&gt;
-
 &lt;div class=&quot;section-headings&quot;&gt;
     
         
@@ -367,6 +360,8 @@
 &lt;p&gt;If we did this, and then were to face a new viral pandemic, I think that would give the world a big pharmacological head start on the virus, and that could make all the difference.&lt;/p&gt;
 
 &lt;!--footnotes--&gt;
+&lt;hr /&gt;
+
 &lt;div class=&quot;footnotes&quot;&gt;
     &lt;ol&gt;
         
@@ -375,47 +370,47 @@
         &lt;/li&gt;
         
         &lt;li id=&quot;fn2&quot;&gt;
-            &lt;p&gt;Between 1998&amp;#8211;2018, overall U.S. inflation was 56 percent, while the cost of medical care services rose by about 120 percent, and hospital services by close to 210 percent. &amp;#8212; &lt;em&gt;Chart of the day…or century?&lt;/em&gt;, American Enterprise Institute, 2019&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://www.aei.org/carpe-diem/chart-of-the-day-or-century/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r2&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Between 1998&amp;#8211;2018, overall U.S. inflation was 56 percent, while the cost of medical care services rose by about 120 percent, and hospital services by close to 210 percent. &amp;#8212; &lt;em&gt;Chart of the day…or century?&lt;/em&gt;, American Enterprise Institute, 2019&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://www.aei.org/carpe-diem/chart-of-the-day-or-century/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r2&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn3&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Diagnosing the decline in pharmaceutical R&amp;amp;D efficiency&lt;/em&gt;, Jack Scannell et al., Nature Reviews Drug Discovery, 2012&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/nrd3681&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r3&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Diagnosing the decline in pharmaceutical R&amp;amp;D efficiency&lt;/em&gt;, Jack Scannell et al., Nature Reviews Drug Discovery, 2012&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/nrd3681&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r3&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn4&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Drug innovation&amp;#8212;what’s slowing it down?&lt;/em&gt;, Fred Steward and George Wibberley, Nature, 1980&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/284118a0&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r4&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Drug innovation&amp;#8212;what’s slowing it down?&lt;/em&gt;, Fred Steward and George Wibberley, Nature, 1980&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/284118a0&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r4&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn5&quot;&gt;
-            &lt;p&gt;See &lt;em&gt;Politician’s syllogism&lt;/em&gt;, Wikipedia&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Politician’s_syllogism&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r5&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;See &lt;em&gt;Politician’s syllogism&lt;/em&gt;, Wikipedia&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Politician’s_syllogism&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r5&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn6&quot;&gt;
-            &lt;p&gt; &lt;em&gt;Valeant&amp;#58; A timeline of the big Pharma scandal&lt;/em&gt;, Fortune, 2015&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://fortune.com/2015/10/31/valeant-scandal/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r6&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;Valeant&amp;#58; A timeline of the big Pharma scandal&lt;/em&gt;, Fortune, 2015&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://fortune.com/2015/10/31/valeant-scandal/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r6&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn7&quot;&gt;
-            &lt;p&gt;For more on the factors driving the uptick in drug approvals, see &lt;em&gt;Breaking Eroom’s Law&lt;/em&gt;, Michael Ringel, Jack Scannell, Mathias Baedeker, and Ulrik Schulze, Nature Reviews Drug Discovery, 2020&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/d41573-020-00059-3&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r7&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;For more on the factors driving the uptick in drug approvals, see &lt;em&gt;Breaking Eroom’s Law&lt;/em&gt;, Michael Ringel, Jack Scannell, Mathias Baedeker, and Ulrik Schulze, Nature Reviews Drug Discovery, 2020&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1038/d41573-020-00059-3&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r7&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn8&quot;&gt;
-            &lt;p&gt; &lt;em&gt;When Quality Beats Quantity&amp;#58; Decision Theory, Drug Discovery, and the Reproducibility Crisis&lt;/em&gt;, Jack Scannell and Jim Bosley, PLoS One, 2016&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1371/journal.pone.0147215&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r8&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;When Quality Beats Quantity&amp;#58; Decision Theory, Drug Discovery, and the Reproducibility Crisis&lt;/em&gt;, Jack Scannell and Jim Bosley, PLoS One, 2016&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1371/journal.pone.0147215&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r8&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn9&quot;&gt;
-            &lt;p&gt;The study tracked every drug approved by the FDA in 1998, looking at new medical uses discovered for those 30-or-so drugs since they came on the market. And of the 150 new medical uses reported, the study found that close to 60 percent were discovered by doctors unaffiliated with any research organization. &amp;#8212; &lt;em&gt;The major role of clinicians in the discovery of off-label drug therapies&lt;/em&gt;, Harold J. DeMonaco, Ayfer Ali, and Eric Von Hippel, Pharmacotherapy, 2006&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1592/phco.26.3.323&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r9&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;The study tracked every drug approved by the FDA in 1998, looking at new medical uses discovered for those 30-or-so drugs since they came on the market. And of the 150 new medical uses reported, the study found that close to 60 percent were discovered by doctors unaffiliated with any research organization. &amp;#8212; &lt;em&gt;The major role of clinicians in the discovery of off-label drug therapies&lt;/em&gt;, Harold J. DeMonaco, Ayfer Ali, and Eric Von Hippel, Pharmacotherapy, 2006&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://doi.org/10.1592/phco.26.3.323&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r9&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn10&quot;&gt;
-            &lt;p&gt;According to Wikipedia, the Proteus phenomenon is the tendency for early replications of a scientific work to contradict the original findings, a consequence of publication bias. &amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Proteus_phenomenon&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r10&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;According to Wikipedia, the Proteus phenomenon is the tendency for early replications of a scientific work to contradict the original findings, a consequence of publication bias. &amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://en.wikipedia.org/wiki/Proteus_phenomenon&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r10&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn11&quot;&gt;
-            &lt;p&gt; &lt;em&gt;The development of antimicrobial drugs and diagnostics&lt;/em&gt;, Jack Scannell, The Review on Antimicrobial Resistance, 2014&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://amr-review.org/sites/default/files/AMR_Supplement_Industry_View%20_141215-150511r.pdf&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r11&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt; &lt;em&gt;The development of antimicrobial drugs and diagnostics&lt;/em&gt;, Jack Scannell, The Review on Antimicrobial Resistance, 2014&amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://amr-review.org/sites/default/files/AMR_Supplement_Industry_View%20_141215-150511r.pdf&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r11&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn12&quot;&gt;
-            &lt;p&gt;The Coalition for Epidemic Preparedness Innovations (CEPI) describes itself as “a global alliance financing and coordinating the development of vaccines against emerging infectious diseases.“ &amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://cepi.net/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r12&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;The Coalition for Epidemic Preparedness Innovations (CEPI) describes itself as “a global alliance financing and coordinating the development of vaccines against emerging infectious diseases.“ &amp;nbsp;&amp;nbsp;&lt;span class=&quot;txt-wrap&quot;&gt;&lt;a class=&quot;fn-ext-lnk&quot; target=&quot;_blank&quot; href=&quot;https://cepi.net/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#r12&quot; class=&quot;fn-btn fn-btn-bot&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
     &lt;/ol&gt;
@@ -425,4 +420,4 @@
           
         
       
-        </content><summary>                            Life after Eroom’s law.        Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.    </summary></entry></feed>
+        </content><summary>                            Interview&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;Mar 27, 2020        Life after Eroom’s law.        Jack Scannell, the man who coined Eroom’s law, on the end of an era in drug R&amp;amp;D, the frontier of drug discovery, and COVID-19.    </summary></entry></feed>
