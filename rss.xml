@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-26T07:26:46-08:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/feed.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><updated>2021-01-26T06:10:14-08:00</updated><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-31T01:02:00-08:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/rss.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><content type="html" xml:base="https://refoundable.com/">
           
             &lt;!--Header--&gt;
 
@@ -27,23 +27,23 @@
 
 &lt;p&gt;The necessary and counterintuitive approach at this point, we believe, is to start with the technology areas worst hit by neglect, stagnation, and rising costs, and figure out how to restart their &lt;span class=&quot;txt-wrap&quot;&gt;progress.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Take healthcare for example. While computers got faster and cheaper year after year for the last five decades, healthcare costs shot three to four times higher than inflation in the last two decades &lt;span class=&quot;txt-wrap&quot;&gt;alone.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Take healthcare for example. While computers got faster and cheaper year after year for the last five decades, healthcare costs shot up to four times higher than inflation in the last two decades &lt;span class=&quot;txt-wrap&quot;&gt;alone.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;And if the recent coronavirus pandemic that swept the globe in a few short weeks has shown us anything, it’s how close our healthcare systems truly are to their breaking point.&lt;/p&gt;
+&lt;p&gt;And if the recent coronavirus pandemic has shown us anything as it swept the globe in a few short weeks, it’s how close our healthcare systems are to their breaking point.&lt;/p&gt;
 
 &lt;p&gt;Yet, unlike other stagnant technology areas, like defense or nuclear energy, most people will agree that healthcare is both badly broken and vital to fix, so by starting there at least, fewer people will try to stop an ambitious founder.&lt;/p&gt;
 
-&lt;p&gt;Of all the healthcare fields that one could start with, many fashionable and less fashionable areas receive a fair bit of attention already from venture capitalists and philanthropists—it’s hard to tell them apart sometimes. Yet there’s one big area that has stagnated despite the close scrutiny it receives, and that’s pharmaceuticals.&lt;/p&gt;
+&lt;p&gt;Of all the healthcare fields that one could go into, many fashionable and less fashionable areas receive a fair bit of attention already from venture capitalists and philanthropists (they’re hard to tell apart sometimes). Yet there’s one big area that has stagnated despite the close scrutiny it receives, and that’s pharmaceuticals.&lt;/p&gt;
 
-&lt;p&gt;The great promise was that by unlocking the secrets of biology, we would create all kinds of life-saving, even life-enhancing medicine, from a full-course-meal in a pill to a general cancer cure.&lt;/p&gt;
+&lt;p&gt;Its great promise was that by unlocking the secrets of biology, we would create all kinds of life-saving, even life-enhancing medicine, from a full-course-meal in a pill to a general cancer cure.&lt;/p&gt;
 
-&lt;p&gt;Moreover, breakthroughs in pharma would open up new avenues of research in many ancillary fields, from nutrition and anti-aging to preventative medicine writ large. The more progress we’d make, the less effort we’d have to put in to uncover new secrets.&lt;/p&gt;
+&lt;p&gt;Moreover, breakthroughs in pharma would open up new avenues of research in many ancillary fields, from nutrition and anti-aging to preventative medicine writ large. The more progress we’d make, the less effort we’d have to put in to uncover additional secrets.&lt;/p&gt;
 
 &lt;p&gt;However, today’s pharma industry looks nothing of the sort. Looking from the outside, it seems that despite a growing mountain of scientific and technical know-how, the cures only seem to get harder and harder to find. So, one might reasonably ask: What went wrong?&lt;/p&gt;
 
 &lt;p&gt;To cut the Gordian knot of pharma’s long stasis, we must turn to the one robust measure of progress the industry has, known simply as Eroom’s law. The name is already very suggestive, as it’s quite literally an ironic backward spelling of Moore’s law—the computer industry’s relentless benchmark of progress—which makes it a fitting place to start.&lt;/p&gt;
 
-&lt;p class=&quot;subheading&quot;&gt;&lt;strong&gt;Race to the bottom&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Race to the bottom&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Eroom’s law is the observation that the cost of developing a new drug roughly doubled every nine years from 1950 through 2010. All in all, it shows a roughly 80-fold decline in the productivity of drug R&amp;amp;D.&lt;/p&gt;
 
@@ -66,9 +66,9 @@
 
 &lt;p&gt;When Scannell worked as an investment analyst, he used to ask the top executives at major pharma firms to explain why the productivity of drug R&amp;amp;D kept falling for so long, when the science and technology inputs were getting cheaper and more efficient all the time. Generally, he’d get the same kind of answer: the industry had run out of “low-hanging fruit.”&lt;/p&gt;
 
-&lt;p&gt;In the course of his own later investigations, Scannell began to focus on a serious technical problem called “model validity,” which he found was holding back progress in the science of drug discovery. And while everyone can acknowledge that there’s a host of issues to fix with the drug industry, we agree with Scannell that starting with the science could prove decisive in the heroic effort needed to restart general progress in the field.&lt;/p&gt;
+&lt;p&gt;In the course of his own later investigations, Scannell began to focus on a technical problem in drug R&amp;amp;D called “model validity,” which he believed to be holding back progress in the science of drug discovery. And while everyone can acknowledge that there’s a host of issues to fix with the drug industry, we agree with Scannell that starting with the science may be a decisive first step in the heroic effort needed to restart general progress in the field.&lt;/p&gt;
 
-&lt;p&gt;So, we sit down with Jack Scannell to discuss the beginning and end of Eroom’s law, the technical frontier of drug discovery, and whether drug R&amp;amp;D can help win the fight against COVID-19 and prevent future pandemics.&lt;/p&gt;
+&lt;p&gt;So, we sit down with Jack Scannell to discuss the beginning and end of Eroom’s law, the technical frontier of drug discovery, and whether drug R&amp;amp;D can help win the fight against COVID-19 and prevent such global catastrophies in the future.&lt;/p&gt;
 
 &lt;!--h2 &amp; h3 Headings--&gt;
 
@@ -238,7 +238,7 @@
 
 &lt;p&gt;Yet, it turns out to be deceptively difficult to get people to act on the idea that something they already believe to be important—model validity—is, in fact, far more important than they already believe.&lt;/p&gt;
 
-&lt;p&gt;Nonetheless, I’m optimistic. British cycling has been very successful in recent years under coach Dave Brailsford, whose philosophy is that if you make enough marginal gains, they eventually add up to a sizable improvement. Likewise, if I’m right about the link between model validity and R&amp;amp;D productivity, then there should be lots of small things that could be done by drug companies that would cumulatively have a substantial effect.&lt;/p&gt;
+&lt;p&gt;Nonetheless, I’m optimistic. British cycling has been very successful in recent years under coach Dave Brailsford, and his philosophy is that if you make enough marginal gains, they eventually add up to a sizable improvement. Likewise, if I’m right about the link between model validity and R&amp;amp;D productivity, then there should be lots of small things that drug companies could do and that would cumulatively have a big effect.&lt;/p&gt;
 
 &lt;!--Question--&gt;
 &lt;p&gt;&lt;strong id=&quot;q8&quot;&gt;&lt;span&gt;8. &lt;/span&gt;If marginal differences in model quality can be orders of magnitude more predictive, why haven’t we seen enough investment in better target validation tools?&lt;/strong&gt;&lt;/p&gt;
@@ -266,7 +266,7 @@
 
 &lt;p&gt;For example, once a drug goes on the market, its patent expiry clock starts ticking, and that often makes it impractical to invest in the kind of evidence that would back up the unexpected discovery of new uses. It’s much harder to make money on field discoveries, so they don’t get promoted to the same degree.&lt;/p&gt;
 
-&lt;p&gt;Third, medical practice is heavily influenced by an approach called “Evidence-based medicine,” which holds that randomized control trials, and meta-analyses of those trials, are true and believable in a way that nothing else is. And that’s because those trials do a good job of avoiding “statistical bias.”&lt;/p&gt;
+&lt;p&gt;Third, medical practice is heavily influenced by an approach called “Evidence-based medicine,” which holds that randomized control trials, and meta-analyses of those trials, are true and believable in a way that nothing else is, because they do a good job avoiding “statistical bias.”&lt;/p&gt;
 
 &lt;p&gt;However, the randomized control trials are generally paid for by drug companies for the purposes of regulatory approval. They typically recruit young and fit patients who are unlike the older and sicker patients who get the drugs in the real world. And the meta-analyses are based on the phase III trials the drug companies chose to run. All this means that they often lack what you might call “ecological validity.”&lt;/p&gt;
 
@@ -338,7 +338,7 @@
 
 &lt;p&gt;It would evaluate a large set of approved drugs and antiviral drug candidates against these potential future pathogens, in standard in vitro models and animal models, and do some preliminary toxicology studies on the drugs. It would also plan for the human trials that would be needed once a new virus did appear in humans.&lt;/p&gt;
 
-&lt;p&gt;If we did this, and then were to face a new viral pandemic, I think that would give the world a big pharmacological head start on the virus, and that could make all the difference.&lt;/p&gt;
+&lt;p&gt;If we did this, and then were to face a new viral pandemic, I think that would give the world a big pharmacological head start, and that could make all the difference.&lt;/p&gt;
 
 &lt;!--footnotes--&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -348,11 +348,11 @@
     &lt;ol&gt;
         
         &lt;li id=&quot;fn:1&quot;&gt;
-            &lt;p&gt;A fair question to ask is&amp;#58; What constitutes a technology field? Taking for a start a very simple definition of technology as &lt;em&gt;doing more with less&lt;/em&gt;, we believe that any field where some R&amp;amp;D effort gets undertaken to improve productivity counts as a technology area. By this definition, it’s not surprising to find that Education for example, which accounts for over 5 percent of U.S. GDP spending at this point, would hardly qualify as a technology field since so little of that spending goes to R&amp;amp;D efforts to raise its productivity. &amp;nbsp;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;A fair question to ask is&amp;#58; What constitutes a technology field? Taking for a start a very simple definition of technology as &lt;em&gt;doing more with less&lt;/em&gt;, we believe that any field where serious R&amp;amp;D efforts are made to raise overall productivity should count as a technological field. By this definition, it’s not surprising to find that an area like Education for example, which accounts for over 5 percent of U.S. GDP spending at this point, would hardly qualify as a technologically advancing field since so little of that spending goes to R&amp;amp;D efforts to raise its productivity. &amp;nbsp;&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn:2&quot;&gt;
-            &lt;p&gt;Between 1998&amp;#8211;2018, overall U.S. inflation was 56 percent, while the cost of medical care services rose by about 120 percent, and hospital services by close to 210 percent. &amp;#8212; &lt;em&gt;Chart of the day…or century?&lt;/em&gt;, American Enterprise Institute, 2019&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.aei.org/carpe-diem/chart-of-the-day-or-century/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;Between 1998&amp;#8211;2018, reported inflation in the U.S. was 56 percent, while the cost of medical care services rose by about 120 percent, and hospital services by nearly 210 percent. &amp;#8212; &lt;em&gt;Chart of the day…or century?&lt;/em&gt;, American Enterprise Institute, 2019&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.aei.org/carpe-diem/chart-of-the-day-or-century/&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn:3&quot;&gt;
@@ -380,7 +380,7 @@
         &lt;/li&gt;
         
         &lt;li id=&quot;fn:9&quot;&gt;
-            &lt;p&gt;The study tracked every drug approved by the FDA in 1998, looking at new medical uses discovered for those 30-or-so drugs since they came on the market. And of the 150 new medical uses reported, the study found that close to 60 percent were discovered by doctors unaffiliated with any research organization. &amp;#8212; &lt;em&gt;The major role of clinicians in the discovery of off-label drug therapies&lt;/em&gt;, Harold J. DeMonaco, Ayfer Ali, and Eric Von Hippel, Pharmacotherapy, 2006&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://doi.org/10.1592/phco.26.3.323&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;The study tracked every drug approved by the FDA in 1998, looking at new medical uses discovered for those 30-or-so drugs since coming on the market. And of the 150 new medical uses reported, it found that close to 60 percent were discovered by practicing doctors unaffiliated with any research organization. &amp;#8212; &lt;em&gt;The major role of clinicians in the discovery of off-label drug therapies&lt;/em&gt;, Harold J. DeMonaco, Ayfer Ali, and Eric Von Hippel, Pharmacotherapy, 2006&amp;nbsp;&lt;span&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://doi.org/10.1592/phco.26.3.323&quot;&gt;Learn more&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&amp;#xFE0E;&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
         
         &lt;li id=&quot;fn:10&quot;&gt;
