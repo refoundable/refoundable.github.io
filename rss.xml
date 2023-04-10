@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2021-01-31T02:42:19-08:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/rss.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><content type="html" xml:base="https://refoundable.com/">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Refoundable</title><subtitle>Innovation Is Not Enough</subtitle><updated>2023-04-10T03:20:13-07:00</updated><id>https://refoundable.com/</id><link rel="alternate" type="text/html" hreflang="en" href="https://refoundable.com/" /><link rel="self" type="application/atom+xml" href="https://refoundable.com/rss.xml" /><author><name>John Strider</name><uri>https://refoundable.com/</uri><email>john@refoundable.com</email></author><entry><title>Life After Eroom’s Law - Interview with Jack Scannell</title><id>https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html</id><link rel="alternate" type="text/html" href="https://refoundable.com/research/life-after-erooms-law-interview-with-jack-scannell.html" /><published>2020-03-27T00:00:00-07:00</published><content type="html" xml:base="https://refoundable.com/">
           
             &lt;!--Header--&gt;
 
@@ -23,25 +23,15 @@
             
 &lt;/div&gt;
 
-&lt;p&gt;One of our founding beliefs is that too many people are making the rational choice to look for secrets in a handful of technology areas, in particular, those areas which have seen the most progress over the last half-century, namely computers and finance, with the possible addition of shale oil in the last decade.&lt;/p&gt;
+&lt;p&gt;One of our founding beliefs is that far too many people are looking for secrets in a couple of technology areas, namely software and finance. Therefore, we believe that it’s rational to start looking at neglected technology areas and figure out how to restart their &lt;span class=&quot;txt-wrap&quot;&gt;progress.&lt;sup&gt;&lt;a href=&quot;#fn1&quot; id=&quot;r1&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;The necessary and counterintuitive approach at this point, we believe, is to start with the technology areas worst hit by neglect, stagnation, and rising costs, and figure out how to restart their &lt;span class=&quot;txt-wrap&quot;&gt;progress.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Take healthcare for example. While computers got faster and cheaper year after year for the last five decades, healthcare costs rose up to four times faster than inflation in the last two decades &lt;span class=&quot;txt-wrap&quot;&gt;alone.&lt;sup&gt;&lt;a href=&quot;#fn2&quot; id=&quot;r2&quot; class=&quot;fn-btn fn-btn-top&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Take healthcare for example. While computers got faster and cheaper year after year for the last five decades, healthcare costs shot up to four times higher than inflation in the last two decades &lt;span class=&quot;txt-wrap&quot;&gt;alone.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Yet, unlike other stagnant technology areas, like defense or nuclear energy, most people will agree that healthcare is both badly broken and in urgent need of fixing. But while biotech already attracts a fair bit of attention from investors, the one big area that remains badly stagnant is pharmaceuticals.&lt;/p&gt;
 
-&lt;p&gt;And if the recent coronavirus pandemic has shown us anything as it swept the globe in a few short weeks, it’s how close our healthcare systems are to their breaking point.&lt;/p&gt;
+&lt;p&gt;Despite a growing mountain of scientific and technical know-how, new cures only seem to get harder and more expensive to find. So, one might reasonably ask: What went wrong?&lt;/p&gt;
 
-&lt;p&gt;Yet, unlike other stagnant technology areas, like defense or nuclear energy, most people will agree that healthcare is both badly broken and vital to fix, so by starting there at least, fewer people will try to stop an ambitious founder.&lt;/p&gt;
-
-&lt;p&gt;Of all the healthcare fields that one could go into, many fashionable and less fashionable areas receive a fair bit of attention already from venture capitalists and philanthropists (they’re hard to tell apart sometimes). Yet there’s one big area that has stagnated despite the close scrutiny it receives, and that’s pharmaceuticals.&lt;/p&gt;
-
-&lt;p&gt;Its great promise was that by unlocking the secrets of biology, we would create all kinds of life-saving, even life-enhancing medicine, from a full-course-meal in a pill to a general cancer cure.&lt;/p&gt;
-
-&lt;p&gt;Moreover, breakthroughs in pharma would open up new avenues of research in many ancillary fields, from nutrition and anti-aging to preventative medicine writ large. The more progress we’d make, the less effort we’d have to put in to uncover additional secrets.&lt;/p&gt;
-
-&lt;p&gt;However, today’s pharma industry looks nothing of the sort. Looking from the outside, it seems that despite a growing mountain of scientific and technical know-how, the cures only seem to get harder and harder to find. So, one might reasonably ask: What went wrong?&lt;/p&gt;
-
-&lt;p&gt;To cut the Gordian knot of pharma’s long stasis, we must turn to the one robust measure of progress the industry has, known simply as Eroom’s law. The name is already very suggestive, as it’s quite literally an ironic backward spelling of Moore’s law—the computer industry’s relentless benchmark of progress—which makes it a fitting place to start.&lt;/p&gt;
+&lt;p&gt;One answer is given by Eroom’s law. Already, the name is suggestive, as it’s quite literally an ironic backward spelling of Moore’s law—the computer industry’s relentless benchmark of progress—which makes it a fitting place to start.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Race to the bottom&lt;/strong&gt;&lt;/p&gt;
 
@@ -66,7 +56,7 @@
 
 &lt;p&gt;When Scannell worked as an investment analyst, he used to ask the top executives at major pharma firms to explain why the productivity of drug R&amp;amp;D kept falling for so long, when the science and technology inputs were getting cheaper and more efficient all the time. Generally, he’d get the same kind of answer: the industry had run out of “low-hanging fruit.”&lt;/p&gt;
 
-&lt;p&gt;In the course of his own later investigations, Scannell began to focus on a technical problem in drug R&amp;amp;D called “model validity,” which he believed to be holding back progress in the science of drug discovery. And while everyone can acknowledge that there’s a host of issues to fix with the drug industry, we agree with Scannell that starting with the science may be a decisive first step in the heroic effort needed to restart general progress in the field.&lt;/p&gt;
+&lt;p&gt;In the course of his own later investigations, Scannell began to focus on a technical problem in drug R&amp;amp;D called “model validity,” which he believed to be holding back progress in the science of drug discovery. And while everyone can acknowledge that there’s a host of issues to fix with the drug industry, we agree with Scannell that starting with the science is a worthwhile step in the heroic effort needed to restart general progress in the field.&lt;/p&gt;
 
 &lt;p&gt;So, we sit down with Jack Scannell to discuss the beginning and end of Eroom’s law, the technical frontier of drug discovery, and whether drug R&amp;amp;D can help win the fight against COVID-19 and prevent such global catastrophies in the future.&lt;/p&gt;
 
@@ -183,7 +173,7 @@
 
 &lt;p&gt;At the same time, and away from the spotlight, Valeant was ruthless in ramping up the prices of the drugs that came under its control. It was also quietly buying up pharmacy companies to make it easier to force insurance companies to cough up the cash for its newly-inflated drug prices.&lt;/p&gt;
 
-&lt;p&gt;Valeant looked untouchable until things started to unravel very quickly in 2014–2015. The company’s behavior caught the attention of a few short sellers and journalists at first, and finally of U.S. politicians. Its pricing practices came under scrutiny, the growth evaporated, the firm was left with too much debt, and the stock price &lt;span class=&quot;txt-wrap&quot;&gt;cratered.&lt;sup id=&quot;fnref:6&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Valeant looked untouchable until things started to unravel very quickly in 2014–2015. The company’s behavior first caught the attention of short sellers and journalists, and then came the politicians. Its pricing practices came under scrutiny, the growth evaporated, the firm was left with too much debt, and the stock price &lt;span class=&quot;txt-wrap&quot;&gt;cratered.&lt;sup id=&quot;fnref:6&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;So while the financial returns on R&amp;amp;D may be poor, the idea that you brag about slashing R&amp;amp;D costs has been largely discredited. No one wants to look like Valeant.&lt;/p&gt;
 
