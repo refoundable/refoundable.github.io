@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decile Hub Prototype Style Guide</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><span class="mark">D</span>Decile Hub</div>
+  <nav class="toc" aria-label="Sections">
+	<a href="#principles">Principles</a>
+	<a href="#color">Color</a>
+	<a href="#type">Type</a>
+	<a href="#shape">Shape</a>
+	<a href="#components">Components</a>
+	<a href="#layout">Layout</a>
+	<a href="#words">Words</a>
+	<a href="#tokens">Tokens</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+	<p class="eyebrow">Style guide · Onboarding prototype</p>
+	<h1>Soft purples, clear numbers, gentle nudges.</h1>
+	<p class="lede">Everything the onboarding prototype uses, in one place. Start new pages from the tokens at the bottom and the patterns here, and they’ll feel like part of the same product.</p>
+  </section>
+
+  <!-- Principles -->
+  <section class="card" id="principles">
+	<p class="eyebrow">Principles</p>
+	<h2>Five rules that shaped every screen</h2>
+	<div class="rules">
+	  <div class="rule"><b>Simple first</b><p>Show the few numbers that matter now. Reserves, ownership and other detail belong in the full fund model, not onboarding.</p></div>
+	  <div class="rule"><b>One big number</b><p>Each screen has a hero figure in plum. Supporting numbers are smaller and sit below it.</p></div>
+	  <div class="rule"><b>Nudge, don’t block</b><p>Risky choices turn a soft amber with one calm sentence. Nothing is disabled, nothing flashes red.</p></div>
+	  <div class="rule"><b>Results come last</b><p>Inputs at the top, consequences below. The thing a choice produces sits at the bottom of the page.</p></div>
+	  <div class="rule"><b>Help is always there</b><p>Every step ends with the “Talk to the team” banner, just above the main button.</p></div>
+	</div>
+  </section>
+
+  <!-- Color -->
+  <section class="card" id="color">
+	<p class="eyebrow">Color</p>
+	<h2>A purple system with no harsh tones</h2>
+	<p class="sub">Click any swatch to copy its hex value.</p>
+
+	<h3>Purples</h3>
+	<div class="swatches" data-group="purples"></div>
+	<h3>Surfaces and text</h3>
+	<div class="swatches" data-group="neutrals"></div>
+	<h3>Success</h3>
+	<div class="swatches" data-group="success"></div>
+	<h3>Nudges</h3>
+	<div class="swatches" data-group="amber"></div>
+
+	<h3>Gradients</h3>
+	<div class="grads">
+	  <div class="grad"><span style="background:var(--grad-cta)"></span><b>Primary button</b><code>140°, violet → plum</code></div>
+	  <div class="grad"><span style="background:var(--grad-dark)"></span><b>Dark banner</b><code>120°, plum → #54449A, lavender glow top right</code></div>
+	  <div class="grad"><span style="background:var(--grad-scale)"></span><b>Difficulty scale</b><code>sage → wheat → apricot → rose. Fund size slider only.</code></div>
+	</div>
+
+	<div class="usage">
+	  <p class="u-title">How much of each</p>
+	  <div class="ratio" aria-hidden="true">
+		<span style="flex:62;background:var(--bg)"></span>
+		<span style="flex:20;background:var(--surface)"></span>
+		<span style="flex:8;background:var(--mist)"></span>
+		<span style="flex:6;background:var(--plum)"></span>
+		<span style="flex:3;background:var(--violet)"></span>
+		<span style="flex:1;background:var(--sage)"></span>
+	  </div>
+	  <p class="u-note">Mostly lavender-white page and white cards. Plum is for the hero number, dark banners and selected states. Violet is an accent, not a fill. Sage and amber only appear when something has happened.</p>
+	</div>
+  </section>
+
+  <!-- Type -->
+  <section class="card" id="type">
+	<p class="eyebrow">Type</p>
+	<h2>Modern sans-serifs, no italics</h2>
+	<p class="sub">System fonts only, because external fonts are blocked in previews. Never use an italic or a serif.</p>
+
+	<div class="fonts">
+	  <div class="font"><p class="f-sample" style="font-family:var(--display);font-weight:600">Aa</p><b>Display</b><code>Avenir Next, 600</code><p>Headings, eyebrows, banner titles</p></div>
+	  <div class="font"><p class="f-sample" style="font-family:var(--text)">Aa</p><b>Text</b><code>System UI (SF Pro Text)</code><p>Body, labels, buttons</p></div>
+	  <div class="font"><p class="f-sample num" style="font-family:var(--num);font-weight:600">$10M</p><b>Numbers</b><code>SF Pro Display, 600, tabular</code><p>Every figure, tightly tracked</p></div>
+	</div>
+
+	<div class="scale">
+	  <div class="srow"><span class="s-meta">Hero number<br><code>110–180px · 600 · −0.05em</code></span><span class="s-demo hero-num">$10<i>M</i></span></div>
+	  <div class="srow"><span class="s-meta">Page title<br><code>36–54px · 600 · −0.025em</code></span><span class="s-demo" style="font-family:var(--display);font-weight:600;font-size:44px;letter-spacing:-.025em;line-height:1.05">Let’s pick your fund size.</span></div>
+	  <div class="srow"><span class="s-meta">Section title<br><code>24px · 600 · −0.015em</code></span><span class="s-demo" style="font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.015em">Your portfolio at a glance</span></div>
+	  <div class="srow"><span class="s-meta">Eyebrow<br><code>12.5px · 600 · caps · +0.1em · violet</code></span><span class="s-demo eyebrow" style="margin:0">What that buys you</span></div>
+	  <div class="srow"><span class="s-meta">Metric value<br><code>36–44px · 600 · −0.035em</code></span><span class="s-demo" style="font-family:var(--num);font-weight:600;font-size:44px;letter-spacing:-.035em;font-variant-numeric:tabular-nums">$7.65M</span></div>
+	  <div class="srow"><span class="s-meta">Lede<br><code>17.5px · ink-2</code></span><span class="s-demo" style="font-size:17.5px;color:var(--ink-2)">This number shapes everything else.</span></div>
+	  <div class="srow"><span class="s-meta">Body<br><code>16px / 1.5 · ink</code></span><span class="s-demo" style="font-size:16px">People to contact, from your own network outward.</span></div>
+	  <div class="srow"><span class="s-meta">Label<br><code>13.5px · 600 · ink-2</code></span><span class="s-demo" style="font-size:13.5px;font-weight:600;color:var(--ink-2)">Minimum LP check</span></div>
+	  <div class="srow"><span class="s-meta">Caption<br><code>12.5px · ink-3</code></span><span class="s-demo" style="font-size:12.5px;color:var(--ink-3)">Estimates assume a 2% annual fee over a 10 year fund life.</span></div>
+	</div>
+  </section>
+
+  <!-- Shape, depth, motion -->
+  <section class="card" id="shape">
+	<p class="eyebrow">Shape, depth and motion</p>
+	<h2>Rounded, soft and calm</h2>
+
+	<h3>Corner radius</h3>
+	<div class="radii">
+	  <div><span style="border-radius:28px"></span><b>28px</b><p>Hero cards</p></div>
+	  <div><span style="border-radius:26px"></span><b>26px</b><p>Cards, panels</p></div>
+	  <div><span style="border-radius:22px"></span><b>22px</b><p>Tiles, banner</p></div>
+	  <div><span style="border-radius:16px"></span><b>16px</b><p>Rows inside cards</p></div>
+	  <div><span style="border-radius:12px"></span><b>12px</b><p>Inputs</p></div>
+	  <div><span style="border-radius:999px;height:40px;margin-top:20px"></span><b>Pill</b><p>Buttons, chips</p></div>
+	</div>
+
+	<h3>Shadows</h3>
+	<div class="shadows">
+	  <div style="box-shadow:var(--shadow-card)"><b>Card</b><code>--shadow-card</code></div>
+	  <div style="box-shadow:var(--shadow-hero)"><b>Hero card</b><code>--shadow-hero</code></div>
+	  <div style="box-shadow:var(--shadow-cta)"><b>Primary button</b><code>--shadow-cta</code></div>
+	  <div style="box-shadow:var(--shadow-banner)"><b>Dark banner</b><code>--shadow-banner</code></div>
+	</div>
+	<p class="note">Shadows are always tinted plum, never grey, and fall far below the element so cards seem to float.</p>
+
+	<h3>Motion</h3>
+	<div class="motion">
+	  <div class="m"><b>Sections rise in</b><p>0.5s, ease <code>cubic-bezier(.2,.7,.2,1)</code>, up 14px, staggered 0.04–0.08s.</p><button class="btn-soft" id="replayRise">Replay</button></div>
+	  <div class="m"><b>Numbers roll</b><p>Values count to their new figure over 260–600ms, easing out. They never snap.</p><button class="btn-soft" id="rollBtn">Roll <span id="rollNum" class="roll">$10M</span></button></div>
+	  <div class="m"><b>New things flash sage</b><p>A just-added row starts sage tinted and fades to white over about 1s.</p><button class="btn-soft" id="flashBtn">Flash</button><span class="flash-row" id="flashRow">Priya Raman</span></div>
+	</div>
+  </section>
+
+  <!-- Components -->
+  <section class="card" id="components">
+	<p class="eyebrow">Components</p>
+	<h2>The building blocks</h2>
+
+	<h3>Buttons</h3>
+	<div class="row-demo">
+	  <button class="cta">Continue with $10M<span>→</span></button>
+	  <button class="btn-soft">Open fund model<span>→</span></button>
+	  <span class="on-dark"><button class="btn-light">Book a time<span>→</span></button></span>
+	  <button class="chip-edit">Edit</button>
+	</div>
+	<p class="note">One primary button per page, at the bottom. Its label says what happens next (“Start building my list”), never just “Next.”</p>
+
+	<h3>Chips and choices</h3>
+	<div class="row-demo">
+	  <button class="chip on">✓ Pre-seed</button>
+	  <button class="chip">Seed</button>
+	  <button class="chip" disabled>Series A</button>
+	  <div class="seg"><button class="on">Balanced</button><button>A few anchors</button><button>Mostly small checks</button></div>
+	</div>
+	<p class="note">Selected chips fill with plum. Options that would go past a limit (for example, more than 3 sectors) fade to 40% instead of disappearing.</p>
+
+	<h3>Sliders</h3>
+	<div class="sliders">
+	  <div><p class="label">Hero slider: fund size only</p><input type="range" class="slider big" value="40"></div>
+	  <div><p class="label">Standard slider</p><input type="range" class="slider" value="40" id="stdSlider"></div>
+	</div>
+
+	<h3>Numbers</h3>
+	<div class="metrics-demo">
+	  <article class="metric"><p class="label">Management fees per year</p><p class="m-value">$200K</p><p class="m-desc">At a 2% fee. This pays your salary, team and running costs.</p></article>
+	  <article class="metric own"><p class="label">Your carry if the fund returns 3x</p><p class="m-value plum">$4M</p><p class="m-desc">A lilac tint marks the manager’s personal numbers.</p></article>
+	  <article class="metric over"><p class="label">LPs needed</p><p class="m-value amber">104</p><p class="soft-warn"><span class="dot"></span>Above 99 LPs. Many fund structures cap investors at 99.</p></article>
+	</div>
+	<p class="note">Tags like <span class="est">estimate</span> or <span class="est">assumed</span> mark any number built on our assumptions.</p>
+
+	<h3>Fund chip</h3>
+	<div class="fund-chip"><span class="chip-dot"></span>Your fund <b>$10M</b><span class="sep">·</span><span class="soft">52 LPs to find</span></div>
+	<p class="note">Sits above the title on every step after the first, so people always know which plan they’re working on.</p>
+
+	<h3>Stage rows</h3>
+	<div class="stages">
+	  <div class="stage-row"><span class="fill" style="width:10%;background:#AD9FDA"></span><span class="s-txt"><b>52</b> LPs needed</span><span class="s-rate">Your target</span></div>
+	  <div class="stage-row"><span class="fill" style="width:50%;background:#C9BEE7"></span><span class="s-txt"><b>260</b> people to meet</span><span class="s-rate">5x your LPs</span></div>
+	  <div class="stage-row"><span class="fill" style="width:100%;background:#DED7F0"></span><span class="s-txt"><b>520</b> prospects to reach</span><span class="s-rate">2x meetings</span></div>
+	</div>
+	<p class="note">The fill length matches the real proportion, and the text sits on top so even a thin fill stays readable. Don’t use funnel shapes, which distort the numbers.</p>
+
+	<h3>Status and feedback</h3>
+	<div class="feedback">
+	  <p class="nudge"><span class="dot"></span>That’s a concentrated portfolio. With 12 companies, one or two outcomes will decide most of the fund’s results.</p>
+	  <div class="done"><span class="badge">✓</span><div><b>Your first 10 are down. That’s a real start.</b><p>Keep going, or save and continue.</p></div></div>
+	  <div class="tags"><span class="tag rec">Recommended for you</span><span class="tag in">✓ Signed up</span><span class="tag">Free · 20 min</span></div>
+	</div>
+
+	<h3>Help banner</h3>
+	<aside class="help">
+	  <div class="help-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg></div>
+	  <div class="help-copy"><p class="help-title">Need help with your numbers? Talk to the team.</p><p class="help-sub">Book a free call with a Decile fund specialist.</p></div>
+	  <span class="help-chip">Free · 20 min</span>
+	  <button class="btn-light">Book a time<span>→</span></button>
+	</aside>
+	<p class="note">The darkest thing on the page. The title changes to fit each step (“Stuck on your thesis?”, “Not sure who to add?”). Always placed just above the main button.</p>
+  </section>
+
+  <!-- Layout -->
+  <section class="card" id="layout">
+	<p class="eyebrow">Layout</p>
+	<h2>Stacked, full width, one idea per card</h2>
+	<div class="layout-grid">
+	  <div class="wire" aria-hidden="true">
+		<span class="w-bar"></span>
+		<span class="w-title"></span>
+		<span class="w-card tall"></span>
+		<span class="w-card"></span>
+		<span class="w-card"></span>
+		<span class="w-help"></span>
+		<span class="w-btn"></span>
+	  </div>
+	  <ul class="specs">
+		<li><b>Page width</b> 1040–1120px, 28px side padding</li>
+		<li><b>Order</b> fund chip, eyebrow, title, lede, then cards, help banner and the main button</li>
+		<li><b>Cards</b> 30–34px padding, 18px apart</li>
+		<li><b>Inside cards</b> 16px between tiles, 24px between fields</li>
+		<li><b>Grids</b> 2 or 3 equal columns inside a card, collapsing to 1 below 860px</li>
+		<li><b>No side columns</b> next to the main content. They squeeze the work area.</li>
+		<li><b>Bottom space</b> at least 52px of clear space at the bottom of every page</li>
+	  </ul>
+	</div>
+  </section>
+
+  <!-- Words -->
+  <section class="card" id="words">
+	<p class="eyebrow">Words</p>
+	<h2>How the product talks</h2>
+	<div class="do-dont">
+	  <div class="do">
+		<p class="dd-h">Do</p>
+		<ul>
+		  <li>Talk to one person: “your fund,” “your list.”</li>
+		  <li>Use sentence case everywhere, including buttons.</li>
+		  <li>Say what a number means: “Roughly what you’d need committed before you can start investing.”</li>
+		  <li>Be honest about estimates: “Potential, not promised.”</li>
+		  <li>Name the next action: “Use this with your first 10.”</li>
+		</ul>
+	  </div>
+	  <div class="dont">
+		<p class="dd-h">Don’t</p>
+		<ul>
+		  <li>Use jargon without a plain explanation next to it.</li>
+		  <li>Write warnings in alarming terms: “Error,” “Invalid,” “Too risky.”</li>
+		  <li>Use dashes in page titles.</li>
+		  <li>Show a number without saying what it assumes.</li>
+		  <li>Use generic labels like “Submit” or “Next.”</li>
+		</ul>
+	  </div>
+	</div>
+  </section>
+
+  <!-- Tokens -->
+  <section class="card" id="tokens">
+	<div class="tok-head">
+	  <div>
+		<p class="eyebrow">Tokens</p>
+		<h2>Start every new page with these</h2>
+		<p class="sub">Paste into the top of a new stylesheet. The color and font names match the prototype’s code, so components can be copied across as they are. The shape, shadow and gradient names are new shorthands for values the prototype writes out in full.</p>
+	  </div>
+	  <button class="cta" id="copyTokens">Copy tokens</button>
+	</div>
+	<pre id="tokensCode" tabindex="0">/* Decile Hub prototype design tokens.
+   Paste into :root of any new page so it matches the onboarding prototype. */
+:root{
+  /* Surfaces and text */
+  --bg:#F6F4FA;          /* page background, soft lavender white */
+  --surface:#FFFFFF;     /* cards and panels */
+  --ink:#211B2E;         /* primary text */
+  --ink-2:#5B546B;       /* secondary text, labels */
+  --ink-3:#958FA4;       /* hints, captions, placeholders */
+  --line:#E7E2EF;        /* borders and dividers */
+
+  /* Purples, darkest to lightest */
+  --plum:#3F3168;        /* headline numbers, dark banners, selected states */
+  --plum-2:#54449A;      /* end of dark banner gradients */
+  --violet:#6E5DAA;      /* eyebrows, focus, active accents */
+  --lavender:#A99BD3;    /* hover borders, secondary fills */
+  --lilac:#D9D1EE;       /* light fills, avatars */
+  --mist:#EFEBF8;        /* tinted backgrounds, soft buttons */
+
+  /* Success */
+  --sage:#8CBFA4;        /* goal reached, positive dots */
+  --sage-tint:#DCEFE4;   /* success backgrounds */
+  --sage-ink:#2F7A55;    /* success text */
+
+  /* Gentle nudges, never alarms */
+  --amber-ink:#9A6A1E;   /* nudge text */
+  --amber-num:#B8862E;   /* a number that needs attention */
+  --amber-dot:#D9A441;   /* nudge dot */
+  --amber-bg:#FCF6E8;    /* nudge card tint */
+  --amber-line:#EEDDB4;  /* nudge card border */
+
+  /* Difficulty scale (fund size slider only) */
+  --scale-1:#8CBFA4;     /* sage, easier */
+  --scale-2:#E5CC7C;     /* wheat */
+  --scale-3:#E8A275;     /* apricot */
+  --scale-4:#D77C82;     /* rose, harder */
+
+  /* Type. System fonts only: external fonts are blocked in previews. */
+  --display:"Avenir Next","Avenir","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;
+  --num:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
+
+  /* Shape */
+  --r-section:28px;      /* hero cards */
+  --r-card:26px;         /* standard cards, panels */
+  --r-tile:22px;         /* metric tiles, help banner */
+  --r-inner:16px;        /* rows and boxes inside cards */
+  --r-input:12px;        /* inputs, small buttons */
+  --r-pill:999px;        /* buttons, chips, tags */
+
+  /* Depth */
+  --shadow-card:0 1px 0 var(--line),0 30px 70px -48px rgba(63,49,104,.45);
+  --shadow-hero:0 1px 0 var(--line),0 30px 70px -40px rgba(63,49,104,.45);
+  --shadow-cta:0 14px 30px -14px rgba(63,49,104,.7);
+  --shadow-banner:0 22px 50px -26px rgba(63,49,104,.8);
+
+  /* Gradients */
+  --grad-cta:linear-gradient(140deg,var(--violet),var(--plum));
+  --grad-dark:radial-gradient(420px 160px at 92% 0%,rgba(169,155,211,.55),transparent 70%),linear-gradient(120deg,var(--plum) 0%,var(--plum-2) 100%);
+  --grad-scale:linear-gradient(90deg,var(--scale-1) 0%,var(--scale-2) 38%,var(--scale-3) 68%,var(--scale-4) 100%);
+  --grad-page:radial-gradient(1200px 520px at 85% -10%,rgba(169,155,211,.28),transparent 60%),radial-gradient(900px 480px at -10% 30%,rgba(217,209,238,.45),transparent 60%),var(--bg);
+
+  /* Motion */
+  --ease:cubic-bezier(.2,.7,.2,1);
+}</pre>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

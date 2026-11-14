@@ -65,13 +65,15 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;
   background:radial-gradient(circle,var(--zone) 0%,transparent 70%);opacity:.18;transition:background .4s;pointer-events:none}
 .hero-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.amount{font-family:var(--num);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.05em;line-height:.9;color:var(--plum);display:flex;align-items:baseline}
-.amount .cur{font-size:clamp(48px,6vw,72px);color:var(--lavender);margin-right:4px;font-weight:500}
-.size-input{font:inherit;font-size:clamp(110px,15vw,180px);letter-spacing:inherit;color:inherit;background:transparent;border:none;outline:none;padding:0;
+.amount{font-family:var(--num);font-weight:600;font-variant-numeric:tabular-nums;line-height:.9;color:var(--plum);display:flex;align-items:flex-end;gap:12px}
+.size-input{font:inherit;font-size:clamp(77px,10.5vw,126px);letter-spacing:-.065em;color:inherit;background:transparent;border:none;outline:none;padding:0;
   font-variant-numeric:tabular-nums;border-bottom:4px dashed transparent;border-radius:0;cursor:text;transition:border-color .2s;caret-color:var(--violet)}
 .size-input:hover{border-bottom-color:var(--lilac)}
 .size-input:focus{border-bottom-color:var(--violet);border-bottom-style:solid}
-.amount .unit{font-size:clamp(48px,6vw,72px);color:var(--violet);margin-left:6px;font-weight:500}
+/* "USD" stacked above "Million", to the right of the number. The "M" in the HTML is hidden. */
+.amount .unit{display:inline-flex;flex-direction:column;align-items:flex-start;font-size:0;line-height:1;padding-bottom:10px}
+.amount .unit::before{content:"USD";font-family:var(--text);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--ink-3)}
+.amount .unit::after{content:"Million";font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.02em;color:var(--violet);margin-top:4px}
 .pill{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;background:var(--mist);font-weight:600;font-size:14px;color:var(--ink);margin-bottom:22px;transition:background .3s}
 .pill-dot{width:10px;height:10px;border-radius:50%;background:var(--zone);box-shadow:0 0 0 4px color-mix(in srgb,var(--zone) 30%,transparent);transition:background .3s}
 

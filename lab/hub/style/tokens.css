@@ -1,0 +1,65 @@
+/* Decile Hub prototype design tokens.
+   Paste into :root of any new page so it matches the onboarding prototype. */
+:root{
+  /* Surfaces and text */
+  --bg:#F6F4FA;          /* page background, soft lavender white */
+  --surface:#FFFFFF;     /* cards and panels */
+  --ink:#211B2E;         /* primary text */
+  --ink-2:#5B546B;       /* secondary text, labels */
+  --ink-3:#958FA4;       /* hints, captions, placeholders */
+  --line:#E7E2EF;        /* borders and dividers */
+
+  /* Purples, darkest to lightest */
+  --plum:#3F3168;        /* headline numbers, dark banners, selected states */
+  --plum-2:#54449A;      /* end of dark banner gradients */
+  --violet:#6E5DAA;      /* eyebrows, focus, active accents */
+  --lavender:#A99BD3;    /* hover borders, secondary fills */
+  --lilac:#D9D1EE;       /* light fills, avatars */
+  --mist:#EFEBF8;        /* tinted backgrounds, soft buttons */
+
+  /* Success */
+  --sage:#8CBFA4;        /* goal reached, positive dots */
+  --sage-tint:#DCEFE4;   /* success backgrounds */
+  --sage-ink:#2F7A55;    /* success text */
+
+  /* Gentle nudges, never alarms */
+  --amber-ink:#9A6A1E;   /* nudge text */
+  --amber-num:#B8862E;   /* a number that needs attention */
+  --amber-dot:#D9A441;   /* nudge dot */
+  --amber-bg:#FCF6E8;    /* nudge card tint */
+  --amber-line:#EEDDB4;  /* nudge card border */
+
+  /* Difficulty scale (fund size slider only) */
+  --scale-1:#8CBFA4;     /* sage, easier */
+  --scale-2:#E5CC7C;     /* wheat */
+  --scale-3:#E8A275;     /* apricot */
+  --scale-4:#D77C82;     /* rose, harder */
+
+  /* Type. System fonts only: external fonts are blocked in previews. */
+  --display:"Avenir Next","Avenir","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;
+  --num:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
+
+  /* Shape */
+  --r-section:28px;      /* hero cards */
+  --r-card:26px;         /* standard cards, panels */
+  --r-tile:22px;         /* metric tiles, help banner */
+  --r-inner:16px;        /* rows and boxes inside cards */
+  --r-input:12px;        /* inputs, small buttons */
+  --r-pill:999px;        /* buttons, chips, tags */
+
+  /* Depth */
+  --shadow-card:0 1px 0 var(--line),0 30px 70px -48px rgba(63,49,104,.45);
+  --shadow-hero:0 1px 0 var(--line),0 30px 70px -40px rgba(63,49,104,.45);
+  --shadow-cta:0 14px 30px -14px rgba(63,49,104,.7);
+  --shadow-banner:0 22px 50px -26px rgba(63,49,104,.8);
+
+  /* Gradients */
+  --grad-cta:linear-gradient(140deg,var(--violet),var(--plum));
+  --grad-dark:radial-gradient(420px 160px at 92% 0%,rgba(169,155,211,.55),transparent 70%),linear-gradient(120deg,var(--plum) 0%,var(--plum-2) 100%);
+  --grad-scale:linear-gradient(90deg,var(--scale-1) 0%,var(--scale-2) 38%,var(--scale-3) 68%,var(--scale-4) 100%);
+  --grad-page:radial-gradient(1200px 520px at 85% -10%,rgba(169,155,211,.28),transparent 60%),radial-gradient(900px 480px at -10% 30%,rgba(217,209,238,.45),transparent 60%),var(--bg);
+
+  /* Motion */
+  --ease:cubic-bezier(.2,.7,.2,1);
+}

@@ -108,7 +108,7 @@ function calc() {
 function fitInput() {
   const v = sizeInput.value || '0';
   const dots = (v.match(/\./g) || []).length;
-  sizeInput.style.width = (v.length - dots * 0.6 + 0.15) + 'ch';
+  sizeInput.style.width = (v.length * 0.9 - dots * 0.6 + 0.15) + 'ch';
 }
 
 // Small tween so the numbers roll instead of snapping.
