@@ -5,8 +5,9 @@ const FEE_RATE = 0.02;          // annual management fee
 const FUND_YEARS = 10;          // fees total 2% x 10 years = 20% of the fund
 const FEE_YEARS = 2;            // ...but are paid out in the first 2 years, half each year
 // Formation and fund admin come out of the fees, not from LPs. The GP's share of the
-// fees steps up like tax brackets: 50% on the first $3M, 60% on $3M–$7M, 70% above $7M.
-const GP_SHARE = [[3, 0.5], [7, 0.6], [Infinity, 0.7]];
+// fees steps up like tax brackets: 50% on the first $3M, 62.5% on $3M–$10M,
+// 75% on $10M–$25M and 87.5% above $25M.
+const GP_SHARE = [[3, 0.5], [10, 0.625], [25, 0.75], [Infinity, 0.875]];
 const FIRST_CLOSE = 0.30;
 const INVEST_YEARS = 2;         // window for new investments
 const THIN_PORTFOLIO = 15;      // below this, the portfolio turns amber
@@ -186,9 +187,9 @@ function renderMode() {
     ? (state.salesBooked ? '✓ Call booked with our fund team' : 'Talk to our fund team')
     : `Continue with <span id="ctaSize">$${sizeLabel(state.size)}M</span>`;
 
-  $('fine').textContent = over
+  $('fine').innerHTML = over
     ? `Self-serve funds on Decile Hub go up to $${SELF_SERVE_MAX}M. For larger funds, our fund team sets you up with a structure built for your raise.`
-    : `Assumes 2% annual fees over a 10 year fund life, paid out in the first ${FEE_YEARS} years. Formation and fund admin are covered from the fees, not charged to LPs. You keep 50% of the fees on the first $3M, 60% from $3M to $7M and 70% above $7M. Assumes a ${INVEST_YEARS} year window for new investments.`;
+    : `Assumes 2% annual fees over a 10 year fund life, paid out in the first ${FEE_YEARS} years. Formation and fund admin expenses are covered from the fees. <a href="#" id="feeLink">See the full fee schedule</a>.`;
 
   const lead = state.intended ? `You’re planning about $${sizeLabel(state.intended)}M. ` : '';
   $('bfSub').textContent = `${lead}Decile Hub is built for smaller funds. Raising $${CAP}M or more usually means a traditional fund structure, institutional LPs and a longer raise, and our fund team works with managers like you one-on-one.`;
@@ -370,6 +371,11 @@ function init() {
     if (state.over) { salesCall.open(state.salesBooked); return; }
     persist();
     DemoNav.go(2);
+  });
+  
+  // Placeholder until there's a fee schedule page.
+  $('fine').addEventListener('click', e => {
+    if (e.target.id === 'feeLink') e.preventDefault();
   });
 
   initSales();
