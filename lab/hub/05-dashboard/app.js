@@ -116,7 +116,6 @@ function money(d) {
 }
 const int = v => Math.round(v).toLocaleString('en-US');
 const initials = n => n.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase();
-const longDate = d => d.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
 function toast(msg) {
   const t = $('toast');
@@ -288,56 +287,10 @@ function openWorkshop(id) {
   $('wsSheet').hidden = false;
 }
 
-/* ---------- Help: book a call (prototype, no real scheduling) ---------- */
-const SLOT_TIMES = ['10:00 AM', '1:30 PM', '4:00 PM'];
-const booking = { day: null, time: null };
-
-function nextWeekdays(n) {
-  const out = [], d = new Date(TODAY);
-  while (out.length < n) {
-    d.setDate(d.getDate() + 1);
-    if (d.getDay() !== 0 && d.getDay() !== 6) out.push(new Date(d));
-  }
-  return out;
-}
-
-function renderBooking() {
-  [...$('days').children].forEach((b, i) => b.classList.toggle('on', i === booking.day));
-  const slots = $('slots');
-  slots.innerHTML = '';
-  SLOT_TIMES.forEach(t => {
-    const b = document.createElement('button');
-    b.textContent = t;
-    b.classList.toggle('on', t === booking.time);
-    b.addEventListener('click', () => { booking.time = t; renderBooking(); });
-    slots.appendChild(b);
-  });
-  $('bookConfirm').disabled = booking.day === null || !booking.time;
-}
-
+// Workshop details panel. The help call comes from ../shared/footer.js.
 function initPanels() {
-  const days = nextWeekdays(4);
-  days.forEach((d, i) => {
-    const b = document.createElement('button');
-    b.innerHTML = `${d.toLocaleString('en-US', { weekday: 'short' })}<b>${d.getDate()}</b>${d.toLocaleString('en-US', { month: 'short' })}`;
-    b.addEventListener('click', () => { booking.day = i; booking.time = null; renderBooking(); });
-    $('days').appendChild(b);
-  });
-
-  const book = $('book'), ws = $('wsSheet');
-  const closeAll = () => { book.hidden = true; ws.hidden = true; };
-
-  $('helpBtn').addEventListener('click', () => {
-    booking.day = 0; booking.time = null;
-    $('bookPick').hidden = false; $('bookDone').hidden = true;
-    renderBooking();
-    book.hidden = false;
-  });
-  $('bookConfirm').addEventListener('click', () => {
-    $('bookWhen').textContent = `${longDate(days[booking.day])} at ${booking.time}.`;
-    $('bookPick').hidden = true; $('bookDone').hidden = false;
-    $('helpBtn').firstChild.textContent = 'Call booked';
-  });
+  const ws = $('wsSheet');
+  const close = () => { ws.hidden = true; };
 
   $('wsSignup').addEventListener('click', () => {
     state.signed.add(openWs.id);
@@ -346,9 +299,9 @@ function initPanels() {
     renderNext();
   });
 
-  [$('bookClose'), $('bookDoneBtn'), $('wsClose'), $('wsDoneBtn')].forEach(b => b.addEventListener('click', closeAll));
-  [book, ws].forEach(p => p.addEventListener('click', e => { if (e.target === p) closeAll(); }));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+  [$('wsClose'), $('wsDoneBtn')].forEach(b => b.addEventListener('click', close));
+  ws.addEventListener('click', e => { if (e.target === ws) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 }
 
 /* ---------- Nav highlight ---------- */

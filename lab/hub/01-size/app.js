@@ -291,89 +291,11 @@ function commitTyped() {
   setSelfServe(Math.min(SELF_SERVE_MAX, Math.max(MIN_SIZE, Math.round(v * 100) / 100)));
 }
 
-/* ---------- Booking panels (prototype, no real scheduling) ---------- */
-const START = new Date(2026, 10, 14);
-
-function nextWeekdays(n) {
-  const out = [], d = new Date(START);
-  while (out.length < n) {
-    d.setDate(d.getDate() + 1);
-    if (d.getDay() !== 0 && d.getDay() !== 6) out.push(new Date(d));
-  }
-  return out;
-}
-const longDate = d => d.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-
-// One booking panel. ids: prefix for the panel's elements, e.g. 'book' or 'sales'.
-function makeBooking(cfg) {
-  const id = s => $(cfg.prefix + s);
-  const panel = $(cfg.panel);
-  const days = nextWeekdays(cfg.days);
-  const pick = { day: 0, time: null };
-
-  const render = () => {
-    [...id('Days').children].forEach((b, i) => b.classList.toggle('on', i === pick.day));
-    const slots = id('Slots');
-    slots.innerHTML = '';
-    cfg.times.forEach(t => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = t;
-      b.classList.toggle('on', t === pick.time);
-      b.addEventListener('click', () => { pick.time = t; render(); });
-      slots.appendChild(b);
-    });
-    id('Confirm').disabled = !pick.time;
-  };
-
-  days.forEach((d, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.innerHTML = `${d.toLocaleString('en-US', { weekday: 'short' })}<b>${d.getDate()}</b>${d.toLocaleString('en-US', { month: 'short' })}`;
-    b.addEventListener('click', () => { pick.day = i; pick.time = null; render(); });
-    id('Days').appendChild(b);
-  });
-
-  const close = () => { panel.hidden = true; };
-  id('Close').addEventListener('click', close);
-  id('DoneBtn').addEventListener('click', close);
-  panel.addEventListener('click', e => { if (e.target === panel) close(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) close(); });
-
-  id('Confirm').addEventListener('click', () => {
-    id('When').textContent = cfg.when(days[pick.day], pick.time);
-    id('Pick').hidden = true;
-    id('Done').hidden = false;
-    cfg.onBooked();
-  });
-
-  return {
-    open(showDone) {
-      if (!showDone) {
-        pick.day = 0; pick.time = null;
-        id('Pick').hidden = false;
-        id('Done').hidden = true;
-        render();
-      }
-      if (cfg.onOpen) cfg.onOpen();
-      panel.hidden = false;
-    }
-  };
-}
-
-// Help call: fund specialist, 20 minutes.
-let helpCall, salesCall;
-function initBooking() {
-  helpCall = makeBooking({
-    panel: 'book', prefix: 'book', days: 4,
-    times: ['10:00 AM', '1:30 PM', '4:00 PM'],
-    when: (d, t) => `${longDate(d)} at ${t}.`,
-    onBooked: () => { $('helpBtn').firstChild.textContent = 'Call booked'; }
-  });
-  $('helpBtn').addEventListener('click', () => helpCall.open(false));
-
-  // Sales call: the fund team's own calendar, 30 minutes.
-  salesCall = makeBooking({
+/* ---------- $20M+ sales call (prototype, no real scheduling) ---------- */
+// The help call itself comes from ../shared/footer.js.
+let salesCall;
+function initSales() {
+  salesCall = DemoBooking.make({
     panel: 'sales', prefix: 'sales', days: 4,
     times: ['9:30 AM', '11:00 AM', '2:00 PM', '4:30 PM'],
     onOpen: () => {
@@ -383,7 +305,7 @@ function initBooking() {
     when: (d, t) => {
       const size = parseFloat($('salesSize').value);
       const fund = !isNaN(size) && size > 0 ? ` · about a $${sizeLabel(size)}M fund` : '';
-      return `${longDate(d)} at ${t} · 30 minutes${fund}.`;
+      return `${DemoBooking.longDate(d)} at ${t} · 30 minutes${fund}.`;
     },
     onBooked: () => {
       const size = parseFloat($('salesSize').value);
@@ -439,7 +361,7 @@ function init() {
     DemoNav.go(2);
   });
 
-  initBooking();
+  initSales();
   buildTicks();
   sizeInput.value = state.over ? (state.intended ? sizeLabel(state.intended) : CAP + '+') : sizeLabel(state.size);
   fitInput();

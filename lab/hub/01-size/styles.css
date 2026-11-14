@@ -181,7 +181,7 @@ body.over .help{display:none}
   .bf-points{grid-template-columns:minmax(0,1fr)}
 }
 @media print{
-  .proto,.cta,.help,.book{display:none}
+  .proto{display:none}
   body{padding-bottom:0}
   .intro,.hero,.metrics,.portfolio,.bigfund{animation:none}
 }

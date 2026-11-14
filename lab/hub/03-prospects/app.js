@@ -318,68 +318,6 @@ function submitName() {
   input.focus();
 }
 
-/* ---------- Help: book a call (prototype, no real scheduling) ---------- */
-const START = new Date(2026, 10, 14);
-const SLOT_TIMES = ['10:00 AM', '1:30 PM', '4:00 PM'];
-const booking = { day: null, time: null };
-
-function nextWeekdays(n) {
-  const out = [], d = new Date(START);
-  while (out.length < n) {
-    d.setDate(d.getDate() + 1);
-    if (d.getDay() !== 0 && d.getDay() !== 6) out.push(new Date(d));
-  }
-  return out;
-}
-
-function renderBooking() {
-  [...$('days').children].forEach((b, i) => b.classList.toggle('on', i === booking.day));
-  const slots = $('slots');
-  slots.innerHTML = '';
-  if (booking.day !== null) {
-    SLOT_TIMES.forEach(t => {
-      const b = document.createElement('button');
-      b.textContent = t;
-      b.classList.toggle('on', t === booking.time);
-      b.addEventListener('click', () => { booking.time = t; renderBooking(); });
-      slots.appendChild(b);
-    });
-  }
-  $('bookConfirm').disabled = booking.day === null || !booking.time;
-}
-
-function initBooking() {
-  const days = nextWeekdays(4);
-  days.forEach((d, i) => {
-    const b = document.createElement('button');
-    b.innerHTML = `${d.toLocaleString('en-US', { weekday: 'short' })}<b>${d.getDate()}</b>${d.toLocaleString('en-US', { month: 'short' })}`;
-    b.addEventListener('click', () => { booking.day = i; booking.time = null; renderBooking(); });
-    $('days').appendChild(b);
-  });
-
-  const panel = $('book');
-  const open = () => {
-    booking.day = 0; booking.time = null;
-    $('bookPick').hidden = false; $('bookDone').hidden = true;
-    renderBooking();
-    panel.hidden = false;
-  };
-  const close = () => { panel.hidden = true; };
-
-  $('helpBtn').addEventListener('click', open);
-  $('bookClose').addEventListener('click', close);
-  $('bookDoneBtn').addEventListener('click', close);
-  panel.addEventListener('click', e => { if (e.target === panel) close(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) close(); });
-
-  $('bookConfirm').addEventListener('click', () => {
-    const d = days[booking.day];
-    $('bookWhen').textContent = `${d.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })} at ${booking.time}.`;
-    $('bookPick').hidden = true; $('bookDone').hidden = false;
-    $('helpBtn').firstChild.textContent = 'Call booked';
-  });
-}
-
 /* ---------- Init ---------- */
 function init() {
   renderPlan();
@@ -400,7 +338,6 @@ function init() {
     DemoNav.go(4);
   });
 
-  initBooking();
   render();
 }
 

@@ -164,16 +164,6 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01
 .sheet-go{margin-top:24px;width:100%;justify-content:center}
 .sheet-go:disabled{background:var(--lilac);box-shadow:none;cursor:not-allowed;transform:none}
 .done-check{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--sage-tint);color:var(--sage-ink);font-size:26px;font-weight:700;margin-bottom:10px}
-.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:22px}
-.days button{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:1px;color:var(--ink-2);font-size:12px;font-weight:600;transition:all .15s}
-.days button b{font-family:var(--num);font-size:20px;color:var(--ink);font-weight:600}
-.days button:hover{border-color:var(--lavender)}
-.days button.on{border-color:var(--violet);background:var(--mist);color:var(--plum)}
-.days button.on b{color:var(--plum)}
-.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
-.slots button{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:11px 6px;font-size:14px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;transition:all .15s}
-.slots button:hover{border-color:var(--lavender)}
-.slots button.on{border-color:var(--plum);background:var(--plum);color:#fff}
 
 .toast{position:fixed;left:50%;bottom:64px;transform:translateX(-50%) translateY(16px);z-index:90;background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:all .25s;max-width:calc(100vw - 40px)}
 .toast.show{opacity:1;transform:translateX(-50%)}
