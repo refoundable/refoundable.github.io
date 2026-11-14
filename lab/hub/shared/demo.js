@@ -3,11 +3,11 @@
 (function () {
   const STEPS = [
     ['Sign up', ''],
-    ['Fund size', 'fund-size/'],
-    ['LP plan', 'lp-plan/'],
-    ['First LPs', 'first-lps/'],
-    ['Fund story', 'fund-story/'],
-    ['Dashboard', 'dashboard/']
+    ['Fund size', '01-fund-size/'],
+    ['LP plan', '02-lp-plan/'],
+    ['First LPs', '03-first-lps/'],
+    ['Fund story', '04-fund-story/'],
+    ['Dashboard', '05-dashboard/']
   ];
   const root = document.body.dataset.root || '';
   const current = +document.body.dataset.step;
