@@ -7,16 +7,16 @@
   const DEFAULTS = {
     name: 'Alex Rivera',
     email: '',
-    size: 10,             // fund size
+    size: 5,              // fund size
     firstCheck: 150,      // average first check into a startup
-    companies: 51,        // portfolio size from the fund size page
+    companies: 25,        // portfolio size from the fund size page
     minCheck: 100,        // minimum LP check
     preset: 'balanced',   // commitment mix
     pace: 10,             // LP meetings per week
     known: 100,           // people they could ask today
     plan: {               // results of the LP plan page
-      lps: 52, prospects: 520, meetings: 332,
-      firstCloseWeeks: 19.6, finalCloseWeeks: 43.2,
+      lps: 23, prospects: 230, meetings: 150,
+      firstCloseWeeks: 15.2, finalCloseWeeks: 25,
       tierChecks: [100, 250, 600]
     },
     people: [],           // first LPs: { id, name, prompt, tier }
