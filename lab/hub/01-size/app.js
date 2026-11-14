@@ -2,9 +2,11 @@
 // files would also work inside a Chrome extension, which blocks inline scripts.
 
 const FEE_RATE = 0.02;          // annual management fee
-const FUND_YEARS = 10;          // fees charged over the fund life
-const EXPENSE_FIXED = 150000;   // formation, admin, audit, tax (rough)
-const EXPENSE_RATE = 0.01;      // plus ~1% of the fund
+const FUND_YEARS = 10;          // fees total 2% x 10 years = 20% of the fund
+const FEE_YEARS = 2;            // ...but are paid out in the first 2 years, half each year
+// Formation and fund admin come out of the fees, not from LPs. The GP's share of the
+// fees steps up like tax brackets: 50% on the first $3M, 60% on $3M–$7M, 70% above $7M.
+const GP_SHARE = [[3, 0.5], [7, 0.6], [Infinity, 0.7]];
 const FIRST_CLOSE = 0.30;
 const INVEST_YEARS = 2;         // window for new investments
 const THIN_PORTFOLIO = 15;      // below this, the portfolio turns amber
@@ -96,15 +98,26 @@ function colorAt(t) {
   return `rgb(${STOPS[STOPS.length - 1][1].join(',')})`;
 }
 
+// What the GP keeps from the fees, in dollars. sizeM is the fund size in $M.
+function gpFees(sizeM) {
+  let total = 0, from = 0;
+  for (const [upTo, share] of GP_SHARE) {
+    const part = Math.min(sizeM, upTo) - from;
+    if (part <= 0) break;
+    total += part * 1e6 * FEE_RATE * FUND_YEARS * share;
+    from = upTo;
+  }
+  return total;
+}
+
 function calc() {
   const size = state.size * 1e6;
   const check = CHECKS[state.checkIdx] * 1e3;
-  const feesYear = size * FEE_RATE;
-  const feesLife = feesYear * FUND_YEARS;
-  const expenses = EXPENSE_FIXED + size * EXPENSE_RATE;
-  const net = Math.max(0, size - feesLife - expenses);
+  const fees = size * FEE_RATE * FUND_YEARS;
+  const gp = gpFees(state.size);
+  const net = size - fees;
   return {
-    size, check, feesYear, feesLife, expenses, net,
+    size, check, fees, gp, net,
     close: size * FIRST_CLOSE,
     companies: Math.floor(net / check)
   };
@@ -175,7 +188,7 @@ function renderMode() {
 
   $('fine').textContent = over
     ? `Self-serve funds on Decile Hub go up to $${SELF_SERVE_MAX}M. For larger funds, our fund team sets you up with a structure built for your raise.`
-    : `Estimates assume a 2% annual fee over a 10 year fund life, roughly $150K plus 1% in fund expenses, and a ${INVEST_YEARS} year window for new investments. Real numbers vary by structure.`;
+    : `Assumes 2% annual fees over a 10 year fund life, paid out in the first ${FEE_YEARS} years. Formation and fund admin are covered from the fees, not charged to LPs. You keep 50% of the fees on the first $3M, 60% from $3M to $7M and 70% above $7M. ${INVEST_YEARS} year window for new investments.`;
 
   const lead = state.intended ? `You’re planning about $${sizeLabel(state.intended)}M. ` : '';
   $('bfSub').textContent = `${lead}Decile Hub is built for smaller funds. Raising $${CAP}M or more usually means a traditional fund structure, institutional LPs and a longer raise, and our fund team works with managers like you one-on-one.`;
@@ -185,13 +198,13 @@ function renderMode() {
 function renderMetrics() {
   const c = calc();
   tweenNum($('mClose'), c.close, money);
-  tweenNum($('mFees'), c.feesYear, money);
+  tweenNum($('mFees'), c.gp, money);
   tweenNum($('mNet'), c.net, money);
-  $('mFeesLife').textContent = `About ${money(c.feesLife)} over ${FUND_YEARS} years.`;
+  const half = money(c.gp / FEE_YEARS);
+  $('mFeesLife').textContent = `Paid over ${FEE_YEARS} years: ${half} in year one and ${half} in year two.`;
 
   $('sNet').style.width = (c.net / c.size * 100) + '%';
-  $('sFee').style.width = (c.feesLife / c.size * 100) + '%';
-  $('sExp').style.width = (c.expenses / c.size * 100) + '%';
+  $('sFee').style.width = (c.fees / c.size * 100) + '%';
 }
 
 function busyText(n) {

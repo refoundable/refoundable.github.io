@@ -103,7 +103,6 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .split span{display:block;height:100%;transition:width .4s cubic-bezier(.2,.7,.2,1)}
 .s-net,.k-net{background:var(--violet)}
 .s-fee,.k-fee{background:var(--lavender)}
-.s-exp,.k-exp{background:var(--lilac)}
 .m-legend{display:flex;gap:14px;margin-top:10px;font-size:12.5px;color:var(--ink-3)}
 .m-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
 

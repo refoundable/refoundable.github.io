@@ -9,7 +9,7 @@
     email: '',
     size: 5,              // fund size
     firstCheck: 150,      // average first check into a startup
-    companies: 25,        // portfolio size from the fund size page
+    companies: 26,        // portfolio size from the fund size page
     minCheck: 100,        // minimum LP check
     preset: 'balanced',   // commitment mix
     pace: 10,             // LP meetings per week
