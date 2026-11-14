@@ -45,7 +45,7 @@
 .help-icon{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--violet);box-shadow:inset 0 0 0 1px var(--lilac)}
 .help-copy{flex:1;min-width:0}
 .help-title{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em;line-height:1.25;color:var(--plum)}
-.help-sub{font-size:14px;color:var(--ink-2);margin-top:3px}
+.help-sub{font-size:14px;color:var(--ink-2);margin-top:3px;max-width:55ch}
 .help-chip{flex:none;font-size:12px;font-weight:600;letter-spacing:.02em;padding:5px 11px;border-radius:999px;background:var(--surface);color:var(--violet);white-space:nowrap}
 .help-btn{flex:none;border:1.5px solid var(--lavender);border-radius:999px;padding:11px 20px;font-size:15px;font-weight:600;background:var(--surface);color:var(--plum);display:inline-flex;gap:8px;align-items:center;cursor:pointer;font-family:inherit;transition:border-color .15s,background .15s}
 .help-btn:hover{border-color:var(--violet);background:#fff}
