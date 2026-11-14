@@ -6,23 +6,24 @@ const FUND_YEARS = 10;          // fees charged over the fund life
 const EXPENSE_FIXED = 150000;   // formation, admin, audit, tax (rough)
 const EXPENSE_RATE = 0.01;      // plus ~1% of the fund
 const FIRST_CLOSE = 0.30;
-const CARRY_RATE = 0.20;        // share of profits
-const RETURN_MULTIPLE = 3;      // "if the fund returns 3x"
-const GP_COMMIT_LOW = 0.01;     // GP commitment range
-const GP_COMMIT_HIGH = 0.02;
 const INVEST_YEARS = 2;         // window for new investments
-const THIN_PORTFOLIO = 15;      // below this, show the gentle nudge
+const THIN_PORTFOLIO = 15;      // below this, the portfolio turns amber
 const MAX_DOTS = 120;
 
+// Self-serve funds go up to $19.99M. At $20M and above, people talk to the fund team.
+const SELF_SERVE_MAX = 19.99;
+const CAP = 20;
+
 // Fund sizes in $M. Finer steps at the small end, where most first funds live.
+// The last stop is "$20M+", which hands off to the fund team.
 const SIZES = [
   1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5,
-  6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  22.5, 25, 27.5, 30, 35, 40, 45, 50
+  6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+  CAP
 ];
+const OVER_IDX = SIZES.length - 1;
 const MIN_SIZE = SIZES[0];
-const MAX_SIZE = SIZES[SIZES.length - 1];
-const TICKS = [1, 5, 10, 20, 30, 50];
+const TICKS = [1, 5, 10, 15, CAP];
 
 // Average first check in $K.
 const CHECKS = [25, 50, 75, 100, 125, 150, 200, 250, 300, 400, 500, 750, 1000];
@@ -35,16 +36,25 @@ const STOPS = [
   [1, [215, 124, 130]]
 ];
 
-// Size is kept in $M so a typed value (e.g. 8.3) doesn't have to sit on a slider step.
+// Size is kept in $M so a typed value (e.g. 8.35) doesn't have to sit on a slider step.
 // Starting values come from the shared demo state, so going back keeps earlier choices.
+// size is always a self-serve size; over and intended describe a $20M+ plan.
 const saved = DemoStore.load();
 const state = {
-  size: Math.min(MAX_SIZE, Math.max(MIN_SIZE, saved.size)),
-  checkIdx: CHECKS.includes(saved.firstCheck) ? CHECKS.indexOf(saved.firstCheck) : CHECKS.indexOf(150)
+  size: Math.min(SELF_SERVE_MAX, Math.max(MIN_SIZE, saved.size)),
+  checkIdx: CHECKS.includes(saved.firstCheck) ? CHECKS.indexOf(saved.firstCheck) : CHECKS.indexOf(150),
+  over: !!saved.bigFund || saved.size >= CAP,
+  intended: saved.bigFund && saved.bigFund.size > CAP ? saved.bigFund.size : (saved.size > CAP ? saved.size : null),
+  salesBooked: false
 };
 
 function persist() {
-  DemoStore.save({ size: state.size, firstCheck: CHECKS[state.checkIdx], companies: calc().companies });
+  DemoStore.save({
+    size: state.size,
+    firstCheck: CHECKS[state.checkIdx],
+    companies: calc().companies,
+    bigFund: state.over ? { size: state.intended || CAP } : null
+  });
 }
 
 const $ = id => document.getElementById(id);
@@ -59,22 +69,21 @@ function money(dollars) {
   }
   return '$' + Math.round(dollars / 1e3) + 'K';
 }
-const sizeLabel = m => String(+m.toFixed(1));
+const sizeLabel = m => String(+m.toFixed(2));
 
 function difficulty(m) {
   if (m <= 3) return 'Easier to raise';
   if (m <= 8) return 'Achievable for a first fund';
   if (m <= 15) return 'A stretch for a first fund';
-  if (m <= 25) return 'Hard for a first fund';
-  return 'Very hard for a first fund';
+  return 'Hard for a first fund';
 }
 
-// Fractional position of any size along the stepped slider.
+// Fractional position of any self-serve size along the stepped slider.
 function sizePos(m) {
-  for (let i = 1; i < SIZES.length; i++) {
+  for (let i = 1; i < OVER_IDX; i++) {
     if (m <= SIZES[i]) return i - 1 + (m - SIZES[i - 1]) / (SIZES[i] - SIZES[i - 1]);
   }
-  return SIZES.length - 1;
+  return OVER_IDX - 1;
 }
 
 function colorAt(t) {
@@ -99,8 +108,6 @@ function calc() {
   return {
     size, check, feesYear, feesLife, expenses, net,
     close: size * FIRST_CLOSE,
-    carry: CARRY_RATE * size * (RETURN_MULTIPLE - 1),
-    commitLow: size * GP_COMMIT_LOW,
     companies: Math.floor(net / check)
   };
 }
@@ -108,7 +115,8 @@ function calc() {
 function fitInput() {
   const v = sizeInput.value || '0';
   const dots = (v.match(/\./g) || []).length;
-  sizeInput.style.width = (v.length * 0.9 - dots * 0.6 + 0.15) + 'ch';
+  const plus = (v.match(/\+/g) || []).length;
+  sizeInput.style.width = ((v.length - plus) * 0.9 - dots * 0.6 + plus * 0.75 + 0.15) + 'ch';
 }
 
 // Small tween so the numbers roll instead of snapping.
@@ -133,25 +141,54 @@ function tweenNum(el, to, fmt) {
   el._raf = requestAnimationFrame(tick);
 }
 
+/* ---------- Hero ---------- */
 function renderSize(fromTyping) {
   const m = state.size;
-  const pos = sizePos(m);
-  document.documentElement.style.setProperty('--zone', colorAt(pos / (SIZES.length - 1)));
-  sizeSlider.value = Math.round(pos);
+  const pos = state.over ? OVER_IDX : sizePos(m);
+  document.documentElement.style.setProperty('--zone', colorAt(pos / OVER_IDX));
+  sizeSlider.value = state.over ? OVER_IDX : Math.min(OVER_IDX - 1, Math.round(pos));
 
-  if (!fromTyping) tweenNum(sizeInput, m, v => sizeLabel(Math.abs(v - m) < 0.05 ? m : Math.round(v * 2) / 2));
-  else tweens.sizeInput = m;
-  $('pillText').textContent = difficulty(m);
-  $('ctaSize').textContent = '$' + sizeLabel(m) + 'M';
+  if (state.over) {
+    if (!fromTyping) {
+      cancelAnimationFrame(sizeInput._raf);
+      sizeInput.value = state.intended ? sizeLabel(state.intended) : CAP + '+';
+      fitInput();
+    }
+    tweens.sizeInput = state.intended || CAP;
+  } else if (!fromTyping) {
+    tweenNum(sizeInput, m, v => sizeLabel(Math.abs(v - m) < 0.05 ? m : Math.round(v * 2) / 2));
+  } else {
+    tweens.sizeInput = m;
+  }
+
+  $('pillText').textContent = state.over ? 'Very hard for a first fund' : difficulty(m);
+  renderMode();
 }
 
+// Switches the page between the self-serve numbers and the fund team card.
+function renderMode() {
+  const over = state.over;
+  document.body.classList.toggle('over', over);
+  $('bigFund').hidden = !over;
+
+  $('ctaText').innerHTML = over
+    ? (state.salesBooked ? '✓ Call booked with our fund team' : 'Talk to our fund team')
+    : `Continue with <span id="ctaSize">$${sizeLabel(state.size)}M</span>`;
+
+  $('fine').textContent = over
+    ? `Self-serve funds on Decile Hub go up to $${SELF_SERVE_MAX}M. For larger funds, our fund team sets you up with a structure built for your raise.`
+    : `Estimates assume a 2% annual fee over a 10 year fund life, roughly $150K plus 1% in fund expenses, and a ${INVEST_YEARS} year window for new investments. Real numbers vary by structure.`;
+
+  const lead = state.intended ? `You’re planning about $${sizeLabel(state.intended)}M. ` : '';
+  $('bfSub').textContent = `${lead}Decile Hub is built for smaller funds. Raising $${CAP}M or more usually means a traditional fund structure, institutional LPs and a longer raise, and our fund team works with managers like you one-on-one.`;
+}
+
+/* ---------- Numbers ---------- */
 function renderMetrics() {
   const c = calc();
   tweenNum($('mClose'), c.close, money);
   tweenNum($('mFees'), c.feesYear, money);
   tweenNum($('mNet'), c.net, money);
-  tweenNum($('mCarry'), c.carry, money);
-  tweenNum($('mCommit'), c.commitLow, v => money(v) + '–' + money(v * GP_COMMIT_HIGH / GP_COMMIT_LOW));
   $('mFeesLife').textContent = `About ${money(c.feesLife)} over ${FUND_YEARS} years.`;
 
   $('sNet').style.width = (c.net / c.size * 100) + '%';
@@ -205,12 +242,6 @@ function renderPortfolio() {
     }
     lastDots = shown;
   }
-
-  const nudge = $('nudge');
-  nudge.classList.toggle('thin', thin);
-  $('nudgeText').textContent = thin
-    ? `That’s a concentrated portfolio. With ${n} companies, one or two outcomes will decide most of the fund’s results. A smaller check or a bigger fund spreads the risk.`
-    : `${money(c.net)} invested at ${money(c.check)} per company. Change the check size to see how your portfolio shifts.`;
 }
 
 function renderAll(fromTyping) {
@@ -220,8 +251,17 @@ function renderAll(fromTyping) {
   persist();
 }
 
-function setSize(m) {
+/* ---------- Changing the size ---------- */
+function setSelfServe(m) {
+  state.over = false;
+  state.intended = null;
   state.size = m;
+  renderAll(false);
+}
+
+function setOver(intended) {
+  state.over = true;
+  state.intended = intended && intended > CAP ? intended : null;
   renderAll(false);
 }
 
@@ -229,70 +269,30 @@ function buildTicks() {
   const wrap = $('ticks');
   TICKS.forEach(m => {
     const s = document.createElement('span');
-    s.textContent = '$' + m + 'M';
-    s.style.left = (SIZES.indexOf(m) / (SIZES.length - 1) * 100) + '%';
-    s.addEventListener('click', () => setSize(m));
+    const isCap = m === CAP;
+    s.textContent = isCap ? `$${CAP}M+` : '$' + m + 'M';
+    if (isCap) s.className = 'cap-tick';
+    s.style.left = (SIZES.indexOf(m) / OVER_IDX * 100) + '%';
+    s.addEventListener('click', () => (isCap ? setOver(null) : setSelfServe(m)));
     wrap.appendChild(s);
   });
+
+  // Hatch the stretch of track between the last self-serve stop and "$20M+".
+  // The thumb center travels 20px in from each end, so the zone starts halfway
+  // between the two stops on that inset scale.
+  const p = (OVER_IDX - 0.5) / OVER_IDX;
+  $('capZone').style.left = `calc(20px + (100% - 40px) * ${p})`;
 }
 
 function commitTyped() {
   const v = parseFloat(sizeInput.value);
-  const m = isNaN(v) ? state.size : Math.min(MAX_SIZE, Math.max(MIN_SIZE, Math.round(v * 10) / 10));
-  state.size = m;
-  sizeInput.value = sizeLabel(m);
-  fitInput();
-  renderAll(true);
+  if (isNaN(v)) { renderAll(false); return; }
+  if (v >= CAP) { setOver(Math.round(v * 100) / 100); return; }
+  setSelfServe(Math.min(SELF_SERVE_MAX, Math.max(MIN_SIZE, Math.round(v * 100) / 100)));
 }
 
-function init() {
-  sizeSlider.max = SIZES.length - 1;
-  checkSlider.max = CHECKS.length - 1;
-  checkSlider.value = state.checkIdx;
-
-  sizeSlider.addEventListener('input', () => setSize(SIZES[+sizeSlider.value]));
-
-  sizeInput.addEventListener('focus', () => sizeInput.select());
-  sizeInput.addEventListener('input', () => {
-    // Keep digits and a single decimal point.
-    let v = sizeInput.value.replace(/[^\d.]/g, '');
-    const i = v.indexOf('.');
-    if (i !== -1) v = v.slice(0, i + 1) + v.slice(i + 1).replace(/\./g, '').slice(0, 1);
-    sizeInput.value = v;
-    fitInput();
-    const m = parseFloat(v);
-    if (!isNaN(m) && m >= MIN_SIZE && m <= MAX_SIZE) {
-      state.size = m;
-      renderAll(true);
-    }
-  });
-  sizeInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') sizeInput.blur();
-    if (e.key === 'Escape') { sizeInput.value = sizeLabel(state.size); sizeInput.blur(); }
-  });
-  sizeInput.addEventListener('blur', commitTyped);
-
-  checkSlider.addEventListener('input', () => {
-    state.checkIdx = +checkSlider.value;
-    renderPortfolio();
-    persist();
-  });
-  $('cta').addEventListener('click', () => {
-    persist();
-    DemoNav.go(2);
-  });
-
-  initBooking();
-  buildTicks();
-  sizeInput.value = sizeLabel(state.size);
-  fitInput();
-  renderAll(false);
-}
-
-/* ---------- Help: book a call (prototype, no real scheduling) ---------- */
+/* ---------- Booking panels (prototype, no real scheduling) ---------- */
 const START = new Date(2026, 10, 14);
-const SLOT_TIMES = ['10:00 AM', '1:30 PM', '4:00 PM'];
-const booking = { day: null, time: null };
 
 function nextWeekdays(n) {
   const out = [], d = new Date(START);
@@ -302,53 +302,148 @@ function nextWeekdays(n) {
   }
   return out;
 }
+const longDate = d => d.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
-function renderBooking() {
-  [...$('days').children].forEach((b, i) => b.classList.toggle('on', i === booking.day));
-  const slots = $('slots');
-  slots.innerHTML = '';
-  if (booking.day !== null) {
-    SLOT_TIMES.forEach(t => {
+// One booking panel. ids: prefix for the panel's elements, e.g. 'book' or 'sales'.
+function makeBooking(cfg) {
+  const id = s => $(cfg.prefix + s);
+  const panel = $(cfg.panel);
+  const days = nextWeekdays(cfg.days);
+  const pick = { day: 0, time: null };
+
+  const render = () => {
+    [...id('Days').children].forEach((b, i) => b.classList.toggle('on', i === pick.day));
+    const slots = id('Slots');
+    slots.innerHTML = '';
+    cfg.times.forEach(t => {
       const b = document.createElement('button');
+      b.type = 'button';
       b.textContent = t;
-      b.classList.toggle('on', t === booking.time);
-      b.addEventListener('click', () => { booking.time = t; renderBooking(); });
+      b.classList.toggle('on', t === pick.time);
+      b.addEventListener('click', () => { pick.time = t; render(); });
       slots.appendChild(b);
     });
-  }
-  $('bookConfirm').disabled = booking.day === null || !booking.time;
-}
+    id('Confirm').disabled = !pick.time;
+  };
 
-function initBooking() {
-  const days = nextWeekdays(4);
   days.forEach((d, i) => {
     const b = document.createElement('button');
+    b.type = 'button';
     b.innerHTML = `${d.toLocaleString('en-US', { weekday: 'short' })}<b>${d.getDate()}</b>${d.toLocaleString('en-US', { month: 'short' })}`;
-    b.addEventListener('click', () => { booking.day = i; booking.time = null; renderBooking(); });
-    $('days').appendChild(b);
+    b.addEventListener('click', () => { pick.day = i; pick.time = null; render(); });
+    id('Days').appendChild(b);
   });
 
-  const panel = $('book');
-  const open = () => {
-    booking.day = 0; booking.time = null;
-    $('bookPick').hidden = false; $('bookDone').hidden = true;
-    renderBooking();
-    panel.hidden = false;
-  };
   const close = () => { panel.hidden = true; };
-
-  $('helpBtn').addEventListener('click', open);
-  $('bookClose').addEventListener('click', close);
-  $('bookDoneBtn').addEventListener('click', close);
+  id('Close').addEventListener('click', close);
+  id('DoneBtn').addEventListener('click', close);
   panel.addEventListener('click', e => { if (e.target === panel) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) close(); });
 
-  $('bookConfirm').addEventListener('click', () => {
-    const d = days[booking.day];
-    $('bookWhen').textContent = `${d.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })} at ${booking.time}.`;
-    $('bookPick').hidden = true; $('bookDone').hidden = false;
-    $('helpBtn').firstChild.textContent = 'Call booked';
+  id('Confirm').addEventListener('click', () => {
+    id('When').textContent = cfg.when(days[pick.day], pick.time);
+    id('Pick').hidden = true;
+    id('Done').hidden = false;
+    cfg.onBooked();
   });
+
+  return {
+    open(showDone) {
+      if (!showDone) {
+        pick.day = 0; pick.time = null;
+        id('Pick').hidden = false;
+        id('Done').hidden = true;
+        render();
+      }
+      if (cfg.onOpen) cfg.onOpen();
+      panel.hidden = false;
+    }
+  };
+}
+
+// Help call: fund specialist, 20 minutes.
+let helpCall, salesCall;
+function initBooking() {
+  helpCall = makeBooking({
+    panel: 'book', prefix: 'book', days: 4,
+    times: ['10:00 AM', '1:30 PM', '4:00 PM'],
+    when: (d, t) => `${longDate(d)} at ${t}.`,
+    onBooked: () => { $('helpBtn').firstChild.textContent = 'Call booked'; }
+  });
+  $('helpBtn').addEventListener('click', () => helpCall.open(false));
+
+  // Sales call: the fund team's own calendar, 30 minutes.
+  salesCall = makeBooking({
+    panel: 'sales', prefix: 'sales', days: 4,
+    times: ['9:30 AM', '11:00 AM', '2:00 PM', '4:30 PM'],
+    onOpen: () => {
+      const f = $('salesSize');
+      if (!state.salesBooked) f.value = sizeLabel(state.intended || CAP);
+    },
+    when: (d, t) => {
+      const size = parseFloat($('salesSize').value);
+      const fund = !isNaN(size) && size > 0 ? ` · about a $${sizeLabel(size)}M fund` : '';
+      return `${longDate(d)} at ${t} · 30 minutes${fund}.`;
+    },
+    onBooked: () => {
+      const size = parseFloat($('salesSize').value);
+      if (!isNaN(size) && size >= CAP) state.intended = size > CAP ? size : null;
+      state.salesBooked = true;
+      renderMode();
+      persist();
+    }
+  });
+  $('salesSize').addEventListener('input', e => { e.target.value = e.target.value.replace(/[^\d.]/g, ''); });
+}
+
+/* ---------- Init ---------- */
+function init() {
+  sizeSlider.max = OVER_IDX;
+  checkSlider.max = CHECKS.length - 1;
+  checkSlider.value = state.checkIdx;
+
+  sizeSlider.addEventListener('input', () => {
+    const i = +sizeSlider.value;
+    if (i === OVER_IDX) setOver(null); else setSelfServe(SIZES[i]);
+  });
+
+  sizeInput.addEventListener('focus', () => sizeInput.select());
+  sizeInput.addEventListener('input', () => {
+    // Keep digits and a single decimal point, with up to two decimals.
+    let v = sizeInput.value.replace(/[^\d.]/g, '');
+    const i = v.indexOf('.');
+    if (i !== -1) v = v.slice(0, i + 1) + v.slice(i + 1).replace(/\./g, '').slice(0, 2);
+    sizeInput.value = v;
+    fitInput();
+    const m = parseFloat(v);
+    if (isNaN(m) || m < MIN_SIZE) return;
+    if (m >= CAP) { state.over = true; state.intended = m > CAP ? m : null; }
+    else { state.over = false; state.intended = null; state.size = m; }
+    renderAll(true);
+  });
+  sizeInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') sizeInput.blur();
+    if (e.key === 'Escape') { renderAll(false); sizeInput.blur(); }
+  });
+  sizeInput.addEventListener('blur', commitTyped);
+
+  checkSlider.addEventListener('input', () => {
+    state.checkIdx = +checkSlider.value;
+    renderPortfolio();
+    persist();
+  });
+
+  $('cta').addEventListener('click', () => {
+    if (state.over) { salesCall.open(state.salesBooked); return; }
+    persist();
+    DemoNav.go(2);
+  });
+
+  initBooking();
+  buildTicks();
+  sizeInput.value = state.over ? (state.intended ? sizeLabel(state.intended) : CAP + '+') : sizeLabel(state.size);
+  fitInput();
+  renderAll(false);
 }
 
 init();

@@ -37,6 +37,7 @@
 
 	<div class="slider-wrap">
 	  <input type="range" id="sizeSlider" class="slider big" min="0" max="0" step="1" aria-label="Fund size">
+	  <span class="cap-zone" id="capZone" aria-hidden="true"></span>
 	  <div class="ticks" id="ticks"></div>
 	  <div class="zones"><span>Easier to raise</span><span>Harder to raise</span></div>
 	</div>
@@ -60,19 +61,6 @@
 	  <p class="m-label">Management fees at 2% per year</p>
 	  <p class="m-value" id="mFees">$200K</p>
 	  <p class="m-desc">This pays your salary, team and running costs. <span class="soft" id="mFeesLife">About $2M over 10 years.</span></p>
-	</article>
-  </section>
-
-  <section class="yours" style="display:none;">
-	<article class="metric">
-	  <p class="m-label">Your GP commitment</p>
-	  <p class="m-value" id="mCommit">$100K–$200K</p>
-	  <p class="m-desc">Managers usually invest 1–2% of the fund themselves, from their own pocket.</p>
-	</article>
-	<article class="metric">
-	  <p class="m-label">Your carry if the fund returns 3x</p>
-	  <p class="m-value" id="mCarry">$4M</p>
-	  <p class="m-desc">20% of the profits, paid out as the companies exit. Shared with any partners.</p>
 	</article>
   </section>
 
@@ -100,12 +88,30 @@
 	</div>
   </section>
 
+  <!-- Shown instead of the numbers above when the fund is $20M or more -->
+  <section class="bigfund" id="bigFund" hidden>
+	<div class="bf-icon" aria-hidden="true">
+	  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg>
+	</div>
+	<div class="bf-copy">
+	  <p class="eyebrow">Funds of $20M and up</p>
+	  <h2>Larger funds get a dedicated team.</h2>
+	  <p class="bf-sub" id="bfSub">Decile Hub is built for smaller funds. Raising $20M or more usually means a traditional fund structure, institutional LPs and a longer raise, and our fund team works with managers like you one-on-one.</p>
+	  <ul class="bf-points">
+		<li><b>A traditional fund structure</b><span>Set up for a larger raise and more investors.</span></li>
+		<li><b>Institutional LPs</b><span>Funds of funds, endowments and family offices.</span></li>
+		<li><b>A one-on-one fund team</b><span>Planning, documents and your raise, with people who do this every day.</span></li>
+	  </ul>
+	  <p class="bf-back">Planning something smaller? Bring the slider under $20M to keep going on your own.</p>
+	</div>
+  </section>
+
   <footer class="foot">
-	<p class="fine">Estimates assume a 2% annual fee over a 10 year fund life, roughly $150K plus 1% in fund expenses, and a 2 year window for new investments. Real numbers vary by structure.</p>
-	<button class="cta" id="cta">Continue with <span id="ctaSize">$10M</span><span class="arrow">→</span></button>
+	<p class="fine" id="fine">Estimates assume a 2% annual fee over a 10 year fund life, roughly $150K plus 1% in fund expenses, and a 2 year window for new investments. Real numbers vary by structure.</p>
+	<button class="cta" id="cta"><span id="ctaText">Continue with <span id="ctaSize">$10M</span></span><span class="arrow">→</span></button>
   </footer>
-  
-  <aside class="help" aria-label="Get help from the Decile team">
+
+  <aside class="help" id="helpBanner" aria-label="Get help from the Decile team">
 	  <div class="help-icon" aria-hidden="true">
 		<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg>
 	  </div>
@@ -118,6 +124,7 @@
 	</aside>
 </main>
 
+<!-- Help call: fund specialist, 20 minutes -->
 <div class="book" id="book" hidden>
   <div class="book-panel" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
 	<button class="book-x" id="bookClose" aria-label="Close">×</button>
@@ -125,8 +132,8 @@
 	  <p class="eyebrow">Free · 20 minute call</p>
 	  <h2 id="bookTitle">Talk to a fund specialist</h2>
 	  <p class="book-sub">Pick a time that works. We’ll go through your fund size, what it means for your raise and next steps for setup.</p>
-	  <div class="days" id="days"></div>
-	  <div class="slots" id="slots"></div>
+	  <div class="days" id="bookDays"></div>
+	  <div class="slots" id="bookSlots"></div>
 	  <button class="cta book-go" id="bookConfirm" disabled>Confirm time<span class="arrow">→</span></button>
 	</div>
 	<div id="bookDone" hidden>
@@ -135,6 +142,32 @@
 	  <p class="book-sub" id="bookWhen"></p>
 	  <p class="book-note">We’ll send a calendar invite with a video link. Your numbers from this page come with you.</p>
 	  <button class="cta book-go" id="bookDoneBtn">Back to my fund size</button>
+	</div>
+  </div>
+</div>
+
+<!-- Sales call: fund team, 30 minutes, separate calendar -->
+<div class="book" id="sales" hidden>
+  <div class="book-panel" role="dialog" aria-modal="true" aria-labelledby="salesTitle">
+	<button class="book-x" id="salesClose" aria-label="Close">×</button>
+	<div id="salesPick">
+	  <p class="eyebrow">30 minute call · Decile fund team</p>
+	  <h2 id="salesTitle">Plan your larger fund with us</h2>
+	  <p class="book-sub">We’ll talk through your strategy, target LPs and the right fund structure, and map out next steps together.</p>
+	  <label class="sales-size" for="salesSize">
+		<span>Rough target size</span>
+		<span class="ss-field"><input id="salesSize" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="25"><small>USD Million</small></span>
+	  </label>
+	  <div class="days" id="salesDays"></div>
+	  <div class="slots" id="salesSlots"></div>
+	  <button class="cta book-go" id="salesConfirm" disabled>Book my call<span class="arrow">→</span></button>
+	</div>
+	<div id="salesDone" hidden>
+	  <div class="done-check">✓</div>
+	  <h2>You’re booked with our fund team</h2>
+	  <p class="book-sub" id="salesWhen"></p>
+	  <p class="book-note">We’ll send a calendar invite with a video link and a short questionnaire about your fund, so the call starts where you are.</p>
+	  <button class="cta book-go" id="salesDoneBtn">Done</button>
 	</div>
   </div>
 </div>

@@ -17,9 +17,6 @@
   --apricot:#E8A275;
   --rose:#D77C82;
 
-  --amber-ink:#9A6A1E;
-  --amber-bg:#FBF3E1;
-
   --display:"Avenir Next","Avenir","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
   --text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;
   --num:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
@@ -110,9 +107,6 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .m-legend{display:flex;gap:14px;margin-top:10px;font-size:12.5px;color:var(--ink-3)}
 .m-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
 
-/* Your stake */
-.yours{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px;animation:rise .55s .2s cubic-bezier(.2,.7,.2,1) both}
-
 /* Portfolio */
 .portfolio{margin-top:18px;background:var(--surface);border-radius:28px;padding:32px 36px 28px;box-shadow:0 1px 0 var(--line),0 30px 70px -48px rgba(63,49,104,.4)}
 .p-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
@@ -130,7 +124,6 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .p-body{display:grid;grid-template-columns:200px minmax(0,1fr);gap:30px;margin-top:26px;align-items:center}
 .count{display:flex;flex-direction:column}
 .count-num{font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:600;font-size:88px;letter-spacing:-.05em;line-height:.9;color:var(--plum);transition:color .3s}
-.count-label{font-size:14px;color:var(--ink-2);margin-top:8px}
 .count.thin .count-num{color:#B8862E}
 .busy{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);line-height:1.4}
 .busy b{color:var(--plum);font-weight:600}
@@ -143,11 +136,6 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .count.thin + .dots i:nth-child(odd){background:#EBD9A0}
 .dots .more{font-size:13px;color:var(--ink-3);font-weight:600;align-self:center;margin-left:4px}
 @keyframes pop{from{transform:scale(0);opacity:0}to{transform:none;opacity:1}}
-
-.nudge{margin-top:22px;display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2);min-height:24px;transition:all .3s}
-.nudge-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--lavender);margin-top:7px;transition:background .3s}
-.nudge.thin{color:var(--amber-ink)}
-.nudge.thin .nudge-dot{background:#D9A441}
 
 /* Help banner */
 .help{margin-top:50px;display:flex;align-items:center;gap:18px;padding:20px 22px 20px 20px;border-radius:22px;color:#fff;
@@ -197,17 +185,54 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
   .cta{justify-content:center}
 }
 
+/* ---------- $20M cap ---------- */
+
+/* The last stop on the track ("20+") is hatched so it reads as beyond self-serve */
+.cap-zone{position:absolute;top:15px;height:14px;right:0;border-radius:0 999px 999px 0;pointer-events:none;
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.7) 0 3px,transparent 3px 7px);
+  box-shadow:inset 2px 0 0 #fff}
+.ticks span.cap-tick{color:var(--violet);font-weight:700}
+
+/* Big-fund state: swap the numbers for the fund team card */
+body.over .metrics,
+body.over .portfolio,
+body.over .help{display:none}
+.bigfund{margin-top:18px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:22px;align-items:start;
+  background:var(--surface);border-radius:28px;padding:32px 36px 30px;border:1px solid var(--lilac);
+  box-shadow:0 1px 0 var(--line),0 30px 70px -48px rgba(63,49,104,.45);animation:rise .45s cubic-bezier(.2,.7,.2,1) both}
+.bigfund[hidden]{display:none}
+.bf-icon{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:#fff;
+  background:radial-gradient(60px 40px at 90% 0%, rgba(169,155,211,.6), transparent 70%),linear-gradient(120deg,var(--plum) 0%,#54449A 100%)}
+.bigfund h2{font-size:clamp(24px,3vw,30px);margin-top:6px}
+.bf-sub{font-size:16px;color:var(--ink-2);margin-top:10px;max-width:62ch}
+.bf-points{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.bf-points li{background:var(--mist);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:3px}
+.bf-points b{font-size:14.5px;color:var(--plum)}
+.bf-points span{font-size:13px;color:var(--ink-2);line-height:1.4}
+.bf-back{font-size:13.5px;color:var(--ink-3);margin-top:18px}
+
+/* Sales booking panel */
+.sales-size{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:20px;padding:12px 14px;border-radius:14px;background:var(--mist)}
+.sales-size > span:first-child{font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.ss-field{display:inline-flex;align-items:baseline;gap:8px}
+.ss-field input{width:5.5ch;border:1.5px solid var(--line);border-radius:10px;background:#fff;padding:7px 10px;font-family:var(--num);font-size:18px;font-weight:600;color:var(--plum);text-align:right;font-variant-numeric:tabular-nums;outline:none}
+.ss-field input:focus{border-color:var(--violet)}
+.ss-field small{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--ink-3)}
+#salesSlots{grid-template-columns:repeat(4,minmax(0,1fr))}
+
 @media (max-width:860px){
   .hero{padding:28px 24px 24px}
-  .metrics,.yours{grid-template-columns:minmax(0,1fr)}
+  .metrics{grid-template-columns:minmax(0,1fr)}
   .p-body{grid-template-columns:minmax(0,1fr)}
   .portfolio{padding:26px 24px}
   .help{flex-wrap:wrap}
   .help-copy{flex-basis:calc(100% - 70px)}
   .help-btn{width:100%;justify-content:center}
+  .bigfund{grid-template-columns:minmax(0,1fr);padding:26px 24px}
+  .bf-points{grid-template-columns:minmax(0,1fr)}
 }
 @media print{
   .proto,.cta,.help,.book{display:none}
   body{padding-bottom:0}
-  .intro,.hero,.metrics,.yours,.portfolio{animation:none}
+  .intro,.hero,.metrics,.portfolio,.bigfund{animation:none}
 }
