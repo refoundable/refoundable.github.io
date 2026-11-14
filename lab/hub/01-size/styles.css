@@ -70,10 +70,9 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
   font-variant-numeric:tabular-nums;border-bottom:4px dashed transparent;border-radius:0;cursor:text;transition:border-color .2s;caret-color:var(--violet)}
 .size-input:hover{border-bottom-color:var(--lilac)}
 .size-input:focus{border-bottom-color:var(--violet);border-bottom-style:solid}
-/* "USD" stacked above "Million", to the right of the number. The "M" in the HTML is hidden. */
-.amount .unit{display:inline-flex;flex-direction:column;align-items:flex-start;font-size:0;line-height:1;padding-bottom:10px}
-.amount .unit::before{content:"USD";font-family:var(--text);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--ink-3)}
-.amount .unit::after{content:"Million";font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.02em;color:var(--violet);margin-top:4px}
+/* "USD" stacked above "Million", to the right of the number */
+.amount .unit{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;padding-bottom:10px;font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.02em;color:var(--violet)}
+.amount .unit small{font-family:var(--text);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);margin-bottom:4px}
 .pill{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;background:var(--mist);font-weight:600;font-size:14px;color:var(--ink);margin-bottom:22px;transition:background .3s}
 .pill-dot{width:10px;height:10px;border-radius:50%;background:var(--zone);box-shadow:0 0 0 4px color-mix(in srgb,var(--zone) 30%,transparent);transition:background .3s}
 
@@ -94,8 +93,6 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .ticks span{position:absolute;transform:translateX(-50%);font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums;font-weight:500;cursor:pointer}
 .ticks span:hover{color:var(--plum)}
 .zones{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.changeable{margin-top:22px;font-size:14px;color:var(--ink-2);display:flex;align-items:center;gap:10px}
-.lock{width:24px;height:24px;border-radius:50%;background:var(--mist);color:var(--violet);display:grid;place-items:center;font-size:13px;font-weight:700}
 
 /* Metrics */
 .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
@@ -115,8 +112,6 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 
 /* Your stake */
 .yours{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px;animation:rise .55s .2s cubic-bezier(.2,.7,.2,1) both}
-.metric.own{background:linear-gradient(150deg,#FFFFFF 0%,var(--mist) 100%);border-color:var(--lilac)}
-.metric.own .m-value{color:var(--plum)}
 
 /* Portfolio */
 .portfolio{margin-top:18px;background:var(--surface);border-radius:28px;padding:32px 36px 28px;box-shadow:0 1px 0 var(--line),0 30px 70px -48px rgba(63,49,104,.4)}
@@ -190,13 +185,17 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .done-check{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#DCEFE4;color:#2F7A55;font-size:26px;font-weight:700;margin-bottom:14px}
 .book-note{font-size:13.5px;color:var(--ink-3);margin-top:12px}
 
-/* Footer */
-.foot{margin-top:28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-.cta{border:none;border-radius:999px;padding:16px 26px;font-size:16px;font-weight:600;color:#fff;
+/* Footer: fine print left, main button right. Help banner sits below it. */
+.foot{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.fine{flex:1 1 auto;max-width:560px;font-size:12.5px;color:var(--ink-3)}
+.cta{flex:none;border:none;border-radius:999px;padding:16px 26px;font-size:16px;font-weight:600;color:#fff;
   background:linear-gradient(140deg,var(--violet),var(--plum));box-shadow:0 14px 30px -14px rgba(63,49,104,.7);display:inline-flex;gap:8px;align-items:center;transition:transform .15s}
 .cta:hover{transform:translateY(-1px)}
 .cta .arrow{margin-left:4px}
-.fine{font-size:12.5px;color:var(--ink-3);max-width:520px}
+@media (max-width:640px){
+  .foot{flex-direction:column;align-items:stretch;gap:14px}
+  .cta{justify-content:center}
+}
 
 @media (max-width:860px){
   .hero{padding:28px 24px 24px}
