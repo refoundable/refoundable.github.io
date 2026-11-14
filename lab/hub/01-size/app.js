@@ -201,7 +201,7 @@ function renderMetrics() {
   tweenNum($('mFees'), c.gp, money);
   tweenNum($('mNet'), c.net, money);
   const half = money(c.gp / FEE_YEARS);
-  $('mFeesLife').textContent = `Paid over ${FEE_YEARS} years: ${half} in year one and ${half} in year two.`;
+  $('mFeesLife').textContent = `Paid over ${FEE_YEARS} years.`;
 
   $('sNet').style.width = (c.net / c.size * 100) + '%';
   $('sFee').style.width = (c.fees / c.size * 100) + '%';
