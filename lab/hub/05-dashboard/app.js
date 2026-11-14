@@ -67,35 +67,35 @@ function ptSession(n, hour, min = 0) {
 // Placeholder schedule: live, online and free.
 const WORKSHOPS = [
   {
-    id: 'outreach', title: 'Reaching out to your first LPs', ptSession(5, 9), mins: 60, rec: true,
+    id: 'outreach', title: 'Reaching out to your first LPs', date: ptSession(5, 9), mins: 60, rec: true,
     why: 'You have 10 names ready to contact',
     blurb: 'Who to contact first, what to say, and how to turn a warm intro into a first meeting.',
     cover: ['Ordering your list so the likeliest yeses come first', 'Intro messages that get replies, with real examples', 'What to send before and after a first meeting'],
     who: 'Managers who have a list and are about to start their first conversations with LPs.'
   },
   {
-    id: 'thesis', title: 'Building a great fund thesis', ptSession(10, 11), mins: 60, rec: false,
+    id: 'thesis', title: 'Building a great fund thesis', date: ptSession(10, 11), mins: 60, rec: false,
     why: '',
     blurb: 'Turn what you invest in, and why you, into a story LPs remember and repeat.',
     cover: ['What makes a thesis specific enough to stand out', 'Showing your edge with proof, not adjectives', 'Testing your thesis on friendly LPs before you go wide'],
     who: 'Anyone writing or rewriting their thesis, at any stage of the raise.'
   },
   {
-    id: 'meetings', title: 'Running great LP meetings', ptSession(19, 10), mins: 60, rec: true,
+    id: 'meetings', title: 'Running great LP meetings', date: ptSession(19, 10), mins: 60, rec: true,
     why: 'Your first meetings are coming up',
     blurb: 'How to structure a 30 minute meeting, handle the hard questions and ask for a commitment.',
     cover: ['A simple structure for a first LP meeting', 'The questions LPs always ask, and how to answer them', 'Following up so a maybe becomes a yes'],
     who: 'Managers with first LP meetings booked or coming soon.'
   },
   {
-    id: 'model', title: 'Fund modeling 201', ptSession(17, 8, 30), mins: 75, rec: false,
+    id: 'model', title: 'Fund modeling 201', date: ptSession(17, 8, 30), mins: 75, rec: false,
     why: '',
     blurb: 'Go past the basics: reserves for follow-on checks, ownership and what it takes to return the fund.',
     cover: ['Setting aside money for follow-on investments', 'Ownership, dilution and what a winner needs to look like', 'Stress testing your model before LPs do'],
     who: 'Managers who have a basic fund model and want to go deeper.'
   },
   {
-    id: 'close', title: 'Your first close: what to expect', ptSession(26, 12), mins: 60, rec: false,
+    id: 'close', title: 'Your first close: what to expect', date: ptSession(26, 12), mins: 60, rec: false,
     why: '',
     blurb: 'What has to be in place before your first close, and how long each step usually takes.',
     cover: ['When you’re ready to hold a first close', 'Documents and steps along the way', 'Keeping momentum between first and final close'],
