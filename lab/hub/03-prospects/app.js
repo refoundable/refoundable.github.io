@@ -90,9 +90,6 @@ function tween(el, to, fmt) {
 
 /* ---------- Plan summary ---------- */
 function renderPlan() {
-  $('chipSize').textContent = money(PLAN.size);
-  $('chipLPs').textContent = `${int(PLAN.lps)} LPs to find`;
-  $('chipKnown').textContent = `You know about ${int(PLAN.known)} people`;
   $('ledeKnown').textContent = int(PLAN.known);
   $('moneyOf').textContent = ` of ${money(TO_RAISE)}`;
   $('noteProspects').textContent = int(PLAN.prospects);

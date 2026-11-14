@@ -59,7 +59,6 @@ function persist(c) {
 const $ = id => document.getElementById(id);
 const checkSlider = $('checkSlider');
 const paceSlider = $('paceSlider');
-const sizeInput = $('sizeInput');
 
 function money(d) {
   if (d >= 1e6) return '$' + String(+(d / 1e6).toFixed(d >= 1e7 ? 1 : 2)) + 'M';
@@ -265,7 +264,6 @@ function render() {
   $('paceVal').textContent = state.pace;
   checkSlider.style.setProperty('--fill', (state.checkIdx / (CHECKS.length - 1) * 100) + '%');
   paceSlider.style.setProperty('--fill', ((state.pace - 3) / 22 * 100) + '%');
-  $('chipClose').textContent = 'First close at ' + money(c.size * FIRST_CLOSE);
 
   tween($('nProspects'), c.prospects, int);
   tween($('nLPs'), c.lps, int);
@@ -288,14 +286,10 @@ function render() {
   persist(c);
 }
 
-function fitChip() { sizeInput.style.width = Math.max(1.2, sizeInput.value.length - (sizeInput.value.includes('.') ? 0.5 : 0)) + 0.2 + 'ch'; }
-
 function init() {
   checkSlider.max = CHECKS.length - 1;
   checkSlider.value = state.checkIdx;
   paceSlider.value = state.pace;
-  sizeInput.value = sizeLabel(state.size);
-  fitChip();
   buildChoices();
   buildPyramid();
 
@@ -309,30 +303,6 @@ function init() {
     const c = calc();
     renderKnown(c);
     persist(c);
-  });
-
-  $('chipEdit').addEventListener('click', () => { sizeInput.focus(); });
-  sizeInput.addEventListener('focus', () => { $('fundChip').classList.add('editing'); sizeInput.select(); });
-  sizeInput.addEventListener('input', () => {
-    let v = sizeInput.value.replace(/[^\d.]/g, '');
-    const i = v.indexOf('.');
-    if (i !== -1) v = v.slice(0, i + 1) + v.slice(i + 1).replace(/\./g, '').slice(0, 1);
-    sizeInput.value = v;
-    fitChip();
-    const m = parseFloat(v);
-    if (m >= MIN_SIZE && m <= MAX_SIZE) { state.size = m; render(); }
-  });
-  sizeInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') sizeInput.blur();
-    if (e.key === 'Escape') { sizeInput.value = sizeLabel(state.size); sizeInput.blur(); }
-  });
-  sizeInput.addEventListener('blur', () => {
-    const v = parseFloat(sizeInput.value);
-    state.size = isNaN(v) ? state.size : Math.min(MAX_SIZE, Math.max(MIN_SIZE, Math.round(v * 10) / 10));
-    sizeInput.value = sizeLabel(state.size);
-    fitChip();
-    $('fundChip').classList.remove('editing');
-    render();
   });
 
   $('cta').addEventListener('click', () => {

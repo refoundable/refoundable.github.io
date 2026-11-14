@@ -55,17 +55,6 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .prospects-card{animation:rise .55s .24s cubic-bezier(.2,.7,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-/* Fund chip carried over from step 1 */
-.fund-chip{display:inline-flex;align-items:center;gap:10px;padding:8px 10px 8px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;color:var(--ink-2);margin-bottom:26px;box-shadow:0 10px 24px -18px rgba(63,49,104,.5)}
-.chip-dot{width:8px;height:8px;border-radius:50%;background:var(--sage)}
-.chip-size{font-family:var(--num);font-weight:600;color:var(--plum);font-variant-numeric:tabular-nums;display:inline-flex;align-items:baseline}
-.chip-size input{font:inherit;color:inherit;background:transparent;border:none;outline:none;width:2.2ch;padding:0;text-align:center;border-bottom:1.5px dashed transparent;border-radius:0}
-.fund-chip.editing .chip-size input,.chip-size input:focus{border-bottom-color:var(--violet)}
-.chip-sep{color:var(--ink-3)}
-.chip-soft{color:var(--ink-3)}
-.chip-edit{border:none;background:var(--mist);color:var(--violet);font-weight:600;font-size:13px;padding:5px 12px;border-radius:999px}
-.chip-edit:hover{background:var(--lilac)}
-
 /* Hero */
 .hero{margin-top:30px;background:var(--surface);border-radius:28px;padding:36px 40px 30px;box-shadow:0 1px 0 var(--line),0 30px 70px -40px rgba(63,49,104,.45)}
 .pr-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:40px;align-items:start}
@@ -194,7 +183,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
   .s-rate{display:none}
 }
 @media print{
-  .proto,.cta,.chip-edit,.help-btn,.book{display:none}
+  .proto,.cta,.help-btn,.book{display:none}
   body{padding-bottom:0}
   .intro,.hero,.metrics,.prospects-card,.pyramid-card{animation:none}
 }

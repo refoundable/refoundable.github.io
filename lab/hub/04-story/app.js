@@ -248,9 +248,6 @@ function loadState(next) {
 
 /* ---------- Init ---------- */
 function init() {
-  $('chipSize').textContent = money(PLAN.size);
-  $('chipList').textContent = `${PLAN.listed} ${PLAN.listed === 1 ? 'name' : 'names'} on your list`;
-
   buildChips('stageChips', STAGES, 'stage', { single: true });
   buildChips('sectorChips', SECTORS, 'sectors', { max: MAX_SECTORS });
   buildChips('geoChips', GEOS, 'geos', { max: MAX_GEOS });

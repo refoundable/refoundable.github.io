@@ -14,6 +14,7 @@
   const url = path => root + path + 'index.html';
 
   window.DemoNav = {
+    url(step) { return url(STEPS[step][1]); },
     go(step) { location.href = url(STEPS[step][1]); },
     restart() { window.DemoStore.reset(); location.href = url(''); }
   };

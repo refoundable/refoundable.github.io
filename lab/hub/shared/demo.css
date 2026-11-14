@@ -77,3 +77,29 @@
 @media print{
   .cta,.help,.book{display:none}
 }
+
+/* ---------- Setup breadcrumb, steps 1 to 4 (built by steps.js) ---------- */
+.steps{margin-bottom:28px;font-size:13.5px}
+.steps-list{list-style:none;display:flex;align-items:center;flex-wrap:wrap;gap:2px;margin:0;padding:0}
+.steps-list li{display:flex;align-items:center}
+.steps-list a,.steps-list span{display:inline-flex;align-items:center;gap:7px;padding:4px 8px;border-radius:999px;text-decoration:none;color:var(--ink-3);font-weight:600;white-space:nowrap;transition:background .15s,color .15s}
+.steps-list li:first-child > *{margin-left:-8px}
+.steps-list i{font-style:normal;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;font-family:var(--num);border:1.5px solid var(--line);background:var(--surface);color:var(--ink-3)}
+.steps-list b{font-weight:600}
+.steps-list .is-now span{color:var(--plum)}
+.steps-list .is-now i{background:var(--plum);border-color:var(--plum);color:#fff}
+/* Subtle arrow from the current step to the next one */
+.steps-list .is-now:not(:last-child)::after{content:"›";margin:0 2px 0 -2px;font-size:17px;line-height:1;font-weight:600;color:var(--lavender)}
+/* Completed steps are lightly faded with a green check. Upcoming steps fade more.
+   Links brighten on hover. */
+.steps-list .is-done > *{opacity:.85}
+.steps-list .is-open > *,.steps-list .is-locked > *{opacity:.45}
+.steps-list li:not(.is-now) > a:hover{opacity:1;background:var(--mist);color:var(--plum)}
+.steps-list .is-locked span{cursor:default}
+.steps-list .is-done i{background:#DCEFE4;border-color:#BFE0CC;color:#2F7A55}
+@media (max-width:760px){
+  .steps-list li:not(.is-now) b{display:none}
+}
+@media print{
+  .steps{display:none}
+}
