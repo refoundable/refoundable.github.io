@@ -3,10 +3,10 @@
 (function () {
   const STEPS = [
     ['Sign up', ''],
-    ['Fund size', '01-fund-size/'],
-    ['LP plan', '02-lp-plan/'],
-    ['First LPs', '03-first-lps/'],
-    ['Fund story', '04-fund-story/'],
+    ['Fund size', '01-size/'],
+    ['LP plan', '02-plan/'],
+    ['First LPs', '03-patrons/'],
+    ['Fund story', '04-story/'],
     ['Dashboard', '05-dashboard/']
   ];
   const root = document.body.dataset.root || '';
