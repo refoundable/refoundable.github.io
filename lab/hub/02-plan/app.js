@@ -12,8 +12,9 @@ const LAG_WEEKS = 6;             // decision time after the last meeting
 const LP_LIMIT = 99;             // warn above this many LPs
 const MAX_LP_SHARE = 0.20;       // no single LP can exceed 20% of the fund
 const MEETING_HOURS = 0.5;       // each meeting takes 30 minutes
-const MIN_SIZE = 1, MAX_SIZE = 50;
-const START = new Date(2026, 10, 14);
+const MIN_SIZE = 1, MAX_SIZE = 19.99;
+const START = new Date();
+START.setHours(0, 0, 0, 0);   // today, at midnight
 
 // Minimum LP check in $K. Smallest is $50K.
 const CHECKS = [50, 75, 100, 150, 200, 250, 300, 400, 500, 750, 1000];

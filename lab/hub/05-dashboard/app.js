@@ -33,38 +33,48 @@ const LIST = (saved.people || [])
   .sort((a, b) => b.tier - a.tier)
   .map(p => [p.name, TIER_LABELS[p.tier] || 'Minimum']);
 
+// A date n days from now at the given hour, moved off weekends.
+  function inDays(n, hour) {
+    const d = new Date();
+    d.setDate(d.getDate() + n);
+    d.setHours(hour, 0, 0, 0);
+    if (d.getDay() === 6) d.setDate(d.getDate() + 2);   // Saturday → Monday
+    if (d.getDay() === 0) d.setDate(d.getDate() + 1);   // Sunday → Monday
+    return d;
+  }
+
 // Placeholder schedule: live, online and free.
 const WORKSHOPS = [
   {
-    id: 'outreach', title: 'Reaching out to your first LPs', date: new Date(2026, 10, 19, 12), mins: 60, rec: true,
+    id: 'outreach', title: 'Reaching out to your first LPs', date: inDays(5, 12), mins: 60, rec: true,
     why: 'You have 10 names ready to contact',
     blurb: 'Who to contact first, what to say, and how to turn a warm intro into a first meeting.',
     cover: ['Ordering your list so the likeliest yeses come first', 'Intro messages that get replies, with real examples', 'What to send before and after a first meeting'],
     who: 'Managers who have a list and are about to start their first conversations with LPs.'
   },
   {
-    id: 'thesis', title: 'Building a great fund thesis', date: new Date(2026, 10, 24, 13), mins: 60, rec: false,
+    id: 'thesis', title: 'Building a great fund thesis', date: inDays(10, 13), mins: 60, rec: false,
     why: '',
     blurb: 'Turn what you invest in, and why you, into a story LPs remember and repeat.',
     cover: ['What makes a thesis specific enough to stand out', 'Showing your edge with proof, not adjectives', 'Testing your thesis on friendly LPs before you go wide'],
     who: 'Anyone writing or rewriting their thesis, at any stage of the raise.'
   },
   {
-    id: 'meetings', title: 'Running great LP meetings', date: new Date(2026, 11, 3, 12), mins: 60, rec: true,
+    id: 'meetings', title: 'Running great LP meetings', date: inDays(19, 12), mins: 60, rec: true,
     why: 'Your first meetings are coming up',
     blurb: 'How to structure a 30 minute meeting, handle the hard questions and ask for a commitment.',
     cover: ['A simple structure for a first LP meeting', 'The questions LPs always ask, and how to answer them', 'Following up so a maybe becomes a yes'],
     who: 'Managers with first LP meetings booked or coming soon.'
   },
   {
-    id: 'model', title: 'Fund modeling 201', date: new Date(2026, 11, 1, 12), mins: 75, rec: false,
+    id: 'model', title: 'Fund modeling 201', date: inDays(17, 12), mins: 75, rec: false,
     why: '',
     blurb: 'Go past the basics: reserves for follow-on checks, ownership and what it takes to return the fund.',
     cover: ['Setting aside money for follow-on investments', 'Ownership, dilution and what a winner needs to look like', 'Stress testing your model before LPs do'],
     who: 'Managers who have a basic fund model and want to go deeper.'
   },
   {
-    id: 'close', title: 'Your first close: what to expect', date: new Date(2026, 11, 10, 12), mins: 60, rec: false,
+    id: 'close', title: 'Your first close: what to expect', date: inDays(26, 12), mins: 60, rec: false,
     why: '',
     blurb: 'What has to be in place before your first close, and how long each step usually takes.',
     cover: ['When you’re ready to hold a first close', 'Documents and steps along the way', 'Keeping momentum between first and final close'],
@@ -72,7 +82,7 @@ const WORKSHOPS = [
   }
 ];
 
-const TODAY = new Date(2026, 10, 14, 15, 47);
+const TODAY = new Date();
 const fresh = () => ({ listed: LIST.length, meetings: 0, soft: 0, weeksIn: 0, signed: new Set(), booked: false });
 let state = fresh();
 
