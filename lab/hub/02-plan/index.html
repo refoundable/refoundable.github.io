@@ -134,45 +134,17 @@
 	  </div>
 	</div>
   </section>
-
-  <aside class="help" aria-label="Get help from the Decile team">
-	<div class="help-icon" aria-hidden="true">
-	  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg>
-	</div>
-	<div class="help-copy">
-		<p class="help-title">Need help with your numbers? Talk to the team.</p>
-		<p class="help-sub">Book a free call with a Decile fund specialist. We’ll walk through your fund model and setup with you.</p>
-	</div>
-	<span class="help-chip">Free · 20 min</span>
-	<button class="help-btn" id="helpBtn">Book a time<span class="arrow">→</span></button>
-  </aside>
-
-  <footer class="foot">
-	<button class="cta" id="cta">Start building my list<span class="arrow">→</span></button>
-	<p class="fine">Estimates assume your GP commitment is 1% of the fund, about half of prospects take a meeting, 20% of people met commit, committed LPs take about 2.5 meetings and others about 1, a 4 week ramp and a 6 week decision lag. First close at 30% of the fund. Commitment mixes are illustrative.</p>
-  </footer>
-</main>
-
-<div class="book" id="book" hidden>
-  <div class="book-panel" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
-	<button class="book-x" id="bookClose" aria-label="Close">×</button>
-	<div id="bookPick">
-	  <p class="eyebrow">Free · 20 minute call</p>
-	  <h2 id="bookTitle">Talk to a fund specialist</h2>
-	  <p class="book-sub">Pick a time that works. We’ll go through your fund size, LP targets and next steps for setup.</p>
-	  <div class="days" id="days"></div>
-	  <div class="slots" id="slots"></div>
-	  <button class="cta book-go" id="bookConfirm" disabled>Confirm time<span class="arrow">→</span></button>
-	</div>
-	<div id="bookDone" hidden>
-	  <div class="done-check">✓</div>
-	  <h2>You’re booked</h2>
-	  <p class="book-sub" id="bookWhen"></p>
-	  <p class="book-note">We’ll send a calendar invite with a video link. Bring your questions, your numbers from this page come with you.</p>
-	  <button class="cta book-go" id="bookDoneBtn">Back to my plan</button>
-	</div>
+  <!-- Footer, help banner and help call come from ../shared/footer.js -->
+	<div id="pageFoot"
+	  data-fine="Estimates assume your GP commitment is 1% of the fund, about half of prospects take a meeting, 20% of people met commit, committed LPs take about 2.5 meetings and others about 1, a 4 week ramp and a 6 week decision lag. First close at 30% of the fund. Commitment mixes are illustrative."
+	  data-cta="Start building my list"
+	  data-help="Need help with your numbers?"
+	  data-help-sub="Book a free call with a Decile fund specialist. We’ll walk through your fund model and setup with you."
+	  data-book-sub="Pick a time that works. We’ll go through your fund size, LP targets and next steps for setup."
+	  data-book-note="We’ll send a calendar invite with a video link. Bring your questions, your numbers from this page come with you."
+	  data-book-back="Back to my plan">
   </div>
-</div>
+</main>
 
 <script src="../shared/store.js"></script>
 <script src="../shared/demo.js"></script>

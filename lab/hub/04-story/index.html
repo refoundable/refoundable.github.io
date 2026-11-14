@@ -149,45 +149,17 @@
 	  </div>
 	</article>
   </section>
-
-  <aside class="help" aria-label="Get help from the Decile team">
-	<div class="help-icon" aria-hidden="true">
-	  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg>
-	</div>
-	<div class="help-copy">
-	  <p class="help-title">Stuck on your thesis? Talk to the team.</p>
-	  <p class="help-sub">Book a free call with a Decile fund specialist. We’ll help you sharpen your story before you send it to anyone.</p>
-	</div>
-	<span class="help-chip">Free · 20 min</span>
-	<button class="help-btn" id="helpBtn">Book a time<span class="arrow">→</span></button>
-  </aside>
-
-  <footer class="foot">
-	<button class="cta" id="cta">Use this with your first 10<span class="arrow">→</span></button>
-	<p class="fine">You can edit your story any time. Nothing is sent to anyone from this page.</p>
-  </footer>
+  <!-- Footer, help banner and help call come from ../shared/footer.js -->
+	<div id="pageFoot"
+	  data-fine="You can edit your story any time. Nothing is sent to anyone from this page."
+	  data-cta="Use this with your first 10"
+	  data-help="Stuck on your thesis?"
+	  data-help-sub="Book a free call with a Decile fund specialist. We’ll help you sharpen your story before you send it to anyone."
+	  data-book-sub="Pick a time that works. We’ll go through your thesis, your story and how to pitch it to your first LPs."
+	  data-book-note="We’ll send a calendar invite with a video link. Your plan and story come with you."
+	  data-book-back="Back to my story">
+  </div> 
 </main>
-
-<div class="book" id="book" hidden>
-  <div class="book-panel" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
-	<button class="book-x" id="bookClose" aria-label="Close">×</button>
-	<div id="bookPick">
-	  <p class="eyebrow">Free · 20 minute call</p>
-	  <h2 id="bookTitle">Talk to a fund specialist</h2>
-	  <p class="book-sub">Pick a time that works. We’ll go through your thesis, your story and how to pitch it to your first LPs.</p>
-	  <div class="days" id="days"></div>
-	  <div class="slots" id="slots"></div>
-	  <button class="cta book-go" id="bookConfirm" disabled>Confirm time<span class="arrow">→</span></button>
-	</div>
-	<div id="bookDone" hidden>
-	  <div class="done-check">✓</div>
-	  <h2>You’re booked</h2>
-	  <p class="book-sub" id="bookWhen"></p>
-	  <p class="book-note">We’ll send a calendar invite with a video link. Your plan and story come with you.</p>
-	  <button class="cta book-go" id="bookDoneBtn">Back to my story</button>
-	</div>
-  </div>
-</div>
 
 <script src="../shared/store.js"></script>
 <script src="../shared/demo.js"></script>

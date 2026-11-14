@@ -124,18 +124,14 @@
 	</div>
 	<div class="ws-grid" id="wsGrid"></div>
   </section>
-
-  <aside class="help" aria-label="Get help from the Decile team">
-	<div class="help-icon" aria-hidden="true">
-	  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg>
-	</div>
-	<div class="help-copy">
-	  <p class="help-title">Need help with anything? Talk to the team.</p>
-	  <p class="help-sub">Book a free call with a Decile fund specialist about your plan, your outreach or your setup.</p>
-	</div>
-	<span class="help-chip">Free · 20 min</span>
-	<button class="help-btn" id="helpBtn">Book a time<span class="arrow">→</span></button>
-  </aside>
+  <!-- Help banner and help call come from ../shared/footer.js -->
+	<div id="pageFoot"
+	  data-help="Need help with anything?"
+	  data-help-sub="Book a free call with a Decile fund specialist about your plan, your outreach or your setup."
+	  data-book-sub="Pick a time that works. Bring whatever is on your mind: your plan, your outreach or your setup."
+	  data-book-note="We’ll send a calendar invite with a video link."
+	  data-book-back="Back to my dashboard">
+  </div>
 </main>
 
 <!-- Workshop details -->
@@ -159,28 +155,6 @@
 	  <p class="ws-when" id="wsDoneWhen"></p>
 	  <p class="ws-note">We’ll send a calendar invite with the link and a reminder the day before.</p>
 	  <button class="cta sheet-go" id="wsDoneBtn">Back to my dashboard</button>
-	</div>
-  </div>
-</div>
-
-<!-- Book a call -->
-<div class="sheet" id="book" hidden>
-  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
-	<button class="sheet-x" id="bookClose" aria-label="Close">×</button>
-	<div id="bookPick">
-	  <p class="eyebrow">Free · 20 minute call</p>
-	  <h2 id="bookTitle">Talk to a fund specialist</h2>
-	  <p class="ws-desc">Pick a time that works. Bring whatever is on your mind: your plan, your outreach or your setup.</p>
-	  <div class="days" id="days"></div>
-	  <div class="slots" id="slots"></div>
-	  <button class="cta sheet-go" id="bookConfirm" disabled>Confirm time<span class="arrow">→</span></button>
-	</div>
-	<div id="bookDone" hidden>
-	  <div class="done-check">✓</div>
-	  <h2>You’re booked</h2>
-	  <p class="ws-when" id="bookWhen"></p>
-	  <p class="ws-note">We’ll send a calendar invite with a video link.</p>
-	  <button class="cta sheet-go" id="bookDoneBtn">Back to my dashboard</button>
 	</div>
   </div>
 </div>
