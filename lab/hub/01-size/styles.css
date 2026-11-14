@@ -60,13 +60,13 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* Hero */
-.hero{margin-top:34px;background:var(--surface);border-radius:28px;padding:38px 44px 30px;
+.hero{margin-top:34px;background:var(--surface);border-radius:28px;padding:10px 44px 30px;
   box-shadow:0 1px 0 var(--line),0 30px 70px -40px rgba(63,49,104,.45);position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;
   background:radial-gradient(circle,var(--zone) 0%,transparent 70%);opacity:.18;transition:background .4s;pointer-events:none}
 .hero-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .amount{font-family:var(--num);font-weight:600;font-variant-numeric:tabular-nums;line-height:.9;color:var(--plum);display:flex;align-items:flex-end;gap:12px}
-.size-input{font:inherit;font-size:clamp(77px,10.5vw,126px);letter-spacing:-.065em;color:inherit;background:transparent;border:none;outline:none;padding:0;
+.size-input{font:inherit;font-size:clamp(77px,10.5vw,126px);margin-bottom:-15px;letter-spacing:-.065em;color:inherit;background:transparent;border:none;outline:none;padding:0;
   font-variant-numeric:tabular-nums;border-bottom:4px dashed transparent;border-radius:0;cursor:text;transition:border-color .2s;caret-color:var(--violet)}
 .size-input:hover{border-bottom-color:var(--lilac)}
 .size-input:focus{border-bottom-color:var(--violet);border-bottom-style:solid}
