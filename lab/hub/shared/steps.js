@@ -5,7 +5,7 @@
 // which is the only way to move on to a new step. The breadcrumb can go back to any
 // earlier step, and forward only to steps already completed. The rest are locked.
 (function () {
-  const STEPS = ['Fund size', 'LP plan', 'First LPs', 'Fund story'];
+  const STEPS = ['Fund size', 'Your raise', 'First LPs', 'Final steps'];
   const current = +document.body.dataset.step;
   const main = document.querySelector('main');
   if (!main || !(current >= 1 && current <= STEPS.length)) return;
