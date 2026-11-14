@@ -29,7 +29,7 @@
 /* Footer button shaped like a step in a process (a chevron): notched on the left, pointed on the right.
    clip-path cuts off box-shadow, so the shadow sits on the wrapper as a drop-shadow. */
 .cta-wrap{flex:none;display:inline-flex;filter:drop-shadow(0 12px 14px rgba(63,49,104,.35))}
-.cta-step{border-radius:0;padding:21px 64px;box-shadow:none;
+.cta-step{border-radius:0;padding:22px 64px;box-shadow:none;
   clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%,22px 50%);transition:transform .15s,filter .15s}
 .cta-step:hover{transform:translateX(3px);filter:brightness(1.08)}
 
