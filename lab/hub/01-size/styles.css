@@ -100,7 +100,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .m-label{font-size:13.5px;font-weight:600;color:var(--ink-2);display:flex;align-items:center;gap:8px}
 .est{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--violet);background:var(--mist);padding:2px 7px;border-radius:999px}
 .m-value{font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:600;font-size:44px;letter-spacing:-.035em;line-height:1.05;margin-top:10px;color:var(--ink)}
-.m-desc{font-size:14px;color:var(--ink-2);margin-top:10px}
+.m-desc{font-size:14px;color:var(--ink-2);margin-top:10px;max-width:40ch}
 .soft{color:var(--ink-3)}
 .split{display:flex;height:8px;border-radius:999px;overflow:hidden;margin-top:16px;background:var(--mist)}
 .split span{display:block;height:100%;transition:width .4s cubic-bezier(.2,.7,.2,1)}
