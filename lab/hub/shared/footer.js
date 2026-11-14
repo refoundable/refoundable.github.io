@@ -104,7 +104,7 @@
     parts.push(html(`
       <footer class="foot">
         ${o.fine ? `<p class="fine" id="fine">${esc(o.fine)}</p>` : ''}
-        ${o.cta ? `<button class="cta" id="cta"><span id="ctaText">${esc(o.cta)}</span><span class="arrow">→</span></button>` : ''}
+        ${o.cta ? `<span class="cta-wrap"><button class="cta cta-step" id="cta"><span id="ctaText">${esc(o.cta)}</span></button></span>` : ''}
       </footer>`));
   }
 
