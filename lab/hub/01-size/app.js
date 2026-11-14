@@ -188,7 +188,7 @@ function renderMode() {
 
   $('fine').textContent = over
     ? `Self-serve funds on Decile Hub go up to $${SELF_SERVE_MAX}M. For larger funds, our fund team sets you up with a structure built for your raise.`
-    : `Assumes 2% annual fees over a 10 year fund life, paid out in the first ${FEE_YEARS} years. Formation and fund admin are covered from the fees, not charged to LPs. You keep 50% of the fees on the first $3M, 60% from $3M to $7M and 70% above $7M. ${INVEST_YEARS} year window for new investments.`;
+    : `Assumes 2% annual fees over a 10 year fund life, paid out in the first ${FEE_YEARS} years. Formation and fund admin are covered from the fees, not charged to LPs. You keep 50% of the fees on the first $3M, 60% from $3M to $7M and 70% above $7M. Assumes a ${INVEST_YEARS} year window for new investments.`;
 
   const lead = state.intended ? `You’re planning about $${sizeLabel(state.intended)}M. ` : '';
   $('bfSub').textContent = `${lead}Decile Hub is built for smaller funds. Raising $${CAP}M or more usually means a traditional fund structure, institutional LPs and a longer raise, and our fund team works with managers like you one-on-one.`;
