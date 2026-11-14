@@ -42,39 +42,60 @@ const LIST = (saved.people || [])
     if (d.getDay() === 0) d.setDate(d.getDate() + 1);   // Sunday → Monday
     return d;
   }
+  
+// Workshops run on Pacific time, so they're scheduled and shown in PT
+const PT = 'America/Los_Angeles';
+const inPT = (d, opts) => d.toLocaleString('en-US', { ...opts, timeZone: PT });
+
+// Hours PT is behind UTC on a given day (8 in winter, 7 in summer), in ms.
+function ptOffset(d) {
+  const name = new Intl.DateTimeFormat('en-US', { timeZone: PT, timeZoneName: 'shortOffset' })
+    .formatToParts(d).find(p => p.type === 'timeZoneName').value; // e.g. "GMT-8"
+  return -parseInt(name.slice(3), 10) * 36e5;
+}
+
+// A session n days from now at hour:min PT, moved off weekends.
+function ptSession(n, hour, min = 0) {
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: PT, year: 'numeric', month: 'numeric', day: 'numeric', weekday: 'short' })
+    .formatToParts(new Date(Date.now() + n * 864e5)).forEach(x => { p[x.type] = x.value; });
+  const day = +p.day + (p.weekday === 'Sat' ? 2 : p.weekday === 'Sun' ? 1 : 0);
+  const wall = Date.UTC(+p.year, +p.month - 1, day, hour, min);
+  return new Date(wall + ptOffset(new Date(wall)));
+}
 
 // Placeholder schedule: live, online and free.
 const WORKSHOPS = [
   {
-    id: 'outreach', title: 'Reaching out to your first LPs', date: inDays(5, 12), mins: 60, rec: true,
+    id: 'outreach', title: 'Reaching out to your first LPs', ptSession(5, 9), mins: 60, rec: true,
     why: 'You have 10 names ready to contact',
     blurb: 'Who to contact first, what to say, and how to turn a warm intro into a first meeting.',
     cover: ['Ordering your list so the likeliest yeses come first', 'Intro messages that get replies, with real examples', 'What to send before and after a first meeting'],
     who: 'Managers who have a list and are about to start their first conversations with LPs.'
   },
   {
-    id: 'thesis', title: 'Building a great fund thesis', date: inDays(10, 13), mins: 60, rec: false,
+    id: 'thesis', title: 'Building a great fund thesis', ptSession(10, 11), mins: 60, rec: false,
     why: '',
     blurb: 'Turn what you invest in, and why you, into a story LPs remember and repeat.',
     cover: ['What makes a thesis specific enough to stand out', 'Showing your edge with proof, not adjectives', 'Testing your thesis on friendly LPs before you go wide'],
     who: 'Anyone writing or rewriting their thesis, at any stage of the raise.'
   },
   {
-    id: 'meetings', title: 'Running great LP meetings', date: inDays(19, 12), mins: 60, rec: true,
+    id: 'meetings', title: 'Running great LP meetings', ptSession(19, 10), mins: 60, rec: true,
     why: 'Your first meetings are coming up',
     blurb: 'How to structure a 30 minute meeting, handle the hard questions and ask for a commitment.',
     cover: ['A simple structure for a first LP meeting', 'The questions LPs always ask, and how to answer them', 'Following up so a maybe becomes a yes'],
     who: 'Managers with first LP meetings booked or coming soon.'
   },
   {
-    id: 'model', title: 'Fund modeling 201', date: inDays(17, 12), mins: 75, rec: false,
+    id: 'model', title: 'Fund modeling 201', ptSession(17, 8, 30), mins: 75, rec: false,
     why: '',
     blurb: 'Go past the basics: reserves for follow-on checks, ownership and what it takes to return the fund.',
     cover: ['Setting aside money for follow-on investments', 'Ownership, dilution and what a winner needs to look like', 'Stress testing your model before LPs do'],
     who: 'Managers who have a basic fund model and want to go deeper.'
   },
   {
-    id: 'close', title: 'Your first close: what to expect', date: inDays(26, 12), mins: 60, rec: false,
+    id: 'close', title: 'Your first close: what to expect', ptSession(26, 12), mins: 60, rec: false,
     why: '',
     blurb: 'What has to be in place before your first close, and how long each step usually takes.',
     cover: ['When you’re ready to hold a first close', 'Documents and steps along the way', 'Keeping momentum between first and final close'],
@@ -95,9 +116,7 @@ function money(d) {
 }
 const int = v => Math.round(v).toLocaleString('en-US');
 const initials = n => n.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase();
-const shortDate = d => d.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
 const longDate = d => d.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-const timeOf = d => d.toLocaleString('en-US', { hour: 'numeric', minute: '2-digit' });
 
 function toast(msg) {
   const t = $('toast');
@@ -145,7 +164,7 @@ function renderNext() {
     : '<li class="more" style="padding-left:0">No names yet. Your first 10 go here.</li>';
 
   const ws = WORKSHOPS[0];
-  $('nextWsDate').textContent = shortDate(ws.date);
+  $('nextWsDate').textContent = inPT(ws.date, { weekday: 'short', month: 'short', day: 'numeric' });
   const btn = $('nextWorkshop');
   const joined = state.signed.has(ws.id);
   btn.classList.toggle('joined', joined);
@@ -237,8 +256,8 @@ function renderWorkshops() {
     return `<article class="ws ${w.rec ? 'rec' : ''} ${signed ? 'signed' : ''}">
       <div class="ws-tags">${tags}</div>
       <div class="ws-date">
-        <span class="ws-cal"><i>${w.date.toLocaleString('en-US', { month: 'short' })}</i><b>${w.date.getDate()}</b></span>
-        <span class="ws-time">${w.date.toLocaleString('en-US', { weekday: 'long' })}, ${timeOf(w.date)} ET<br>${w.mins} min · Live online</span>
+        <span class="ws-cal"><i>${inPT(w.date, { month: 'short' })}</i><b>${inPT(w.date, { day: 'numeric' })}</b></span>
+        <span class="ws-time">${inPT(w.date, { weekday: 'long' })}, ${inPT(w.date, { hour: 'numeric', minute: '2-digit' })} PT<br>${w.mins} min · Live online</span>
       </div>
       <h3>${esc(w.title)}</h3>
       <p class="ws-blurb">${esc(w.blurb)}</p>
@@ -255,7 +274,7 @@ let openWs = null;
 function openWorkshop(id) {
   const w = WORKSHOPS.find(x => x.id === id);
   openWs = w;
-  const when = `${longDate(w.date)} · ${timeOf(w.date)} ET · ${w.mins} min`;
+  const when = `${inPT(w.date, { weekday: 'long', month: 'long', day: 'numeric' })} · ${inPT(w.date, { hour: 'numeric', minute: '2-digit' })} PT · ${w.mins} min`;
   $('wsKicker').textContent = w.rec ? 'Recommended for you · Live · Free' : 'Live workshop · Free';
   $('wsTitle').textContent = w.title;
   $('wsWhen').textContent = when;
