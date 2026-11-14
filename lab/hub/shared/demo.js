@@ -5,7 +5,7 @@
     ['Sign up', ''],
     ['Fund size', '01-size/'],
     ['LP plan', '02-plan/'],
-    ['First LPs', '03-patrons/'],
+    ['First LPs', '03-prospects/'],
     ['Fund story', '04-story/'],
     ['Dashboard', '05-dashboard/']
   ];
