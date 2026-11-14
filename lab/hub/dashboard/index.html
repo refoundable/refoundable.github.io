@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Decile Hub Dashboard Prototype</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../shared/demo.css">
+</head>
+<body data-step="5" data-root="../">
+
+<div class="proto">
+  <span class="tag">Prototype</span>
+  <span>Decile Hub · Fund dashboard</span>
+  <span class="proto-actions">
+	<button id="demoSim">Simulate a few weeks</button>
+	<button id="demoReset">Reset</button>
+  </span>
+</div>
+
+<header class="app-nav">
+  <div class="nav-inner">
+	<div class="brand"><span class="mark">D</span>Decile Hub</div>
+	<nav class="links" aria-label="Main">
+	  <a href="#top" class="on">Home</a>
+	  <a href="#model">Fund model</a>
+	  <a href="#numbers">LPs</a>
+	  <a href="#story">Fund story</a>
+	  <a href="#learn">Learn</a>
+	</nav>
+	<div class="me"><span class="me-fund" id="navFund">Northbound Ventures</span><span class="av" id="navAv">AR</span></div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="welcome">
+	<p class="eyebrow" id="today">Saturday, November 14</p>
+	<h1><span id="greet">Good afternoon</span>, <span id="firstName">Alex</span>.</h1>
+	<p class="lede">Welcome to the home of <b id="fundName">Northbound Ventures</b>. Here’s where your fund stands today.</p>
+  </section>
+
+  <!-- Next step -->
+  <section class="next">
+	<div class="next-copy">
+	  <p class="next-kicker">Your next step</p>
+	  <h2 id="nextTitle">Reach out to your first 10</h2>
+	  <p class="next-sub" id="nextSub">Your list and your story are ready. Start with the people most likely to say yes, and aim for your first meetings this week.</p>
+	  <div class="next-actions">
+		<button class="btn-light" id="startOutreach">Start outreach<span class="arrow">→</span></button>
+		<button class="btn-ghost" id="nextWorkshop">Join “Reaching out to your first LPs” on <span id="nextWsDate">Thu, Nov 19</span></button>
+	  </div>
+	</div>
+	<div class="next-people" aria-label="First names on your list">
+	  <p class="np-label">First up from your list</p>
+	  <ul id="nextPeople"></ul>
+	</div>
+  </section>
+
+  <!-- Live numbers -->
+  <section class="numbers" id="numbers" aria-label="Where things stand">
+	<article class="stat">
+	  <p class="s-label">Names on your list</p>
+	  <p class="s-value"><span id="sList">10</span><span class="s-of" id="sListOf">of 520</span></p>
+	  <div class="s-bar"><span id="bList"></span></div>
+	  <p class="s-note" id="nList">Keep adding as people come to mind.</p>
+	</article>
+	<article class="stat">
+	  <p class="s-label">LP meetings held</p>
+	  <p class="s-value"><span id="sMeet">0</span><span class="s-of" id="sMeetOf">of 332</span></p>
+	  <div class="s-bar"><span id="bMeet"></span></div>
+	  <p class="s-note" id="nMeet">Your plan: 10 a week, about 5 hours.</p>
+	</article>
+	<article class="stat">
+	  <p class="s-label">Soft-circled</p>
+	  <p class="s-value"><span id="sSoft">$0</span><span class="s-of" id="sSoftOf">of $9.9M</span></p>
+	  <div class="s-bar"><span id="bSoft"></span></div>
+	  <p class="s-note" id="nSoft">LPs who’ve said they’re in, before signing.</p>
+	</article>
+	<article class="stat">
+	  <p class="s-label">Estimated first close</p>
+	  <p class="s-value"><span id="sClose">Apr 2027</span></p>
+	  <div class="s-bar"><span id="bClose"></span></div>
+	  <p class="s-note" id="nClose">About 5 months away at your current pace.</p>
+	</article>
+  </section>
+
+  <!-- Fund model + story -->
+  <section class="pair">
+	<article class="card model" id="model">
+	  <div class="card-head">
+		<div>
+		  <p class="eyebrow">Fund model</p>
+		  <h2>Your plan at a glance</h2>
+		</div>
+		<button class="btn-soft" id="openModel">Open fund model<span class="arrow">→</span></button>
+	  </div>
+	  <dl class="model-grid" id="modelGrid"></dl>
+	</article>
+
+	<article class="card story" id="story">
+	  <div class="card-head">
+		<div>
+		  <p class="eyebrow">Fund story</p>
+		  <h2>What LPs will see</h2>
+		</div>
+		<button class="btn-soft" id="openStory">Edit<span class="arrow">→</span></button>
+	  </div>
+	  <p class="st-thesis" id="stThesis"></p>
+	  <p class="st-label">Why us</p>
+	  <p class="st-why" id="stWhy"></p>
+	</article>
+  </section>
+
+  <!-- Workshops -->
+  <section class="card learn" id="learn">
+	<div class="card-head">
+	  <div>
+		<p class="eyebrow">Learn with Decile</p>
+		<h2>Workshops to help you launch</h2>
+		<p class="learn-sub">Live, online and free. Led by the Decile team, with time for your questions.</p>
+	  </div>
+	  <p class="learn-count" id="learnCount"></p>
+	</div>
+	<div class="ws-grid" id="wsGrid"></div>
+  </section>
+
+  <aside class="help" aria-label="Get help from the Decile team">
+	<div class="help-icon" aria-hidden="true">
+	  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg>
+	</div>
+	<div class="help-copy">
+	  <p class="help-title">Need help with anything? Talk to the team.</p>
+	  <p class="help-sub">Book a free call with a Decile fund specialist about your plan, your outreach or your setup.</p>
+	</div>
+	<span class="help-chip">Free · 20 min</span>
+	<button class="help-btn" id="helpBtn">Book a time<span class="arrow">→</span></button>
+  </aside>
+</main>
+
+<!-- Workshop details -->
+<div class="sheet" id="wsSheet" hidden>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="wsTitle">
+	<button class="sheet-x" id="wsClose" aria-label="Close">×</button>
+	<div id="wsInfo">
+	  <p class="eyebrow" id="wsKicker">Live workshop · Free</p>
+	  <h2 id="wsTitle"></h2>
+	  <p class="ws-when" id="wsWhen"></p>
+	  <p class="ws-desc" id="wsDesc"></p>
+	  <p class="ws-h">What you’ll cover</p>
+	  <ul class="ws-cover" id="wsCover"></ul>
+	  <p class="ws-h">Who it’s for</p>
+	  <p class="ws-for" id="wsFor"></p>
+	  <button class="cta sheet-go" id="wsSignup">Save my seat<span class="arrow">→</span></button>
+	</div>
+	<div id="wsDone" hidden>
+	  <div class="done-check">✓</div>
+	  <h2>You’re signed up</h2>
+	  <p class="ws-when" id="wsDoneWhen"></p>
+	  <p class="ws-note">We’ll send a calendar invite with the link and a reminder the day before.</p>
+	  <button class="cta sheet-go" id="wsDoneBtn">Back to my dashboard</button>
+	</div>
+  </div>
+</div>
+
+<!-- Book a call -->
+<div class="sheet" id="book" hidden>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+	<button class="sheet-x" id="bookClose" aria-label="Close">×</button>
+	<div id="bookPick">
+	  <p class="eyebrow">Free · 20 minute call</p>
+	  <h2 id="bookTitle">Talk to a fund specialist</h2>
+	  <p class="ws-desc">Pick a time that works. Bring whatever is on your mind: your plan, your outreach or your setup.</p>
+	  <div class="days" id="days"></div>
+	  <div class="slots" id="slots"></div>
+	  <button class="cta sheet-go" id="bookConfirm" disabled>Confirm time<span class="arrow">→</span></button>
+	</div>
+	<div id="bookDone" hidden>
+	  <div class="done-check">✓</div>
+	  <h2>You’re booked</h2>
+	  <p class="ws-when" id="bookWhen"></p>
+	  <p class="ws-note">We’ll send a calendar invite with a video link.</p>
+	  <button class="cta sheet-go" id="bookDoneBtn">Back to my dashboard</button>
+	</div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="../shared/store.js"></script>
+<script src="../shared/demo.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

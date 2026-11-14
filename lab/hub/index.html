@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Decile Hub Onboarding Prototype</title>
+<link rel="stylesheet" href="start.css">
+<link rel="stylesheet" href="shared/demo.css">
+</head>
+<body data-step="0" data-root="">
+
+<div class="proto">
+  <span class="tag">Prototype</span>
+  <span>Decile Hub · New fund onboarding</span>
+</div>
+
+<main class="start">
+  <section class="pitch">
+	<div class="brand"><span class="mark">D</span>Decile Hub</div>
+	<p class="eyebrow">For first-time fund managers</p>
+	<h1>Launch your first fund, one clear step at a time.</h1>
+	<p class="lede">In about 15 minutes you’ll have a fund plan, a realistic path to your first close, your first 10 LP names and a one-pager to share.</p>
+	<ol class="steps">
+	  <li><b>Pick your fund size</b><span>See what it means for fees, carry and your portfolio.</span></li>
+	  <li><b>Map your raise</b><span>How many LPs, meetings and months it could take.</span></li>
+	  <li><b>Name your first 10 LPs</b><span>Start your list with people you already know.</span></li>
+	  <li><b>Tell your fund story</b><span>Your thesis and why you, turned into a one-pager.</span></li>
+	</ol>
+  </section>
+
+  <section class="signup" aria-labelledby="signupTitle">
+	<h2 id="signupTitle">Create your account</h2>
+	<p class="s-sub">It’s free. This is a prototype, so nothing is sent anywhere.</p>
+	<form id="signupForm" novalidate>
+	  <label for="name">Your name</label>
+	  <input id="name" type="text" autocomplete="off" placeholder="Alex Rivera">
+	  <label for="email">Work email</label>
+	  <input id="email" type="email" autocomplete="off" placeholder="alex@example.com">
+	  <fieldset class="intent">
+		<legend>What brings you here?</legend>
+		<label class="opt"><input type="radio" name="intent" value="launch" checked><span>I want to launch a fund</span></label>
+		<label class="opt"><input type="radio" name="intent" value="explore"><span>I’m exploring the idea</span></label>
+	  </fieldset>
+	  <button class="cta" type="submit">Get started<span class="arrow">→</span></button>
+	  <p class="resume" id="resume" hidden>Picking up where you left off. <button type="button" id="resumeBtn">Continue my setup</button></p>
+	</form>
+  </section>
+</main>
+
+<script src="shared/store.js"></script>
+<script src="shared/demo.js"></script>
+<script src="start.js"></script>
+</body>
+</html>

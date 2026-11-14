@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Decile Hub Fund Size Prototype</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../shared/demo.css">
+</head>
+<body data-step="1" data-root="../">
+
+<div class="proto">
+  <span class="tag">Prototype</span>
+  <span>Decile Hub · Pick your fund size</span>
+</div>
+
+<header class="top">
+  <div class="brand"><span class="mark">D</span>Decile Hub</div>
+  <div class="step">Step 1 · Your fund</div>
+</header>
+
+<main>
+  <section class="intro">
+	<p class="eyebrow">Let’s start with the big one</p>
+	<h1>Let’s pick your fund size.</h1>
+	<p class="lede">This number shapes everything else: how much you raise before you can start investing, what you earn to run the fund, and how many companies you can back. Slide it around and see what changes. You can change it any time.</p>
+  </section>
+
+  <section class="hero">
+	<div class="hero-top">
+	  <div class="amount" aria-live="polite">
+		<span class="cur">$</span><input id="sizeInput" class="size-input" type="text" inputmode="decimal" value="10" aria-label="Fund size in millions" autocomplete="off" spellcheck="false"><span class="unit">M</span>
+	  </div>
+	  <div class="pill" id="pill"><span class="pill-dot"></span><span id="pillText">A stretch</span></div>
+	</div>
+
+	<div class="slider-wrap">
+	  <input type="range" id="sizeSlider" class="slider big" min="0" max="0" step="1" aria-label="Fund size">
+	  <div class="ticks" id="ticks"></div>
+	  <div class="zones"><span>Easier to raise</span><span>Harder to raise</span></div>
+	</div>
+
+	<p class="changeable"><span class="lock">↺</span>Nothing is locked in. Drag the slider, or click the number to type an exact amount.</p>
+  </section>
+
+  <section class="metrics">
+	<article class="metric">
+	  <p class="m-label">First close at 30%</p>
+	  <p class="m-value" id="mClose">$3M</p>
+	  <p class="m-desc">Roughly what you’d need committed before you can start investing.</p>
+	</article>
+	<article class="metric">
+	  <p class="m-label">Management fees per year</p>
+	  <p class="m-value" id="mFees">$200K</p>
+	  <p class="m-desc">At a 2% fee. This pays your salary, team and running costs. <span class="soft" id="mFeesLife">About $2M over 10 years.</span></p>
+	</article>
+	<article class="metric">
+	  <p class="m-label">Net investable <span class="est">estimate</span></p>
+	  <p class="m-value" id="mNet">$7.7M</p>
+	  <div class="split" aria-hidden="true">
+		<span class="s-net" id="sNet"></span><span class="s-fee" id="sFee"></span><span class="s-exp" id="sExp"></span>
+	  </div>
+	  <p class="m-legend"><span><i class="k-net"></i>Invested</span><span><i class="k-fee"></i>Fees</span><span><i class="k-exp"></i>Expenses</span></p>
+	</article>
+  </section>
+
+  <section class="yours">
+	<article class="metric own">
+	  <p class="m-label">Your carry if the fund returns 3x</p>
+	  <p class="m-value" id="mCarry">$4M</p>
+	  <p class="m-desc">20% of the profits, paid out as the companies exit. Shared with any partners.</p>
+	</article>
+	<article class="metric own">
+	  <p class="m-label">Your GP commitment</p>
+	  <p class="m-value" id="mCommit">$100K–$200K</p>
+	  <p class="m-desc">Managers usually invest 1–2% of the fund themselves, from their own pocket.</p>
+	</article>
+  </section>
+
+  <section class="portfolio">
+	<div class="p-head">
+	  <div>
+		<p class="eyebrow">What that buys you</p>
+		<h2>Your portfolio at a glance</h2>
+	  </div>
+	  <div class="check">
+		<div class="check-row">
+		  <label for="checkSlider">Average first check</label>
+		  <span class="check-val" id="checkVal">$150K</span>
+		</div>
+		<input type="range" id="checkSlider" class="slider small" min="0" max="0" step="1" aria-label="Average check size">
+	  </div>
+	</div>
+
+	<div class="p-body">
+	  <div class="count" id="countBox">
+		<span class="count-num" id="countNum">51</span>
+		<span class="count-label">companies, give or take</span>
+		<span class="busy" id="busy"></span>
+	  </div>
+	  <div class="dots" id="dots" aria-hidden="true"></div>
+	</div>
+
+	<p class="nudge" id="nudge"><span class="nudge-dot"></span><span id="nudgeText"></span></p>
+  </section>
+
+  <aside class="help" aria-label="Get help from the Decile team">
+	<div class="help-icon" aria-hidden="true">
+	  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg>
+	</div>
+	<div class="help-copy">
+	  <p class="help-title">Not sure what size is right? Talk to the team.</p>
+	  <p class="help-sub">Book a free call with a Decile fund specialist. We’ll walk through your fund model and setup with you.</p>
+	</div>
+	<span class="help-chip">Free · 20 min</span>
+	<button class="help-btn" id="helpBtn">Book a time<span class="arrow">→</span></button>
+  </aside>
+
+  <footer class="foot">
+	<button class="cta" id="cta">Continue with <span id="ctaSize">$10M</span><span class="arrow">→</span></button>
+	<p class="fine">Estimates assume a 2% annual fee over a 10 year fund life, roughly $150K plus 1% of the fund in fund expenses, 20% carry, and a 3 year window for new investments. Real numbers vary by structure.</p>
+  </footer>
+</main>
+
+<div class="book" id="book" hidden>
+  <div class="book-panel" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+	<button class="book-x" id="bookClose" aria-label="Close">×</button>
+	<div id="bookPick">
+	  <p class="eyebrow">Free · 20 minute call</p>
+	  <h2 id="bookTitle">Talk to a fund specialist</h2>
+	  <p class="book-sub">Pick a time that works. We’ll go through your fund size, what it means for your raise and next steps for setup.</p>
+	  <div class="days" id="days"></div>
+	  <div class="slots" id="slots"></div>
+	  <button class="cta book-go" id="bookConfirm" disabled>Confirm time<span class="arrow">→</span></button>
+	</div>
+	<div id="bookDone" hidden>
+	  <div class="done-check">✓</div>
+	  <h2>You’re booked</h2>
+	  <p class="book-sub" id="bookWhen"></p>
+	  <p class="book-note">We’ll send a calendar invite with a video link. Your numbers from this page come with you.</p>
+	  <button class="cta book-go" id="bookDoneBtn">Back to my fund size</button>
+	</div>
+  </div>
+</div>
+
+<script src="../shared/store.js"></script>
+<script src="../shared/demo.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

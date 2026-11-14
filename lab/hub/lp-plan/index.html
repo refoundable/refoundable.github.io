@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Decile Hub LP Prospects Prototype</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../shared/demo.css">
+</head>
+<body data-step="2" data-root="../">
+
+<div class="proto">
+  <span class="tag">Prototype</span>
+  <span>Decile Hub · LP prospects</span>
+</div>
+
+<header class="top">
+  <div class="brand"><span class="mark">D</span>Decile Hub</div>
+  <div class="step">Step 2 · Your raise</div>
+</header>
+
+<main>
+  <section class="intro">
+	<div class="fund-chip" id="fundChip">
+	  <span class="chip-dot"></span>
+	  <span>Your fund</span>
+	  <span class="chip-size">$<input id="sizeInput" type="text" inputmode="decimal" value="10" aria-label="Fund size in millions" autocomplete="off" spellcheck="false">M</span>
+	  <span class="chip-sep">·</span>
+	  <span class="chip-soft" id="chipClose">First close at $3M</span>
+	  <button class="chip-edit" id="chipEdit">Edit</button>
+	</div>
+	<p class="eyebrow">From idea to a real fund</p>
+	<h1>Let’s map your path to LPs.</h1>
+	<p class="lede">Every fund starts as a list of people. Here’s roughly how many you’ll need to reach, how many you’ll meet, and how long it could take to close.</p>
+  </section>
+
+  <aside class="help" aria-label="Get help from the Decile team">
+	<div class="help-icon" aria-hidden="true">
+	  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg>
+	</div>
+	<div class="help-copy">
+	  <p class="help-title">Need help with your numbers? Talk to the team.</p>
+	  <p class="help-sub">Book a free call with a Decile fund specialist. We’ll walk through your fund model and setup with you.</p>
+	</div>
+	<span class="help-chip">Free · 20 min</span>
+	<button class="help-btn" id="helpBtn">Book a time<span class="arrow">→</span></button>
+  </aside>
+
+  <section class="hero">
+	<div class="t-head">
+	  <div>
+		<p class="eyebrow">How long it could take</p>
+		<h2>Your path to close</h2>
+	  </div>
+	  <div class="t-sum">
+		<div><span class="t-k" id="tFirst">4 mo</span><span class="t-l">to first close</span></div>
+		<div><span class="t-k final" id="tFinal">8 mo</span><span class="t-l">to final close</span></div>
+	  </div>
+	</div>
+	<div class="track" id="track">
+	  <div class="bar"><span class="seg-b ramp" id="segRamp"></span><span class="seg-b meet" id="segMeet"></span><span class="seg-b lag" id="segLag"></span></div>
+	  <div class="marks" id="marks"></div>
+	</div>
+	<p class="t-note">Includes about a month to build your list before meetings start, and the weeks LPs usually take to decide after their last meeting.</p>
+
+	<div class="controls">
+	  <div class="control">
+		<div class="c-row">
+		  <label for="checkSlider">Minimum LP check</label>
+		  <span class="c-val" id="checkVal">$100K</span>
+		</div>
+		<input type="range" id="checkSlider" class="slider" min="0" max="0" step="1" aria-label="Minimum LP check">
+		<div class="c-ends"><span>$50K</span><span>$1M</span></div>
+	  </div>
+	  <div class="control">
+		<div class="c-row">
+		  <label for="paceSlider">LP meetings per week</label>
+		  <span class="c-val" id="paceVal">10</span>
+		</div>
+		<input type="range" id="paceSlider" class="slider" min="3" max="25" step="1" aria-label="LP meetings per week">
+		<div class="c-ends"><span>Part time</span><span>All in</span></div>
+	  </div>
+	</div>
+  </section>
+
+  <section class="metrics">
+	<article class="metric" id="lpCard">
+	  <p class="m-label">LPs needed</p>
+	  <p class="m-value" id="nLPs">51</p>
+	  <p class="m-desc" id="lpDesc">To raise $9.9M after your own commitment.</p>
+	  <p class="soft-warn" id="lpWarn"><span class="warn-dot"></span><span>Above 99 LPs. Many fund structures cap investors at 99, so this may need a different setup. A larger minimum check keeps you under.</span></p>
+	</article>
+	<article class="metric">
+	  <p class="m-label">Meetings needed</p>
+	  <p class="m-value" id="nMeetings">332</p>
+	  <p class="m-desc" id="meetDesc">At 10 a week: about 8 first meetings and 2 follow ups.</p>
+	  <p class="m-desc m-time" id="meetTime">About 5 hours of meetings a week, at 30 minutes each.</p>
+	</article>
+  </section>
+
+  <section class="pyramid-card">
+	<div class="p-head">
+	  <div>
+		<p class="eyebrow">Who actually writes the checks</p>
+		<h2>Your LPs won’t all write the minimum</h2>
+		<p class="p-sub">Most commitments come in at the minimum. A few larger LPs at the top often bring in a big share of the money.</p>
+	  </div>
+	  <div class="presets" id="presets" role="radiogroup" aria-label="Commitment mix"></div>
+	</div>
+
+	<div class="pyramid" id="pyramid"></div>
+
+	<div class="phases">
+	  <div class="phase"><span class="ph-dot first"></span><span><b id="ph1n">15 LPs</b> get you to first close</span></div>
+	  <div class="phase"><span class="ph-dot after"></span><span><b id="ph2n">36 more</b> to reach final close</span></div>
+	</div>
+  </section>
+
+  <section class="prospects-card">
+	<div class="pr-grid">
+	  <div class="headline">
+		<p class="eyebrow">Who you’ll need to reach</p>
+		<p class="m-label" style="margin-top:14px">Prospects to reach</p>
+		<p class="big-num" id="nProspects">510</p>
+		<p class="m-desc">Everything above adds up to this list of people.</p>
+
+		<div class="known">
+		  <div class="c-row">
+			<label for="knownSlider">People you could ask today</label>
+			<span class="c-val" id="knownVal">100</span>
+		  </div>
+		  <input type="range" id="knownSlider" class="slider" min="0" max="1000" step="10" value="100" aria-label="People you could ask today">
+		  <div class="c-ends"><span>0</span><span>1,000</span></div>
+		  <p class="known-line" id="knownLine">Friends, colleagues, investors you know. A rough guess is fine.</p>
+		</div>
+	  </div>
+
+	  <div class="stages" id="stages">
+		<div class="stage-row r2"><span class="fill" id="fill2"></span><span class="s-txt"><b id="sv2">51</b> LPs needed</span><span class="s-rate">Your target</span></div>
+		<div class="stage-arrow" id="sa2">↓ About 1 in 5 people you meet commits</div>
+		<div class="stage-row r1"><span class="fill" id="fill1"></span><span class="s-txt"><b id="sv1">255</b> people to meet</span><span class="s-rate" id="sr1">5x your LPs</span></div>
+		<div class="stage-arrow" id="sa1">↓ About half the people you reach take a meeting</div>
+		<div class="stage-row r0"><span class="fill" id="fill0"></span><span class="fill-known" id="fillKnown"></span><span class="s-txt"><b id="sv0">510</b> prospects to reach</span><span class="s-rate" id="sr0">2x meetings</span></div>
+		<div class="known-legend" id="knownLegend"><span><i class="k-known"></i>People you know</span><span><i class="k-find"></i>Still to find</span></div>
+	  </div>
+	</div>
+  </section>
+
+  <footer class="foot">
+	<button class="cta" id="cta">Start building my list<span class="arrow">→</span></button>
+	<p class="fine">Estimates assume your GP commitment is 1% of the fund, about half of prospects take a meeting, 20% of people met commit, committed LPs take about 2.5 meetings and others about 1, a 4 week ramp and a 6 week decision lag. First close at 30% of the fund. Commitment mixes are illustrative.</p>
+  </footer>
+</main>
+
+<div class="book" id="book" hidden>
+  <div class="book-panel" role="dialog" aria-modal="true" aria-labelledby="bookTitle">
+	<button class="book-x" id="bookClose" aria-label="Close">×</button>
+	<div id="bookPick">
+	  <p class="eyebrow">Free · 20 minute call</p>
+	  <h2 id="bookTitle">Talk to a fund specialist</h2>
+	  <p class="book-sub">Pick a time that works. We’ll go through your fund size, LP targets and next steps for setup.</p>
+	  <div class="days" id="days"></div>
+	  <div class="slots" id="slots"></div>
+	  <button class="cta book-go" id="bookConfirm" disabled>Confirm time<span class="arrow">→</span></button>
+	</div>
+	<div id="bookDone" hidden>
+	  <div class="done-check">✓</div>
+	  <h2>You’re booked</h2>
+	  <p class="book-sub" id="bookWhen"></p>
+	  <p class="book-note">We’ll send a calendar invite with a video link. Bring your questions, your numbers from this page come with you.</p>
+	  <button class="cta book-go" id="bookDoneBtn">Back to my plan</button>
+	</div>
+  </div>
+</div>
+
+<script src="../shared/store.js"></script>
+<script src="../shared/demo.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* Demo bar additions, shared by every page */
+.proto{flex-wrap:wrap;row-gap:6px}
+.demo-steps{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.demo-steps + .proto-actions{margin-left:10px}
+.demo-steps a{text-decoration:none;color:#5B546B;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.demo-steps a:hover{border-color:#D9D1EE;background:#fff;color:#3F3168}
+.demo-steps a.on{background:#EFEBF8;color:#3F3168;border-color:#D9D1EE}
+.demo-restart{margin-left:6px;border:1px solid #E7E2EF;background:#fff;color:#5B546B;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:999px;cursor:pointer;font-family:inherit}
+.demo-restart:hover{border-color:#A99BD3;color:#3F3168}
+@media (max-width:760px){
+  .demo-steps a:not(.on){display:none}
+}
+@media print{
+  .demo-steps{display:none}
+}

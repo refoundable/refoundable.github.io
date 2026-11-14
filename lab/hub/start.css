@@ -1,0 +1,69 @@
+:root{
+  --bg:#F6F4FA;
+  --surface:#FFFFFF;
+  --ink:#211B2E;
+  --ink-2:#5B546B;
+  --ink-3:#958FA4;
+  --line:#E7E2EF;
+  --plum:#3F3168;
+  --violet:#6E5DAA;
+  --lavender:#A99BD3;
+  --lilac:#D9D1EE;
+  --mist:#EFEBF8;
+  --display:"Avenir Next","Avenir","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--text);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{
+  min-height:100vh;padding-bottom:80px;
+  background:
+	radial-gradient(1200px 520px at 85% -10%, rgba(169,155,211,.32), transparent 60%),
+	radial-gradient(900px 480px at -10% 40%, rgba(217,209,238,.5), transparent 60%),
+	var(--bg);
+}
+button,input{font-family:inherit;color:inherit}
+button{cursor:pointer}
+
+.proto{display:flex;gap:12px;align-items:center;padding:7px 24px;font-size:12px;color:var(--ink-2);border-bottom:1px solid var(--line);background:rgba(255,255,255,.6)}
+.proto .tag{background:var(--plum);color:#fff;font-weight:600;padding:2px 8px;border-radius:999px;font-size:11px;letter-spacing:.02em}
+
+.start{max-width:1080px;margin:0 auto;padding:56px 28px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em}
+.mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;background:linear-gradient(140deg,var(--violet),var(--plum))}
+.eyebrow{font-family:var(--display);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);margin-top:40px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(36px,4.6vw,54px);letter-spacing:-.025em;line-height:1.05;margin-top:10px}
+.lede{font-size:17.5px;color:var(--ink-2);margin-top:16px;max-width:520px}
+.steps{list-style:none;counter-reset:s;margin-top:30px;display:grid;gap:14px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:14px;align-items:start}
+.steps li::before{content:counter(s);grid-row:span 2;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid var(--line);color:var(--plum);font-weight:700;font-size:14px}
+.steps b{font-size:15.5px;font-weight:600}
+.steps span{font-size:14px;color:var(--ink-3)}
+
+.pitch{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+.signup{animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both;margin-top:64px;background:var(--surface);border-radius:26px;padding:32px 32px 28px;box-shadow:0 1px 0 var(--line),0 30px 70px -40px rgba(63,49,104,.5)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.signup h2{font-family:var(--display);font-size:26px;font-weight:600;letter-spacing:-.015em}
+.s-sub{font-size:14px;color:var(--ink-3);margin-top:4px}
+form{margin-top:22px;display:grid;gap:6px}
+form > label{font-size:13.5px;font-weight:600;color:var(--ink-2);margin-top:10px}
+form input[type=text],form input[type=email]{width:100%;border:1.5px solid var(--line);border-radius:12px;background:#fff;padding:13px 15px;font-size:16px;outline:none;transition:border-color .2s}
+form input:focus{border-color:var(--violet)}
+form input::placeholder{color:var(--ink-3)}
+.intent{border:none;margin-top:16px;display:grid;gap:8px}
+.intent legend{font-size:13.5px;font-weight:600;color:var(--ink-2);margin-bottom:8px}
+.opt{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;font-size:15px;transition:all .15s}
+.opt:hover{border-color:var(--lavender)}
+.opt input{accent-color:var(--plum);width:18px;height:18px}
+.opt:has(input:checked){border-color:var(--violet);background:var(--mist)}
+.cta{margin-top:22px;border:none;border-radius:999px;padding:16px 26px;font-size:16px;font-weight:600;color:#fff;
+  background:linear-gradient(140deg,var(--violet),var(--plum));box-shadow:0 14px 30px -14px rgba(63,49,104,.7);display:inline-flex;gap:8px;align-items:center;justify-content:center;transition:transform .15s}
+.cta:hover{transform:translateY(-1px)}
+.resume{font-size:13.5px;color:var(--ink-3);margin-top:12px;text-align:center}
+.resume[hidden]{display:none}
+.resume button{border:none;background:none;color:var(--violet);font-weight:600;font-size:13.5px;text-decoration:underline;text-underline-offset:3px}
+
+@media (max-width:860px){
+  .start{grid-template-columns:minmax(0,1fr);gap:20px;padding-top:36px}
+  .signup{margin-top:0}
+}
