@@ -187,7 +187,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 
 /* Footer: fine print left, main button right. Help banner sits below it. */
 .foot{margin:24px 0 0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
-.fine{flex:1 1 auto;max-width:600px;font-size:12.5px;color:var(--ink-3)}
+.fine{flex:1 1 auto;max-width:75ch;font-size:12.5px;color:var(--ink-3)}
 .cta{flex:none;border:none;border-radius:999px;padding:16px 26px;font-size:16px;font-weight:600;color:#fff;
   background:linear-gradient(140deg,var(--violet),var(--plum));box-shadow:0 14px 30px -14px rgba(63,49,104,.7);display:inline-flex;gap:8px;align-items:center;transition:transform .15s}
 .cta:hover{transform:translateY(-1px)}
