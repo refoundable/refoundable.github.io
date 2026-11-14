@@ -10,7 +10,7 @@ const CARRY_RATE = 0.20;        // share of profits
 const RETURN_MULTIPLE = 3;      // "if the fund returns 3x"
 const GP_COMMIT_LOW = 0.01;     // GP commitment range
 const GP_COMMIT_HIGH = 0.02;
-const INVEST_YEARS = 3;         // window for new investments
+const INVEST_YEARS = 2;         // window for new investments
 const THIN_PORTFOLIO = 15;      // below this, show the gentle nudge
 const MAX_DOTS = 120;
 
@@ -171,7 +171,7 @@ function busyText(n) {
     every = months < 1.5 ? 'a month' : `every ${Math.round(months)} months`;
   }
   const yr = Math.max(1, Math.round(perYear));
-  return `<b>About ${yr} new investment${yr === 1 ? '' : 's'} a year</b> for ${INVEST_YEARS} years, roughly one ${every}.`;
+  return `<b>About ${yr} new investment${yr === 1 ? '' : 's'} a year for ${INVEST_YEARS} years</b>, roughly one ${every}.`;
 }
 
 let lastDots = -1;
