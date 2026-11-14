@@ -14,13 +14,9 @@ const MAX_DOTS = 120;
 const SELF_SERVE_MAX = 19.99;
 const CAP = 20;
 
-// Fund sizes in $M. Finer steps at the small end, where most first funds live.
+// Fund sizes in $M, in $0.5M steps from $1M to $19.5M.
 // The last stop is "$20M+", which hands off to the fund team.
-const SIZES = [
-  1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5,
-  6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-  CAP
-];
+const SIZES = [...Array.from({ length: 38 }, (_, i) => 1 + i * 0.5), CAP];
 const OVER_IDX = SIZES.length - 1;
 const MIN_SIZE = SIZES[0];
 const TICKS = [1, 5, 10, 15, CAP];
@@ -70,6 +66,8 @@ function money(dollars) {
   return '$' + Math.round(dollars / 1e3) + 'K';
 }
 const sizeLabel = m => String(+m.toFixed(2));
+// Big number in the hero: always at least one decimal (5.0, 5.5), two if typed (8.35).
+const heroLabel = m => (Math.round(m * 100) % 10 ? m.toFixed(2) : m.toFixed(1));
 
 function difficulty(m) {
   if (m <= 3) return 'Easier to raise';
@@ -151,12 +149,12 @@ function renderSize(fromTyping) {
   if (state.over) {
     if (!fromTyping) {
       cancelAnimationFrame(sizeInput._raf);
-      sizeInput.value = state.intended ? sizeLabel(state.intended) : CAP + '+';
+      sizeInput.value = state.intended ? heroLabel(state.intended) : CAP + '+';
       fitInput();
     }
     tweens.sizeInput = state.intended || CAP;
   } else if (!fromTyping) {
-    tweenNum(sizeInput, m, v => sizeLabel(Math.abs(v - m) < 0.05 ? m : Math.round(v * 2) / 2));
+    tweenNum(sizeInput, m, v => heroLabel(Math.abs(v - m) < 0.05 ? m : Math.round(v * 2) / 2));
   } else {
     tweens.sizeInput = m;
   }
@@ -363,7 +361,7 @@ function init() {
 
   initSales();
   buildTicks();
-  sizeInput.value = state.over ? (state.intended ? sizeLabel(state.intended) : CAP + '+') : sizeLabel(state.size);
+  sizeInput.value = state.over ? (state.intended ? heroLabel(state.intended) : CAP + '+') : sizeLabel(state.size);
   fitInput();
   renderAll(false);
 }
