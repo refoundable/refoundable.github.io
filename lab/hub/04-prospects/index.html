@@ -91,19 +91,19 @@
 	</div>
   </div>
 
-  <!-- Shown if the list is done but the PACT isn't signed when they press the main button -->
-  <div class="book" id="nudge" hidden>
-	<div class="book-panel nudge-panel" role="dialog" aria-modal="true" aria-labelledby="nudgeTitle">
-	  <button class="book-x" id="nudgeClose" aria-label="Close">×</button>
-	  <p class="eyebrow">Before you go</p>
-	  <h2 id="nudgeTitle">Your $10K is waiting</h2>
-	  <p class="book-sub">You’ve unlocked a $10K catalytic investment from Decile. Sign your PACT now to claim it, or we’ll keep it ready on your dashboard.</p>
-	  <div class="nudge-acts">
-		<button class="pill-btn" id="nudgeSign" type="button">Sign my PACT now</button>
-		<button class="nudge-later" id="nudgeLater" type="button">Sign later</button>
-	  </div>
+  <!-- Shown on the way out if the list isn't done or the PACT isn't signed. app.js fills in the text. -->
+	<div class="book" id="nudge" hidden>
+		<div class="book-panel nudge-panel" role="dialog" aria-modal="true" aria-labelledby="nudgeTitle">
+			<button class="book-x" id="nudgeClose" aria-label="Close">×</button>
+			<p class="eyebrow">Before you go</p>
+			<h2 id="nudgeTitle">Your $10K is waiting</h2>
+			<p class="book-sub" id="nudgeSub"></p>
+			<div class="nudge-acts">
+			<button class="pill-btn" id="nudgeMain" type="button"></button>
+			<button class="nudge-later" id="nudgeLater" type="button"></button>
+			</div>
+		</div>
 	</div>
-  </div>
 
   <section class="card prompts-card">
 	<p class="eyebrow">Who comes to mind?</p>
@@ -126,7 +126,7 @@
 	<!-- Footer, help banner and help call come from ../shared/footer.js -->
 	<div id="pageFoot"
 		data-fine="Your $10K catalytic investment comes once you sign a PACT, Decile’s letter of intent. Terms apply."
-		data-cta="Remind me later"
+		data-cta="Continue without my $10K"
 		data-help="Not sure who to add?"
 		data-help-sub="Book a free call with a Decile fund specialist. We’ll help you find the right first LPs and walk through your setup."
 		data-book-sub="Pick a time that works. We’ll go through your list, your plan and next steps for setup."

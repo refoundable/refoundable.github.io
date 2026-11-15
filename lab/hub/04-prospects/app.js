@@ -228,9 +228,9 @@ function renderProgress() {
   $('pactBtn').hidden = state.signed;
   $('signedChip').hidden = !state.signed;
 
-  // The main button only ever moves on. Signing lives in the card above, and anything
-  // left undone becomes a reminder on the dashboard.
-  $('ctaText').textContent = done ? 'Finish setting up' : 'Remind me later';
+  // The main button only ever moves on. Signing lives in the card above, and a prompt
+  // on the way out catches anything left undone.
+  $('ctaText').textContent = done ? 'Finish setting up' : `Continue without my $${PACT_TOTAL}K`;
 }
 
 function render() {
@@ -286,9 +286,30 @@ function signPact() {
   render();
 }
 
-// If the list is done but the PACT isn't signed, the main button asks first:
-// sign now, or leave it as a to-do on the dashboard.
-function openNudge() { $('nudge').hidden = false; $('nudgeSign').focus(); }
+// One prompt on the way out covers both cases: an unfinished list ('list') or an
+// unsigned PACT ('pact'). They can stay and finish, or leave it as a dashboard reminder.
+let nudgeKind = null;
+function openNudge(kind) {
+  nudgeKind = kind;
+  const n = state.people.length, left = FIRST_GOAL - n;
+  const s = k => k === 1 ? '' : 's';
+  if (kind === 'list') {
+    $('nudgeTitle').textContent = `You’re ${left} name${s(left)} away`;
+    $('nudgeSub').textContent = (n
+      ? `You’re ${n} name${s(n)} in, with $${n * PACT_PER_NAME}K unlocked. Add ${left} more to claim your $${PACT_TOTAL}K.`
+      : `Add ${FIRST_GOAL} names to claim a $${PACT_TOTAL}K catalytic investment from Decile.`)
+      + ' If you go now, your $' + PACT_TOTAL + 'K stays open and we’ll remind you on your dashboard.';
+    $('nudgeMain').textContent = 'Finish my list';
+    $('nudgeLater').textContent = 'Remind me later';
+  } else {
+    $('nudgeTitle').textContent = `Your $${PACT_TOTAL}K is waiting`;
+    $('nudgeSub').textContent = `You’ve unlocked a $${PACT_TOTAL}K catalytic investment from Decile. Sign your PACT now to claim it, or we’ll keep it ready on your dashboard.`;
+    $('nudgeMain').textContent = 'Sign my PACT now';
+    $('nudgeLater').textContent = 'Sign later';
+  }
+  $('nudge').hidden = false;
+  $('nudgeMain').focus();
+}
 function closeNudge() { $('nudge').hidden = true; }
 
 function initPact() {
@@ -301,7 +322,12 @@ function initPact() {
   $('pact').addEventListener('click', e => { if (e.target === $('pact')) closePact(); });
   $('pactTermsLink').addEventListener('click', e => e.preventDefault());
 
-  $('nudgeSign').addEventListener('click', () => { closeNudge(); openPact(true); });
+  // Stay: back to the name field for a short list, or straight to signing for the PACT.
+  $('nudgeMain').addEventListener('click', () => {
+    closeNudge();
+    if (nudgeKind === 'list') $('nameInput').focus();
+    else openPact(true);
+  });
   $('nudgeLater').addEventListener('click', () => { closeNudge(); finish(); });
   $('nudgeClose').addEventListener('click', closeNudge);
   $('nudge').addEventListener('click', e => { if (e.target === $('nudge')) closeNudge(); });
@@ -349,12 +375,12 @@ function init() {
 
   $('pactBtn').addEventListener('click', () => openPact());
 
-  // The main button moves on to the dashboard, which picks up whatever is left:
-  // finish the list (listTodo) or sign the PACT that's ready (pactTodo). With the list
-  // done and the PACT unsigned, it asks first, in case they missed the button above.
+  // The main button moves on to the dashboard once the PACT is signed. Otherwise it
+  // asks first: finish the list, or sign the PACT that's ready. Choosing later leaves
+  // a dashboard reminder (listTodo or pactTodo).
   $('cta').addEventListener('click', () => {
-    if (state.people.length >= FIRST_GOAL && !state.signed) openNudge();
-    else finish();
+    if (state.signed) finish();
+    else openNudge(state.people.length >= FIRST_GOAL ? 'pact' : 'list');
   });
 
   render();
