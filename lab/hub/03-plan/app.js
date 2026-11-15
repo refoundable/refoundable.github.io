@@ -105,9 +105,11 @@ function calc() {
   const prospects = Math.ceil(met / MEET_RATE);
   const meetings = Math.round(lps * MEETINGS_PER_LP + (met - lps) * MEETINGS_PER_PASS);
   const meetWeeks = meetings / state.pace;
-
+  const firstWeeks = meetWeeks * (lp1 / lps);
+  const finalWeeks = meetWeeks;
+  
   return { size, gp, toRaise, committed, minCheck, lp1, lp2, lps, tierData, met, prospects, meetings,
-    meetWeeks, avg: committed / lps };
+    meetWeeks, firstWeeks, finalWeeks, avg: committed / lps };
 }
 
 function addWeeks(w) { return new Date(START.getTime() + w * 7 * 864e5); }
