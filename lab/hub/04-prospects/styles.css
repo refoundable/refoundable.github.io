@@ -155,7 +155,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
   .plus,.dot{display:none}
 }
 .prog-body{min-width:0}
-.prog-sub{font-size:14.5px;color:var(--ink-2);margin-top:8px;line-height:1.5;max-width:560px}
+.prog-sub{font-size:14.5px;color:var(--ink-2);margin-top:8px;line-height:1.5;max-width:60ch}
 .prog-note{margin-top:14px;font-size:13.5px;color:var(--ink-2)}
 .prog-note[hidden]{display:none}
 .prog-note b{color:var(--plum);font-weight:600}
