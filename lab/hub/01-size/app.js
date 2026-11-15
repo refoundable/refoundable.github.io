@@ -192,7 +192,7 @@ function renderMode() {
     : `Assumes 2% annual fees over a 10 year fund life, paid out in the first ${FEE_YEARS} years. Minimum first close is $100K. Operational expenses are covered from the fees. <a href="#" id="feeLink">See the full fee schedule</a>.`;
 
   const lead = state.intended ? `You’re planning about $${sizeLabel(state.intended)}M. ` : '';
-  $('bfSub').textContent = `${lead}Decile Hub is built for smaller funds. Raising $${CAP}M or more usually means a traditional fund structure, institutional LPs and a longer raise, and our fund team works with managers like you one-on-one.`;
+  $('bfSub').textContent = `${lead}Raising $${CAP}M or more usually means a traditional fund structure, institutional LPs and a longer raise, and our fund team works with managers like you one-on-one.`;
 }
 
 /* ---------- Numbers ---------- */
