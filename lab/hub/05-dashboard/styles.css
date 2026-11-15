@@ -111,7 +111,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01
 .model-grid div:nth-last-child(-n+3){border-bottom:none}
 .model-grid dt{font-size:12.5px;color:var(--ink-3)}
 .model-grid dd{font-family:var(--num);font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.model-grid dd.txt{font-family:var(--text);font-size:16px;letter-spacing:0}
+.model-grid dd.txt{font-family:var(--text);font-size:20px;letter-spacing:0}
 
 .st-thesis{font-family:var(--display);font-size:19px;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
 .st-label{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-top:16px}

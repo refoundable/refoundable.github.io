@@ -235,7 +235,7 @@ function renderModel() {
     ['LPs needed', `About ${FUND.lpsNeeded}`],
     ['Meetings a week', String(FUND.pace)],
     ['Typical first check', money(FUND.firstCheck)],
-    ['Portfolio', `About ${FUND.companies} companies`, true],
+    ['Target Portfolio', `${FUND.companies} startups`, true],
     ['Prospects to reach', int(FUND.prospects)]
   ];
   $('modelGrid').innerHTML = rows.map(([k, v, txt]) => `<div><dt>${k}</dt><dd class="${txt ? 'txt' : ''}">${esc(v)}</dd></div>`).join('');
