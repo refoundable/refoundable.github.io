@@ -26,78 +26,107 @@
   <section class="intro">
 	<p class="eyebrow">Your first LPs</p>
 	<h1>Let’s get your first 10 names down.</h1>
-	<p class="lede">You said you know about <span id="ledeKnown">100</span> people. Start with the ones who come to mind first. Use the prompts below to jog your memory. You can add details later.</p>
+	<p class="lede">Add 10 people who might back your fund. Start with the ones who come to mind first.</p>
   </section>
+
+  <!-- Catalytic investment: the card fills as names are added, and the PACT unlocks at 10 -->
+  <section class="card progress-card" id="progressCard">
+	<div class="card-fill" id="cardFill" aria-hidden="true"></div>
+	<div class="doc-wrap">
+	  <div class="doc" id="doc" aria-hidden="true">
+		<svg class="doc-svg" viewBox="0 0 120 140">
+		  <path class="doc-page" d="M22 6h54l28 28v94a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6V12a6 6 0 0 1 6-6z"/>
+		  <path class="doc-fold" d="M76 6v22a6 6 0 0 0 6 6h22"/>
+		  <g class="doc-lines">
+			<rect x="30" y="42" width="36" height="6" rx="3"/>
+			<rect x="30" y="58" width="60" height="4" rx="2"/>
+			<rect x="30" y="68" width="54" height="4" rx="2"/>
+			<rect x="30" y="78" width="58" height="4" rx="2"/>
+		  </g>
+		  <path class="doc-sig" pathLength="1" d="M31 112c5-9 9-11 11-5s4 9 9 1 7-7 9-2 5 5 11-1 6-3 9-1"/>
+		  <line class="doc-sigline" x1="30" y1="120" x2="90" y2="120"/>
+		</svg>
+		<svg class="lock" id="lock" viewBox="0 0 40 46">
+		  <path class="lock-shackle" d="M11 21v-8a9 9 0 0 1 18 0v8"/>
+		  <rect class="lock-body" x="5" y="20" width="30" height="24" rx="6"/>
+		  <circle class="lock-hole" cx="20" cy="31" r="3"/>
+		</svg>
+		<span class="seal">✓</span>
+		<div class="doc-fx" id="docFx"></div>
+	  </div>
+	  <p class="doc-amt"><b id="docNum">$0</b><span>of $10K</span></p>
+	</div>
+	<div class="prog-body">
+	  <p class="eyebrow">Your catalytic investment</p>
+	  <h2 id="goalLabel">Add 10 names to unlock $10K</h2>
+	  <p class="prog-sub" id="progSub">Decile backs new funds with a $10K catalytic investment. Every name you add unlocks $1K. The full $10K is yours to claim once all 10 are in.</p>
+	  <p class="prog-note" id="progNote" hidden></p>
+	  <div class="pact-act" id="pactAct" hidden>
+		<button class="pill-btn" id="pactBtn" type="button">Sign my PACT</button>
+		<span class="signed-chip" id="signedChip" hidden>✓ Signed</span>
+	  </div>
+	</div>
+  </section>
+
+  <!-- PACT pop-up. Uses the shared panel styles from demo.css. -->
+  <div class="book" id="pact" hidden>
+	<div class="book-panel pact-panel" role="dialog" aria-modal="true" aria-labelledby="pactTitle">
+	  <button class="book-x" id="pactClose" aria-label="Close">×</button>
+	  <div id="pactForm">
+		<p class="eyebrow">Your PACT</p>
+		<h2 id="pactTitle">Sign your PACT</h2>
+		<p class="book-sub">A short letter of intent between you and Decile. Once it’s signed, Decile reserves a $10K catalytic investment in your fund.</p>
+		<dl class="pact-terms" id="pactTerms"></dl>
+		<label class="pact-label" for="pactName">Type your full name to sign</label>
+		<input class="pact-input" id="pactName" type="text" autocomplete="name" spellcheck="false">
+		<label class="pact-agree"><input type="checkbox" id="pactAgree"><span>I’ve read the <a href="#" id="pactTermsLink">PACT terms</a> and agree to them.</span></label>
+		<button class="cta book-go" id="pactSign" disabled>Sign and send</button>
+	  </div>
+	  <div id="pactDone" hidden>
+		<div class="done-badge pact-badge">✓</div>
+		<h2>Your PACT is signed</h2>
+		<p class="book-sub">We’ve emailed you a copy. Your $10K catalytic investment is reserved for your fund.</p>
+		<button class="cta book-go" id="pactDoneBtn">Back to my list</button>
+	  </div>
+	</div>
+  </div>
+
+  <!-- Shown if the list is done but the PACT isn't signed when they press the main button -->
+  <div class="book" id="nudge" hidden>
+	<div class="book-panel nudge-panel" role="dialog" aria-modal="true" aria-labelledby="nudgeTitle">
+	  <button class="book-x" id="nudgeClose" aria-label="Close">×</button>
+	  <p class="eyebrow">Before you go</p>
+	  <h2 id="nudgeTitle">Your $10K is waiting</h2>
+	  <p class="book-sub">You’ve unlocked a $10K catalytic investment from Decile. Sign your PACT now to claim it, or we’ll keep it ready on your dashboard.</p>
+	  <div class="nudge-acts">
+		<button class="pill-btn" id="nudgeSign" type="button">Sign my PACT now</button>
+		<button class="nudge-later" id="nudgeLater" type="button">Sign later</button>
+	  </div>
+	</div>
+  </div>
 
   <section class="card prompts-card">
 	<p class="eyebrow">Who comes to mind?</p>
 	<h2>Pick a group, then add names</h2>
 	<div class="prompts" id="prompts" role="radiogroup" aria-label="Who you know"></div>
 
-	<div class="add" id="addBox">
-	  <div class="add-head">
-		<span class="add-for">Adding from <b id="addFor">Former bosses and mentors</b></span>
-		<span class="add-hint" id="addHint">People who’ve seen your work up close.</span>
-	  </div>
-	  <div class="add-row">
-		<input id="nameInput" type="text" placeholder="Name" autocomplete="off" spellcheck="false" aria-label="Name">
-		<div class="tier-pick" id="tierPick" role="radiogroup" aria-label="Likely check size"></div>
-		<button class="add-btn" id="addBtn">Add</button>
-	  </div>
-	  <p class="add-note">Guess their likely check. Most people start at your minimum. Press Enter to add the next one.</p>
+	<div class="add-row">
+	  <input id="nameInput" type="text" placeholder="Name" autocomplete="off" spellcheck="false" aria-label="Name">
+	  <button class="add-btn" id="addBtn">Add</button>
+	</div>
+	<p class="add-note">Press Enter to add the next one.</p>
+
+	<div class="list-wrap">
+	  <p class="list-head"><span class="eyebrow">Your list</span><b id="listHead">0 names</b></p>
+	  <div class="list" id="list"></div>
+	  <p class="empty" id="empty">Your list is empty. Add the first person who comes to mind.</p>
 	</div>
   </section>
 
-  <section class="card list-card">
-	<div class="list-head">
-	  <div>
-		<p class="eyebrow">Your list</p>
-		<h2 id="listHead">0 of 10 names</h2>
-	  </div>
-	  <p class="drag-hint" id="dragHint" hidden>Drag a name to change its likely check</p>
-	</div>
-
-	<div class="money">
-	  <div class="money-top">
-		<p class="m-label">Potential on your list</p>
-		<p class="money-num"><span id="moneyNum">$0</span><span class="money-of" id="moneyOf"> of $9.9M</span></p>
-	  </div>
-	  <div class="money-bar"><span id="moneyFill"></span></div>
-	  <p class="money-note">Potential, not promised. Most people on any list won’t invest. That’s why your full list needs about <b id="noteProspects">520</b> names.</p>
-	</div>
-
-	<div class="list" id="list"></div>
-	<div class="empty" id="empty">
-	  <p class="empty-title">Your list is empty.</p>
-	  <p>Pick a group above and add the first person who comes to mind.</p>
-	</div>
-  </section>
-
-  <section class="card progress-card">
-	<div class="ring" aria-hidden="true">
-	  <svg viewBox="0 0 160 160">
-		<circle cx="80" cy="80" r="68" class="ring-bg"/>
-		<circle cx="80" cy="80" r="68" class="ring-fg" id="ringFg"/>
-	  </svg>
-	  <div class="ring-c"><b id="ringNum">0</b><span id="ringOf">of 10</span></div>
-	</div>
-	<div class="prog-body">
-	  <p class="eyebrow">Your progress</p>
-	  <h2 id="goalLabel">Next up: your first 10 names</h2>
-	  <ul class="miles" id="miles"></ul>
-	  <div class="done" id="doneBanner" hidden>
-		<div class="done-badge">✓</div>
-		<div>
-		  <p class="done-title">Your first 10 are down. That’s a real start.</p>
-		  <p class="done-sub">Keep going while names are coming to mind, or save and continue. Your list stays here.</p>
-		</div>
-	  </div>
-	</div>
-  </section>
 	<!-- Footer, help banner and help call come from ../shared/footer.js -->
 	<div id="pageFoot"
-		data-fine="Check sizes come from your plan: a $100K minimum with the Balanced mix of larger checks. You can change any guess later."
-		data-cta="Save my list and continue"
+		data-fine="Your $10K catalytic investment comes once you sign a PACT, Decile’s letter of intent. Terms apply."
+		data-cta="Remind me later"
 		data-help="Not sure who to add?"
 		data-help-sub="Book a free call with a Decile fund specialist. We’ll help you find the right first LPs and walk through your setup."
 		data-book-sub="Pick a time that works. We’ll go through your list, your plan and next steps for setup."

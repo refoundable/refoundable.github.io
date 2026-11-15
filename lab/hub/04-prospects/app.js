@@ -1,74 +1,53 @@
 // First LPs page. All handlers are attached here (no inline JS) so the same
 // files would also work inside a Chrome extension, which blocks inline scripts.
 
-// Plan carried over from earlier steps through the shared demo state.
 const saved = DemoStore.load();
 
-const PLAN = {
-  size: saved.size * 1e6,
-  minCheck: saved.minCheck * 1e3,
-  preset: saved.preset,
-  lps: saved.plan.lps,
-  prospects: saved.plan.prospects,
-  known: saved.known
-};
-const GP_COMMIT = 0;
-const MAX_LP_SHARE = 0.20;
-const TO_RAISE = PLAN.size * (1 - GP_COMMIT);
-
-// Same commitment mixes as step 2 (multiple of the minimum per tier).
-const PRESET_MULTS = {
-  small: [1, 2, 4],
-  balanced: [1, 2.5, 6],
-  anchors: [1, 2, 20]
-};
-const PRESET_LABELS = { small: 'Mostly small checks', balanced: 'Balanced', anchors: 'A few anchors' };
-const mults = PRESET_MULTS[PLAN.preset] || PRESET_MULTS.balanced;
-// Use the exact tier checks from step 2 when available, so the numbers match.
-const TIERS = ['Minimum', 'Larger', 'Largest'].map((label, i) => ({
-  label,
-  check: saved.plan.tierChecks && saved.plan.tierChecks[i]
-    ? saved.plan.tierChecks[i] * 1e3
-    : Math.min(PLAN.minCheck * mults[i], PLAN.size * MAX_LP_SHARE)
-}));
-
-const FIRST_GOAL = 10;
-const OUTREACH_GOAL = 25;
+const FIRST_GOAL = 10;           // names needed to claim the catalytic investment
+const PACT_PER_NAME = 1;         // $K unlocked by each name, up to the goal
+const PACT_TOTAL = FIRST_GOAL * PACT_PER_NAME;
 
 const PROMPTS = [
-  { icon: '🧭', name: 'Former bosses and mentors', hint: 'People who’ve seen your work up close.' },
-  { icon: '🚀', name: 'Founders you’ve helped', hint: 'They know your value firsthand.' },
-  { icon: '💼', name: 'Angels and investors', hint: 'People who already write checks.' },
-  { icon: '🤝', name: 'Successful friends and family', hint: 'People who already trust you.' },
-  { icon: '🏢', name: 'Executives and operators', hint: 'Senior people at companies you know.' },
-  { icon: '🏛️', name: 'Family offices and advisors', hint: 'Wealth managers and family office contacts.' }
+  'Former bosses and mentors',
+  'Founders you’ve helped',
+  'Angels and investors',
+  'Successful friends and family',
+  'Executives and operators',
+  'Family offices and advisors'
 ];
 
 const SAMPLE = [
-  ['Priya Raman', 0, 1], ['Marcus Feld', 1, 2], ['Dana Okafor', 5, 1], ['Tom Becker', 0, 0],
-  ['Sofia Marin', 2, 1], ['Ben Asher', 2, 0], ['Rachel Kim', 5, 0], ['Omar Shah', 3, 0],
-  ['Leila Haddad', 4, 0], ['Julia Ortiz', 1, 0]
+  ['Priya Raman', 0], ['Marcus Feld', 1], ['Dana Okafor', 5], ['Tom Becker', 0],
+  ['Sofia Marin', 2], ['Ben Asher', 2], ['Rachel Kim', 5], ['Omar Shah', 3],
+  ['Leila Haddad', 4], ['Julia Ortiz', 1]
 ];
 
+// Everyone starts with Decile's CEO on the list, as an example and a head start.
+const EXAMPLE = { name: 'Adeo Ressi', prompt: 2, decile: true };
+
 // The list is saved in the shared demo state, so it survives going back and forth.
+// Everyone starts at the minimum check (tier 0); check guesses come later, on the dashboard.
 const state = {
   prompt: 0,
-  tier: 0,
-  people: (saved.people || []).map(p => ({ id: p.id, name: p.name, prompt: p.prompt, tier: p.tier, fresh: false }))
+  people: (saved.people || []).map(p => ({ id: p.id, name: p.name, prompt: p.prompt, tier: p.tier || 0, decile: !!p.decile, fresh: false })),
+  signed: !!saved.pactSigned
 };
 let nextId = state.people.reduce((m, p) => Math.max(m, p.id), 0) + 1;
 
+// Add the example on the first visit only, so removing it keeps it removed.
+function addExample() {
+  state.people.push({ id: nextId++, ...EXAMPLE, tier: 0, fresh: false });
+}
+if (!saved.exampleAdded) {
+  addExample();
+  DemoStore.save({ exampleAdded: true });
+}
+
 function persist() {
-  DemoStore.save({ people: state.people.map(({ id, name, prompt, tier }) => ({ id, name, prompt, tier })) });
+  DemoStore.save({ people: state.people.map(({ id, name, prompt, tier, decile }) => ({ id, name, prompt, tier, decile })) });
 }
 
 const $ = id => document.getElementById(id);
-
-function money(d) {
-  if (d >= 1e6) return '$' + String(+(d / 1e6).toFixed(d >= 1e7 ? 1 : 2)) + 'M';
-  return '$' + Math.round(d / 1e3) + 'K';
-}
-const int = v => Math.round(v).toLocaleString('en-US');
 const initials = name => name.trim().split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase();
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 
@@ -88,49 +67,15 @@ function tween(el, to, fmt) {
   el._raf = requestAnimationFrame(step);
 }
 
-/* ---------- Plan summary ---------- */
-function renderPlan() {
-  $('ledeKnown').textContent = int(PLAN.known);
-  $('moneyOf').textContent = ` of ${money(TO_RAISE)}`;
-  $('noteProspects').textContent = int(PLAN.prospects);
-  $('fine').textContent = `Check sizes come from your plan: a ${money(PLAN.minCheck)} minimum with the ${PRESET_LABELS[PLAN.preset] || 'Balanced'} mix of larger checks. You can change any guess later.`;
-}
-
-/* ---------- Tier picker (shared by quick add and list rows) ---------- */
-function tierPicker(selected, onPick) {
-  const wrap = document.createElement('div');
-  wrap.className = 'tier-pick';
-  wrap.setAttribute('role', 'radiogroup');
-  wrap.setAttribute('aria-label', 'Likely check size');
-  TIERS.forEach((t, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('role', 'radio');
-    b.setAttribute('aria-checked', i === selected);
-    b.className = i === selected ? 'on' : '';
-    b.innerHTML = `${t.label}<small>${money(t.check)}</small>`;
-    b.addEventListener('click', () => onPick(i));
-    wrap.appendChild(b);
-  });
-  return wrap;
-}
-
-function renderAddPicker() {
-  const holder = $('tierPick');
-  const fresh = tierPicker(state.tier, i => { state.tier = i; renderAddPicker(); $('nameInput').focus(); });
-  fresh.id = 'tierPick';
-  holder.replaceWith(fresh);
-}
-
 /* ---------- Prompts ---------- */
 function buildPrompts() {
   const wrap = $('prompts');
-  PROMPTS.forEach((p, i) => {
+  PROMPTS.forEach((name, i) => {
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'prompt';
     b.setAttribute('role', 'radio');
-    b.innerHTML = `<span class="p-count"></span><span class="p-name">${p.name}</span><span class="p-hint">${p.hint}</span>`;
+    b.innerHTML = `<span class="p-name">${name}</span><span class="p-count"></span>`;
     b.addEventListener('click', () => {
       state.prompt = i;
       renderPrompts();
@@ -148,40 +93,19 @@ function renderPrompts() {
     b.setAttribute('aria-checked', i === state.prompt);
     b.querySelector('.p-count').textContent = n;
   });
-  $('addFor').textContent = PROMPTS[state.prompt].name;
-  $('addHint').textContent = PROMPTS[state.prompt].hint;
 }
 
 /* ---------- List ---------- */
-function addPerson(name, prompt, tier, fresh = true) {
-  state.people.unshift({ id: nextId++, name, prompt, tier, fresh });
-}
-
-// Three buckets by likely check. Drag a name to move it; with a name focused,
-// the left and right arrow keys move it too.
-const TIER_HINTS = ['Most of your LPs', 'A step up', 'Your anchors'];
-let dragId = null;
-
-function movePerson(id, tier) {
-  const p = state.people.find(q => q.id === id);
-  if (!p || p.tier === tier) return;
-  p.tier = tier;
-  p.fresh = true;
-  render();
-  const moved = document.querySelector(`.row[data-id="${id}"]`);
-  if (moved) moved.focus();
+function addPerson(name, prompt, fresh = true) {
+  state.people.unshift({ id: nextId++, name, prompt, tier: 0, fresh });
 }
 
 function personRow(p) {
   const row = document.createElement('div');
   row.className = 'row' + (p.fresh ? ' fresh' : '');
   p.fresh = false;
-  row.dataset.id = p.id;
-  row.draggable = true;
-  row.tabIndex = 0;
-  row.setAttribute('aria-label', `${p.name}, ${TIERS[p.tier].label} check. Use left and right arrows to move.`);
-  row.innerHTML = `<span class="grip" aria-hidden="true">⋮⋮</span><span class="av">${esc(initials(p.name))}</span>
-    <span class="r-text"><span class="r-name">${esc(p.name)}</span><span class="r-rel">${PROMPTS[p.prompt].name}</span></span>`;
+  row.innerHTML = `<span class="av">${esc(initials(p.name))}</span>
+    <span class="r-text"><span class="r-name">${esc(p.name)}${p.decile ? '<span class="r-tag">Decile</span>' : ''}</span><span class="r-rel">${PROMPTS[p.prompt]}</span></span>`;
 
   const x = document.createElement('button');
   x.type = 'button';
@@ -190,109 +114,123 @@ function personRow(p) {
   x.textContent = '×';
   x.addEventListener('click', () => { state.people = state.people.filter(q => q.id !== p.id); render(); });
   row.appendChild(x);
-
-  row.addEventListener('dragstart', e => {
-    dragId = p.id;
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', String(p.id));
-    requestAnimationFrame(() => row.classList.add('dragging'));
-  });
-  row.addEventListener('dragend', () => {
-    dragId = null;
-    row.classList.remove('dragging');
-    document.querySelectorAll('.bucket.over').forEach(b => b.classList.remove('over'));
-  });
-  row.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' && p.tier < TIERS.length - 1) { e.preventDefault(); movePerson(p.id, p.tier + 1); }
-    if (e.key === 'ArrowLeft' && p.tier > 0) { e.preventDefault(); movePerson(p.id, p.tier - 1); }
-  });
   return row;
 }
 
 function renderList() {
   const list = $('list');
   list.innerHTML = '';
+  state.people.forEach(p => list.appendChild(personRow(p)));
+
   const n = state.people.length;
-
-  if (n) {
-    TIERS.forEach((t, i) => {
-      const people = state.people.filter(p => p.tier === i);
-      const bucket = document.createElement('div');
-      bucket.className = 'bucket b' + i;
-      bucket.innerHTML = `<div class="b-head">
-          <div><p class="b-name">${t.label}</p><p class="b-check">${money(t.check)} each · ${TIER_HINTS[i]}</p></div>
-          <div class="b-sum"><b>${people.length}</b><span>${money(people.length * t.check)}</span></div>
-        </div>`;
-      const body = document.createElement('div');
-      body.className = 'b-body';
-      people.forEach(p => body.appendChild(personRow(p)));
-      if (!people.length) {
-        const ph = document.createElement('p');
-        ph.className = 'b-empty';
-        ph.textContent = 'Drag names here';
-        body.appendChild(ph);
-      }
-      bucket.appendChild(body);
-
-      bucket.addEventListener('dragover', e => {
-        if (dragId === null) return;
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-        bucket.classList.add('over');
-      });
-      bucket.addEventListener('dragleave', e => {
-        if (!bucket.contains(e.relatedTarget)) bucket.classList.remove('over');
-      });
-      bucket.addEventListener('drop', e => {
-        e.preventDefault();
-        bucket.classList.remove('over');
-        const id = dragId ?? +e.dataTransfer.getData('text/plain');
-        movePerson(id, i);
-      });
-      list.appendChild(bucket);
-    });
-  }
-
   $('empty').hidden = n > 0;
-  $('dragHint').hidden = n === 0;
-  // Keep progress visible while adding, since the ring now sits at the bottom.
-  $('listHead').textContent = n < FIRST_GOAL
-    ? `${n} of ${FIRST_GOAL} names`
-    : `${n} ${n === 1 ? 'name' : 'names'}`;
+  $('listHead').textContent = `${n} ${n === 1 ? 'name' : 'names'}`;
 }
 
 /* ---------- Progress ---------- */
-const R = 68, C = 2 * Math.PI * R;
+const thousands = v => Math.round(v) ? `$${Math.round(v)}K` : '$0';
+const BURST_COLORS = ['#6E5DAA', '#A99BD3', '#3F3168', '#8CBFA4', '#D9D1EE'];
+let shown = null;                // names counted at the last render, null before the first
+
+// Card fill colors by share of the list done: [share, fill, leading edge].
+// Lilac at the start, deeper violet as it fills, sage once all 10 are in.
+const FILL_STOPS = [
+  [0,   [239, 235, 248], [217, 209, 238]],
+  [0.5, [226, 219, 245], [169, 155, 211]],
+  [0.9, [214, 204, 239], [110, 93, 170]],
+  [1,   [220, 239, 228], [140, 191, 164]]
+];
+function fillColors(p) {
+  let i = FILL_STOPS.findIndex(s => s[0] >= p);
+  if (i <= 0) i = 1;
+  const [p0, f0, e0] = FILL_STOPS[i - 1], [p1, f1, e1] = FILL_STOPS[i];
+  const k = p1 === p0 ? 1 : (p - p0) / (p1 - p0);
+  const mix = (a, b) => `rgb(${a.map((v, j) => Math.round(v + (b[j] - v) * k)).join(',')})`;
+  return [mix(f0, f1), mix(e0, e1)];
+}
+
+// Restart a CSS animation on an element by toggling its class.
+function replay(el, cls) {
+  el.classList.remove(cls);
+  void el.getBoundingClientRect();
+  el.classList.add(cls);
+}
+
+function floatPlus() {
+  const p = document.createElement('span');
+  p.className = 'plus';
+  p.textContent = `+$${PACT_PER_NAME}K`;
+  $('docFx').appendChild(p);
+  setTimeout(() => p.remove(), 1000);
+}
+
+function burst() {
+  const fx = $('docFx');
+  for (let i = 0; i < 26; i++) {
+    const d = document.createElement('span');
+    const a = (i / 26) * Math.PI * 2 + Math.random() * .3;
+    const dist = 95 + Math.random() * 55;
+    d.className = 'dot' + (i % 3 === 0 ? ' sq' : '');
+    d.style.setProperty('--dx', `${Math.cos(a) * dist}px`);
+    d.style.setProperty('--dy', `${Math.sin(a) * dist}px`);
+    d.style.setProperty('--r', `${Math.random() * 360}deg`);
+    d.style.setProperty('--s', `${5 + Math.random() * 5}px`);
+    d.style.setProperty('--c', BURST_COLORS[i % BURST_COLORS.length]);
+    d.style.animationDelay = `${Math.random() * 80}ms`;
+    fx.appendChild(d);
+    setTimeout(() => d.remove(), 1100);
+  }
+}
+
+// Each name unlocks $1K, but the $10K can only be claimed once all 10 are in, by
+// signing the PACT from the button in this card.
+// Once signed, the PACT stays signed even if names are removed later.
 function renderProgress() {
   const n = state.people.length;
-  const goal = n < FIRST_GOAL ? FIRST_GOAL : OUTREACH_GOAL;
-  $('goalLabel').textContent = n < FIRST_GOAL
-    ? 'Next up: your first 10 names'
-    : n < OUTREACH_GOAL ? `Next up: ${OUTREACH_GOAL} names to start outreach` : 'Ready to start outreach';
-  const ring = $('ringFg');
-  ring.style.strokeDasharray = C;
-  ring.style.strokeDashoffset = C * (1 - Math.min(1, n / goal));
-  document.querySelector('.ring').classList.toggle('full', n >= goal);
-  tween($('ringNum'), n, int);
-  $('ringOf').textContent = `of ${goal}`;
+  const done = n >= FIRST_GOAL || state.signed;
+  const left = FIRST_GOAL - n;
+  const filled = done ? FIRST_GOAL : n;
+  const unlocked = filled * PACT_PER_NAME;
 
-  const miles = [
-    { t: 'First 10 names', goal: FIRST_GOAL },
-    { t: 'Ready for outreach', goal: OUTREACH_GOAL },
-    { t: 'Your full list', goal: PLAN.prospects }
-  ];
-  const current = miles.findIndex(m => n < m.goal);
-  $('miles').innerHTML = miles.map((m, i) => {
-    const cls = n >= m.goal ? 'hit' : i === current ? 'now' : '';
-    const pct = Math.min(100, n / m.goal * 100);
-    return `<li class="${cls}"><span class="ml-top"><span>${m.t}</span><b>${n >= m.goal ? int(m.goal) : int(n) + ' / ' + int(m.goal)}</b></span><span class="ml-bar"><i style="width:${pct}%"></i></span></li>`;
-  }).join('');
+  $('goalLabel').textContent = state.signed ? 'Your PACT is signed'
+    : done ? `Your $${PACT_TOTAL}K is unlocked`
+    : n === 0 ? `Add ${FIRST_GOAL} names to unlock $${PACT_TOTAL}K`
+    : `Add ${left} more name${left === 1 ? '' : 's'} to unlock $${PACT_TOTAL}K`;
 
-  const potential = state.people.reduce((s, p) => s + TIERS[p.tier].check, 0);
-  tween($('moneyNum'), potential, money);
-  $('moneyFill').style.width = Math.min(100, potential / TO_RAISE * 100) + '%';
+  // The card fills left to right, one tenth per name, and shifts color as it goes.
+  const [fill, edge] = fillColors(filled / FIRST_GOAL);
+  const card = $('cardFill');
+  card.style.width = (filled / FIRST_GOAL * 100) + '%';
+  card.style.setProperty('--fill', fill);
+  card.style.setProperty('--edge', edge);
+  $('progressCard').classList.toggle('full', done);
 
-  $('doneBanner').hidden = n < FIRST_GOAL;
+  // Only a new name animates: the lock nudges, the amount bumps and a "+$1K" floats
+  // up. The tenth opens the lock and sets off a burst.
+  const doc = $('doc');
+  doc.classList.toggle('open', done);
+  doc.classList.toggle('signed', state.signed);
+  if (shown !== null && filled > shown) {
+    replay($('docNum'), 'bump');
+    floatPlus();
+    if (done) { replay(doc, 'win'); burst(); } else replay($('lock'), 'nudge');
+  }
+  shown = filled;
+  tween($('docNum'), unlocked, thousands);
+
+  $('progNote').hidden = n === 0 || done;
+  $('progNote').innerHTML = `<b>$${unlocked}K unlocked so far.</b> Finish the list to claim it. A partial list can’t be claimed.`;
+  $('progSub').textContent = state.signed
+    ? `Your $${PACT_TOTAL}K catalytic investment is reserved. We’ve emailed you a copy of your PACT. You can keep adding names any time.`
+    : done ? `All ${FIRST_GOAL} names are in. Sign your PACT, Decile’s short letter of intent, to claim it. It takes a minute.`
+    : `Decile backs new funds with a $${PACT_TOTAL}K catalytic investment. Every name you add unlocks $${PACT_PER_NAME}K. The full $${PACT_TOTAL}K is yours to claim once all ${FIRST_GOAL} are in.`;
+  $('pactAct').hidden = !done;
+  $('pactBtn').hidden = state.signed;
+  $('signedChip').hidden = !state.signed;
+
+  // The main button only ever moves on. Signing lives in the card above, and anything
+  // left undone becomes a reminder on the dashboard.
+  $('ctaText').textContent = done ? 'Finish setting up' : 'Remind me later';
 }
 
 function render() {
@@ -307,35 +245,123 @@ function submitName() {
   const input = $('nameInput');
   const name = input.value.trim();
   if (!name) { input.focus(); return; }
-  addPerson(name, state.prompt, state.tier);
+  addPerson(name, state.prompt);
   input.value = '';
-  state.tier = 0;
-  renderAddPicker();
   render();
   input.focus();
 }
 
+/* ---------- PACT ---------- */
+// A short pop-up to sign the PACT. It reuses the shared panel styles from demo.css.
+// `leaving` is true when it was opened on the way out, so signing then moves on.
+let leaving = false;
+function openPact(fromNudge = false) {
+  leaving = fromNudge;
+  const fund = (saved.story && saved.story.fundName || '').trim() || 'Your fund';
+  const size = saved.size >= 1 ? `$${(+saved.size).toFixed(saved.size % 1 ? 1 : 0)}M` : `$${Math.round(saved.size * 1e3)}K`;
+  $('pactTerms').innerHTML = [
+    ['Fund', fund], ['General partner', saved.name || 'You'], ['Target size', size],
+    ['Catalytic investment', `$${PACT_TOTAL}K from Decile`]
+  ].map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('');
+  $('pactName').placeholder = saved.name || 'Your full name';
+  $('pactDoneBtn').textContent = leaving ? 'Finish setting up' : 'Back to my list';
+  $('pactForm').hidden = false;
+  $('pactDone').hidden = true;
+  $('pact').hidden = false;
+  $('pactName').focus();
+  checkPact();
+}
+
+function closePact() { $('pact').hidden = true; }
+
+function checkPact() {
+  $('pactSign').disabled = !($('pactName').value.trim().length > 1 && $('pactAgree').checked);
+}
+
+function signPact() {
+  state.signed = true;
+  DemoStore.save({ pactSigned: true, pactName: $('pactName').value.trim() });
+  $('pactForm').hidden = true;
+  $('pactDone').hidden = false;
+  render();
+}
+
+// If the list is done but the PACT isn't signed, the main button asks first:
+// sign now, or leave it as a to-do on the dashboard.
+function openNudge() { $('nudge').hidden = false; $('nudgeSign').focus(); }
+function closeNudge() { $('nudge').hidden = true; }
+
+function initPact() {
+  $('pactName').addEventListener('input', checkPact);
+  $('pactAgree').addEventListener('change', checkPact);
+  $('pactSign').addEventListener('click', signPact);
+  $('pactName').addEventListener('keydown', e => { if (e.key === 'Enter' && !$('pactSign').disabled) signPact(); });
+  $('pactClose').addEventListener('click', closePact);
+  $('pactDoneBtn').addEventListener('click', () => leaving ? finish() : closePact());
+  $('pact').addEventListener('click', e => { if (e.target === $('pact')) closePact(); });
+  $('pactTermsLink').addEventListener('click', e => e.preventDefault());
+
+  $('nudgeSign').addEventListener('click', () => { closeNudge(); openPact(true); });
+  $('nudgeLater').addEventListener('click', () => { closeNudge(); finish(); });
+  $('nudgeClose').addEventListener('click', closeNudge);
+  $('nudge').addEventListener('click', e => { if (e.target === $('nudge')) closeNudge(); });
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (!$('pact').hidden) closePact();
+    else if (!$('nudge').hidden) closeNudge();
+  });
+}
+
+/* ---------- Leaving ---------- */
+// Save the list and the reminders the dashboard should show, then go there.
+function finish() {
+  const done = state.people.length >= FIRST_GOAL || state.signed;
+  persist();
+  DemoStore.save({
+    pactSigned: state.signed,
+    listTodo: !done,
+    pactTodo: done && !state.signed
+  });
+  DemoNav.go(5);
+}
+
 /* ---------- Init ---------- */
 function init() {
-  renderPlan();
   buildPrompts();
-  renderAddPicker();
+  initPact();
 
   $('addBtn').addEventListener('click', submitName);
   $('nameInput').addEventListener('keydown', e => { if (e.key === 'Enter') submitName(); });
 
+  // Fills the list up to 10, on top of whoever is already there.
   $('demoFill').addEventListener('click', () => {
-    SAMPLE.forEach(([name, prompt, tier]) => addPerson(name, prompt, tier));
+    SAMPLE.slice(0, Math.max(0, FIRST_GOAL - state.people.length)).forEach(([name, prompt]) => addPerson(name, prompt));
     render();
   });
-  $('demoClear').addEventListener('click', () => { state.people = []; render(); });
+  $('demoClear').addEventListener('click', () => {
+    state.people = [];
+    addExample();
+    state.signed = false;
+    DemoStore.save({ pactSigned: false, listTodo: false, pactTodo: false });
+    render();
+  });
 
+  $('pactBtn').addEventListener('click', () => openPact());
+
+  // The main button moves on to the dashboard, which picks up whatever is left:
+  // finish the list (listTodo) or sign the PACT that's ready (pactTodo). With the list
+  // done and the PACT unsigned, it asks first, in case they missed the button above.
   $('cta').addEventListener('click', () => {
-    persist();
-    DemoNav.go(5);
+    if (state.people.length >= FIRST_GOAL && !state.signed) openNudge();
+    else finish();
   });
 
   render();
+  // A small nudge on arrival, so the lock reads as something to open.
+  if (!state.signed && state.people.length && state.people.length < FIRST_GOAL) {
+    setTimeout(() => replay($('lock'), 'nudge'), 700);
+  }
 }
 
 init();
