@@ -49,9 +49,9 @@ const DEALS = [
   { label: '600+', mid: 750 }
 ];
 const LEAD = [
-  { label: 'Lead the round', s: 'Usually leading rounds' },
-  { label: 'Co-lead', s: 'Usually co-leading rounds' },
-  { label: 'Follow other investors', s: 'Usually following other investors' }
+  { label: 'Lead the round', s: 'Leading most rounds' },
+  { label: 'Co-lead', s: 'Co-leading most rounds' },
+  { label: 'Follow other investors', s: 'Following other investors in most rounds' }
 ];
 const HELP = ['Hiring', 'Go-to-market', 'Fundraising', 'Product', 'Customer intros', 'Industry expertise'];
 const EXPERIENCE = [
@@ -229,10 +229,8 @@ function howSentence() {
   const parts = [
     lead ? esc(lead.s) + '.' : ph('Lead or follow.'),
     help.length ? `Helping founders with ${esc(joinList(help))}.` : ph('How you help founders.'),
-    exp && time ? `${esc(exp.s)}, ${esc(time.s)}.`
-      : exp ? `${esc(exp.s)}. ${ph('Time on the fund.')}`
-      : time ? `${ph('Investing experience.')} ${esc(time.s[0].toUpperCase() + time.s.slice(1))}.`
-      : ph('Investing experience and time on the fund.')
+    exp ? esc(exp.s) + '.' : ph('Investing experience.'),
+    time ? esc(time.s) + '.' : ph('Time on the fund.')
   ];
   return parts.join(' ');
 }
