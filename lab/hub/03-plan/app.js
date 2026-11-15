@@ -185,11 +185,15 @@ function buildPyramid() {
   });
 }
 
+// Every tier is measured against the same fixed scale, so the whole pyramid
+// grows and shrinks with the LP count. 100 LPs fills the width (the page warns
+// above 99). The square root keeps small tiers from shrinking to slivers.
+const PYRAMID_FULL = 100;
+
 function renderPyramid(c) {
-  const maxCount = Math.max(1, ...c.tierData.map(t => t.count));
   c.tierData.forEach((t, i) => {
     const bar = $('tb' + i);
-    bar.style.width = (t.count / maxCount * 100) + '%';
+    bar.style.width = Math.min(100, Math.sqrt(t.count / PYRAMID_FULL) * 100) + '%';
     bar.textContent = t.count;
     $('tn' + i).textContent = `${t.name} · ${t.count} LP${t.count === 1 ? '' : 's'}`;
     $('tc' + i).textContent = t.capped
