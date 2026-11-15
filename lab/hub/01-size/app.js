@@ -188,7 +188,7 @@ function renderMode() {
     : `Continue with <span id="ctaSize">$${sizeLabel(state.size)}M</span>`;
 
   $('fine').innerHTML = over
-    ? `Self-serve funds on Decile Hub go up to $${SELF_SERVE_MAX}M. For larger funds, our fund team sets you up with a structure built for your raise.`
+    ? `&nbsp;`
     : `Assumes 2% annual fees over a 10 year fund life, paid out in the first ${FEE_YEARS} years. Minimum first close is $100K. Operational expenses are covered from the fees. <a href="#" id="feeLink">See the full fee schedule</a>.`;
 
   const lead = state.intended ? `You’re planning about $${sizeLabel(state.intended)}M. ` : '';
