@@ -254,7 +254,7 @@ function placeLabels() {
     items.forEach(it => {
       const { d, lbl, w, x, left } = it;
       lbl.style.left = (left - x) + 'px';
-      lbl.style.textAlign = left >= x - 1 ? 'left' : left + w <= x + 1 ? 'right' : 'center';
+      lbl.style.textAlign = left >= x - 1 ? 'left' : left + w <= x + 1 ? 'right' : 'left';
 
       // Moved clear of its point: a line runs out from the bar, then across to the
       // label's near edge. `span` is [start, end] in px from the point, or null when
