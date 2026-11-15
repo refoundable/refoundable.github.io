@@ -51,7 +51,7 @@ const DEALS = [
 const LEAD = [
   { label: 'Lead the round', s: 'Leading most rounds' },
   { label: 'Co-lead', s: 'Co-leading most rounds' },
-  { label: 'Follow other investors', s: 'Following other investors in most rounds' }
+  { label: 'Follow other investors', s: 'Following other investors usually' }
 ];
 const HELP = ['Hiring', 'Go-to-market', 'Fundraising', 'Product', 'Customer intros', 'Industry expertise'];
 const EXPERIENCE = [
