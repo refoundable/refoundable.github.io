@@ -132,21 +132,20 @@ const thousands = v => Math.round(v) ? `$${Math.round(v)}K` : '$0';
 const BURST_COLORS = ['#6E5DAA', '#A99BD3', '#3F3168', '#8CBFA4', '#D9D1EE'];
 let shown = null;                // names counted at the last render, null before the first
 
-// Card fill colors by share of the list done: [share, fill, leading edge].
+// Card fill color by share of the list done: [share, fill].
 // Lilac at the start, deeper violet as it fills, sage once all 10 are in.
 const FILL_STOPS = [
-  [0,   [239, 235, 248], [217, 209, 238]],
-  [0.5, [226, 219, 245], [169, 155, 211]],
-  [0.9, [214, 204, 239], [110, 93, 170]],
-  [1,   [220, 239, 228], [140, 191, 164]]
+  [0,   [239, 235, 248]],
+  [0.5, [226, 219, 245]],
+  [0.9, [214, 204, 239]],
+  [1,   [220, 239, 228]]
 ];
-function fillColors(p) {
+function fillColor(p) {
   let i = FILL_STOPS.findIndex(s => s[0] >= p);
   if (i <= 0) i = 1;
-  const [p0, f0, e0] = FILL_STOPS[i - 1], [p1, f1, e1] = FILL_STOPS[i];
+  const [p0, f0] = FILL_STOPS[i - 1], [p1, f1] = FILL_STOPS[i];
   const k = p1 === p0 ? 1 : (p - p0) / (p1 - p0);
-  const mix = (a, b) => `rgb(${a.map((v, j) => Math.round(v + (b[j] - v) * k)).join(',')})`;
-  return [mix(f0, f1), mix(e0, e1)];
+  return `rgb(${f0.map((v, j) => Math.round(v + (f1[j] - v) * k)).join(',')})`;
 }
 
 // Restart a CSS animation on an element by toggling its class.
@@ -198,11 +197,9 @@ function renderProgress() {
     : `Add ${left} more name${left === 1 ? '' : 's'} to unlock $${PACT_TOTAL}K`;
 
   // The card fills left to right, one tenth per name, and shifts color as it goes.
-  const [fill, edge] = fillColors(filled / FIRST_GOAL);
   const card = $('cardFill');
   card.style.width = (filled / FIRST_GOAL * 100) + '%';
-  card.style.setProperty('--fill', fill);
-  card.style.setProperty('--edge', edge);
+  card.style.setProperty('--fill', fillColor(filled / FIRST_GOAL));
   $('progressCard').classList.toggle('full', done);
 
   // Only a new name animates: the lock nudges, the amount bumps and a "+$1K" floats
