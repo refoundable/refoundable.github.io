@@ -82,7 +82,7 @@ input::placeholder{color:var(--ink-3)}
 .pager-card .sec-head{justify-content:flex-start}
 .readiness{margin-left:auto;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--mist);color:var(--violet)}
 .readiness.ready{background:var(--sage-tint);color:var(--sage-ink)}
-.pager{margin-top:22px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 24px 60px -36px rgba(63,49,104,.55)}
+.pager{margin:22px 0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 24px 60px -36px rgba(63,49,104,.55)}
 .pg-top{padding:28px 32px 24px;color:#fff;
   background:radial-gradient(520px 200px at 95% 0%, rgba(169,155,211,.5), transparent 70%),linear-gradient(120deg,var(--plum) 0%,#54449A 100%)}
 .pg-kicker{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#CFC6EA}
