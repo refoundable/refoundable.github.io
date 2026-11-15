@@ -128,7 +128,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .t-sum div{display:flex;flex-direction:column}
 .t-k{font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:600;font-size:40px;letter-spacing:-.035em;line-height:1;color:var(--violet)}
 .t-k.final{color:var(--plum)}
-.t-l{font-size:12px;text-transform:uppercase;font-weight:600;text-align:right;letter-spacing: 0.02em;color:var(--ink-2);margin-top:3px}
+.t-l{font-size:12px;text-transform:uppercase;font-weight:600;text-align:right;letter-spacing: 0.02em;color:var(--ink-2)}
 
 /* Track: meetings start above the bar, closes below */
 .track{margin-top:18px;position:relative;padding:58px 0 50px}
