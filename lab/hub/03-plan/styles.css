@@ -125,7 +125,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 /* Timeline */
 .t-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
 .t-sum{display:flex;gap:34px}
-.t-sum div{display:flex;flex-direction:column}
+.t-sum div{display:flex;flex-direction:column;position:relative;top:-6px}
 .t-k{font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:600;font-size:35px;text-align:right;letter-spacing:-.035em;line-height:1;color:var(--violet)}
 .t-k.final{color:var(--plum)}
 .t-l{font-size:12.5px;text-transform:uppercase;font-weight:600;text-align:right;letter-spacing: 0.02em;color:var(--ink-2)}
