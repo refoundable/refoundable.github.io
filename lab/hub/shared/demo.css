@@ -19,7 +19,7 @@
 
 /* Footer: fine print left, main button right. Help banner sits below it. */
 .foot{margin:24px 0 0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
-.fine{flex:1 1 auto;max-width:65ch;font-size:12.5px;color:var(--ink-3)}
+.fine{flex:1 1 auto;max-width:70ch;font-size:12.5px;color:var(--ink-3)}
 .fine a{color:var(--violet);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 .fine a:hover{color:var(--plum)}
 .cta{flex:none;border:none;border-radius:999px;padding:16px 26px;font-size:16px;font-weight:600;color:#fff;cursor:pointer;font-family:inherit;
