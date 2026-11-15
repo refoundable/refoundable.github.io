@@ -195,7 +195,7 @@ function renderRatio() {
   const base = `You plan about ${s.perYear} new investments a year. At ${s.label} deals a year, you’d back about <b>1 in ${s.r}</b>`;
   let tone, rest;
   if (s.r < 5) { tone = 'tight'; rest = '. That leaves little room to be choosy, so LPs may ask how you’ll keep quality high.'; }
-  else if (s.r <= 25) { tone = 'good'; rest = ', a healthy level of selectivity for a first fund.'; }
+  else if (s.r <= 25) { tone = 'good'; rest = '. That’s a healthy level of selectivity for a first fund.'; }
   else { tone = 'wide'; rest = '. Very selective, as long as you have time to look at that many deals.'; }
   el.className = 'ratio ' + tone;
   el.innerHTML = base + rest;
