@@ -26,7 +26,7 @@ const FUND = {
   style: story.styleText || '',
   focusDone: !!story.complete
 };
-const TO_RAISE = FUND.size * 0.99;   // after the 1% GP commitment
+const TO_RAISE = FUND.size;
 const MEETING_HOURS = 0.5;
 
 // Names from onboarding, biggest likely checks first.

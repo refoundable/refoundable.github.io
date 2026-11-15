@@ -1,7 +1,7 @@
 // LP prospects page. All handlers are attached here (no inline JS) so the same
 // files would also work inside a Chrome extension, which blocks inline scripts.
 
-const GP_COMMIT = 0.01;          // manager's own commitment, low end from step 1
+const GP_COMMIT = 0;             // manager's own commitment, defaults to 0
 const FIRST_CLOSE = 0.30;        // same as step 1
 const MEET_RATE = 0.5;           // share of prospects who take a first meeting
 const CONVERSION = 0.20;         // share of people met who commit
@@ -134,40 +134,6 @@ function tween(el, to, fmt) {
   el._raf = requestAnimationFrame(step);
 }
 
-/* ---------- Stage rows (LPs at the top, prospects at the bottom) ---------- */
-function renderStages(c) {
-  const vals = [c.prospects, c.met, c.lps];
-  vals.forEach((v, i) => {
-    $('fill' + i).style.width = Math.max(2, v / c.prospects * 100) + '%';
-    tween($('sv' + i), v, int);
-  });
-  $('sa2').textContent = `↓ About 1 in ${Math.round(1 / CONVERSION)} people you meet commits`;
-  $('sa1').textContent = `↓ About ${MEET_RATE === 0.5 ? 'half' : Math.round(MEET_RATE * 100) + '%'} of the people you reach take a meeting`;
-  $('sr1').textContent = `${Math.round(c.met / c.lps)}x your LPs`;
-  $('sr0').textContent = `${Math.round(c.prospects / c.met)}x meetings`;
-  renderKnown(c);
-}
-
-// Optional: how many people they could ask today. Only splits the prospect row.
-function renderKnown(c) {
-  const known = state.known;
-  const line = $('knownLine');
-  const has = known > 0;
-  const ks = $('knownSlider');
-  $('knownVal').textContent = int(known);
-  ks.style.setProperty('--fill', (known / +ks.max * 100) + '%');
-  $('fillKnown').style.width = has ? Math.min(100, known / c.prospects * 100) + '%' : '0';
-  $('knownLegend').classList.toggle('on', has);
-  line.classList.toggle('set', has);
-  if (!has) {
-    line.textContent = 'Friends, colleagues, investors you know. A rough guess is fine.';
-  } else if (known >= c.prospects) {
-    line.innerHTML = `You know <b>${int(known)}</b>. That covers everyone you need to reach. Start with the people most likely to invest.`;
-  } else {
-    line.innerHTML = `You know <b>${int(known)}</b>. About <b>${int(c.prospects - known)}</b> to find through introductions and outreach.`;
-  }
-}
-
 /* ---------- Pyramid ---------- */
 function buildPyramid() {
   const wrap = $('pyramid');
@@ -274,11 +240,10 @@ function render() {
   checkSlider.style.setProperty('--fill', (state.checkIdx / (CHECKS.length - 1) * 100) + '%');
   paceSlider.style.setProperty('--fill', ((state.pace - 3) / 22 * 100) + '%');
 
-  tween($('nProspects'), c.prospects, int);
   tween($('nLPs'), c.lps, int);
   tween($('nMeetings'), c.meetings, int);
 
-  $('lpDesc').textContent = `To raise ${money(c.toRaise)} after your own ${money(c.gp)} commitment. About ${money(c.avg)} per LP on average.`;
+  $('lpDesc').textContent = `To raise ${money(c.toRaise)}, about ${money(c.avg)} per LP on average.`;
   $('lpCard').classList.toggle('over', c.lps > LP_LIMIT);
 
   const firstShare = c.met / c.meetings;
@@ -289,7 +254,6 @@ function render() {
   $('meetTime').innerHTML = `About <b>${hrs(state.pace * MEETING_HOURS)} hours a week</b> of meetings, at 30 minutes each.`;
 
   renderChoices();
-  renderStages(c);
   renderPyramid(c);
   renderTimeline(c);
   persist(c);
@@ -304,15 +268,6 @@ function init() {
 
   checkSlider.addEventListener('input', () => { state.checkIdx = +checkSlider.value; render(); });
   paceSlider.addEventListener('input', () => { state.pace = +paceSlider.value; render(); });
-
-  const knownSlider = $('knownSlider');
-  knownSlider.value = state.known;
-  knownSlider.addEventListener('input', () => {
-    state.known = +knownSlider.value;
-    const c = calc();
-    renderKnown(c);
-    persist(c);
-  });
 
   $('cta').addEventListener('click', () => {
     persist(calc());

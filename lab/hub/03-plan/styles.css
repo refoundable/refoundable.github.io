@@ -52,27 +52,12 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .intro{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
 .hero{animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both}
 .metrics{animation:rise .55s .16s cubic-bezier(.2,.7,.2,1) both}
-.prospects-card{animation:rise .55s .24s cubic-bezier(.2,.7,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* Hero */
 .hero{margin-top:30px;background:var(--surface);border-radius:28px;padding:36px 40px 30px;box-shadow:0 1px 0 var(--line),0 30px 70px -40px rgba(63,49,104,.45)}
-.pr-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:40px;align-items:start}
 .m-label{font-size:13.5px;font-weight:600;color:var(--ink-2);display:flex;align-items:center;gap:8px}
-.big-num{font-family:var(--num);font-weight:600;font-variant-numeric:tabular-nums;font-size:clamp(88px,11vw,132px);letter-spacing:-.05em;line-height:.95;color:var(--plum);margin-top:6px}
 .m-desc{font-size:14px;color:var(--ink-2);margin-top:10px}
-/* Stage rows: text sits over the shading, fill length = share of prospects */
-.stages{display:grid;gap:10px;min-width:0}
-.stage-row{position:relative;height:64px;border-radius:16px;background:#F4F1FA;overflow:hidden;display:flex;align-items:center;justify-content:space-between;padding:0 22px;gap:16px}
-.stage-row .fill{position:absolute;inset:0 auto 0 0;border-radius:16px;transition:width .5s cubic-bezier(.2,.7,.2,1)}
-.r0 .fill{background:#DED7F0}
-.r1 .fill{background:#C9BEE7}
-.r2 .fill{background:#AD9FDA}
-.s-txt,.s-rate{position:relative;z-index:1;white-space:nowrap}
-.s-txt{font-size:16px;color:var(--ink-2)}
-.s-txt b{font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:600;font-size:26px;letter-spacing:-.025em;color:var(--ink);margin-right:6px;vertical-align:-2px}
-.r2 .s-txt b{color:var(--plum)}
-.s-rate{font-size:12.5px;font-weight:600;color:var(--violet);background:rgba(255,255,255,.75);padding:4px 10px;border-radius:999px}
 
 .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
 .control{min-width:0}
@@ -138,19 +123,6 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .metric.over .soft-warn{display:flex}
 
 /* Timeline */
-.prospects-card{margin-top:18px;background:var(--surface);border-radius:28px;padding:32px 36px 30px;box-shadow:0 1px 0 var(--line),0 30px 70px -48px rgba(63,49,104,.4)}
-.stage-arrow{font-size:12.5px;font-weight:600;color:var(--violet);padding:2px 0 2px 22px}
-.stage-row .fill-known{position:absolute;inset:0 auto 0 0;border-radius:16px 0 0 16px;background:#B9D9C6;width:0;transition:width .5s cubic-bezier(.2,.7,.2,1)}
-.known-legend{display:none;gap:16px;font-size:12.5px;color:var(--ink-3);padding-left:22px;margin-top:2px}
-.known-legend.on{display:flex}
-.known-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
-.k-known{background:#B9D9C6}
-.k-find{background:#DED7F0}
-.known{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
-.known .c-row label{color:var(--ink)}
-.known-line{font-size:13.5px;color:var(--ink-3);margin-top:10px;line-height:1.45}
-.known-line b{color:var(--ink);font-weight:600}
-.known-line.set{color:var(--ink-2)}
 .t-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
 .t-sum{display:flex;gap:34px}
 .t-sum div{display:flex;flex-direction:column}
@@ -176,14 +148,12 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 
 @media (max-width:860px){
   .hero{padding:28px 24px 24px}
-  .pr-grid,.controls,.metrics{grid-template-columns:minmax(0,1fr)}
-  .prospects-card,.pyramid-card{padding:26px 24px}
+  .controls,.metrics{grid-template-columns:minmax(0,1fr)}
+  .pyramid-card{padding:26px 24px}
   .tier{grid-template-columns:minmax(0,1fr)}
-  .stage-row{padding:0 14px}
-  .s-rate{display:none}
 }
 @media print{
   .proto,.cta,.help-btn,.book{display:none}
   body{padding-bottom:0}
-  .intro,.hero,.metrics,.prospects-card,.pyramid-card{animation:none}
+  .intro,.hero,.metrics,.pyramid-card{animation:none}
 }

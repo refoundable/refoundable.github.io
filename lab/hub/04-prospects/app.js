@@ -12,7 +12,7 @@ const PLAN = {
   prospects: saved.plan.prospects,
   known: saved.known
 };
-const GP_COMMIT = 0.01;
+const GP_COMMIT = 0;
 const MAX_LP_SHARE = 0.20;
 const TO_RAISE = PLAN.size * (1 - GP_COMMIT);
 
