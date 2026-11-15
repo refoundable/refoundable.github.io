@@ -334,12 +334,12 @@ function init() {
   initNav();
 
   $('startOutreach').addEventListener('click', () => {
-    if (LIST.length === 0) { DemoNav.go(3); return; }
+    if (LIST.length === 0) { DemoNav.go(4); return; }
     toast('Outreach tools would open here. Not part of this prototype.');
   });
   $('nextWorkshop').addEventListener('click', () => openWorkshop('outreach'));
   $('openModel').addEventListener('click', () => DemoNav.go(1));
-  $('openStory').addEventListener('click', () => DemoNav.go(4));
+  $('openStory').addEventListener('click', () => DemoNav.go(2));
 
   // Prototype helper: two weeks of progress at the planned pace.
   $('demoSim').addEventListener('click', () => {

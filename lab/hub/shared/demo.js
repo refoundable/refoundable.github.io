@@ -4,9 +4,9 @@
   const STEPS = [
     ['Sign up', ''],
     ['Fund size', '01-size/'],
-    ['LP plan', '02-plan/'],
-    ['First LPs', '03-prospects/'],
-    ['Fund story', '04-story/'],
+    ['Fund story', '02-story/'],
+    ['LP plan', '03-plan/'],
+    ['First LPs', '04-prospects/'],
     ['Dashboard', '05-dashboard/']
   ];
   const root = document.body.dataset.root || '';

@@ -273,7 +273,7 @@ function init() {
 
   $('cta').addEventListener('click', () => {
     renderPager();
-    DemoNav.go(5);
+    DemoNav.go(3);
   });
 
   const story = saved.story;

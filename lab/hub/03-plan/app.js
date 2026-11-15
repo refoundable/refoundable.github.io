@@ -307,7 +307,7 @@ function init() {
 
   $('cta').addEventListener('click', () => {
     persist(calc());
-    DemoNav.go(3);
+    DemoNav.go(4);
   });
 
   render();
