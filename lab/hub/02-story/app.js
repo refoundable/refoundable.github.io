@@ -46,13 +46,14 @@ const SOURCES = [
   { label: 'Inbound', s: 'inbound' },
   { label: 'Other', s: null }
 ];
-// mid is a rough midpoint, used to estimate how selective the fund can be
+// mid is a rough midpoint, used to estimate how selective the fund can be.
+// s is the wording used inside sentences.
 const DEALS = [
-  { label: 'Under 50', mid: 35 },
-  { label: '50–150', mid: 100 },
-  { label: '150–300', mid: 225 },
-  { label: '300–600', mid: 450 },
-  { label: '600+', mid: 750 }
+  { label: 'Under 50', s: 'fewer than 50', mid: 35 },
+  { label: '50–150', s: '50–150', mid: 100 },
+  { label: '150–300', s: '150–300', mid: 225 },
+  { label: '300–600', s: '300–600', mid: 450 },
+  { label: '600+', s: 'more than 600', mid: 750 }
 ];
 const LEAD = [
   { label: 'Lead the round', s: 'Leading most rounds' },
@@ -190,7 +191,7 @@ function selectivity() {
   const d = find(DEALS, state.deals);
   const perYear = PLAN.companies / INVEST_YEARS;
   if (!d || !perYear) return null;
-  return { perYear: Math.max(1, Math.round(perYear)), r: Math.max(1, Math.round(d.mid / perYear)), label: d.label };
+  return { perYear: Math.max(1, Math.round(perYear)), r: Math.max(1, Math.round(d.mid / perYear)), label: d.s };
 }
 
 function renderRatio() {
@@ -224,7 +225,7 @@ function dealsSentence() {
   const sources = picked('sources', SOURCES, 'sourceOther');
   const from = sources.length ? `Mostly from ${esc(joinList(sources))}.` : ph('Your top deal sources.');
   const s = selectivity();
-  const seen = s ? ` About ${esc(s.label)} deals a year, backing about 1 in ${s.r}.` : ' ' + ph('How many deals you see a year.');
+  const seen = s ? ` Seeing ${esc(s.label)} deals a year, backing about 1 in ${s.r}.` : ' ' + ph('How many deals you see a year.');
   return from + seen;
 }
 
