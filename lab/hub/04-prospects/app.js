@@ -8,18 +8,18 @@ const PACT_PER_NAME = 1;         // $K unlocked by each name, up to the goal
 const PACT_TOTAL = FIRST_GOAL * PACT_PER_NAME;
 
 const PROMPTS = [
-  'Former bosses and mentors',
+  'Former bosses & mentors',
   'Founders you’ve helped',
-  'Angels and investors',
-  'Successful friends and family',
-  'Executives and operators',
-  'Family offices and advisors'
+  'Angels & investors',
+  'Successful friends & family',
+  'Executives & operators',
+  'Family offices & advisors'
 ];
 
 const SAMPLE = [
-  ['Priya Raman', 0], ['Marcus Feld', 1], ['Dana Okafor', 5], ['Tom Becker', 0],
-  ['Sofia Marin', 2], ['Ben Asher', 2], ['Rachel Kim', 5], ['Omar Shah', 3],
-  ['Leila Haddad', 4], ['Julia Ortiz', 1]
+  ['Caleb West', 0], ['Marcus Feld', 1], ['Dana Okafor', 5], ['Tom Becker', 0],
+  ['Sofia Marin', 2], ['Ben Asher', 2], ['Rachel Kim', 5], ['Brad Avery', 3],
+  ['Lexie Scott', 4], ['Julia Ortiz', 1]
 ];
 
 // Everyone starts with Decile's CEO on the list, as an example and a head start.
