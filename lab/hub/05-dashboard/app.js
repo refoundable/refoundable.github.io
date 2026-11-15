@@ -22,7 +22,9 @@ const FUND = {
   companies: saved.companies,
   firstCloseWeeks: saved.plan.firstCloseWeeks,
   thesis: story.thesisText || '',
-  why: (story.why || '').trim()
+  deals: story.dealsText || '',
+  style: story.styleText || '',
+  focusDone: !!story.complete
 };
 const TO_RAISE = FUND.size * 0.99;   // after the 1% GP commitment
 const MEETING_HOURS = 0.5;
@@ -179,9 +181,9 @@ function renderNext() {
     $('startOutreach').firstChild.textContent = 'Start my list';
   } else {
     $('nextTitle').textContent = `Reach out to your first ${Math.min(10, LIST.length)}`;
-    $('nextSub').textContent = FUND.why
-      ? 'Your list and your story are ready. Start with the people most likely to say yes, and aim for your first meetings this week.'
-      : 'Your list is ready. Add why you to your fund story, then start with the people most likely to say yes.';
+    $('nextSub').textContent = FUND.focusDone
+    ? 'Your fund focus and list are ready. Start with the people most likely to say yes, and aim for your first meetings this week.'
+    : 'Your list is ready. Finish your fund focus, then start with the people most likely to say yes.';
     $('startOutreach').firstChild.textContent = 'Start outreach';
   }
 }
@@ -237,10 +239,12 @@ function renderModel() {
     ['Prospects to reach', int(FUND.prospects)]
   ];
   $('modelGrid').innerHTML = rows.map(([k, v, txt]) => `<div><dt>${k}</dt><dd class="${txt ? 'txt' : ''}">${esc(v)}</dd></div>`).join('');
-  $('stThesis').textContent = FUND.thesis || 'Your thesis goes here. Pick a stage, sectors and region in your fund story.';
+  $('stThesis').textContent = FUND.thesis || 'Your focus goes here. Pick a stage, sectors and region in your fund focus.';
   $('stThesis').style.color = FUND.thesis ? '' : 'var(--ink-3)';
-  $('stWhy').textContent = FUND.why || 'Not written yet. This is the line LPs remember.';
-  $('stWhy').style.color = FUND.why ? '' : 'var(--ink-3)';
+  $('stWhy').textContent = FUND.deals || 'Not set yet. Pick your top sources and how many deals you see in your fund focus.';
+  $('stWhy').style.color = FUND.deals ? '' : 'var(--ink-3)';
+  $('stHow').textContent = FUND.style || 'Not set yet. Pick lead or follow and how you help founders in your fund focus.';
+  $('stHow').style.color = FUND.style ? '' : 'var(--ink-3)';
 }
 
 /* ---------- Workshops ---------- */
