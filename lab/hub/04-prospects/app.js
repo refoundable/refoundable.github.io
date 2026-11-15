@@ -20,7 +20,7 @@ const PROMPTS = [
 const SAMPLE = [
   ['Julia Ortiz', 0], ['Marcus Feld', 1], ['Dana Okafor', 2], ['Tom Becker', 3],
   ['Sofia Marin', 4], ['Ben Asher', 5], ['Rachel Kim', 6], ['Brad Avery', 3],
-  ['Lexie Scott', 5], ['Justin Darcy', 0]
+  ['Lexie Scott', 5], ['Jim Halbert', 0]
 ];
 
 // Everyone starts with Decile's CEO on the list, as an example and a head start.
