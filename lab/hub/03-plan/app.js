@@ -193,7 +193,7 @@ function renderPyramid(c) {
     bar.textContent = t.count;
     $('tn' + i).textContent = `${t.name} · ${t.count} LP${t.count === 1 ? '' : 's'}`;
     $('tc' + i).textContent = t.capped
-      ? `${money(t.check)} each, the 20% cap`
+      ? `${money(t.check)} each, 20% cap per LP`
       : `${money(t.check)} each`;
     tween($('tm' + i), t.dollars, money);
     $('ts' + i).textContent = Math.round(t.dollars / c.committed * 100) + '% of the money';
