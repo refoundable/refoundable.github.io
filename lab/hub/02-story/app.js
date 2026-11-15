@@ -49,9 +49,9 @@ const DEALS = [
   { label: '600+', mid: 750 }
 ];
 const LEAD = [
-  { label: 'Lead the round', s: 'Usually leads rounds' },
-  { label: 'Co-lead', s: 'Usually co-leads rounds' },
-  { label: 'Follow other investors', s: 'Usually follows other investors' }
+  { label: 'Lead the round', s: 'Usually leading rounds' },
+  { label: 'Co-lead', s: 'Usually co-leading rounds' },
+  { label: 'Follow other investors', s: 'Usually following other investors' }
 ];
 const HELP = ['Hiring', 'Go-to-market', 'Fundraising', 'Product', 'Customer intros', 'Industry expertise'];
 const EXPERIENCE = [
@@ -228,7 +228,7 @@ function howSentence() {
   const time = find(TIME, state.time);
   const parts = [
     lead ? esc(lead.s) + '.' : ph('Lead or follow.'),
-    help.length ? `Helps founders with ${esc(joinList(help))}.` : ph('How you help founders.'),
+    help.length ? `Helping founders with ${esc(joinList(help))}.` : ph('How you help founders.'),
     exp && time ? `${esc(exp.s)}, ${esc(time.s)}.`
       : exp ? `${esc(exp.s)}. ${ph('Time on the fund.')}`
       : time ? `${ph('Investing experience.')} ${esc(time.s[0].toUpperCase() + time.s.slice(1))}.`
@@ -285,7 +285,7 @@ function styleSentence() {
   const lead = find(LEAD, state.lead);
   const help = state.help.map(h => h.toLowerCase());
   if (!lead || !help.length) return '';
-  return `${lead.s}. Helps founders with ${joinList(help)}.`;
+  return `${lead.s}. Helping founders with ${joinList(help)}.`;
 }
 
 // Save the answers, plus plain-text summary lines for the dashboard.
