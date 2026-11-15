@@ -61,8 +61,8 @@ const EXPERIENCE = [
   { label: '20+', s: '20+ angel investments so far' }
 ];
 const TIME = [
-  { label: 'Full time', s: 'full time on the fund' },
-  { label: 'Part time to start', s: 'part time on the fund to start' }
+  { label: 'Full time', s: 'Full time on the fund' },
+  { label: 'Part time to start', s: 'Part time on the fund to start' }
 ];
 
 // Every question on the page. All of them need an answer before moving on.
