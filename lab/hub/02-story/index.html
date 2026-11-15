@@ -13,7 +13,7 @@
 <div class="proto">
   <span class="tag">Prototype</span>
   <span class="proto-actions">
-	<button id="demoFill">Fill sample story</button>
+	<button id="demoFill">Fill sample answers</button>
 	<button id="demoClear">Clear</button>
   </span>
 </div>
@@ -24,27 +24,27 @@
 
 <main>
   <section class="intro">
-	<p class="eyebrow">Your fund story</p>
-	<h1>Every LP will ask two things.</h1>
-	<p class="lede">What are you investing in, and why are you the one to do it? Answer both here and we’ll turn it into a one-pager, using the numbers you’ve already worked out.</p>
+	<p class="eyebrow">Your fund focus</p>
+	<h1>What kind of fund are you building?</h1>
+	<p class="lede">A few quick choices about what you invest in, where your deals come from and how you’ll run the fund. Nothing to write. You can change any of these at any time.</p>
   </section>
 
-  <!-- 1. Thesis -->
+  <!-- 1. What you invest in -->
   <section class="card">
 	<div class="sec-head">
 	  <span class="sec-num">1</span>
 	  <div>
-		<p class="eyebrow">What you’re investing in</p>
+		<p class="eyebrow">What you invest in</p>
 		<h2>Your thesis, in a few taps</h2>
 	  </div>
 	</div>
 
-	<div class="field">
+	<div class="field" data-q="stage">
 	  <p class="f-label">Stage</p>
 	  <div class="chips" id="stageChips" role="radiogroup" aria-label="Stage"></div>
 	</div>
 
-	<div class="field">
+	<div class="field" data-q="sectors">
 	  <p class="f-label">Sectors <span class="f-soft">Pick up to 3</span></p>
 	  <div class="chips" id="sectorChips" role="group" aria-label="Sectors"></div>
 	  <div class="other" id="sectorOtherWrap" hidden>
@@ -52,56 +52,75 @@
 	  </div>
 	</div>
 
-	<div class="field">
+	<div class="field" data-q="geos">
 	  <p class="f-label">Where <span class="f-soft">Pick up to 2</span></p>
 	  <div class="chips" id="geoChips" role="group" aria-label="Geography"></div>
 	</div>
-
-	<div class="field">
-	  <p class="f-label"><label for="thesisLine">In your own words</label> <span class="f-soft">Optional</span></p>
-	  <div class="ta-wrap">
-		<textarea id="thesisLine" maxlength="160" rows="2" placeholder="e.g. The next generation of AI companies will be built by infrastructure engineers, and they need a first check from someone who speaks their language."></textarea>
-		<span class="count" id="thesisCount">0 / 160</span>
-	  </div>
-	</div>
   </section>
 
-  <!-- 2. Why you -->
+  <!-- 2. Deal flow -->
   <section class="card">
 	<div class="sec-head">
 	  <span class="sec-num">2</span>
 	  <div>
-		<p class="eyebrow">Why you</p>
-		<h2>The line LPs remember</h2>
+		<p class="eyebrow">Your deal flow</p>
+		<h2>Where your deals come from</h2>
 	  </div>
 	</div>
 
-	<div class="field">
-	  <p class="f-label"><label for="whyYou">What do you know, or who do you know, that others don’t?</label></p>
-	  <div class="ta-wrap">
-		<textarea id="whyYou" maxlength="280" rows="3" placeholder="One or two sentences. Specific beats impressive."></textarea>
-		<span class="count" id="whyCount">0 / 280</span>
-	  </div>
-	  <div class="examples">
-		<p class="ex-label">What a strong answer sounds like</p>
-		<div class="ex-list" id="examples"></div>
+	<div class="field" data-q="sources">
+	  <p class="f-label">Your best sources <span class="f-soft">Pick your top 3</span></p>
+	  <div class="chips" id="sourceChips" role="group" aria-label="Deal flow sources"></div>
+	  <div class="other" id="sourceOtherWrap" hidden>
+		<input id="sourceOther" type="text" maxlength="32" placeholder="Your source, e.g. Hackathons" autocomplete="off" aria-label="Other deal flow source">
 	  </div>
 	</div>
 
-	<div class="field">
-	  <p class="f-label">Track record highlights <span class="f-soft">Optional · up to 3</span></p>
-	  <div class="highlights" id="highlights"></div>
-	  <button class="add-line" id="addHighlight" type="button">+ Add another</button>
+	<div class="field" data-q="deals">
+	  <p class="f-label">Deals you see in a year</p>
+	  <div class="chips" id="dealChips" role="radiogroup" aria-label="Deals seen per year"></div>
+	  <p class="ratio" id="ratio" hidden></p>
 	</div>
   </section>
 
-  <!-- 3. One-pager -->
-  <section class="card pager-card">
+  <!-- 3. How you invest -->
+  <section class="card">
 	<div class="sec-head">
 	  <span class="sec-num">3</span>
 	  <div>
-		<p class="eyebrow">Your one-pager</p>
-		<h2>Here’s what LPs will see</h2>
+		<p class="eyebrow">How you invest</p>
+		<h2>You and your fund</h2>
+	  </div>
+	</div>
+
+	<div class="field" data-q="lead">
+	  <p class="f-label">In most rounds, you’ll</p>
+	  <div class="chips" id="leadChips" role="radiogroup" aria-label="Lead or follow"></div>
+	</div>
+
+	<div class="field" data-q="help">
+	  <p class="f-label">How you help founders <span class="f-soft">Pick up to 3</span></p>
+	  <div class="chips" id="helpChips" role="group" aria-label="How you help founders"></div>
+	</div>
+
+	<div class="field" data-q="experience">
+	  <p class="f-label">Angel investments you’ve made so far</p>
+	  <div class="chips" id="expChips" role="radiogroup" aria-label="Investing experience"></div>
+	</div>
+
+	<div class="field" data-q="time">
+	  <p class="f-label">Time on the fund</p>
+	  <div class="chips" id="timeChips" role="radiogroup" aria-label="Time on the fund"></div>
+	</div>
+  </section>
+
+  <!-- 4. Summary -->
+  <section class="card pager-card">
+	<div class="sec-head">
+	  <span class="sec-num">4</span>
+	  <div>
+		<p class="eyebrow">Your fund at a glance</p>
+		<h2>Here’s your fund so far</h2>
 	  </div>
 	  <p class="readiness" id="readiness"></p>
 	</div>
@@ -109,10 +128,10 @@
 	<article class="pager" id="pager">
 	  <header class="pg-top">
 		<div>
-		  <p class="pg-kicker" id="pgKicker">Fund I · First close target $3M</p>
+		  <p class="pg-kicker" id="pgKicker">Your first fund</p>
 		  <div class="pg-name-row">
 			<input id="fundName" class="pg-name" type="text" maxlength="40" placeholder="Fund I" autocomplete="off" spellcheck="false" aria-label="Fund name">
-			<span class="pg-edit" aria-hidden="true">Click to name your fund</span>
+			<span class="pg-edit" aria-hidden="true">Click to name your fund · Optional</span>
 		  </div>
 		  <p class="pg-gp">General partner · <span id="pgGP">Alex Rivera</span></p>
 		</div>
@@ -120,17 +139,14 @@
 
 	  <div class="pg-body">
 		<div class="pg-main">
-		  <p class="pg-label">The thesis</p>
+		  <p class="pg-label">Focus</p>
 		  <p class="pg-thesis" id="pgThesis"></p>
-		  <p class="pg-thesis-line" id="pgThesisLine"></p>
 
-		  <p class="pg-label">Why us</p>
-		  <p class="pg-why" id="pgWhy"></p>
+		  <p class="pg-label">Deal flow</p>
+		  <p class="pg-line" id="pgDeals"></p>
 
-		  <div id="pgHighlightsWrap">
-			<p class="pg-label">Track record</p>
-			<ul class="pg-highlights" id="pgHighlights"></ul>
-		  </div>
+		  <p class="pg-label">How you invest</p>
+		  <p class="pg-line" id="pgHow"></p>
 		</div>
 
 		<aside class="pg-numbers">
@@ -139,17 +155,18 @@
 		</aside>
 	  </div>
 	</article>
+	<p class="pager-note">Fund size and portfolio come from step 1. Change them there and they update here.</p>
   </section>
+
   <!-- Footer, help banner and help call come from ../shared/footer.js -->
-	<div id="pageFoot"
-	  data-fine="You can edit your story any time. Nothing is sent to anyone from this page."
-	  data-cta="Continue to my LP plan"
-	  data-help="Stuck on your thesis?"
-	  data-help-sub="Book a free call with a Decile fund specialist. We’ll help you sharpen your story before you send it to anyone."
-	  data-book-sub="Pick a time that works. We’ll go through your thesis, your story and how to pitch it to your first LPs."
-	  data-book-note="We’ll send a calendar invite with a video link. Your plan and story come with you."
-	  data-book-back="Back to my story">
-  </div> 
+  <div id="pageFoot"
+	data-fine="You can change any of these at any time."
+	data-cta="Continue to my LP plan"
+	data-help="Not sure how to describe your focus?"
+	data-help-sub="Book a free call with a Decile fund specialist. We’ll help you sharpen your focus and how you talk about it."
+	data-book-sub="Pick a time that works. We’ll go through your focus, your deal flow and how to talk about your fund."
+	data-book-note="We’ll send a calendar invite with a video link. Your answers from this page come with you."
+	data-book-back="Back to my fund focus"></div>
 </main>
 
 <script src="../shared/store.js"></script>

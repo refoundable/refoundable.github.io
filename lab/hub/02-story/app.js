@@ -1,21 +1,20 @@
-// Fund story page. All handlers are attached here (no inline JS) so the same
+// Fund focus page. All handlers are attached here (no inline JS) so the same
 // files would also work inside a Chrome extension, which blocks inline scripts.
 
-// Plan carried over from earlier steps through the shared demo state.
+// Plan carried over from step 1 through the shared demo state.
 const saved = DemoStore.load();
 
 const PLAN = {
   size: saved.size * 1e6,
-  minCheck: saved.minCheck * 1e3,
   firstCheck: saved.firstCheck * 1e3,
   companies: saved.companies,
-  listed: (saved.people || []).length,
   gp: saved.name
 };
 const FIRST_CLOSE = 0.30;
+const INVEST_YEARS = 2;          // same window for new investments as step 1
 
+// label shown on the chip, s used inside the summary sentences
 const STAGES = ['Pre-seed', 'Seed', 'Pre-seed and seed', 'Series A'];
-// label shown on the chip, s used inside the thesis sentence
 const SECTORS = [
   { label: 'AI', s: 'AI' },
   { label: 'Fintech', s: 'fintech' },
@@ -27,29 +26,82 @@ const SECTORS = [
   { label: 'Other', s: null }
 ];
 const GEOS = ['North America', 'Europe', 'Latin America', 'Africa', 'Middle East', 'South Asia', 'Southeast Asia', 'Global'];
-const MAX_SECTORS = 3, MAX_GEOS = 2, MAX_HIGHLIGHTS = 3;
+const SOURCES = [
+  { label: 'Founder referrals', s: 'founder referrals' },
+  { label: 'Accelerators', s: 'accelerators' },
+  { label: 'Incubators and studios', s: 'incubators and studios' },
+  { label: 'Friends and personal network', s: 'friends and personal network' },
+  { label: 'Former colleagues', s: 'former colleagues' },
+  { label: 'Angel groups and syndicates', s: 'angel groups and syndicates' },
+  { label: 'Private communities', s: 'private communities' },
+  { label: 'University and alumni networks', s: 'university and alumni networks' },
+  { label: 'Other investors', s: 'other investors' },
+  { label: 'Events and demo days', s: 'events and demo days' },
+  { label: 'Inbound', s: 'inbound' },
+  { label: 'Other', s: null }
+];
+// mid is a rough midpoint, used to estimate how selective the fund can be
+const DEALS = [
+  { label: 'Under 50', mid: 35 },
+  { label: '50–150', mid: 100 },
+  { label: '150–300', mid: 225 },
+  { label: '300–600', mid: 450 },
+  { label: '600+', mid: 750 }
+];
+const LEAD = [
+  { label: 'Lead the round', s: 'Usually leads rounds' },
+  { label: 'Co-lead', s: 'Usually co-leads rounds' },
+  { label: 'Follow other investors', s: 'Usually follows other investors' }
+];
+const HELP = ['Hiring', 'Go-to-market', 'Fundraising', 'Product', 'Customer intros', 'Industry expertise'];
+const EXPERIENCE = [
+  { label: 'None yet', s: 'No angel investments yet' },
+  { label: '1–5', s: '1–5 angel investments so far' },
+  { label: '6–20', s: '6–20 angel investments so far' },
+  { label: '20+', s: '20+ angel investments so far' }
+];
+const TIME = [
+  { label: 'Full time', s: 'full time on the fund' },
+  { label: 'Part time to start', s: 'part time on the fund to start' }
+];
 
-const EXAMPLES = [
-  { text: 'Eight years building ML infrastructure at a major cloud provider. I know the engineers who will start the next wave of these companies.', why: 'Insider knowledge' },
-  { text: 'I’ve angel invested in 22 companies and helped 30 founders raise their first round. Founders call me before they call anyone else.', why: 'Proven access' },
-  { text: 'I ran growth at two fintechs in Lagos. I see the best deals in West Africa months before they reach other investors.', why: 'Unfair network' }
+// Every question on the page. All of them need an answer before moving on.
+const QUESTIONS = [
+  { key: 'stage', wrap: 'stageChips', items: STAGES, single: true, todo: 'Pick a stage' },
+  { key: 'sectors', wrap: 'sectorChips', items: SECTORS, max: 3, other: 'sectorOther', todo: 'Pick your sectors' },
+  { key: 'geos', wrap: 'geoChips', items: GEOS, max: 2, todo: 'Pick where you invest' },
+  { key: 'sources', wrap: 'sourceChips', items: SOURCES, max: 3, other: 'sourceOther', todo: 'Pick your deal sources' },
+  { key: 'deals', wrap: 'dealChips', items: DEALS, single: true, todo: 'Pick how many deals you see' },
+  { key: 'lead', wrap: 'leadChips', items: LEAD, single: true, todo: 'Pick lead or follow' },
+  { key: 'help', wrap: 'helpChips', items: HELP, max: 3, todo: 'Pick how you help founders' },
+  { key: 'experience', wrap: 'expChips', items: EXPERIENCE, single: true, todo: 'Pick your investing experience' },
+  { key: 'time', wrap: 'timeChips', items: TIME, single: true, todo: 'Pick your time on the fund' }
 ];
 
 const SAMPLE = {
   fundName: 'Northbound Ventures',
   stage: 'Pre-seed',
   sectors: ['AI', 'Enterprise software'],
-  other: '',
+  sectorOther: '',
   geos: ['North America'],
-  thesisLine: 'The next generation of AI companies will be built by infrastructure engineers, and they need a first check from someone who speaks their language.',
-  why: 'Eight years building ML infrastructure at a major cloud provider. I know the engineers who will start the next wave of these companies, and they already ask me for advice.',
-  highlights: ['Early angel in Vectorly (acquired 2024)', 'Led ML platform team of 40 at a major cloud provider', 'Advisor to 12 seed-stage AI startups']
+  sources: ['Founder referrals', 'Former colleagues', 'Private communities'],
+  sourceOther: '',
+  deals: '150–300',
+  lead: 'Lead the round',
+  help: ['Hiring', 'Go-to-market', 'Product'],
+  experience: '6–20',
+  time: 'Full time'
 };
 
-const blank = () => ({ fundName: '', stage: null, sectors: [], other: '', geos: [], thesisLine: '', why: '', highlights: [''] });
+const blank = () => ({
+  fundName: '', stage: null, sectors: [], sectorOther: '', geos: [],
+  sources: [], sourceOther: '', deals: null, lead: null, help: [], experience: null, time: null
+});
 let state = blank();
 
 const $ = id => document.getElementById(id);
+const labelOf = item => (typeof item === 'string' ? item : item.label);
+const find = (items, label) => items.find(i => labelOf(i) === label);
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 function money(d) {
   if (d >= 1e6) return '$' + String(+(d / 1e6).toFixed(d >= 1e7 ? 1 : 2)) + 'M';
@@ -60,169 +112,193 @@ function joinList(items) {
   if (items.length === 2) return items.join(' and ');
   return items.slice(0, -1).join(', ') + ' and ' + items[items.length - 1];
 }
+const ph = s => `<span class="ph">${s}</span>`;
 
 /* ---------- Chips ---------- */
-function buildChips(wrapId, items, key, opts) {
-  const wrap = $(wrapId);
+function buildChips(q) {
+  const wrap = $(q.wrap);
   wrap.innerHTML = '';
-  items.forEach(item => {
-    const label = typeof item === 'string' ? item : item.label;
+  q.items.forEach(item => {
+    const label = labelOf(item);
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'chip';
     b.dataset.value = label;
     b.textContent = label;
-    b.setAttribute(opts.single ? 'aria-checked' : 'aria-pressed', 'false');
-    if (opts.single) b.setAttribute('role', 'radio');
+    if (q.single) b.setAttribute('role', 'radio');
     b.addEventListener('click', () => {
-      if (opts.single) {
-        state[key] = state[key] === label ? null : label;
+      if (q.single) {
+        state[q.key] = state[q.key] === label ? null : label;
       } else {
-        const list = state[key];
+        const list = state[q.key];
         const i = list.indexOf(label);
         if (i >= 0) list.splice(i, 1);
-        else if (list.length < opts.max) list.push(label);
+        else if (list.length < q.max) list.push(label);
         // "Global" doesn't combine with specific regions.
-        if (key === 'geos' && label === 'Global' && list.includes('Global')) state.geos = ['Global'];
-        if (key === 'geos' && label !== 'Global') state.geos = state.geos.filter(g => g !== 'Global' || label === 'Global');
+        if (q.key === 'geos') {
+          if (label === 'Global' && list.includes('Global')) state.geos = ['Global'];
+          else if (label !== 'Global') state.geos = state.geos.filter(g => g !== 'Global');
+        }
       }
-      renderChips();
-      renderPager();
-      if (key === 'sectors' && label === 'Other' && state.sectors.includes('Other')) $('sectorOther').focus();
+      $(q.wrap).closest('.field').classList.remove('need');
+      render();
+      if (q.other && label === 'Other' && state[q.key].includes('Other')) $(q.other).focus();
     });
     wrap.appendChild(b);
   });
 }
 
-function syncChips(wrapId, selected, max) {
-  const sel = Array.isArray(selected) ? selected : selected ? [selected] : [];
-  [...$(wrapId).children].forEach(b => {
-    const on = sel.includes(b.dataset.value);
-    b.classList.toggle('on', on);
-    b.setAttribute(b.getAttribute('role') === 'radio' ? 'aria-checked' : 'aria-pressed', on);
-    b.disabled = !!max && !on && sel.length >= max;
-  });
-}
-
 function renderChips() {
-  syncChips('stageChips', state.stage);
-  syncChips('sectorChips', state.sectors, MAX_SECTORS);
-  syncChips('geoChips', state.geos, MAX_GEOS);
-  $('sectorOtherWrap').hidden = !state.sectors.includes('Other');
-}
-
-/* ---------- Highlights ---------- */
-function renderHighlights() {
-  const wrap = $('highlights');
-  wrap.innerHTML = '';
-  state.highlights.forEach((h, i) => {
-    const row = document.createElement('div');
-    row.className = 'hl';
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.maxLength = 80;
-    input.value = h;
-    input.placeholder = ['e.g. Early angel in Acme (acquired 2024)', 'e.g. Helped 30 founders raise their first round', 'e.g. Former VP Product at a public fintech'][i];
-    input.setAttribute('aria-label', `Highlight ${i + 1}`);
-    input.addEventListener('input', () => { state.highlights[i] = input.value; renderPager(); });
-    row.appendChild(input);
-    if (state.highlights.length > 1) {
-      const x = document.createElement('button');
-      x.type = 'button';
-      x.className = 'hl-x';
-      x.setAttribute('aria-label', `Remove highlight ${i + 1}`);
-      x.textContent = '×';
-      x.addEventListener('click', () => { state.highlights.splice(i, 1); renderHighlights(); renderPager(); });
-      row.appendChild(x);
-    }
-    wrap.appendChild(row);
+  QUESTIONS.forEach(q => {
+    const v = state[q.key];
+    const sel = Array.isArray(v) ? v : v ? [v] : [];
+    [...$(q.wrap).children].forEach(b => {
+      const on = sel.includes(b.dataset.value);
+      b.classList.toggle('on', on);
+      b.setAttribute(q.single ? 'aria-checked' : 'aria-pressed', on);
+      b.disabled = !!q.max && !on && sel.length >= q.max;
+    });
+    if (q.other) $(q.other + 'Wrap').hidden = !sel.includes('Other');
   });
-  $('addHighlight').hidden = state.highlights.length >= MAX_HIGHLIGHTS;
 }
 
-/* ---------- Counters ---------- */
-function setCount(id, value, max) {
-  const el = $(id);
-  el.textContent = `${value.length} / ${max}`;
-  el.classList.toggle('near', value.length > max * 0.9);
+/* ---------- Answers ---------- */
+function answered(q) {
+  const v = state[q.key];
+  if (!Array.isArray(v)) return !!v;
+  if (!v.length) return false;
+  return !(q.other && v.includes('Other') && !state[q.other].trim());
 }
+const missing = () => QUESTIONS.filter(q => !answered(q));
 
-/* ---------- One-pager ---------- */
-function thesisSentence() {
-  const sectors = state.sectors
-    .map(l => l === 'Other' ? state.other.trim() : SECTORS.find(s => s.label === l).s)
+// Words for a multi-pick answer, with "Other" replaced by what they typed.
+function picked(key, items, otherKey) {
+  return state[key]
+    .map(l => (l === 'Other' ? state[otherKey].trim() : (find(items, l).s || l)))
     .filter(Boolean);
-  const stage = state.stage ? state.stage.toLowerCase() : null;
-  const hasAny = stage || sectors.length || state.geos.length;
-  if (!hasAny) return null;
+}
 
-  const stagePart = stage ? esc(stage) : '<span class="ph">your stage</span>';
-  const sectorPart = sectors.length ? esc(joinList(sectors)) : '<span class="ph">your sector</span>';
+/* ---------- Deal flow ratio ---------- */
+// How many of the deals they see the fund would back, given the portfolio from step 1.
+function selectivity() {
+  const d = find(DEALS, state.deals);
+  const perYear = PLAN.companies / INVEST_YEARS;
+  if (!d || !perYear) return null;
+  return { perYear: Math.max(1, Math.round(perYear)), r: Math.max(1, Math.round(d.mid / perYear)), label: d.label };
+}
+
+function renderRatio() {
+  const el = $('ratio');
+  const s = selectivity();
+  el.hidden = !s;
+  if (!s) return;
+  const base = `You plan about ${s.perYear} new investments a year. At ${s.label} deals a year, you’d back about <b>1 in ${s.r}</b>`;
+  let tone, rest;
+  if (s.r < 5) { tone = 'tight'; rest = '. That leaves little room to be choosy, so LPs may ask how you’ll keep quality high.'; }
+  else if (s.r <= 25) { tone = 'good'; rest = ', a healthy level of selectivity for a first fund.'; }
+  else { tone = 'wide'; rest = '. Very selective, as long as you have time to look at that many deals.'; }
+  el.className = 'ratio ' + tone;
+  el.innerHTML = base + rest;
+}
+
+/* ---------- Summary ---------- */
+function focusSentence() {
+  const sectors = picked('sectors', SECTORS, 'sectorOther');
+  const stage = state.stage ? esc(state.stage.toLowerCase()) : ph('your stage');
+  const sectorPart = sectors.length ? esc(joinList(sectors)) : ph('your sector');
   let geoPart;
   if (state.geos.includes('Global')) geoPart = 'around the world';
   else if (state.geos.length) geoPart = 'in ' + esc(joinList(state.geos));
-  else geoPart = 'in <span class="ph">your region</span>';
-  return `Backing ${stagePart} ${sectorPart} companies ${geoPart}.`;
+  else geoPart = 'in ' + ph('your region');
+  return `Backing ${stage} ${sectorPart} companies ${geoPart}.`;
 }
 
-const READY_CHECKS = [
-  { ok: () => state.stage && state.sectors.length && state.geos.length, todo: 'Pick your stage, sectors and region' },
-  { ok: () => state.why.trim().length >= 20, todo: 'Add why you' }
-];
+function dealsSentence() {
+  const sources = picked('sources', SOURCES, 'sourceOther');
+  const from = sources.length ? `Mostly from ${esc(joinList(sources))}.` : ph('Your top deal sources.');
+  const s = selectivity();
+  const seen = s ? ` About ${esc(s.label)} deals a year, backing about 1 in ${s.r}.` : ' ' + ph('How many deals you see a year.');
+  return from + seen;
+}
 
-let lastPager = '';
-function renderPager() {
+function howSentence() {
+  const lead = find(LEAD, state.lead);
+  const help = state.help.map(h => h.toLowerCase());
+  const exp = find(EXPERIENCE, state.experience);
+  const time = find(TIME, state.time);
+  const parts = [
+    lead ? esc(lead.s) + '.' : ph('Lead or follow.'),
+    help.length ? `Helps founders with ${esc(joinList(help))}.` : ph('How you help founders.'),
+    exp && time ? `${esc(exp.s)}, ${esc(time.s)}.`
+      : exp ? `${esc(exp.s)}. ${ph('Time on the fund.')}`
+      : time ? `${ph('Investing experience.')} ${esc(time.s[0].toUpperCase() + time.s.slice(1))}.`
+      : ph('Investing experience and time on the fund.')
+  ];
+  return parts.join(' ');
+}
+
+let lastSig = '';
+function renderSummary() {
   const name = state.fundName.trim();
   $('fundName').closest('.pg-name-row').classList.toggle('named', !!name);
   fitName();
-
-  $('pgKicker').textContent = `${name ? 'Fund I' : 'Your first fund'} · First close target ${money(PLAN.size * FIRST_CLOSE)}`;
+  $('pgKicker').textContent = `${name ? 'Fund I' : 'Your first fund'} · ${money(PLAN.size)}`;
   $('pgGP').textContent = PLAN.gp;
 
-  const t = thesisSentence();
-  $('pgThesis').innerHTML = t || '<span class="ph">Backing your stage and sector companies in your region.</span>';
-  $('pgThesisLine').textContent = state.thesisLine.trim();
-
-  const why = state.why.trim();
-  $('pgWhy').innerHTML = why ? esc(why) : '<span class="ph">This is where your edge goes: what you know, or who you know, that others don’t.</span>';
-
-  const hl = state.highlights.map(h => h.trim()).filter(Boolean);
-  $('pgHighlightsWrap').hidden = hl.length === 0;
-  $('pgHighlights').innerHTML = hl.map(h => `<li>${esc(h)}</li>`).join('');
+  $('pgThesis').innerHTML = focusSentence();
+  $('pgDeals').innerHTML = dealsSentence();
+  $('pgHow').innerHTML = howSentence();
 
   const rows = [
     ['Target fund size', money(PLAN.size)],
     ['First close target', money(PLAN.size * FIRST_CLOSE)],
-    ['Minimum LP check', money(PLAN.minCheck)],
     ['Typical first check', money(PLAN.firstCheck)],
-    ['Portfolio', `About ${PLAN.companies} companies`]
+    ['Target Portfolio', `${PLAN.companies} companies`]
   ];
   $('pgNumbers').innerHTML = rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
 
-  const missing = READY_CHECKS.filter(c => !c.ok());
+  const left = missing();
+  const done = QUESTIONS.length - left.length;
   const ready = $('readiness');
-  ready.classList.toggle('ready', missing.length === 0);
-  ready.textContent = missing.length === 0 ? '✓ Ready for your first 10' : 'Next: ' + missing[0].todo.toLowerCase();
+  ready.classList.toggle('ready', left.length === 0);
+  ready.textContent = left.length === 0 ? '✓ All set' : `${done} of ${QUESTIONS.length} answered`;
+  document.body.classList.toggle('incomplete', left.length > 0);
 
-  // Brief highlight on the one-pager when it changes in a meaningful way.
-  const sig = [t, why.length > 0, hl.length, name].join('|');
-  if (lastPager && sig !== lastPager) {
+  // Brief highlight on the summary when an answer changes.
+  const sig = JSON.stringify(state);
+  if (lastSig && sig !== lastSig) {
     const p = $('pager');
     p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash');
   }
-  lastPager = sig;
-  persist(t);
+  lastSig = sig;
 }
 
-// Save the story, plus a plain-text thesis for the dashboard once every part is filled in.
-function persist(thesisHtml) {
-  let thesisText = '';
-  if (thesisHtml && !thesisHtml.includes('class="ph"')) {
-    const tmp = document.createElement('div');
-    tmp.innerHTML = thesisHtml;
-    thesisText = tmp.textContent;
-  }
-  DemoStore.save({ story: Object.assign(JSON.parse(JSON.stringify(state)), { thesisText }) });
+function render() {
+  renderChips();
+  renderRatio();
+  renderSummary();
+  persist();
+}
+
+// Short version for the dashboard: investing style and how they help founders only.
+function styleSentence() {
+  const lead = find(LEAD, state.lead);
+  const help = state.help.map(h => h.toLowerCase());
+  if (!lead || !help.length) return '';
+  return `${lead.s}. Helps founders with ${joinList(help)}.`;
+}
+
+// Save the answers, plus plain-text summary lines for the dashboard.
+function persist() {
+  const text = html => { const t = document.createElement('div'); t.innerHTML = html; return t.querySelector('.ph') ? '' : t.textContent; };
+  DemoStore.save({
+    story: Object.assign(JSON.parse(JSON.stringify(state)), {
+      thesisText: text(focusSentence()),
+      dealsText: text(dealsSentence()),
+      styleText: styleSentence(),
+      complete: missing().length === 0
+    })
+  });
 }
 
 function fitName() {
@@ -231,53 +307,51 @@ function fitName() {
   input.style.width = Math.min(len + 1, 30) + 'ch';
 }
 
+// Point to the first unanswered question.
+function showMissing() {
+  const q = missing()[0];
+  if (!q) return;
+  const field = $(q.wrap).closest('.field');
+  field.classList.remove('need'); void field.offsetWidth; field.classList.add('need');
+  field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 /* ---------- Fill / clear (prototype helpers) ---------- */
 function loadState(next) {
   state = next;
   $('fundName').value = state.fundName;
-  $('sectorOther').value = state.other;
-  $('thesisLine').value = state.thesisLine;
-  $('whyYou').value = state.why;
-  setCount('thesisCount', state.thesisLine, 160);
-  setCount('whyCount', state.why, 280);
-  renderChips();
-  renderHighlights();
-  lastPager = '';
-  renderPager();
+  $('sectorOther').value = state.sectorOther;
+  $('sourceOther').value = state.sourceOther;
+  document.querySelectorAll('.field.need').forEach(f => f.classList.remove('need'));
+  lastSig = '';
+  render();
 }
 
 /* ---------- Init ---------- */
 function init() {
-  buildChips('stageChips', STAGES, 'stage', { single: true });
-  buildChips('sectorChips', SECTORS, 'sectors', { max: MAX_SECTORS });
-  buildChips('geoChips', GEOS, 'geos', { max: MAX_GEOS });
+  QUESTIONS.forEach(buildChips);
 
-  $('examples').innerHTML = EXAMPLES.map(e => `<div class="ex"><p>${esc(e.text)}</p><span>${esc(e.why)}</span></div>`).join('');
-
-  $('sectorOther').addEventListener('input', e => { state.other = e.target.value; renderPager(); });
-  $('thesisLine').addEventListener('input', e => { state.thesisLine = e.target.value; setCount('thesisCount', state.thesisLine, 160); renderPager(); });
-  $('whyYou').addEventListener('input', e => { state.why = e.target.value; setCount('whyCount', state.why, 280); renderPager(); });
-  $('fundName').addEventListener('input', e => { state.fundName = e.target.value; renderPager(); });
+  $('sectorOther').addEventListener('input', e => { state.sectorOther = e.target.value; render(); });
+  $('sourceOther').addEventListener('input', e => { state.sourceOther = e.target.value; render(); });
+  $('fundName').addEventListener('input', e => { state.fundName = e.target.value; render(); });
   $('fundName').addEventListener('keydown', e => { if (e.key === 'Enter') e.target.blur(); });
-
-  $('addHighlight').addEventListener('click', () => {
-    if (state.highlights.length >= MAX_HIGHLIGHTS) return;
-    state.highlights.push('');
-    renderHighlights();
-    const inputs = $('highlights').querySelectorAll('input');
-    inputs[inputs.length - 1].focus();
-  });
 
   $('demoFill').addEventListener('click', () => loadState(JSON.parse(JSON.stringify(SAMPLE))));
   $('demoClear').addEventListener('click', () => loadState(blank()));
 
+  // Every question needs an answer before moving on.
   $('cta').addEventListener('click', () => {
-    renderPager();
+    if (missing().length) { showMissing(); return; }
+    persist();
     DemoNav.go(3);
   });
 
-  const story = saved.story;
-  loadState(story ? Object.assign(blank(), story, { highlights: story.highlights && story.highlights.length ? story.highlights : [''] }) : blank());
+  // Earlier versions of this page saved the custom sector as "other".
+  const story = saved.story || {};
+  const next = blank();
+  Object.keys(next).forEach(k => { if (story[k] !== undefined) next[k] = story[k]; });
+  if (!next.sectorOther && story.other) next.sectorOther = story.other;
+  loadState(next);
 }
 
 init();

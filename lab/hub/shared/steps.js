@@ -12,8 +12,9 @@
 
   const completed = DemoStore.load().stepsDone || 0;
 
-  // A page can block moving on (the fund size page does at $20M+).
-  const blocked = () => document.body.classList.contains('over');
+  // A page can block moving on: the fund size page at $20M+ (body.over), or a page
+  // with unanswered questions (body.incomplete).
+  const blocked = () => ['over', 'incomplete'].some(c => document.body.classList.contains(c));
 
   // Mark this step completed when the main button moves on. This runs before the
   // page's own handler, because this file loads before app.js.
