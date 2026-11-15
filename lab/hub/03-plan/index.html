@@ -22,7 +22,7 @@
   <section class="intro">
 	<p class="eyebrow">From idea to a real fund</p>
 	<h1>Let’s map your raise.</h1>
-	<p class="lede">Every fund starts as a list of people. Here’s roughly how many you’ll need to reach, how many you’ll meet, and how long it could take to close.</p>
+	<p class="lede">Here’s roughly how many LPs you’ll need, how big a first close to aim for, and how long it could take.</p>
   </section> 
 
   <section class="hero">
@@ -52,12 +52,12 @@
 	  </div>
 	  <div class="control">
 		<div class="c-row">
-		  <label for="paceSlider">LP meetings per week</label>
-		  <span class="c-val" id="paceVal">10</span>
+			<label for="fcSlider">First close</label>
+			<span class="c-val" id="fcVal">$1.5M · 30%</span>
 		</div>
-		<input type="range" id="paceSlider" class="slider" min="3" max="25" step="1" aria-label="LP meetings per week">
-		<div class="c-ends"><span>Part time</span><span>All in</span></div>
-	  </div>
+		<input type="range" id="fcSlider" class="slider" min="100" max="2500" step="50" aria-label="First close size">
+		<div class="c-ends"><span>$100K</span><span id="fcMaxLabel">$2.5M</span></div>
+		</div>
 	</div>
   </section>
 
@@ -69,10 +69,10 @@
 	  <p class="soft-warn" id="lpWarn"><span class="warn-dot"></span><span>Above 99 LPs. Many fund structures cap investors at 99, so this may need a different setup. A larger minimum check keeps you under.</span></p>
 	</article>
 	<article class="metric">
-	  <p class="m-label">Meetings needed</p>
-	  <p class="m-value" id="nMeetings">150</p>
-	  <p class="m-desc" id="meetDesc">At 10 a week: about 8 first meetings and 2 follow ups.</p>
-	  <p class="m-desc m-time" id="meetTime">About 5 hours of meetings a week, at 30 mins each.</p>
+		<p class="m-label">First close</p>
+		<p class="m-value" id="nFirst">$1.5M</p>
+		<p class="m-desc" id="fcDesc">30% of your $5M fund, from about 7 LPs.</p>
+		<p class="m-desc m-time">Once it closes, you can start investing.</p>
 	</article>
   </section>
 
@@ -96,7 +96,7 @@
   
   <!-- Footer, help banner and help call come from ../shared/footer.js -->
 	<div id="pageFoot"
-	  data-fine="Estimates assume 20% of people met commit, and committed LPs take 3 meetings to close. Commitment mixes are illustrative."
+	  data-fine="Estimates assume about 10 LP meetings a week, 20% of people met commit, and committed LPs take 3 meetings to close. Commitment mixes are illustrative."
 	  data-cta="Start building my list"
 	  data-help="Need help with your numbers?"
 	  data-help-sub="Book a free call with a Decile fund specialist. We’ll walk through your fund model and setup with you."

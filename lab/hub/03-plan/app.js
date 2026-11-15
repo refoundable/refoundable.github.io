@@ -2,7 +2,11 @@
 // files would also work inside a Chrome extension, which blocks inline scripts.
 
 const GP_COMMIT = 0;             // manager's own commitment, defaults to 0
-const FIRST_CLOSE = 0.30;        // same as step 1
+const FIRST_CLOSE = 0.30;        // default first close, as a share of the fund
+const FC_MIN = 100;              // smallest first close, in $K
+const FC_MAX_SHARE = 0.50;       // largest first close, as a share of the fund
+const FC_STEP = 50;              // slider steps, in $K
+const PACE = 10;                 // assumed LP meetings a week
 const MEET_RATE = 0.5;           // share of prospects who take a first meeting
 const CONVERSION = 0.20;         // share of people met who commit
 const MEETINGS_PER_LP = 3;       // meetings with each LP who commits
@@ -33,15 +37,20 @@ const state = {
   checkIdx: CHECKS.includes(saved.minCheck) ? CHECKS.indexOf(saved.minCheck) : CHECKS.indexOf(100),
   preset: PRESETS[saved.preset] ? saved.preset : 'balanced',
   known: saved.known,
-  pace: saved.pace
+  firstClose: 0
 };
+
+// First close in $K: $50K steps, from $100K up to half the fund.
+const fcMax = sizeM => Math.floor(sizeM * 1e3 * FC_MAX_SHARE / FC_STEP) * FC_STEP;
+const fcClamp = (k, sizeM) => Math.min(fcMax(sizeM), Math.max(FC_MIN, Math.round(k / FC_STEP) * FC_STEP));
+state.firstClose = fcClamp(state.size * 1e3 * (saved.firstCloseShare ?? FIRST_CLOSE), state.size);
 
 function persist(c) {
   DemoStore.save({
     size: state.size,
     minCheck: CHECKS[state.checkIdx],
     preset: state.preset,
-    pace: state.pace,
+    firstCloseShare: state.firstClose / (state.size * 1e3),
     known: state.known,
     plan: {
       lps: c.lps,
@@ -56,7 +65,7 @@ function persist(c) {
 
 const $ = id => document.getElementById(id);
 const checkSlider = $('checkSlider');
-const paceSlider = $('paceSlider');
+const fcSlider = $('fcSlider');
 
 function money(d) {
   if (d >= 1e6) return '$' + String(+(d / 1e6).toFixed(d >= 1e7 ? 1 : 2)) + 'M';
@@ -76,7 +85,7 @@ function calc() {
 
   const gp = size * GP_COMMIT;
   const toRaise = size - gp;
-  const raise1 = Math.max(0, size * FIRST_CLOSE - gp);   // GP commitment counts toward first close
+  const raise1 = Math.max(0, state.firstClose * 1e3 - gp);   // GP commitment counts toward first close
   const lpExact = toRaise / avgCheck;
 
   // Whole LPs per tier. Dollars always come from count x check, so totals match the labels.
@@ -104,11 +113,11 @@ function calc() {
   const met = Math.ceil(lps / CONVERSION);
   const prospects = Math.ceil(met / MEET_RATE);
   const meetings = Math.round(lps * MEETINGS_PER_LP + (met - lps) * MEETINGS_PER_PASS);
-  const meetWeeks = meetings / state.pace;
+  const meetWeeks = meetings / PACE
   const firstWeeks = meetWeeks * (lp1 / lps);
   const finalWeeks = meetWeeks;
   
-  return { size, gp, toRaise, committed, minCheck, lp1, lp2, lps, tierData, met, prospects, meetings,
+  return { size, gp, toRaise, raise1, committed, minCheck, lp1, lp2, lps, tierData, met, prospects, meetings,
     meetWeeks, firstWeeks, finalWeeks, avg: committed / lps };
 }
 
@@ -231,22 +240,17 @@ function render() {
   const c = calc();
 
   $('checkVal').textContent = money(c.minCheck);
-  $('paceVal').textContent = state.pace;
   checkSlider.style.setProperty('--fill', (state.checkIdx / (CHECKS.length - 1) * 100) + '%');
-  paceSlider.style.setProperty('--fill', ((state.pace - 3) / 22 * 100) + '%');
+  const fcPct = Math.round(c.raise1 / c.size * 100);
+  $('fcVal').textContent = `${money(c.raise1)} · ${fcPct}%`;
+  fcSlider.style.setProperty('--fill', ((state.firstClose - FC_MIN) / (fcSlider.max - FC_MIN) * 100) + '%');
 
   tween($('nLPs'), c.lps, int);
-  tween($('nMeetings'), c.meetings, int);
+  tween($('nFirst'), c.raise1, money);
+  $('fcDesc').textContent = `${fcPct}% of your ${money(c.size)} fund, from about ${c.lp1} LP${c.lp1 === 1 ? '' : 's'}.`;
 
   $('lpDesc').textContent = `To raise ${money(c.toRaise)}, about ${money(c.avg)} per LP on average.`;
   $('lpCard').classList.toggle('over', c.lps > LP_LIMIT);
-
-  const firstShare = c.met / c.meetings;
-  const firsts = Math.max(1, Math.round(state.pace * firstShare));
-  const follows = Math.max(0, state.pace - firsts);
-  $('meetDesc').textContent = `At ${state.pace} a week: about ${firsts} first meetings and ${follows} follow ups.`;
-  const hrs = h => String(+h.toFixed(1));
-  $('meetTime').innerHTML = `About <b>${hrs(state.pace * MEETING_HOURS)} hours a week</b> of meetings, at 30 minutes each.`;
 
   renderChoices();
   renderPyramid(c);
@@ -257,12 +261,16 @@ function render() {
 function init() {
   checkSlider.max = CHECKS.length - 1;
   checkSlider.value = state.checkIdx;
-  paceSlider.value = state.pace;
+  fcSlider.min = FC_MIN;
+  fcSlider.max = fcMax(state.size);
+  fcSlider.step = FC_STEP;
+  fcSlider.value = state.firstClose;
+  $('fcMaxLabel').textContent = money(fcSlider.max * 1e3);
   buildChoices();
   buildPyramid();
 
   checkSlider.addEventListener('input', () => { state.checkIdx = +checkSlider.value; render(); });
-  paceSlider.addEventListener('input', () => { state.pace = +paceSlider.value; render(); });
+  fcSlider.addEventListener('input', () => { state.firstClose = +fcSlider.value; render(); });
 
   $('cta').addEventListener('click', () => {
     persist(calc());

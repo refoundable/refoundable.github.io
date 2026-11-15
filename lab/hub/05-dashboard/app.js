@@ -11,7 +11,7 @@ const FUND = {
   name: (story.fundName || '').trim() || 'Fund I',
   gp: saved.name,
   size: saved.size * 1e6,
-  firstClose: saved.size * 1e6 * 0.30,
+  firstClose: Math.max(1e5, Math.round(saved.size * 1e6 * (saved.firstCloseShare ?? 0.30) / 5e4) * 5e4),
   minCheck: saved.minCheck * 1e3,
   mix: MIX_LABELS[saved.preset] || 'Balanced',
   lpsNeeded: saved.plan.lps,
