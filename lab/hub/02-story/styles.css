@@ -113,7 +113,7 @@ input::placeholder{color:var(--ink-3)}
 @keyframes flash{from{background:var(--sage-tint)}to{background:transparent}}
 
 /* Deal flow ratio, under "Deals you see in a year" */
-.ratio{margin-top:12px;max-width:70ch;font-size:14px;line-height:1.5;color:var(--ink-2);padding:11px 14px;border-radius:14px;background:var(--mist)}
+.ratio{margin-top:12px;max-width:72ch;font-size:14px;line-height:1.5;color:var(--ink-2);padding:11px 14px;border-radius:14px;background:var(--mist)}
 .ratio[hidden]{display:none}
 .ratio b{color:var(--plum)}
 .ratio.good{background:var(--sage-tint)}
