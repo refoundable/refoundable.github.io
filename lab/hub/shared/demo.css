@@ -36,7 +36,7 @@
 /* Help banner */
 /* Light card, so the main button stays the one dark, solid thing at the bottom */
 .help{margin-top:18px;display:flex;align-items:center;gap:18px;padding:18px 20px 18px 18px;border-radius:22px;color:var(--ink);
-  border:1.5px solid color:var(--lavender);
+  border:1.5px solid var(--lavender);
   /* Card fill on top, gradient border underneath */
   background:
     linear-gradient(var(--mist),var(--mist)) padding-box,
