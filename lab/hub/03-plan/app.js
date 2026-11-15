@@ -206,7 +206,7 @@ function renderTimeline(c) {
   tween($('tFinal'), months(c.finalWeeks), v => Math.round(v) + ' mo');
 
   const pts = [
-    { cls: 'up', w: RAMP_WEEKS, t: 'Meetings start', s: monthYear(addWeeks(RAMP_WEEKS)) },
+    { cls: 'up', w: RAMP_WEEKS, t: 'Start raising', s: monthYear(addWeeks(RAMP_WEEKS)) },
     { cls: 'down first', w: c.firstWeeks, t: 'First close', s: monthYear(addWeeks(c.firstWeeks)) },
     { cls: 'down final', w: c.finalWeeks, t: 'Final close', s: monthYear(addWeeks(c.finalWeeks)) }
   ];
