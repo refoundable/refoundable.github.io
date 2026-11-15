@@ -228,7 +228,7 @@ function renderProgress() {
 
   // The main button only ever moves on. Signing lives in the card above, and a prompt
   // on the way out catches anything left undone.
-  $('ctaText').textContent = done ? 'Finish setting up' : `Continue without my $${PACT_TOTAL}K`;
+  $('ctaText').textContent = 'Finish setting up';
 }
 
 function render() {
