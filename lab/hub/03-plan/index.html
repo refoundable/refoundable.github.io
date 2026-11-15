@@ -42,6 +42,14 @@
 	</div>
 
 	<div class="controls">
+		<div class="control">
+		<div class="c-row">
+			<label for="rampSlider">Starting raising in</label>
+			<span class="c-val" id="rampVal">4 weeks</span>
+		</div>
+		<input type="range" id="rampSlider" class="slider" min="0" max="12" step="1" aria-label="Weeks until the raise starts">
+		<div class="c-ends"><span>Now</span><span>12 weeks</span></div>
+		</div>
 	  <div class="control">
 		<div class="c-row">
 		  <label for="checkSlider">Minimum LP check</label>
@@ -96,7 +104,7 @@
   
   <!-- Footer, help banner and help call come from ../shared/footer.js -->
 	<div id="pageFoot"
-	  data-fine="Estimates assume 1 month to build your list, then 6 qualified LP meetings a week, 15% of people met commit, and LPs take 3 meetings to close. Commitment mixes are illustrative."
+	  data-fine="Estimates assume 10 qualified LP meetings a week once you start raising, 15% of people met commit, and LPs take 3 meetings to close. Commitment mixes are illustrative."
 	  data-cta="Start building my list"
 	  data-help="Need help with your numbers?"
 	  data-help-sub="Book a free call with a Decile fund specialist. We’ll walk through your fund model and setup with you."

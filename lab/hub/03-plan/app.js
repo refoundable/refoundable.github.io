@@ -7,7 +7,8 @@ const FC_MIN = 100;              // smallest first close, in $K
 const FC_MAX_SHARE = 0.50;       // largest first close, as a share of the fund
 const FC_STEP = 50;              // slider steps, in $K
 const PACE = 10;                  // assumed LP meetings a week
-const RAMP_WEEKS = 4.345;        // one month to build the list before meetings start
+const RAMP_MAX = 12;             // longest wait before the raise starts, in weeks
+const RAMP_DEFAULT = 4;          // default wait before the raise starts, in weeks
 const MEET_RATE = 0.5;           // share of prospects who take a first meeting
 const CONVERSION = 0.15;         // share of people met who commit
 const MEETINGS_PER_LP = 3;       // meetings with each LP who commits
@@ -38,7 +39,8 @@ const state = {
   checkIdx: CHECKS.includes(saved.minCheck) ? CHECKS.indexOf(saved.minCheck) : CHECKS.indexOf(100),
   preset: PRESETS[saved.preset] ? saved.preset : 'balanced',
   known: saved.known,
-  firstClose: 0
+  firstClose: 0,
+  ramp: Math.min(RAMP_MAX, Math.max(0, saved.rampWeeks ?? RAMP_DEFAULT))
 };
 
 // First close in $K: $50K steps, from $100K up to half the fund.
@@ -52,6 +54,7 @@ function persist(c) {
     minCheck: CHECKS[state.checkIdx],
     preset: state.preset,
     firstCloseShare: state.firstClose / (state.size * 1e3),
+    rampWeeks: state.ramp,
     known: state.known,
     plan: {
       lps: c.lps,
@@ -67,6 +70,7 @@ function persist(c) {
 const $ = id => document.getElementById(id);
 const checkSlider = $('checkSlider');
 const fcSlider = $('fcSlider');
+const rampSlider = $('rampSlider');
 
 function money(d) {
   if (d >= 1e6) return '$' + String(+(d / 1e6).toFixed(d >= 1e7 ? 1 : 2)) + 'M';
@@ -115,8 +119,8 @@ function calc() {
   const prospects = Math.ceil(met / MEET_RATE);
   const meetings = Math.round(lps * MEETINGS_PER_LP + (met - lps) * MEETINGS_PER_PASS);
   const meetWeeks = meetings / PACE
-  const firstWeeks = RAMP_WEEKS + meetWeeks * (lp1 / lps);
-  const finalWeeks = RAMP_WEEKS + meetWeeks;
+  const firstWeeks = state.ramp + meetWeeks * (lp1 / lps);
+  const finalWeeks = state.ramp + meetWeeks;
   
   return { size, gp, toRaise, raise1, committed, minCheck, lp1, lp2, lps, tierData, met, prospects, meetings,
     meetWeeks, firstWeeks, finalWeeks, avg: committed / lps };
@@ -199,14 +203,14 @@ const LABEL_GAP = 16;
 
 function renderTimeline(c) {
   const total = c.finalWeeks;
-  $('segRamp').style.width = (RAMP_WEEKS / total * 100) + '%';
-  $('segFirst').style.width = ((c.firstWeeks - RAMP_WEEKS) / total * 100) + '%';
+  $('segRamp').style.width = (state.ramp / total * 100) + '%';
+  $('segFirst').style.width = ((c.firstWeeks - state.ramp) / total * 100) + '%';
 
   tween($('tFirst'), months(c.firstWeeks), v => Math.round(v) + ' mo');
   tween($('tFinal'), months(c.finalWeeks), v => Math.round(v) + ' mo');
 
   const pts = [
-    { cls: 'up', w: RAMP_WEEKS, t: 'Start raising', s: monthYear(addWeeks(RAMP_WEEKS)) },
+    { cls: 'up', w: state.ramp, t: 'Start raising', s: monthYear(addWeeks(state.ramp)) },
     { cls: 'down first', w: c.firstWeeks, t: 'First close', s: monthYear(addWeeks(c.firstWeeks)) },
     { cls: 'down final', w: c.finalWeeks, t: 'Final close', s: monthYear(addWeeks(c.finalWeeks)) }
   ];
@@ -303,6 +307,8 @@ function renderChoices() {
 function render() {
   const c = calc();
 
+  $('rampVal').textContent = state.ramp ? `${state.ramp} week${state.ramp === 1 ? '' : 's'}` : 'Right away';
+  rampSlider.style.setProperty('--fill', (state.ramp / RAMP_MAX * 100) + '%');
   $('checkVal').textContent = money(c.minCheck);
   checkSlider.style.setProperty('--fill', (state.checkIdx / (CHECKS.length - 1) * 100) + '%');
   const fcPct = Math.round(c.raise1 / c.size * 100);
@@ -323,6 +329,8 @@ function render() {
 }
 
 function init() {
+  rampSlider.max = RAMP_MAX;
+  rampSlider.value = state.ramp;
   checkSlider.max = CHECKS.length - 1;
   checkSlider.value = state.checkIdx;
   fcSlider.min = FC_MIN;
@@ -334,6 +342,7 @@ function init() {
   buildPyramid();
 
   new ResizeObserver(placeLabels).observe($('track'));
+  rampSlider.addEventListener('input', () => { state.ramp = +rampSlider.value; render(); });
   checkSlider.addEventListener('input', () => { state.checkIdx = +checkSlider.value; render(); });
   fcSlider.addEventListener('input', () => { state.firstClose = +fcSlider.value; render(); });
 
