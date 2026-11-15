@@ -14,7 +14,13 @@ const FIRST_CLOSE = 0.30;
 const INVEST_YEARS = 2;          // same window for new investments as step 1
 
 // label shown on the chip, s used inside the summary sentences
-const STAGES = ['Pre-seed', 'Seed', 'Pre-seed and seed', 'Series A'];
+const STAGES = [
+  { label: 'Pre-seed', s: 'pre-seed' },
+  { label: 'Seed', s: 'seed' },
+  { label: 'Pre-seed and seed', s: 'pre-seed and seed' },
+  { label: 'Series A', s: 'Series A' },
+  { label: 'Series B and later', s: 'later-stage' }
+];
 const SECTORS = [
   { label: 'AI', s: 'AI' },
   { label: 'Fintech', s: 'fintech' },
@@ -204,13 +210,14 @@ function renderRatio() {
 /* ---------- Summary ---------- */
 function focusSentence() {
   const sectors = picked('sectors', SECTORS, 'sectorOther');
-  const stage = state.stage ? esc(state.stage.toLowerCase()) : ph('your stage');
+  const stage = find(STAGES, state.stage);
+  const stagePart = stage ? esc(stage.s) : ph('your stage');
   const sectorPart = sectors.length ? esc(joinList(sectors)) : ph('your sector');
   let geoPart;
   if (state.geos.includes('Global')) geoPart = 'around the world';
   else if (state.geos.length) geoPart = 'in ' + esc(joinList(state.geos));
   else geoPart = 'in ' + ph('your region');
-  return `Backing ${stage} ${sectorPart} companies ${geoPart}.`;
+  return `Backing ${stagePart} ${sectorPart} companies ${geoPart}.`;
 }
 
 function dealsSentence() {
