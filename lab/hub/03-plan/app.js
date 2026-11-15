@@ -241,7 +241,9 @@ function placeLabels() {
     const items = all.filter(d => d.classList.contains(row)).map(d => {
       const lbl = d.querySelector('.lbl');
       const w = lbl.offsetWidth, x = +d.dataset.x * W;
-      return { d, lbl, w, x, left: Math.min(W - w, Math.max(0, x - w / 2)) };
+      // Meetings start and First close labels start at their point; Final close ends at it.
+      const start = d.classList.contains('final') ? x - w / 2 : x;
+      return { d, lbl, w, x, left: Math.min(W - w, Math.max(0, start)) };
     });
     const [a, b] = items;
     if (b) {
@@ -254,7 +256,7 @@ function placeLabels() {
     items.forEach(it => {
       const { d, lbl, w, x, left } = it;
       lbl.style.left = (left - x) + 'px';
-      lbl.style.textAlign = left >= x - 1 ? 'left' : left + w <= x + 1 ? 'right' : 'left';
+      lbl.style.textAlign = left >= x - 1 ? 'left' : left + w <= x + 1 ? 'right' : 'center';
 
       // Moved clear of its point: a line runs out from the bar, then across to the
       // label's near edge. `span` is [start, end] in px from the point, or null when
