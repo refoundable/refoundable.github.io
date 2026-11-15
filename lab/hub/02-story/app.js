@@ -259,7 +259,7 @@ function renderSummary() {
     ['Target fund size', money(PLAN.size)],
     ['First close target', money(PLAN.size * FIRST_CLOSE)],
     ['Typical first check', money(PLAN.firstCheck)],
-    ['Target Portfolio', `${PLAN.companies} companies`]
+    ['Target Portfolio', `${PLAN.companies} Investments`]
   ];
   $('pgNumbers').innerHTML = rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
 
