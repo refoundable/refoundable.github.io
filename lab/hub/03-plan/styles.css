@@ -143,7 +143,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .mark-pt .tick,.mark-pt .lead{position:absolute;background:var(--c);transition:top .3s,height .3s,left .45s cubic-bezier(.2,.7,.2,1),width .45s cubic-bezier(.2,.7,.2,1),opacity .2s}
 /* Final close is a dark notch pressed into the end of the bar. */
 .mark-pt .notch{display:none;position:absolute;top:58px;height:14px;left:-6px;width:6px;border-radius:2px;background:var(--c);box-shadow:inset 0 2px 3px rgba(20,12,48,.55),inset 0 -1px 1px rgba(255,255,255,.3)}
-.mark-pt.final .notch{display:block}
+.mark-pt.final .notch{display:none}
 .mark-pt .tick{left:-.75px;width:1.5px}
 .mark-pt .lead{height:1.5px;opacity:0}
 .mark-pt .lead.on{opacity:1}
