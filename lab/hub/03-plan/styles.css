@@ -79,7 +79,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .presets button:hover{color:var(--ink)}
 .presets button.on{background:#fff;color:var(--plum);box-shadow:0 4px 12px -6px rgba(63,49,104,.5)}
 .pyramid{margin-top:26px;display:grid;gap:0}
-.tier{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:160px;align-items:center}
+.tier{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,330px);gap:160px;align-items:center}
 .tier-bar-wrap{display:flex;justify-content:center;min-width:0}
 .tier-bar{height:52px;border-radius:8px;transition:width .5s cubic-bezier(.2,.7,.2,1);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:18px;font-variant-numeric:tabular-nums;min-width:46px}
 .tier.t2 .tier-bar{background:var(--lavender)}
@@ -89,7 +89,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .tier:last-child .tier-info{border-bottom:none}
 .tier-info .ti-name{font-size:14px;font-weight:600;color:var(--ink)}
 .tier-info .ti-check{font-size:12.5px;color:var(--ink-3);display:block;font-weight:400;font-variant-numeric:tabular-nums}
-.tier-info .ti-money{text-align:right;font-family:var(--num);font-weight:600;font-size:19px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--plum)}
+.tier-info .ti-money{text-align:right;font-family:var(--num);font-weight:600;font-size:19px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--plum);margin-right:10px}
 .tier-info .ti-share{display:block;font-family:var(--text);font-size:12px;font-weight:500;color:var(--ink-3);letter-spacing:0}
 .phases{display:flex;gap:28px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
 .phase{display:flex;align-items:center;gap:10px}
