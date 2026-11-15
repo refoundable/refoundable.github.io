@@ -242,7 +242,7 @@ function render() {
   $('checkVal').textContent = money(c.minCheck);
   checkSlider.style.setProperty('--fill', (state.checkIdx / (CHECKS.length - 1) * 100) + '%');
   const fcPct = Math.round(c.raise1 / c.size * 100);
-  $('fcVal').textContent = `${money(c.raise1)} · ${fcPct}%`;
+  $('fcVal').textContent = `${money(c.raise1)}`;
   fcSlider.style.setProperty('--fill', ((state.firstClose - FC_MIN) / (fcSlider.max - FC_MIN) * 100) + '%');
 
   tween($('nLPs'), c.lps, int);
