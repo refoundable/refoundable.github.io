@@ -5,10 +5,8 @@ const GP_COMMIT = 0;             // manager's own commitment, defaults to 0
 const FIRST_CLOSE = 0.30;        // same as step 1
 const MEET_RATE = 0.5;           // share of prospects who take a first meeting
 const CONVERSION = 0.20;         // share of people met who commit
-const MEETINGS_PER_LP = 2.5;     // meetings with each LP who commits
+const MEETINGS_PER_LP = 3;       // meetings with each LP who commits
 const MEETINGS_PER_PASS = 1;     // meetings with each person who passes
-const RAMP_WEEKS = 4;            // building the list before meetings start
-const LAG_WEEKS = 6;             // decision time after the last meeting
 const LP_LIMIT = 99;             // warn above this many LPs
 const MAX_LP_SHARE = 0.20;       // no single LP can exceed 20% of the fund
 const MEETING_HOURS = 0.5;       // each meeting takes 30 minutes
@@ -107,11 +105,9 @@ function calc() {
   const prospects = Math.ceil(met / MEET_RATE);
   const meetings = Math.round(lps * MEETINGS_PER_LP + (met - lps) * MEETINGS_PER_PASS);
   const meetWeeks = meetings / state.pace;
-  const firstWeeks = RAMP_WEEKS + meetWeeks * (lp1 / lps) + LAG_WEEKS;
-  const finalWeeks = RAMP_WEEKS + meetWeeks + LAG_WEEKS;
 
   return { size, gp, toRaise, committed, minCheck, lp1, lp2, lps, tierData, met, prospects, meetings,
-    meetWeeks, firstWeeks, finalWeeks, avg: committed / lps };
+    meetWeeks, avg: committed / lps };
 }
 
 function addWeeks(w) { return new Date(START.getTime() + w * 7 * 864e5); }
@@ -181,9 +177,6 @@ function renderPyramid(c) {
 /* ---------- Timeline ---------- */
 function renderTimeline(c) {
   const total = c.finalWeeks;
-  $('segRamp').style.width = (RAMP_WEEKS / total * 100) + '%';
-  $('segMeet').style.width = (c.meetWeeks / total * 100) + '%';
-  $('segLag').style.width = (LAG_WEEKS / total * 100) + '%';
 
   tween($('tFirst'), months(c.firstWeeks), v => Math.round(v) + ' mo');
   tween($('tFinal'), months(c.finalWeeks), v => Math.round(v) + ' mo');

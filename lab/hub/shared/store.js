@@ -16,8 +16,8 @@
     known: 100,           // people they could ask today
     stepsDone: 0,         // last setup step completed with main button for breadcrumb
     plan: {               // results of the LP plan page
-      lps: 23, prospects: 230, meetings: 150,
-      firstCloseWeeks: 15.2, finalCloseWeeks: 25,
+      lps: 23, prospects: 230, meetings: 161,
+      firstCloseWeeks: 5.6, finalCloseWeeks: 16.1,
       tierChecks: [100, 250, 600]
     },
     people: [],           // first LPs: { id, name, prompt, tier }
