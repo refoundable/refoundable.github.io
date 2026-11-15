@@ -21,11 +21,11 @@ const CHECKS = [50, 75, 100, 150, 200, 250, 300, 400, 500, 750, 1000];
 
 // Commitment mixes. Tiers run bottom to top: share of LPs, check as a multiple of the minimum.
 const PRESETS = {
-  small:    { label: 'Mostly small checks', tiers: [[0.75, 1], [0.20, 2], [0.05, 4]] },
+  small:    { label: 'Small checks',        tiers: [[0.75, 1], [0.20, 2], [0.05, 4]] },
   balanced: { label: 'Balanced',            tiers: [[0.60, 1], [0.30, 2.5], [0.10, 6]] },
   anchors:  { label: 'A few anchors',       tiers: [[0.70, 1], [0.25, 2], [0.05, 20]] }
 };
-const TIER_NAMES = ['At the minimum', 'Larger checks', 'Largest checks'];
+const TIER_NAMES = ['Minimum', 'Larger checks', 'Largest checks'];
 
 // Starting values come from the shared demo state: fund size from step 1,
 // and this page's own choices if they've been here before.
