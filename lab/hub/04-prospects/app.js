@@ -8,22 +8,23 @@ const PACT_PER_NAME = 1;         // $K unlocked by each name, up to the goal
 const PACT_TOTAL = FIRST_GOAL * PACT_PER_NAME;
 
 const PROMPTS = [
-  'Former bosses & mentors',
-  'Founders you’ve helped',
-  'Angels & investors',
   'Successful friends & family',
+  'Angels & investors',
+  'Former bosses & mentors',
+  'Former colleagues',
+  'Founders you’ve helped',
   'Executives & operators',
-  'Family offices & advisors'
+  'Family offices & advisors',
 ];
 
 const SAMPLE = [
-  ['Caleb West', 0], ['Marcus Feld', 1], ['Dana Okafor', 5], ['Tom Becker', 0],
-  ['Sofia Marin', 2], ['Ben Asher', 2], ['Rachel Kim', 5], ['Brad Avery', 3],
-  ['Lexie Scott', 4], ['Julia Ortiz', 1]
+  ['Caleb West', 0], ['Marcus Feld', 1], ['Dana Okafor', 2], ['Tom Becker', 3],
+  ['Sofia Marin', 4], ['Ben Asher', 5], ['Rachel Kim', 6], ['Brad Avery', 3],
+  ['Lexie Scott', 5], ['Julia Ortiz', 0]
 ];
 
 // Everyone starts with Decile's CEO on the list, as an example and a head start.
-const EXAMPLE = { name: 'Adeo Ressi', prompt: 2, decile: true };
+const EXAMPLE = { name: 'Adeo Ressi', prompt: 1, decile: true };
 
 // The list is saved in the shared demo state, so it survives going back and forth.
 // Everyone starts at the minimum check (tier 0); check guesses come later, on the dashboard.
