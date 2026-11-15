@@ -4,7 +4,7 @@
 // Everything set up during onboarding, read from the shared demo state.
 const saved = DemoStore.load();
 const story = saved.story || {};
-const MIX_LABELS = { small: 'Mostly small checks', balanced: 'Balanced', anchors: 'A few anchors' };
+const MIX_LABELS = { small: 'Small checks', balanced: 'Balanced', anchors: 'A few anchors' };
 const TIER_LABELS = ['Minimum', 'Larger', 'Largest'];
 
 const FUND = {
