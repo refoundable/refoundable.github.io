@@ -187,32 +187,92 @@ function renderPyramid(c) {
 }
 
 /* ---------- Timeline ---------- */
+// Meetings start sits above the bar, closes below. The bar changes color at meetings
+// start and first close, and a dark notch marks final close. In px from the top of the
+// track (matches .track padding and .lbl tops in styles.css): `edge` is the bar edge
+// facing the label, `lead` the height of the line that joins a moved label back.
+const TL = {
+  up:   { edge: 58, lead: 37 },
+  down: { edge: 72, lead: 93 }
+};
+const LABEL_GAP = 16;
+
 function renderTimeline(c) {
   const total = c.finalWeeks;
   $('segRamp').style.width = (RAMP_WEEKS / total * 100) + '%';
+  $('segFirst').style.width = ((c.firstWeeks - RAMP_WEEKS) / total * 100) + '%';
 
   tween($('tFirst'), months(c.firstWeeks), v => Math.round(v) + ' mo');
   tween($('tFinal'), months(c.finalWeeks), v => Math.round(v) + ' mo');
 
   const pts = [
-    { cls: 'start left', w: 0, t: 'Today', s: monthYear(START) },
-    { cls: '', w: c.firstWeeks, t: 'First close', s: monthYear(addWeeks(c.firstWeeks)) },
-    { cls: 'final right', w: c.finalWeeks, t: 'Final close', s: monthYear(addWeeks(c.finalWeeks)) }
+    { cls: 'up', w: RAMP_WEEKS, t: 'Meetings start', s: monthYear(addWeeks(RAMP_WEEKS)) },
+    { cls: 'down first', w: c.firstWeeks, t: 'First close', s: monthYear(addWeeks(c.firstWeeks)) },
+    { cls: 'down final', w: c.finalWeeks, t: 'Final close', s: monthYear(addWeeks(c.finalWeeks)) }
   ];
   const marks = $('marks');
   if (!marks.children.length) {
     pts.forEach(() => {
       const d = document.createElement('div');
-      d.innerHTML = '<div class="pin"></div><b></b><span></span>';
+      d.innerHTML = '<i class="notch"></i><i class="tick"></i><i class="lead"></i><div class="lbl"><b></b><span></span></div>';
       marks.appendChild(d);
     });
   }
   [...marks.children].forEach((d, i) => {
     const p = pts[i];
     d.className = 'mark-pt ' + p.cls;
+    d.dataset.x = p.w / total;
     d.style.left = (p.w / total * 100) + '%';
     d.querySelector('b').textContent = p.t;
     d.querySelector('span').textContent = p.s;
+  });
+  placeLabels();
+}
+
+// Each label centers on its point and stays inside the track. If the two labels in a
+// row would touch, the later one moves right, then the earlier one left if needed,
+// and a short elbow line joins a moved label back to its point. Points never move.
+function placeLabels() {
+  const W = $('track').clientWidth;
+  const all = [...$('marks').children];
+  if (!W || !all.length) return;
+
+  ['up', 'down'].forEach(row => {
+    const items = all.filter(d => d.classList.contains(row)).map(d => {
+      const lbl = d.querySelector('.lbl');
+      const w = lbl.offsetWidth, x = +d.dataset.x * W;
+      return { d, lbl, w, x, left: Math.min(W - w, Math.max(0, x - w / 2)) };
+    });
+    const [a, b] = items;
+    if (b) {
+      const overlap = () => a.left + a.w + LABEL_GAP - b.left;
+      if (overlap() > 0) b.left = Math.min(W - b.w, b.left + overlap());
+      if (overlap() > 0) a.left = Math.max(0, a.left - overlap());
+    }
+
+    const y = TL[row];
+    items.forEach(it => {
+      const { d, lbl, w, x, left } = it;
+      lbl.style.left = (left - x) + 'px';
+      lbl.style.textAlign = left >= x - 1 ? 'left' : left + w <= x + 1 ? 'right' : 'center';
+
+      // Moved clear of its point: a line runs out from the bar, then across to the
+      // label's near edge. `span` is [start, end] in px from the point, or null when
+      // the label sits over it.
+      const span = x < left - 2 ? [0, left - x - 6]
+        : x > left + w + 2 ? [left + w - x + 6, 0] : null;
+      const moved = span !== null;
+      const tick = d.querySelector('.tick'), lead = d.querySelector('.lead');
+      const reach = moved ? Math.abs(y.edge - y.lead) : 0;
+      tick.style.top = (row === 'up' ? y.edge - reach : y.edge) + 'px';
+      tick.style.height = reach + 'px';
+      lead.classList.toggle('on', moved);
+      if (moved) {
+        lead.style.top = (y.lead - 0.75) + 'px';
+        lead.style.left = span[0] + 'px';
+        lead.style.width = Math.max(0, span[1] - span[0]) + 'px';
+      }
+    });
   });
 }
 
@@ -271,6 +331,7 @@ function init() {
   buildChoices();
   buildPyramid();
 
+  new ResizeObserver(placeLabels).observe($('track'));
   checkSlider.addEventListener('input', () => { state.checkIdx = +checkSlider.value; render(); });
   fcSlider.addEventListener('input', () => { state.firstClose = +fcSlider.value; render(); });
 
