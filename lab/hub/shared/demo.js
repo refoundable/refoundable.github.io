@@ -4,7 +4,7 @@
   const STEPS = [
     ['Sign up', ''],
     ['Fund size', '01-size/'],
-    ['Fund story', '02-story/'],
+    ['Fund focus', '02-story/'],
     ['LP plan', '03-plan/'],
     ['First LPs', '04-prospects/'],
     ['Dashboard', '05-dashboard/']
