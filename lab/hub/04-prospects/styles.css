@@ -104,7 +104,7 @@ h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.01
 .progress-card{position:relative;overflow:hidden;display:grid;grid-template-columns:180px minmax(0,1fr);gap:36px;align-items:center}
 .progress-card > :not(.card-fill){position:relative;z-index:1}
 @property --fill{syntax:"<color>";inherits:false;initial-value:#E6E0F5}
-@property --edge{syntax:"<color>";inherits:true;initial-value:#A99BD3}
+@property --edge{syntax:"<color>";inherits:true;initial-value:rgba(169, 155, 211, 0.5)}
 .card-fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,rgba(255,255,255,0),var(--fill) 70%,var(--fill));transition:width .6s cubic-bezier(.2,.7,.2,1),--fill .6s,--edge .6s}
 .card-fill::after{content:"";position:absolute;top:0;bottom:0;right:0;width:3px;background:var(--edge);opacity:.7;transition:opacity .3s}
 .progress-card.full .card-fill::after{opacity:0}
