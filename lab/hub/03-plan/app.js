@@ -7,6 +7,7 @@ const FC_MIN = 100;              // smallest first close, in $K
 const FC_MAX_SHARE = 0.50;       // largest first close, as a share of the fund
 const FC_STEP = 50;              // slider steps, in $K
 const PACE = 6;                  // assumed LP meetings a week
+const RAMP_WEEKS = 4.345;        // one month to build the list before meetings start
 const MEET_RATE = 0.5;           // share of prospects who take a first meeting
 const CONVERSION = 0.15;         // share of people met who commit
 const MEETINGS_PER_LP = 3;       // meetings with each LP who commits
@@ -114,8 +115,8 @@ function calc() {
   const prospects = Math.ceil(met / MEET_RATE);
   const meetings = Math.round(lps * MEETINGS_PER_LP + (met - lps) * MEETINGS_PER_PASS);
   const meetWeeks = meetings / PACE
-  const firstWeeks = meetWeeks * (lp1 / lps);
-  const finalWeeks = meetWeeks;
+  const firstWeeks = RAMP_WEEKS + meetWeeks * (lp1 / lps);
+  const finalWeeks = RAMP_WEEKS + meetWeeks;
   
   return { size, gp, toRaise, raise1, committed, minCheck, lp1, lp2, lps, tierData, met, prospects, meetings,
     meetWeeks, firstWeeks, finalWeeks, avg: committed / lps };
@@ -188,6 +189,7 @@ function renderPyramid(c) {
 /* ---------- Timeline ---------- */
 function renderTimeline(c) {
   const total = c.finalWeeks;
+  $('segRamp').style.width = (RAMP_WEEKS / total * 100) + '%';
 
   tween($('tFirst'), months(c.firstWeeks), v => Math.round(v) + ' mo');
   tween($('tFinal'), months(c.finalWeeks), v => Math.round(v) + ' mo');
