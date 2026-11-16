@@ -32,7 +32,7 @@ button{cursor:pointer}
 a{color:inherit}
 
 .proto{display:flex;gap:12px;align-items:center;padding:7px 24px;font-size:12px;color:var(--ink-2);border-bottom:1px solid var(--line);background:rgba(255,255,255,.6)}
-.proto .tag{background:var(--plum);color:#fff;font-weight:600;padding:2px 8px;border-radius:999px;font-size:11px;letter-spacing:.02em}
+.proto .tag{background:var(--violet);color:#fff;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;padding:4px 12px;border-radius:999px;font-size:10.5px}
 
 /* Top nav stays pinned on scroll, like the dashboard. Side padding keeps the content on the 1120px column. */
 .nav{position:sticky;top:0;z-index:40;padding:14px max(28px,calc((100% - 1064px) / 2));display:flex;justify-content:space-between;align-items:center;
@@ -299,7 +299,7 @@ form input::placeholder{color:var(--ink-3)}
 .site-end::before{content:"";position:absolute;width:620px;height:620px;left:-200px;bottom:-360px;border-radius:50%;background:radial-gradient(circle,rgba(169,155,211,.3),transparent 65%);pointer-events:none}
 .site-end > *{position:relative}
 .finale{max-width:1120px;margin:0 auto;padding:120px 28px 104px;text-align:center}
-.sendoff-line{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,96px);letter-spacing:-.04em;line-height:1;max-width:900px;margin:0 auto;
+.sendoff-line{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,96px);letter-spacing:-.04em;line-height:1;max-width:13ch;margin:0 auto;
   background:linear-gradient(180deg,#fff 35%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
 
 /* Footer, inside the closing band */
