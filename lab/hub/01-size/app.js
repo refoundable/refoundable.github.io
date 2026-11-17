@@ -185,9 +185,10 @@ function renderMode() {
     ? (state.salesBooked ? '✓ Call booked with our fund team' : 'Talk to our fund team')
     : `Continue with <span id="ctaSize">$${sizeLabel(state.size)}M</span>`;
 
+  // fineprint
   $('fine').innerHTML = over
-    ? `&nbsp;`
-    : `Assumes 2% annual fees over a 10 year fund life, paid out in the first ${FEE_YEARS} years. Minimum first close is $100K. Operational expenses are covered from the fees. <a href="#" id="feeLink">See the full fee schedule</a>.`;
+    ? ` `
+    : ` `;
 
   const lead = state.intended ? `You’re planning about $${sizeLabel(state.intended)}M. ` : '';
   $('bfSub').textContent = `${lead}Raising $${CAP}M or more usually means a traditional fund structure, institutional LPs and a longer raise, and our fund team works with managers like you one-on-one.`;
