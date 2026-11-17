@@ -18,7 +18,7 @@ const PROMPTS = [
 ];
 
 const SAMPLE = [
-  ['Julia Ortiz', 0], ['Marcus Feld', 1], ['Dana Okafor', 2], ['Tom Becker', 3],
+  ['Julia Ortiz', 0], ['Marc Feld', 1], ['Dana Okafor', 2], ['Tom Becker', 3],
   ['Sofia Marin', 4], ['Ben Asher', 5], ['Rachel Kim', 6], ['Brad Avery', 3],
   ['Lexie Scott', 5], ['Jim Halbert', 0]
 ];
