@@ -84,8 +84,7 @@ h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .offer-body{min-width:0}
 .offer-amt{font-family:var(--num);font-size:64px;font-weight:700;letter-spacing:-.045em;line-height:.95;
   background:linear-gradient(180deg,#fff 30%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent}
-.offer-line{margin-top:8px;font-size:16px;font-weight:600;line-height:1.35;color:#fff;max-width:320px}
-.offer-terms{margin-top:6px;font-size:12px;color:rgba(255,255,255,.6)}
+.offer-line{margin-top:8px;font-size:16px;font-weight:600;line-height:1.35;color:#fff;max-width:30ch}
 
 /* Lineage, right under the offer */
 .lineage{margin-top:34px;display:flex;align-items:center;gap:14px;line-height:1.45;font-size:14.5px;color:var(--ink-2);max-width:540px}
@@ -263,7 +262,7 @@ form input::placeholder{color:var(--ink-3)}
 .faq details p{padding:0 48px 22px 4px;font-size:15.5px;color:var(--ink-2);max-width:820px}
 
 /* How the $10K works, in a pop-up */
-.offer-how{border:none;background:none;padding:0;font:inherit;font-size:12px;font-weight:600;color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.5)}
+.offer-how{border:none;background:none;padding:0;font:inherit;font-size:16px;font-weight:600;color:rgba(255,255,255,.5);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.5)}
 .offer-how:hover{text-decoration-color:#fff}
 .ten-panel{width:min(480px,100%)}
 .ten-steps{list-style:none;counter-reset:t;margin-top:20px;display:grid;gap:14px}
