@@ -251,7 +251,7 @@ form input::placeholder{color:var(--ink-3)}
 .faq .help-copy{flex:none;margin:26px 0 28px}
 .faq .help-title{font-size:26px;line-height:1.15;letter-spacing:-.02em}
 .faq .help-sub{font-size:15px;line-height:1.55;margin-top:12px}
-.faq .help-chip{margin-top:auto}
+.faq .help-chip{margin-top:auto;visibility:hidden}
 .faq .help-btn{margin-top:14px;width:100%;justify-content:center;border:0;background:var(--plum);color:#fff}
 .faq .help-btn:hover{background:#2A2048}
 .faq details{border-bottom:1px solid var(--line)}
