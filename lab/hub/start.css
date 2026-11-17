@@ -164,7 +164,7 @@ form input::placeholder{color:var(--ink-3)}
 .feature:nth-of-type(even) .f-text{order:2}
 .f-kicker{font-size:13.5px;font-weight:700;color:var(--violet)}
 .f-text h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.02em;line-height:1.15;margin-top:8px;max-width:22ch}
-.f-text > p:not(.f-kicker){margin-top:12px;font-size:16.5px;color:var(--ink-2);max-width:470px}
+.f-text > p:not(.f-kicker){margin-top:12px;font-size:16.5px;color:var(--ink-2);max-width:470px;text-wrap:pretty}
 .f-points{list-style:none;margin-top:18px;display:grid;gap:8px}
 .f-points li{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:600;color:var(--ink)}
 .f-points li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--sage-ink);background:var(--sage-tint)}
