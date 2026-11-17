@@ -3,8 +3,8 @@
 
 const saved = DemoStore.load();
 
-const FIRST_GOAL = 10;           // names needed to claim the catalytic investment
-const PACT_PER_NAME = 1;         // $K unlocked by each name, up to the goal
+const FIRST_GOAL = 5;           // names needed to claim the catalytic investment
+const PACT_PER_NAME = 2;         // $K unlocked by each name, up to the goal
 const PACT_TOTAL = FIRST_GOAL * PACT_PER_NAME;
 
 const PROMPTS = [
@@ -134,7 +134,7 @@ const BURST_COLORS = ['#6E5DAA', '#A99BD3', '#3F3168', '#8CBFA4', '#D9D1EE'];
 let shown = null;                // names counted at the last render, null before the first
 
 // Card fill color by share of the list done: [share, fill].
-// Lilac at the start, deeper violet as it fills, sage once all 10 are in.
+// Lilac at the start, deeper violet as it fills, sage once all names are in.
 const FILL_STOPS = [
   [0,   [239, 235, 248]],
   [0.5, [226, 219, 245]],
@@ -197,14 +197,14 @@ function renderProgress() {
     : n === 0 ? `Add ${FIRST_GOAL} names to unlock $${PACT_TOTAL}K`
     : `Add ${left} more name${left === 1 ? '' : 's'} to unlock $${PACT_TOTAL}K`;
 
-  // The card fills left to right, one tenth per name, and shifts color as it goes.
+  // The card fills left to right and shifts color as it goes.
   const card = $('cardFill');
   card.style.width = (filled / FIRST_GOAL * 100) + '%';
   card.style.setProperty('--fill', fillColor(filled / FIRST_GOAL));
   $('progressCard').classList.toggle('full', done);
 
-  // Only a new name animates: the lock nudges, the amount bumps and a "+$1K" floats
-  // up. The tenth opens the lock and sets off a burst.
+  // Only a new name animates: the lock nudges, the amount bumps and a "+$XK" floats
+  // up. The last bump opens the lock and sets off a burst.
   const doc = $('doc');
   doc.classList.toggle('open', done);
   doc.classList.toggle('signed', state.signed);
