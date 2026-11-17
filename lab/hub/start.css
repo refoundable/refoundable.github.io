@@ -262,8 +262,8 @@ form input::placeholder{color:var(--ink-3)}
 .faq details p{padding:0 48px 22px 4px;font-size:15.5px;color:var(--ink-2);max-width:820px}
 
 /* How the $10K works, in a pop-up */
-.offer-how{border:none;background:none;padding:0;font:inherit;font-size:16px;font-weight:600;color:rgba(255,255,255,.5);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.5)}
-.offer-how:hover{text-decoration-color:#fff}
+.offer-how{border:none;background:none;padding:0;font:inherit;font-size:16px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.5)}
+.offer-how:hover{text-decoration-color:#fff;color:#fff}
 .ten-panel{width:min(480px,100%)}
 .ten-steps{list-style:none;counter-reset:t;margin-top:20px;display:grid;gap:14px}
 .ten-steps li{counter-increment:t;display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:14px}
