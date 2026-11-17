@@ -258,7 +258,7 @@ function openPact(fromNudge = false) {
   const fund = (saved.story && saved.story.fundName || '').trim() || 'Your fund';
   const size = saved.size >= 1 ? `$${(+saved.size).toFixed(saved.size % 1 ? 1 : 0)}M` : `$${Math.round(saved.size * 1e3)}K`;
   $('pactTerms').innerHTML = [
-    ['Fund', fund], ['General partner', saved.name || 'You'], ['Target size', size],
+    ['Fund', fund], ['Investment Lead', saved.name || 'You'], ['Target size', size],
     ['Catalytic investment', `$${PACT_TOTAL}K from Decile`]
   ].map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('');
   $('pactName').placeholder = saved.name || 'Your full name';
