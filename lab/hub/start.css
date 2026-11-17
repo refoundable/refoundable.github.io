@@ -207,7 +207,7 @@ form input::placeholder{color:var(--ink-3)}
 .st.m{background:#F4EFE3;color:#8A6A2A}
 .st.n{background:var(--bg);color:var(--ink-3)}
 .mk-co li{grid-template-columns:30px minmax(0,1fr) auto auto}
-.mk-co li small{grid-column:2;grid-row:2;font-weight:500;font-size:12px;color:var(--ink-3);margin-top:-4px}
+.mk-co li small{grid-column:2;grid-row:2;font-weight:500;font-size:12px;color:var(--ink-3);margin-top:-12px}
 .mk-co li .st{grid-column:3;grid-row:1 / span 2}
 .mk-co li b{grid-column:4;grid-row:1 / span 2}
 .mk-logo{grid-row:1 / span 2;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff}
