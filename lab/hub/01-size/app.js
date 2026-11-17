@@ -8,7 +8,6 @@ const FEE_YEARS = 2;            // ...but are paid out in the first 2 years, hal
 // fees steps up like tax brackets: 50% on the first $3M, 62.5% on $3M–$10M,
 // 75% on $10M–$25M and 87.5% above $25M.
 const GP_SHARE = [[3, 0.5], [10, 0.625], [25, 0.75], [Infinity, 0.875]];
-const FIRST_CLOSE = 0.30;
 const INVEST_YEARS = 2;         // window for new investments
 const THIN_PORTFOLIO = 15;      // below this, the portfolio turns amber
 const MAX_DOTS = 120;
@@ -119,7 +118,6 @@ function calc() {
   const net = size - fees;
   return {
     size, check, fees, gp, net,
-    close: size * FIRST_CLOSE,
     companies: Math.floor(net / check)
   };
 }
@@ -198,7 +196,6 @@ function renderMode() {
 /* ---------- Numbers ---------- */
 function renderMetrics() {
   const c = calc();
-  tweenNum($('mClose'), c.close, money);
   tweenNum($('mFees'), c.gp, money);
   tweenNum($('mNet'), c.net, money);
   const half = money(c.gp / FEE_YEARS);
