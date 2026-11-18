@@ -157,6 +157,12 @@ form input::placeholder{color:var(--ink-3)}
 .tabs b{display:block;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tabs small{display:block;font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
+/* Call to action between the stories and the FAQ */
+.mid-cta{margin-top:64px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.mid-cta .cta{margin-top:0}
+.mid-cta span{font-size:14px;color:var(--ink-3)}
+.mid-cta + .faq{margin-top:96px}
+
 /* How it works: what Hub does, end to end */
 .how{margin-top:120px}
 /* Feature sections: text on one side, a product mock on the other, alternating */
