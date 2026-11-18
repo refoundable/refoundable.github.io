@@ -39,6 +39,13 @@
   sub.className = 'tag-sub';
   sub.textContent = BAR_LABEL;
   tag.replaceChildren(name, sub);
+  
+  // Colophon link, on every page, right after the name.
+  const colophon = document.createElement('a');
+  colophon.className = 'demo-colophon';
+  colophon.href = root + 'style/index.html';
+  colophon.textContent = 'Colophon';
+  tag.after(colophon);
 
   const actions = bar.querySelector('.proto-actions');
   
