@@ -64,7 +64,7 @@ h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .lede{font-size:18.5px;color:var(--ink-2);margin-top:18px;max-width:43ch}
 
 /* The $10K offer: a dark plum card with the locked PACT from step 4 */
-.offer{position:relative;overflow:hidden;margin-top:30px;display:flex;align-items:center;gap:26px;padding:24px 30px 24px 26px;border-radius:24px;max-width:540px;color:#fff;
+.offer{position:relative;overflow:hidden;margin-top:30px;display:flex;align-items:center;gap:26px;padding:24px 30px 24px 26px;border-radius:24px;max-width:520px;color:#fff;
   background:radial-gradient(120% 140% at 100% 0%,#6E5DAA 0%,#3F3168 48%,#2A2048 100%);
   box-shadow:0 30px 60px -28px rgba(42,32,72,.75),inset 0 1px 0 rgba(255,255,255,.14)}
 .offer-glow{position:absolute;width:260px;height:260px;right:-70px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(217,209,238,.45),transparent 65%);pointer-events:none}
