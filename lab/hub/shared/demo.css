@@ -6,7 +6,7 @@
 @keyframes live-pulse{0%,100%{box-shadow:0 0 0 3px rgba(95,211,160,.22)}50%{box-shadow:0 0 0 6px rgba(95,211,160,0)}}
 /* Divider between the name and the label: a thin line, taller than the text */
 .proto .tag-sub{display:inline-flex;align-items:center;gap:11px;margin-left:2px}
-.proto .tag-sub::before{content:"";flex:none;width:1px;height:18px;background:rgba(255,255,255,.38)}
+.proto .tag-sub::before{content:"";flex:none;width:1.5px;height:18px;background:rgba(255,255,255,.38)}
 /* Demo steps*/
 .demo-steps{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .proto-actions{margin-left:auto;display:flex;gap:6px}
