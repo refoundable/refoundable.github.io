@@ -24,14 +24,21 @@
   const bar = document.querySelector('.proto');
   if (!bar) return;
   // The name in the bar is set here for every page
-  const BAR_NAME = 'Iris | Design Preview';
+  // The divider between the two parts is drawn in CSS (.tag-sub::before)
+  const BAR_NAME = 'Iris';
+  const BAR_LABEL = 'Design Preview';
   let tag = bar.querySelector('.tag');
   if (!tag) {
     tag = document.createElement('span');
     tag.className = 'tag';
     bar.prepend(tag);
   }
-  tag.textContent = BAR_NAME;
+  const name = document.createElement('span');
+  name.textContent = BAR_NAME;
+  const sub = document.createElement('span');
+  sub.className = 'tag-sub';
+  sub.textContent = BAR_LABEL;
+  tag.replaceChildren(name, sub);
 
   const actions = bar.querySelector('.proto-actions');
   

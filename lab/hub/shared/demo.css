@@ -1,9 +1,13 @@
 /* Demo bar, shared by every page. A solid plum strip, so it reads as separate from the site. */
 .proto{flex-wrap:wrap;row-gap:6px;padding:8px 24px;background:var(--plum,#3F3168);color:rgba(255,255,255,.72);border-bottom:0;-webkit-backdrop-filter:none;backdrop-filter:none}
 .proto .tag{display:inline-flex;align-items:center;gap:9px;padding:0;background:none;border-radius:0;color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-/* Live dot before the name: mint, so it doesn't clash with the red of the live workshop tag */
+/* Live dot before the name */
 .proto .tag::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:#5FD3A0;box-shadow:0 0 0 3px rgba(95,211,160,.22);animation:live-pulse 2.4s ease-in-out infinite}
 @keyframes live-pulse{0%,100%{box-shadow:0 0 0 3px rgba(95,211,160,.22)}50%{box-shadow:0 0 0 6px rgba(95,211,160,0)}}
+/* Divider between the name and the label: a thin line, taller than the text */
+.proto .tag-sub{display:inline-flex;align-items:center;gap:11px;margin-left:2px}
+.proto .tag-sub::before{content:"";flex:none;width:1px;height:18px;background:rgba(255,255,255,.38)}
+/* Demo steps*/
 .demo-steps{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .proto-actions{margin-left:auto;display:flex;gap:6px}
 .demo-steps + .proto-actions{margin-left:6px}
