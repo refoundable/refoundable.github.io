@@ -24,7 +24,7 @@
   const bar = document.querySelector('.proto');
   if (!bar) return;
   // The name in the bar is set here for every page
-  const BAR_NAME = 'Lavender | Design Preview';
+  const BAR_NAME = 'Iris | Design Preview';
   let tag = bar.querySelector('.tag');
   if (!tag) {
     tag = document.createElement('span');
