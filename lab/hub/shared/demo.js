@@ -1,4 +1,4 @@
-// Demo bar: step links and a restart button, added to each page's prototype bar.
+// Demo bar: the name, optional step links, and a restart button on the dashboard.
 // Pages set data-step (0 to 5) and data-root ('' at the top level, '../' in a step folder) on <body>.
 (function () {
   const STEPS = [
@@ -33,25 +33,35 @@
   }
   tag.textContent = BAR_NAME;
 
-  const nav = document.createElement('nav');
-  nav.className = 'demo-steps';
-  nav.setAttribute('aria-label', 'Demo steps');
-  STEPS.forEach(([label, path], i) => {
-    if (!SHOW_STEPS) return;
-    const a = document.createElement('a');
-    a.href = url(path);
-    a.textContent = i === 0 ? label : `${i} ${label}`;
-    if (i === current) { a.className = 'on'; a.setAttribute('aria-current', 'page'); }
-    nav.appendChild(a);
-  });
-
-  const restart = document.createElement('button');
-  restart.type = 'button';
-  restart.className = 'demo-restart';
-  restart.textContent = '↺ Restart';
-  restart.addEventListener('click', () => window.DemoNav.restart());
-  nav.appendChild(restart);
-
   const actions = bar.querySelector('.proto-actions');
-  if (actions) bar.insertBefore(nav, actions); else bar.appendChild(nav);
-})();
+  
+    if (SHOW_STEPS) {
+      const nav = document.createElement('nav');
+      nav.className = 'demo-steps';
+      nav.setAttribute('aria-label', 'Demo steps');
+      STEPS.forEach(([label, path], i) => {
+        const a = document.createElement('a');
+        a.href = url(path);
+        a.textContent = i === 0 ? label : `${i} ${label}`;
+        if (i === current) { a.className = 'on'; a.setAttribute('aria-current', 'page'); }
+        nav.appendChild(a);
+      });
+      if (actions) bar.insertBefore(nav, actions); else bar.appendChild(nav);
+    }
+  
+    // Restart sits with the page's own controls, and only on the dashboard, the end of the flow.
+    if (current === STEPS.length - 1) {
+      const restart = document.createElement('button');
+      restart.type = 'button';
+      restart.className = 'demo-restart';
+      restart.textContent = '↺ Restart';
+      restart.addEventListener('click', () => window.DemoNav.restart());
+      let box = actions;
+      if (!box) {
+        box = document.createElement('span');
+        box.className = 'proto-actions';
+        bar.appendChild(box);
+      }
+      box.appendChild(restart);
+    }
+  })();

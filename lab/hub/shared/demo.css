@@ -5,6 +5,7 @@
 .proto .tag::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:#5FD3A0;box-shadow:0 0 0 3px rgba(95,211,160,.22);animation:live-pulse 2.4s ease-in-out infinite}
 @keyframes live-pulse{0%,100%{box-shadow:0 0 0 3px rgba(95,211,160,.22)}50%{box-shadow:0 0 0 6px rgba(95,211,160,0)}}
 .demo-steps{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.proto-actions{margin-left:auto;display:flex;gap:6px}
 .demo-steps + .proto-actions{margin-left:6px}
 .demo-steps a{text-decoration:none;color:rgba(255,255,255,.65);font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
 .demo-steps a:hover{color:#fff;border-color:rgba(255,255,255,.2)}
