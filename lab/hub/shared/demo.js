@@ -45,6 +45,9 @@
   colophon.className = 'demo-colophon';
   colophon.href = root + 'style/index.html';
   colophon.textContent = 'Colophon';
+  // On the colophon page itself, mark the link as the current page.
+  const here = p => p.replace(/index\.html$/, '');
+  if (here(new URL(colophon.href).pathname) === here(location.pathname)) colophon.setAttribute('aria-current', 'page');
   tag.after(colophon);
 
   const actions = bar.querySelector('.proto-actions');
