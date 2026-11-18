@@ -12,6 +12,8 @@
   const root = document.body.dataset.root || '';
   const current = +document.body.dataset.step;
   const url = path => root + path + 'index.html';
+  // Step links can be shown or hidden. Set to true to show them
+  const SHOW_STEPS = true;
 
   window.DemoNav = {
     url(step) { return url(STEPS[step][1]); },
@@ -21,11 +23,21 @@
 
   const bar = document.querySelector('.proto');
   if (!bar) return;
+  // The name in the bar is set here for every page
+  const BAR_NAME = 'Lavender | Design Preview';
+  let tag = bar.querySelector('.tag');
+  if (!tag) {
+    tag = document.createElement('span');
+    tag.className = 'tag';
+    bar.prepend(tag);
+  }
+  tag.textContent = BAR_NAME;
 
   const nav = document.createElement('nav');
   nav.className = 'demo-steps';
   nav.setAttribute('aria-label', 'Demo steps');
   STEPS.forEach(([label, path], i) => {
+    if (!SHOW_STEPS) return;
     const a = document.createElement('a');
     a.href = url(path);
     a.textContent = i === 0 ? label : `${i} ${label}`;
@@ -36,7 +48,7 @@
   const restart = document.createElement('button');
   restart.type = 'button';
   restart.className = 'demo-restart';
-  restart.textContent = '↺ Restart demo';
+  restart.textContent = '↺ Restart';
   restart.addEventListener('click', () => window.DemoNav.restart());
   nav.appendChild(restart);
 
