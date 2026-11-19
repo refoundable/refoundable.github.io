@@ -5,7 +5,7 @@
 
   // What a fresh demo starts with. Units: size in $M, checks in $K.
   const DEFAULTS = {
-    name: 'Alex Sage',
+    name: 'Alex Ventura',
     nameTyped: false,     // true only if they typed a name at sign-up
     email: '',
     size: 5,              // fund size
