@@ -26,7 +26,7 @@
   // The name in the bar is set here for every page
   // The divider between the two parts is drawn in CSS (.tag-sub::before)
   const BAR_NAME = 'Iris';
-  const BAR_LABEL = 'Design Preview';
+  const BAR_LABEL = 'Early Preview';
   let tag = bar.querySelector('.tag');
   if (!tag) {
     tag = document.createElement('span');
