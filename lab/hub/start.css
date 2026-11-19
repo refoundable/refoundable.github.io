@@ -63,12 +63,22 @@ h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .pitch{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
 .lede{font-size:18.5px;color:var(--ink-2);margin-top:18px;max-width:46ch}
 
-/* The $10K offer: a dark plum card with the locked PACT from step 4 */
-.offer{position:relative;overflow:hidden;margin-top:30px;display:flex;align-items:center;gap:26px;padding:24px 30px 24px 26px;border-radius:24px;max-width:520px;color:#fff;
+/* The $10K offer: a dark plum card with the locked PACT. A hairline rim catches light along the top, and every few seconds a soft glint sweeps across. */
+.offer{position:relative;overflow:hidden;isolation:isolate;margin-top:30px;display:flex;align-items:center;gap:26px;padding:24px 30px 24px 26px;border-radius:24px;max-width:520px;color:#fff;
   background:radial-gradient(120% 140% at 100% 0%,#6E5DAA 0%,#3F3168 48%,#2A2048 100%);
-  box-shadow:0 30px 60px -28px rgba(42,32,72,.75),inset 0 1px 0 rgba(255,255,255,.14)}
+  box-shadow:0 30px 60px -28px rgba(42,32,72,.75)}
 .offer-glow{position:absolute;width:260px;height:260px;right:-70px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(217,209,238,.45),transparent 65%);pointer-events:none}
 .offer > :not(.offer-glow){position:relative}
+/* Rim: brighter along the top, fading toward the bottom, like an edge under overhead light */
+.offer::before{content:"";position:absolute;inset:0;z-index:3;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.08) 45%,rgba(255,255,255,.04));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+/* Glint: a soft diagonal band of light that sweeps across, then rests */
+.offer::after{content:"";position:absolute;top:0;bottom:0;left:0;width:55%;z-index:2;pointer-events:none;
+  background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.07) 38%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.07) 62%,transparent 80%);
+  transform:translateX(-120%);animation:offer-glint 7s 1.4s cubic-bezier(.45,0,.25,1) infinite}
+@keyframes offer-glint{0%{transform:translateX(-120%)}24%,100%{transform:translateX(300%)}}
 .offer-doc{flex:none;width:76px;height:90px;transform:rotate(-6deg)}
 .offer-doc > svg:first-child{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 12px 18px rgba(0,0,0,.35))}
 .od-page{fill:#fff;stroke:none}
@@ -85,12 +95,6 @@ h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .offer-amt{font-family:var(--num);font-size:64px;font-weight:700;letter-spacing:-.045em;line-height:.95;
   background:linear-gradient(180deg,#fff 30%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent}
 .offer-line{margin-top:8px;font-size:16px;font-weight:600;line-height:1.35;color:#fff;max-width:30ch}
-/* Offer: a shining highlight that travels around the card's edge. */
-.offer{isolation:isolate;background:#2A2048}
-.offer::before{content:"";position:absolute;z-index:-2;left:50%;top:50%;width:150%;aspect-ratio:1;translate:-50% -50%;background:repeating-conic-gradient(rgba(255,255,255,.14) 0deg 90deg,rgba(169,155,211,.6) 125deg,#fff 158deg,var(--lilac) 168deg,rgba(255,255,255,.14) 180deg);animation:offer-spin 7s linear infinite}
-.offer::after{content:"";position:absolute;z-index:-1;inset:2px;border-radius:22px;
-  background:radial-gradient(120% 140% at 100% 0%,#6E5DAA 0%,#3F3168 48%,#2A2048 100%)}
-@keyframes offer-spin{to{rotate:360deg}}
 
 /* Lineage, right under the offer */
 .lineage{margin-top:44px;display:flex;align-items:center;gap:14px;line-height:1.45;font-size:14.5px;color:var(--ink-2);max-width:540px}
@@ -363,5 +367,5 @@ form input::placeholder{color:var(--ink-3)}
   .od-lock,.pitch,.signup{animation:none}
   .slide,.slide.is-on{transition:none}
   .slide.is-on blockquote,.tabs button.on::after{animation:none}
-  .offer::before{animation:none;rotate:300deg}
+  .offer::after{display:none}
 }
