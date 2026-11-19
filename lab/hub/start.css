@@ -87,7 +87,7 @@ h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .offer-line{margin-top:8px;font-size:16px;font-weight:600;line-height:1.35;color:#fff;max-width:30ch}
 /* Offer: a shining highlight that travels around the card's edge. */
 .offer{isolation:isolate;background:#2A2048}
-.offer::before{content:"";position:absolute;z-index:-2;left:50%;top:50%;width:150%;aspect-ratio:1;translate:-50% -50%;background:repeating-conic-gradient(rgba(255,255,255,.14) 0deg 90deg,rgba(169,155,211,.6) 125deg,#fff 158deg,var(--lilac) 168deg,rgba(255,255,255,.14) 180deg);animation:offer-spin 5s linear infinite}
+.offer::before{content:"";position:absolute;z-index:-2;left:50%;top:50%;width:150%;aspect-ratio:1;translate:-50% -50%;background:repeating-conic-gradient(rgba(255,255,255,.14) 0deg 90deg,rgba(169,155,211,.6) 125deg,#fff 158deg,var(--lilac) 168deg,rgba(255,255,255,.14) 180deg);animation:offer-spin 7s linear infinite}
 .offer::after{content:"";position:absolute;z-index:-1;inset:2px;border-radius:22px;
   background:radial-gradient(120% 140% at 100% 0%,#6E5DAA 0%,#3F3168 48%,#2A2048 100%)}
 @keyframes offer-spin{to{rotate:360deg}}
@@ -124,8 +124,8 @@ form input::placeholder{color:var(--ink-3)}
 .story b{color:var(--plum);font-weight:600}
 
 /* Alumni stories: one at a time, full width, on a loop. Name tabs underneath fill as each story plays. */
-.stories{margin-top:120px}
 /* Slides stack in one grid cell, so the box is as tall as the longest story */
+.stories{margin-top:120px}
 .slides{display:grid;margin-top:40px;border-radius:28px;background:var(--surface);box-shadow:0 1px 0 var(--line),0 40px 80px -50px rgba(63,49,104,.55);overflow:hidden}
 .slide{grid-area:1/1;display:grid;grid-template-columns:320px minmax(0,1fr);opacity:0;visibility:hidden;transition:opacity .6s ease,visibility 0s linear .6s}
 .slide.is-on{opacity:1;visibility:visible;transition:opacity .6s ease}
