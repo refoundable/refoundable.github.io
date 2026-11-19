@@ -344,6 +344,9 @@ form input::placeholder{color:var(--ink-3)}
 .ai-dot.ok{background:var(--sage-ink)}
 .ai-ask{margin-top:12px;display:flex;justify-content:space-between;align-items:center;padding:10px 10px 10px 14px;border-radius:999px;border:1.5px solid var(--line);font-size:13px;color:var(--ink-3)}
 .ai-ask i{font-style:normal;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--plum);font-size:13px}
+/* Voice input: a quiet icon just before send, so send stays the main action */
+.ai-ask span{margin-right:auto}
+.ai-ask i.mic{margin-right:6px;color:var(--ink-3);background:none}
 
 /* Closing band: the send-off and the footer on one dark background, edge to edge */
 .site-end{position:relative;overflow:hidden;margin-top:120px;color:#fff;
