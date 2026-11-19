@@ -274,7 +274,7 @@ form input::placeholder{color:var(--ink-3)}
 .w-save{margin-top:12px;padding:11px 16px;border-radius:999px;border:1.5px solid var(--plum);background:none;color:var(--plum);font-size:14.5px;font-weight:600;transition:background .2s,color .2s}
 .w-save:hover{background:var(--mist)}
 .w-save.saved{border-color:var(--sage-tint);background:var(--sage-tint);color:var(--sage-ink)}
-.support{margin-top:18px;display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:20px;background:var(--mist);border:1px solid var(--line)}
+.support{margin-top:38px;display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:20px;background:var(--mist);border:1px solid var(--line)}
 .support p{font-size:15px;color:var(--ink-2)}
 .support b{color:var(--ink)}
 .support-av{flex:none;display:flex}
