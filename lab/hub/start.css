@@ -46,7 +46,7 @@ section[id]{scroll-margin-top:84px}
 .nav-links a:hover{color:var(--plum)}
 .nav-login{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 18px;font-size:14px;font-weight:600;color:var(--plum)}
 .nav-login:hover{border-color:var(--lavender)}
-.nav-start{border:none;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;color:#fff;background:linear-gradient(140deg,var(--violet),var(--plum));box-shadow:0 10px 20px -12px rgba(63,49,104,.7)}
+.nav-start{border:none;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;color:#fff;background:linear-gradient(140deg,var(--violet),var(--plum))}
 .nav-start:hover{filter:brightness(1.08)}
 
 main{max-width:1120px;margin:0 auto;padding:0 28px}
