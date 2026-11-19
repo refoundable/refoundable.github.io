@@ -117,7 +117,6 @@
         <p class="help-title">${esc(o.help || 'Need help?')} Talk to the team.</p>
         <p class="help-sub">${esc(o.helpSub || 'Book a free call with a Decile fund specialist. We’ll walk through your fund model and setup with you.')}</p>
       </div>
-      <span class="help-chip">Free · 20 min</span>
       <button class="help-btn" id="helpBtn">Book a time<span class="arrow">→</span></button>
     </aside>`);
 
