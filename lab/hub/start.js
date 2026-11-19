@@ -47,6 +47,28 @@
 
   // Terms, Privacy and Help go nowhere in the demo.
   document.querySelectorAll('a.dead').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+  
+  // Live sessions: dates are set from today, so they're always coming up. Each card is
+  // 3, 5 and 7 working days out. Counting weekdays only means no session lands on a
+  // weekend and no two land on the same day.
+  const SESSION_DAYS = [2, 3, 5];
+  function workingDaysFromToday(n) {
+    const d = new Date();
+    while (n > 0) {
+      d.setDate(d.getDate() + 1);
+      if (d.getDay() !== 0 && d.getDay() !== 6) n--;
+    }
+    return d;
+  }
+  document.querySelectorAll('.webinar').forEach((card, i) => {
+    if (SESSION_DAYS[i] == null) return;
+    const d = workingDaysFromToday(SESSION_DAYS[i]);
+    card.querySelector('.w-date small').textContent = d.toLocaleDateString('en-US', { month: 'short' });
+    card.querySelector('.w-date b').textContent = d.getDate();
+    // Swap only the day name at the start of the meta line, and keep the time and length.
+    const meta = card.querySelector('.w-meta');
+    meta.textContent = meta.textContent.replace(/^\w+/, d.toLocaleDateString('en-US', { weekday: 'short' }));
+  });
 
   // Live sessions: saving a seat flips the button, and a second click undoes it.
   document.querySelectorAll('.w-save').forEach(b => b.addEventListener('click', () => {
