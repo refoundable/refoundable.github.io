@@ -226,6 +226,22 @@ form input::placeholder{color:var(--ink-3)}
 .mk-tiles small{font-size:12px;color:var(--ink-3)}
 .mk-tiles b{font-size:14.5px;color:var(--ink)}
 
+/* Back office: what the operations team has done, and what's next */
+.mk-ops{list-style:none;margin-top:14px;display:grid;gap:4px}
+.mk-ops li{display:grid;grid-template-columns:26px minmax(0,1fr) auto;column-gap:10px;align-items:center;padding:7px 4px;border-top:1px solid var(--line);font-weight:600;color:var(--ink)}
+.mk-ops li:first-child{border-top:none}
+.mk-ops li > span{grid-row:1 / span 2;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700}
+.mk-ops .ok{background:var(--sage-tint);color:var(--sage-ink)}
+.mk-ops .next{background:var(--mist);color:var(--violet)}
+.mk-ops small{grid-column:2;grid-row:2;font-weight:500;font-size:12px;color:var(--ink-3);margin-top:-3px}
+.mk-ops .st{grid-column:3;grid-row:1 / span 2}
+.mk-team{margin-top:12px;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--plum);color:#fff;font-size:12.5px;font-weight:600}
+.mk-avs{display:flex}
+.mk-avs i{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:10.5px;font-weight:700;color:var(--plum);background:var(--lilac);border:2px solid var(--plum)}
+.mk-avs i + i{margin-left:-8px}
+.mk-avs i:nth-child(2){background:#fff}
+.mk-avs i:nth-child(3){background:var(--lavender);color:#fff}
+
 /* Learn how to launch: upcoming live sessions, then expert support */
 .learn{margin-top:120px}
 .webinars{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
