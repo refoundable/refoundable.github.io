@@ -85,6 +85,14 @@ h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .offer-amt{font-family:var(--num);font-size:64px;font-weight:700;letter-spacing:-.045em;line-height:.95;
   background:linear-gradient(180deg,#fff 30%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent}
 .offer-line{margin-top:8px;font-size:16px;font-weight:600;line-height:1.35;color:#fff;max-width:30ch}
+/* Offer: a soft highlight that slowly travels around the card's edge */
+@property --offer-spin{syntax:"<angle>";inherits:false;initial-value:0deg}
+.offer::before{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;padding:1.5px;pointer-events:none;
+  background:conic-gradient(from var(--offer-spin),rgba(255,255,255,.12) 0deg,rgba(255,255,255,.12) 250deg,rgba(217,209,238,.55) 300deg,#fff 330deg,rgba(217,209,238,.55) 350deg,rgba(255,255,255,.12) 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  animation:offer-spin 6s linear infinite}
+@keyframes offer-spin{to{--offer-spin:360deg}}
 
 /* Lineage, right under the offer */
 .lineage{margin-top:44px;display:flex;align-items:center;gap:14px;line-height:1.45;font-size:14.5px;color:var(--ink-2);max-width:540px}
@@ -357,4 +365,5 @@ form input::placeholder{color:var(--ink-3)}
   .od-lock,.pitch,.signup{animation:none}
   .slide,.slide.is-on{transition:none}
   .slide.is-on blockquote,.tabs button.on::after{animation:none}
+  .offer::before{animation:none;--offer-spin:300deg}
 }
