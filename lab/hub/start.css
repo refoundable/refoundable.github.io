@@ -266,6 +266,19 @@ form input::placeholder{color:var(--ink-3)}
 .faq summary:hover{color:var(--plum)}
 .faq details p{padding:0 48px 22px 4px;font-size:15.5px;color:var(--ink-2);max-width:820px}
 
+/* The Mensarius Oath */
+.oath{margin-top:112px;padding-top:44px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px;align-items:start}
+.oath h2{margin-top:8px;font-size:clamp(26px,3vw,36px);line-height:1.1;letter-spacing:-.025em;max-width:16ch}
+.oath-body p{font-size:16.5px;line-height:1.6;color:var(--ink-2);max-width:54ch;text-wrap:pretty}
+.oath-foot{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
+.oath-link{font-size:15px;font-weight:600;color:var(--plum);text-decoration:underline;text-decoration-color:var(--lilac);text-underline-offset:4px;text-decoration-thickness:1.5px;transition:text-decoration-color .2s}
+.oath-link:hover{text-decoration-color:var(--plum)}
+.oath-stats{font-size:13px;color:var(--ink-3)}
+/* The eight values: a quiet numbered row under the copy, four across */
+.oath-values{grid-column:1 / -1;list-style:none;counter-reset:v;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px;margin-top:4px}
+.oath-values li{counter-increment:v;display:flex;align-items:baseline;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.oath-values li::before{content:counter(v,decimal-leading-zero);font-family:var(--num);font-size:12px;font-weight:600;color:var(--lavender);font-variant-numeric:tabular-nums}
+
 /* How the $10K works, in a pop-up */
 .offer-how{border:none;background:none;padding:0;font:inherit;font-size:16px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.5)}
 .offer-how:hover{text-decoration-color:#fff;color:#fff}
@@ -325,9 +338,11 @@ form input::placeholder{color:var(--ink-3)}
   .tabs{display:flex;overflow-x:auto;scrollbar-width:none}
   .tabs::-webkit-scrollbar{display:none}
   .tabs button{flex:0 0 150px}
+  .oath{grid-template-columns:minmax(0,1fr);gap:20px}
+  .oath-values{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px}
 }
 @media (max-width:560px){
-  .how,.learn,.stories,.faq,.site-end{margin-top:84px}
+  .how,.learn,.stories,.faq,.oath,.site-end{margin-top:84px}
   .feature{margin-top:56px}
   .finale{padding:80px 22px 72px}
   .site-foot{padding:20px 22px 32px}
@@ -338,6 +353,7 @@ form input::placeholder{color:var(--ink-3)}
   .signup{padding:26px 22px 22px}
   .offer{flex-direction:column;align-items:flex-start}
   .f-visual{padding:18px}
+  .oath{padding-top:32px}
 }
 @media (prefers-reduced-motion:reduce){
   .od-lock,.pitch,.signup{animation:none}
