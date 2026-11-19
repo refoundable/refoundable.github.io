@@ -69,11 +69,7 @@ h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
   box-shadow:0 30px 60px -28px rgba(42,32,72,.75)}
 .offer-glow{position:absolute;width:260px;height:260px;right:-70px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(217,209,238,.45),transparent 65%);pointer-events:none}
 .offer > :not(.offer-glow){position:relative}
-/* Rim: brighter along the top, fading toward the bottom, like an edge under overhead light */
-.offer::before{content:"";position:absolute;inset:0;z-index:3;border-radius:inherit;padding:1px;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.08) 45%,rgba(255,255,255,.04));
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
-  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.offer::before{content:"";position:absolute;inset:0;z-index:3;border-radius:inherit;padding:1px;pointer-events:none;}
 /* Glint: a soft diagonal band of light that sweeps across, then rests */
 .offer::after{content:"";position:absolute;top:0;bottom:0;left:0;width:55%;z-index:2;pointer-events:none;
   background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.07) 38%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.07) 62%,transparent 80%);
