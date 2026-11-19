@@ -5,7 +5,7 @@
 
   // What a fresh demo starts with. Units: size in $M, checks in $K.
   const DEFAULTS = {
-    name: 'Alex Rivera',
+    name: 'Alex Sage',
     email: '',
     size: 5,              // fund size
     firstCheck: 150,      // average first check into a startup
