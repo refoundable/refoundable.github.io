@@ -41,7 +41,7 @@ a{color:inherit}
 section[id]{scroll-margin-top:84px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em}
 .mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;background:linear-gradient(140deg,var(--violet),var(--plum))}
-.nav-links{display:flex;align-items:center;gap:26px;font-size:14.5px;font-weight:600;color:var(--ink-2)}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:14.5px;font-weight:600;color:var(--ink-2)}
 .nav-links a{text-decoration:none}
 .nav-links a:hover{color:var(--plum)}
 .nav-login{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 18px;font-size:14px;font-weight:600;color:var(--plum)}
