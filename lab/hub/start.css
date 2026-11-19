@@ -54,7 +54,7 @@ main{max-width:1120px;margin:0 auto;padding:0 28px}
 h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,5.2vw,62px);letter-spacing:-.03em;line-height:1.02;margin-top:12px}
 h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 /* Top-level section headings share one scale, a clear step above the feature titles */
-.how > h2,.learn > h2,.stories > h2,.faq-main > h2{font-size:clamp(34px,4.6vw,56px);letter-spacing:-.035em;line-height:1.04;margin-top:10px;max-width:20ch}
+.how > h2,.learn > h2,.stories > h2,.faq-main > h2,.oath > h2{font-size:clamp(34px,4.6vw,56px);letter-spacing:-.035em;line-height:1.04;margin-top:10px;max-width:20ch}
 .sec-sub{margin-top:14px;font-size:18px;color:var(--ink-2);max-width:52ch}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
@@ -267,15 +267,13 @@ form input::placeholder{color:var(--ink-3)}
 .faq details p{padding:0 48px 22px 4px;font-size:15.5px;color:var(--ink-2);max-width:820px}
 
 /* The Mensarius Oath */
-.oath{margin-top:112px;padding-top:44px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:56px;align-items:start}
-.oath h2{margin-top:8px;font-size:clamp(26px,3vw,36px);line-height:1.1;letter-spacing:-.025em;max-width:16ch}
-.oath-body p{font-size:16.5px;line-height:1.6;color:var(--ink-2);max-width:54ch;text-wrap:pretty}
-.oath-foot{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
+.oath{margin-top:120px}
+.oath-foot{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
 .oath-link{font-size:15px;font-weight:600;color:var(--plum);text-decoration:underline;text-decoration-color:var(--lilac);text-underline-offset:4px;text-decoration-thickness:1.5px;transition:text-decoration-color .2s}
 .oath-link:hover{text-decoration-color:var(--plum)}
 .oath-stats{font-size:13px;color:var(--ink-3)}
-/* The eight values: a quiet numbered row under the copy, four across */
-.oath-values{grid-column:1 / -1;list-style:none;counter-reset:v;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px;margin-top:4px}
+/* The eight values: a quiet numbered row, four across */
+.oath-values{list-style:none;counter-reset:v;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px;margin-top:44px}
 .oath-values li{counter-increment:v;display:flex;align-items:baseline;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
 .oath-values li::before{content:counter(v,decimal-leading-zero);font-family:var(--num);font-size:12px;font-weight:600;color:var(--lavender);font-variant-numeric:tabular-nums}
 
