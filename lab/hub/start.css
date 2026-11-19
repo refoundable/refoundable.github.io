@@ -336,7 +336,7 @@ form input::placeholder{color:var(--ink-3)}
 .ai-badge{flex:none;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:16px;background:linear-gradient(140deg,var(--lavender),var(--violet) 50%,var(--plum))}
 .ai-list{list-style:none;margin-top:14px;display:grid;gap:8px}
 .ai-list li{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 12px;border-radius:14px;background:var(--bg)}
-.ai-list p{font-size:13px;line-height:1.4;color:var(--ink-2)}
+.ai-list p{font-size:13px;line-height:1.4;color:var(--ink-2);text-wrap:balance}
 .ai-list p b{color:var(--ink)}
 .ai-list em{font-style:normal;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;background:#fff;color:var(--violet);border:1px solid var(--lilac);white-space:nowrap}
 .ai-dot{width:8px;height:8px;border-radius:50%;background:var(--lavender)}
