@@ -4,14 +4,14 @@
   const saved = DemoStore.load();
   const started = localStorageHas();
 
-  // The default user name is saved for the later pages when the field is left empty
-  // On a return visit, refill what the user typed
-  if (started && saved.name && saved.name !== DemoStore. DEFAULTS.name) $('name').value = saved.name;
+  // On a return visit, refill what the user typed. When the field was left empty, the
+  // default name is saved for the later pages but never goes back into the field.
+  if (started && saved.nameTyped) $('name').value = saved.name;
   if (started && saved.email) $('email').value = saved.email;
 
   function start() {
-    const name = $('name').value.trim() || DemoStore.DEFAULTS.name;
-    DemoStore.save({ name, email: $('email').value.trim() });
+    const typed = $('name').value.trim();
+    DemoStore.save({ name: typed || DemoStore.DEFAULTS.name, nameTyped: !!typed, email: $('email').value.trim() });
     DemoNav.go(1);
   }
 
