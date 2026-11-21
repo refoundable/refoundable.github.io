@@ -198,7 +198,7 @@ section.block{margin-top:120px}
 /* FAQ: heading and the call-booking link on the left, accordion on the right */
 .faq-in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px;align-items:start}
 .faq-side{position:sticky;top:110px}
-.faq-side .lede{font-size:16.5px;max-width:34ch}
+.faq-side .lede{font-size:18px;max-width:34ch}
 .book{margin-top:18px;font-size:16px}
 .faq-list{border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
