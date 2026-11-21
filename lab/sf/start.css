@@ -155,8 +155,8 @@ section.block{margin-top:120px}
 .curr{list-style:none;display:flex;gap:10px;margin-top:56px;padding-top:36px;border-top:1px solid var(--line)}
 .curr li{flex:1;min-width:0}
 .curr i{display:block;height:10px;border-radius:5px;margin-bottom:16px}
-/* Applying happens before the cohort, so its bar is an outline; the four phases deepen from lavender to plum */
-.curr .pre i{box-sizing:border-box;border:1.5px dashed var(--lavender)}
+/* Applying happens before the cohort; the four phases deepen from lavender to plum */
+.curr .pre i{box-sizing:border-box;background:var(--line)}
 .curr .pre small,.curr .pre b{color:var(--violet)}
 .curr li:nth-child(2) i{background:#D6CDEC}
 .curr li:nth-child(3) i{background:var(--lavender)}
