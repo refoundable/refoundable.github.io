@@ -1,133 +1,94 @@
-// Homepage and sign-up. Saves the name and starts the flow.
-(function () {
-  const $ = id => document.getElementById(id);
-  const saved = DemoStore.load();
-  const started = localStorageHas();
+const $ = id => document.getElementById(id);
+const show = (el, on) => el.classList.toggle('hidden', !on);
 
-  // On a return visit, refill what the user typed. When the field was left empty, the
-  // default name is saved for the later pages but never goes back into the field.
-  if (started && saved.nameTyped) $('name').value = saved.name;
-  if (started && saved.email) $('email').value = saved.email;
+const qs = [...document.querySelectorAll('#planner .q')];
+const answers = {};
+let applied = false;
+let cur = 0;
 
-  function start() {
-    const typed = $('name').value.trim();
-    DemoStore.save({ name: typed || DemoStore.DEFAULTS.name, nameTyped: !!typed, email: $('email').value.trim() });
-    DemoNav.go(1);
-  }
+function go(i){
+  cur = i;
+  qs.forEach((q, n) => show(q, n === i));
+  const q = qs[i];
+  q.classList.remove('fade'); void q.offsetWidth; q.classList.add('fade');
+  $('bar').style.width = ((i + 1) / qs.length * 100) + '%';
+  $('back').classList.toggle('gone', i === 0);
+  document.querySelectorAll('.pl-foot .next').forEach(b => show(b, b.dataset.for === q.dataset.k));
+}
 
-  $('signupForm').addEventListener('submit', e => { e.preventDefault(); start(); });
-
-  // Google and LinkedIn sign-up do the same as the form in the demo.
-  $('ssoGoogle').addEventListener('click', start);
-  $('ssoLinkedin').addEventListener('click', start);
-
-  // Log in picks up where they left off, or points to sign-up if they haven't started.
-  $('loginBtn').addEventListener('click', () => {
-    if (started) DemoNav.go(Math.min(5, (saved.stepsDone || 0) + 1));
-    else focusSignup();
+qs.forEach((q, i) => {
+  q.querySelectorAll('.opt').forEach(b => b.onclick = () => {
+    q.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+    b.classList.add('sel');
+    answers[q.dataset.k] = b.dataset.v;
+    setTimeout(() => go(i + 1), 180);
   });
-
-  // Every "Start your fund" button scrolls to the form and puts the cursor in it.
-  document.querySelectorAll('[data-start]').forEach(b => b.addEventListener('click', () => {
-    closeTen();
-    focusSignup();
-  }));
-  function focusSignup() {
-    $('signup').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => $('name').focus({ preventScroll: true }), 400);
-  }
-
-  // How the $10K works, in a pop-up from the offer card.
-  function openTen() { $('howTen').hidden = false; $('howTenClose').focus(); }
-  function closeTen() { $('howTen').hidden = true; }
-  $('offerHow').addEventListener('click', openTen);
-  $('howTenClose').addEventListener('click', closeTen);
-  $('howTen').addEventListener('click', e => { if (e.target === $('howTen')) closeTen(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('howTen').hidden) closeTen(); });
-
-  // Terms, Privacy and Help go nowhere in the demo.
-  document.querySelectorAll('a.dead').forEach(a => a.addEventListener('click', e => e.preventDefault()));
-  
-  // Live sessions: dates are set from today, so they're always coming up. Each card is
-  // 3, 5 and 7 working days out. Counting weekdays only means no session lands on a
-  // weekend and no two land on the same day.
-  const SESSION_DAYS = [2, 3, 5];
-  function workingDaysFromToday(n) {
-    const d = new Date();
-    while (n > 0) {
-      d.setDate(d.getDate() + 1);
-      if (d.getDay() !== 0 && d.getDay() !== 6) n--;
+  const chips = [...q.querySelectorAll('.chip-o')];
+  if (!chips.length) return;
+  const max = +q.dataset.max, next = document.querySelector('.pl-foot .next[data-for="' + q.dataset.k + '"]'), other = q.querySelector('.other-in');
+  chips.forEach(c => c.onclick = () => {
+    if (!c.classList.contains('sel')) {
+      // "Global" can't be combined with specific regions
+      if ('solo' in c.dataset) chips.forEach(x => x.classList.remove('sel'));
+      else chips.filter(x => 'solo' in x.dataset).forEach(x => x.classList.remove('sel'));
     }
-    return d;
-  }
-  document.querySelectorAll('.webinar').forEach((card, i) => {
-    if (SESSION_DAYS[i] == null) return;
-    const d = workingDaysFromToday(SESSION_DAYS[i]);
-    card.querySelector('.w-date small').textContent = d.toLocaleDateString('en-US', { month: 'short' });
-    card.querySelector('.w-date b').textContent = d.getDate();
-    // Swap only the day name at the start of the meta line, and keep the time and length.
-    const meta = card.querySelector('.w-meta');
-    meta.textContent = meta.textContent.replace(/^\w+/, d.toLocaleDateString('en-US', { weekday: 'short' }));
+    const picked = chips.filter(x => x.classList.contains('sel'));
+    if (!c.classList.contains('sel') && picked.length >= max) return;
+    c.classList.toggle('sel');
+    const now = chips.filter(x => x.classList.contains('sel'));
+    q.querySelector('.cnt').textContent = now.length;
+    next.disabled = !now.length;
+    chips.forEach(x => x.classList.toggle('off', now.length >= max && !x.classList.contains('sel')));
+    if (other && c.textContent === 'Other') {
+      show(other, c.classList.contains('sel'));
+      if (c.classList.contains('sel')) other.focus();
+    }
   });
+  if (other) other.onkeydown = e => { if (e.key === 'Enter' && !next.disabled) next.click(); };
+  next.onclick = () => {
+    answers[q.dataset.k] = chips.filter(x => x.classList.contains('sel'))
+      .map(x => x.textContent === 'Other' && other && other.value.trim() ? other.value.trim() : x.textContent);
+    go(i + 1);
+  };
+});
 
-  // Live sessions: saving a seat flips the button, and a second click undoes it.
-  document.querySelectorAll('.w-save').forEach(b => b.addEventListener('click', () => {
-    const saved = b.classList.toggle('saved');
-    b.textContent = saved ? '✓ Seat saved' : 'Save my seat';
+$('mailForm').onsubmit = e => {
+  e.preventDefault();
+  const v = $('mail').value.trim();
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  show($('mailErr'), !ok);
+  if (!ok) return $('mail').focus();
+  $('sentTo').textContent = v;
+  show($('sendForm'), false); show($('sent'), true); show($('applyBtn'), false); show($('labApply'), false);
+  applied = true; syncNav();
+  show($('back'), false); show($('sentNote'), true);
+  $('sumRows').replaceChildren(...[['size', 'Fund size'], ['stage', 'Stage'], ['sectors', 'Sectors'], ['where', 'Region'], ['lps', 'Network LPs'], ['angel', 'Angel investments']].map(([k, label]) => {
+    const row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+    dt.textContent = label; dd.textContent = [].concat(answers[k] || '—').join(', ');
+    row.append(dt, dd); return row;
   }));
+};
 
-  // Stories: one at a time on a loop. Pauses while hovered or focused, and when
-  // the visitor prefers reduced motion. The name tabs jump to a story, and the
-  // bar on the current tab fills while it plays.
-  const slides = [...document.querySelectorAll('.slide')];
-  const dots = $('dots');
-  const STORY_MS = 9000;
-  let current = 0, timer = null;
-  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const box = $('stories');
-  box.style.setProperty('--story-ms', `${STORY_MS}ms`);
+$('back').onclick = () => go(cur - 1);
+go(0);
 
-  slides.forEach((s, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('role', 'tab');
-    b.innerHTML = `<b>${s.dataset.name}</b><small>${s.dataset.meta}</small>`;
-    b.addEventListener('click', () => { show(i); restart(); });
-    dots.appendChild(b);
-  });
+$('navCta').onclick = () => {
+  const p = $('planner');
+  p.scrollIntoView({behavior:'smooth', block:'center'});
+  p.querySelector('.pl-bar').animate([{boxShadow:'0 0 0 0 rgba(110,93,170,.6)'},{boxShadow:'0 0 0 6px rgba(110,93,170,0)'}],{duration:800});
+};
 
-  function show(i) {
-    slides[current].classList.remove('is-on');
-    current = (i + slides.length) % slides.length;
-    slides[current].classList.add('is-on');
-    paintDots();
-  }
-  function paintDots() {
-    [...dots.children].forEach((d, i) => {
-      d.classList.remove('on');
-      d.setAttribute('aria-selected', i === current);
-    });
-    // Forcing a reflow between removing and re-adding the class restarts the fill from zero.
-    const tab = dots.children[current];
-    void tab.offsetWidth;
-    tab.classList.add('on');
-    if (dots.scrollWidth > dots.clientWidth) dots.scrollTo({ left: tab.offsetLeft - 12, behavior: 'smooth' });
-  }
-  function restart() {
-    clearInterval(timer);
-    box.classList.remove('paused');
-    if (!still) timer = setInterval(() => show(current + 1), STORY_MS);
-  }
-  function pause() { clearInterval(timer); box.classList.add('paused'); }
+// Sticky nav: the Apply button only appears once the application has scrolled out of view
+let plannerVisible = true;
+const syncNav = () => {
+  $('navCta').classList.toggle('show', !plannerVisible && !applied);
+};
+$('labApply').onclick = () => $('navCta').onclick();
+new IntersectionObserver(([e]) => { plannerVisible = e.isIntersecting; syncNav(); }, {rootMargin: '-50px 0px 0px 0px'}).observe($('planner'));
 
-  box.addEventListener('mouseenter', pause);
-  box.addEventListener('mouseleave', () => { paintDots(); restart(); });
-  box.addEventListener('focusin', pause);
-  box.addEventListener('focusout', () => { paintDots(); restart(); });
-  paintDots();
-  restart();
-
-  function localStorageHas() {
-    try { return !!localStorage.getItem('decile-onboarding-demo'); } catch (e) { return false; }
-  }
-})();
+$('howTenK').onclick = () => {
+  const d = $('ten-k');
+  d.open = true;
+  d.scrollIntoView({behavior:'smooth', block:'center'});
+  d.classList.remove('flash'); void d.offsetWidth; d.classList.add('flash');
+};

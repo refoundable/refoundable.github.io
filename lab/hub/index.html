@@ -2,414 +2,254 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>Launch Your Fund | Start Fund</title>
-<link rel="stylesheet" href="start.css">
-<link rel="stylesheet" href="shared/demo.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start Fund</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body data-step="0" data-root="">
+<body>
 
-<div class="proto">
-  <span class="tag"></span>
-</div>
-
-<header class="nav">
+<nav class="top">
   <div class="brand"><span class="mark">S</span>Start Fund</div>
-  <nav class="nav-links">
-	<a href="#learn">Learn</a>
-	<a href="#how">Launch</a>
-	<a href="#stories">Stories</a>
-	<a href="#faq">FAQ</a>
-	<button type="button" class="nav-login" id="loginBtn">Log in</button>
-	<button type="button" class="nav-start" data-start>Start your fund</button>
-  </nav>
-</header>
+  <div class="nav-links"><a href="#lab">VC Lab</a><a href="#stories">Stories</a><a href="#ops">Back office</a><a href="#faq">FAQ</a></div>
+  <div class="nav-r"><button class="nav-start" id="navCta">Apply</button></div>
+</nav>
 
-<main>
-  <!-- Hero: the offer on the left, sign-up on the right -->
-  <section class="hero">
-	<div class="pitch">
-	  <p class="eyebrow">Built for new fund managers</p>
-	  <h1>Launch your fund without the hassle.</h1>
-	  <p class="lede">Launch in a day, with the playbook behind 1,000+ firms. We handle the back office, so you can spend your time with LPs and founders.</p>
-
-	  <div class="offer">
-		<div class="offer-glow" aria-hidden="true"></div>
-		<div class="offer-doc" aria-hidden="true">
-		  <svg viewBox="0 0 120 140">
-			<path class="od-page" d="M22 6h54l28 28v94a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6V12a6 6 0 0 1 6-6z"/>
-			<path class="od-fold" d="M76 6v22a6 6 0 0 0 6 6h22"/>
-			<rect class="od-line od-head" x="30" y="42" width="36" height="6" rx="3"/>
-			<rect class="od-line" x="30" y="58" width="60" height="4" rx="2"/>
-			<rect class="od-line" x="30" y="68" width="54" height="4" rx="2"/>
-			<rect class="od-line" x="30" y="78" width="58" height="4" rx="2"/>
-			<line class="od-sigline" x1="30" y1="120" x2="90" y2="120"/>
-		  </svg>
-		  <svg class="od-lock" viewBox="0 0 40 46">
-			<path class="od-shackle" d="M11 21v-8a9 9 0 0 1 18 0v8"/>
-			<rect class="od-body" x="5" y="20" width="30" height="24" rx="6"/>
-			<circle class="od-hole" cx="20" cy="31" r="3"/>
-		  </svg>
-		</div>
-		<div class="offer-body">
-		  <p class="offer-amt">$10,000</p>
-		  <p class="offer-line">Your first commitment is on us when you set up your fund. <button type="button" class="offer-how" id="offerHow">How it works</button></p>
-		</div>
+<section class="hero" id="proposed">
+  <div class="pitch">
+	<span class="eyebrow">Built for new fund managers</span>
+	<h1>Start your fund with <em>1,000 firms behind you.</em></h1>
+	<p class="lede">The VC Lab playbook and a team that runs your back office, so you can spend your time with LPs and founders.</p>
+	<div class="offer">
+	  <div class="offer-amt"><small>LP #1</small>$10K</div>
+	  <div>
+		<div class="offer-k">Decile will be your first LP.</div>
+		<div class="offer-t">We commit $10,000 to your fund, so you never start your raise from zero. <button class="offer-how" id="howTenK">How it works →</button></div>
 	  </div>
-
-	  <p class="lineage"><span class="lineage-mark" aria-hidden="true">VC</span><span>Built by the team behind <b>VC Lab</b>, the world’s largest venture capital accelerator by firms launched.</span></p>
 	</div>
-
-	<section class="signup" id="signup" aria-labelledby="signupTitle">
-	  <h2 id="signupTitle">Start your fund today</h2>
-	  <p class="s-sub">It’s free. No credit card needed.</p>
-
-	  <div class="sso">
-		<button type="button" class="sso-btn" id="ssoGoogle"><span class="sso-g" aria-hidden="true">G</span>Continue with Google</button>
-		<button type="button" class="sso-btn" id="ssoLinkedin"><span class="sso-in" aria-hidden="true">in</span>Continue with LinkedIn</button>
-	  </div>
-	  <p class="or"><span>or</span></p>
-
-	  <form id="signupForm" novalidate>
-		<label for="name">Your name</label>
-		<input id="name" type="text" autocomplete="off" placeholder="Alex Ventura">
-		<label for="email">Your email</label>
-		<input id="email" type="email" autocomplete="off" placeholder="alex@yourfund.com">
-		<button class="cta" type="submit">Create my free account<span class="arrow">→</span></button>
-		<p class="legal">By continuing, you agree to Decile’s <a href="#" class="dead">Terms</a> and <a href="#" class="dead">Privacy Policy</a>.</p>
-	  </form>
-	</section>
-  </section>
-
-  <!-- Learn how to launch: upcoming live sessions, with expert support folded in -->
-  <section class="learn" id="learn">
-	<p class="eyebrow">The VC Lab Playbook</p>
-	<h2>Learn from the team that’s launched a thousand firms.</h2>
-	<p class="sec-sub">Free live sessions walk you through every step, from your legal setup to your first LP pitch. Bring your questions.</p>
-
-	<div class="webinars">
-	  <article class="webinar">
-		<div class="w-top">
-		  <span class="w-date"><small>Nov</small><b>19</b></span>
-		  <span class="w-tag live">Live workshop</span>
-		</div>
-		<h3>Your first LP pitch</h3>
-		<p>What LPs want to hear in the first ten minutes, and how to tell your story so they ask for a second meeting.</p>
-		<p class="w-meta">Thu · 10:00 AM PT · 60 min</p>
-		<button type="button" class="w-save">Save my seat</button>
-	  </article>
-	  <article class="webinar">
-		<div class="w-top">
-		  <span class="w-date"><small>Nov</small><b>24</b></span>
-		  <span class="w-tag">Masterclass</span>
-		</div>
-		<h3>Choosing your fund structure</h3>
-		<p>Fund, SPV, or rolling fund? The trade-offs in cost, speed, and what your LPs will expect.</p>
-		<p class="w-meta">Tue · 9:00 AM PT · 45 min</p>
-		<button type="button" class="w-save">Save my seat</button>
-	  </article>
-	  <article class="webinar">
-		<div class="w-top">
-		  <span class="w-date"><small>Dec</small><b>3</b></span>
-		  <span class="w-tag">Masterclass</span>
-		</div>
-		<h3>Fund economics, made simple</h3>
-		<p>Fees, carry, and follow-on strategy, worked through on a real $10M fund so you can do the same for yours.</p>
-		<p class="w-meta">Thu · 11:00 AM PT · 45 min</p>
-		<button type="button" class="w-save">Save my seat</button>
-	  </article>
-	</div>
-
-	<div class="support">
-	  <span class="support-av" aria-hidden="true"><i>A</i><i>K</i><i>L</i></span>
-	  <p><b>Expert support, built in.</b> The Decile team has launched hundreds of firms, and they’re here for yours too.</p>
-	</div>
-  </section>
-
-  <!-- What SF does, end to end. One full-width section per benefit, each with an
-		 illustrative mock of the product. -->
-	<section class="how" id="how">
-	  <p class="eyebrow">Take a look inside</p>
-	  <h2>Everything your fund needs, in one place.</h2>
-	  <p class="sec-sub">A built-in control center brings your LP pipeline, deal flow, capital calls, and investor updates together, with an AI assistant that stays on top of it all. No&nbsp;spreadsheets, no&nbsp;extra tools.</p>
-  
-	  <div class="feature feature-ai">
-		<div class="f-text">
-		  <p class="f-kicker"><span class="ai-spark" aria-hidden="true">✦</span>AI Assistant</p>
-		  <h3>An assistant that keeps your fund moving.</h3>
-		  <p>Your AI assistant watches your pipeline, tells you what matters today, and takes the busywork off your plate.</p>
-		  <ul class="f-points"><li>Know who to follow up with, and when</li><li>Decks and reports, drafted for you</li><li>Diligence on deals, in minutes</li></ul>
-		</div>
-		<div class="f-visual" aria-hidden="true">
-		  <div class="mock mock-ai">
-			<div class="ai-head"><span class="ai-badge">✦</span><div><b>Good morning, Alex</b><small>Three things for your raise today</small></div></div>
-			<ul class="ai-list">
-			  <li><span class="ai-dot"></span><p><b>Ben Asher opened your deck twice.</b> A&nbsp;good moment to suggest a call.</p><em>Suggest times</em></li>
-			  <li><span class="ai-dot hot"></span><p><b>Follow up with Dana Okafor.</b> Her onboarding has been stalled for 5 days.</p><em>Draft email</em></li>
-			  <li><span class="ai-dot ok"></span><p><b>Diligence on Verdant is ready.</b> Market, team, and competitors in one memo.</p><em>Review</em></li>
-			</ul>
-			<div class="ai-ask"><span>Ask anything about your fund…</span><i class="mic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></i><i>↑</i></div>
-		  </div>
-		</div>
-	  </div>
-  
-	  <div class="feature">
-		<div class="f-text">
-		  <p class="f-kicker">Close your LPs</p>
-		  <h3>Turn conversations into commitments.</h3>
-		  <p>Track every LP from first chat to signed commitment. When they’re ready, they onboard through a polished, secure portal that makes your fund look established from day one.</p>
-		  <ul class="f-points"><li>Your LP pipeline at a glance</li><li>Secure, professional LP onboarding</li><li>See your progress to final close</li></ul>
-		</div>
-		<div class="f-visual" aria-hidden="true">
-		  <div class="mock">
-			<div class="mk-head"><p class="mk-label">LP pipeline</p><span class="mk-chip green">$3.2M raised</span></div>
-			<!-- Funded (wired) and committed (signed, not yet called), out of a $5M final close. -->
-			<div class="mk-raise"><i class="funded" style="width:30%"></i><i class="committed" style="width:34%"></i></div>
-			<div class="mk-legend">
-			  <span><i class="key funded"></i>$1.5M funded</span>
-			  <span><i class="key committed"></i>$1.7M committed</span>
-			  <span class="mk-pct">64% of $5M</span>
-			</div>
-			<ul class="mk-lps">
-			  <li><span class="mk-av">MF</span>Marc Feld<em class="st f">Funded</em><b>$375K</b></li>
-			  <li><span class="mk-av">PR</span>Priya Raman<em class="st c">Committed</em><b>$150K</b></li>
-			  <li><span class="mk-av">DO</span>Dana Okafor<em class="st d">Onboarding</em><b>$250K</b></li>
-			  <li><span class="mk-av">BA</span>Ben Asher<em class="st m">Meeting</em><b>$150K</b></li>
-			  <li class="mk-more">
-				<span class="mk-stack"><span class="mk-av">JL</span><span class="mk-av">SK</span><span class="mk-av">RT</span><span class="mk-av">+11</span></span>
-				<span class="mk-more-t">14 more LPs</span>
-				<span class="mk-more-l">View all →</span>
-			  </li>
-			</ul>
-		  </div>
-		</div>
-	  </div>
-  
-	  <div class="feature">
-		<div class="f-text">
-		  <p class="f-kicker">Manage your investments</p>
-		  <h3>Run your portfolio like a&nbsp;seasoned firm.</h3>
-		  <p>Keep your deals, capital calls, and LP reporting in one place, so the back office never gets in the way of finding great companies.</p>
-		  <ul class="f-points"><li>Deal flow and portfolio in one view</li><li>Founder updates and KPIs as they come in</li><li>Quarterly LP reports, ready to send</li></ul>
-		</div>
-		<div class="f-visual" aria-hidden="true">
-		  <div class="mock">
-			<div class="mk-head"><p class="mk-label">Deal pipeline</p><span class="mk-chip">4 active deals</span></div>
-			<ul class="mk-co">
-			  <li><span class="mk-logo" style="background:#6E5DAA">L</span>Loomwork<small>Seed · Fintech</small><em class="st c">Invested</em><b>$150K</b></li>
-			  <li><span class="mk-logo" style="background:#3F3168">Q</span>Quillstack<small>Seed · AI</small><em class="st d">Term sheet</em><b>$200K</b></li>
-			  <li><span class="mk-logo" style="background:#2F7A55">V</span>Verdant<small>Pre-seed · Climate</small><em class="st m">Diligence</em><b>$100K</b></li>
-			  <li><span class="mk-logo" style="background:#A99BD3">H</span>Halden<small>Pre-seed · Health</small><em class="st n">First call</em><b>$75K</b></li>
-			</ul>
-			<div class="mk-tiles">
-			  <div><small>Founder updates</small><b>3 new this week</b></div>
-			  <div><small>Q1 LP report</small><b>Ready to send</b></div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  
-	  <div class="feature">
-		<div class="f-text">
-		  <p class="f-kicker">Back office</p>
-		  <h3>Your back office, handled for&nbsp;you.</h3>
-		  <p>Fund formation, banking, KYC on every LP, capital calls, tax forms and filings. Start Fund’s operations team takes care of it, so your fund runs like an institution from day one.</p>
-		  <ul class="f-points"><li>Fund formation and bank account in a day</li><li>KYC and AML checks on every LP</li><li>Tax forms and filings, done for you</li></ul>
-		</div>
-		<div class="f-visual" aria-hidden="true">
-		  <div class="mock">
-			<div class="mk-head"><p class="mk-label">Fund operations</p><span class="mk-chip green">All on track</span></div>
-			<ul class="mk-ops">
-			  <li><span class="ok">✓</span>Fund formed<small>Delaware LP</small><em class="st c">Done</em></li>
-			  <li><span class="ok">✓</span>Bank account<small>Ready for wires</small><em class="st c">Open</em></li>
-			  <li><span class="ok">✓</span>LP verification<small>KYC and AML</small><em class="st c">12 of 12</em></li>
-			  <li><span class="ok">✓</span>Capital call #1<small>$1.5M received</small><em class="st c">Reconciled</em></li>
-			  <li><span class="next">⋯</span>2026 tax forms<small>Sent to every LP</small><em class="st d">Due Mar 15</em></li>
-			</ul>
-			<div class="mk-team"><span class="mk-avs"><i>J</i><i>M</i><i>S</i></span>Your fund operations team</div>
-		  </div>
-		</div>
-	  </div>
-	  
-	</section>
-
-  <!-- Alumni stories, one at a time on a loop. -->
-	<section class="stories" id="stories" aria-roledescription="carousel" aria-label="Stories from VC Lab alumni">
-	<p class="eyebrow">From the VC Lab community</p>
-	<h2>Real firms. Real results.</h2>
-	<p class="story">Firms launched through VC Lab and Start Fund have <b>$1.5B</b> in LP commitments and have already backed <b>over a dozen unicorns</b>.</p>
-	<div class="slides" id="slides">
-		<figure class="slide is-on" data-name="Lena Hartmann" data-meta="Fieldnote Ventures · Cohort 4">
-		<figcaption class="s-who">
-			<span class="s-av">LH</span>
-			<b class="s-name">Lena Hartmann</b>
-			<span class="s-role">Founding Partner, Fieldnote Ventures</span>
-			<span class="s-place">Berlin</span>
-			<span class="s-cohort">VC Lab Cohort 4 · 2021</span>
-			<span class="s-fact"><small>Backed</small><span class="s-chips"><i>Tessel</i><i>Brightloop</i><i>Norda</i></span></span>
-		</figcaption>
-		<blockquote class="q-big">VC Lab gave us real deadlines and honest feedback when we needed it most.</blockquote>
-		</figure>
-		<figure class="slide" data-name="Jesse Courtier" data-meta="Avon River Ventures · Cohort 8">
-		<figcaption class="s-who">
-			<span class="s-av">JW</span>
-			<b class="s-name">Jesse Courtier</b>
-			<span class="s-role">Managing Partner, Avon River Ventures</span>
-			<span class="s-place">San Francisco</span>
-			<span class="s-cohort">VC Lab Cohort 8 · 2022</span>
-			<span class="s-fact"><small>Backed</small><span class="s-chips"><i>Kora Health</i><i>Paystride</i><i>Ayo</i></span></span>
-		</figcaption>
-		<blockquote>Outstanding playbook for how to start and do a first close. The program allowed me to do what I never thought would be possible a year ago.</blockquote>
-		</figure>
-		<figure class="slide" data-name="Rafael Mendes" data-meta="Ponte Capital · Cohort 11">
-		<figcaption class="s-who">
-			<span class="s-av">RM</span>
-			<b class="s-name">Rafael Mendes</b>
-			<span class="s-role">General Partner, Ponte Capital</span>
-			<span class="s-place">São Paulo</span>
-			<span class="s-cohort">VC Lab Cohort 11 · 2023</span>
-			<span class="s-fact"><small>Backed</small><span class="s-chips"><i>Caju</i><i>Lumo</i><i>Varal</i></span></span>
-		</figcaption>
-		<blockquote class="q-big">I started from zero. VC Lab turned my network into a real fund.</blockquote>
-		</figure>
-		<figure class="slide" data-name="Tomás Varga" data-meta="Northgate Climate · Cohort 15">
-		<figcaption class="s-who">
-			<span class="s-av">TV</span>
-			<b class="s-name">Tomás Varga</b>
-			<span class="s-role">General Partner, Northgate Climate</span>
-			<span class="s-place">Budapest</span>
-			<span class="s-cohort">VC Lab Cohort 15 · 2024</span>
-			<span class="s-fact"><small>Backed</small><span class="s-chips"><i>Gridwise</i><i>Solace Energy</i><i>Ferrum</i></span></span>
-		</figcaption>
-		<blockquote>I’d spent fifteen years in energy and knew exactly which companies I wanted to back. What I didn’t know was how to run a fund. VC Lab filled that gap.</blockquote>
-		</figure>
-		<figure class="slide" data-name="Mei Lin" data-meta="Lattice Seed Fund · Cohort 17">
-		<figcaption class="s-who">
-			<span class="s-av">ML</span>
-			<b class="s-name">Mei Lin</b>
-			<span class="s-role">Solo GP, Lattice Seed Fund</span>
-			<span class="s-place">Singapore</span>
-			<span class="s-cohort">VC Lab Cohort 17 · 2025</span>
-			<span class="s-fact"><small>Backed</small><span class="s-chips"><i>Orbit Labs</i><i>Tidal</i><i>Quanta Bio</i></span></span>
-		</figcaption>
-		<blockquote class="q-big">The hardest part was asking for that first check. VC Lab made it feel natural.</blockquote>
-		</figure>
-	</div>
-	<div class="tabs" id="dots" role="tablist" aria-label="Choose a story"></div>
-	</section>
-	
-<!-- Call to action, between the stories and the questions -->
-  <div class="mid-cta">
-		<button type="button" class="cta" data-start>Start your fund<span class="arrow">→</span></button>
-		<span>Free. No credit card needed.</span>
   </div>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-	<div class="faq-main">
-	<p class="eyebrow">Questions</p>
-	<h2>The fine print, in plain English.</h2>
+  <div id="planner">
+	<div class="pl-head"><span class="eyebrow">Your Start Fund Application</span></div>
+	<div class="pl-bar"><i id="bar"></i></div>
+
+	<div class="q" data-k="size">
+	  <div class="step-l">01 / 06</div>
+	  <h3>How big is your first fund?</h3>
+	  <p class="h">A rough guess is fine.</p>
+	  <div class="opts">
+		<button class="opt" data-v="Under $5M"><b>Under $5M</b><small>Friends &amp; network</small></button>
+		<button class="opt" data-v="$5–10M"><b>$5–10M</b><small>Most first funds</small></button>
+		<button class="opt" data-v="$10–25M"><b>$10–25M</b><small>Some institutional LPs</small></button>
+		<button class="opt" data-v="Not sure yet"><b>Not sure yet</b><small>We’ll help you size it</small></button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="stage">
+	  <div class="step-l">02 / 06</div>
+	  <h3>What stage will you back?</h3>
+	  <p class="h">Pick the one that fits best.</p>
+	  <div class="opts">
+		<button class="opt" data-v="Pre-seed"><b>Pre-seed</b></button>
+		<button class="opt" data-v="Seed"><b>Seed</b></button>
+		<button class="opt" data-v="Pre-seed and seed"><b>Pre-seed and seed</b></button>
+		<button class="opt" data-v="Series A"><b>Series A</b></button>
+		<button class="opt" data-v="Series B and later"><b>Series B and later</b></button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="sectors" data-max="3">
+	  <div class="step-l">03 / 06</div>
+	  <h3>Which sectors?</h3>
+	  <p class="h pick"><span>Pick up to 3.</span><span class="pick-c"><span class="cnt">0</span> of 3</span></p>
+	  <div class="chips">
+		<button class="chip-o">AI</button><button class="chip-o">Fintech</button>
+		<button class="chip-o">Climate</button><button class="chip-o">Health</button>
+		<button class="chip-o">Consumer</button>
+		<button class="chip-o">Deep tech</button><button class="chip-o wide">Other</button>
+	  </div>
+	  <input class="other-in hidden" placeholder="Your sector, e.g. Robotics" maxlength="40">
+	</div>
+
+	<div class="q hidden" data-k="where" data-max="2">
+	  <div class="step-l">04 / 06</div>
+	  <h3>Where will you invest?</h3>
+	  <p class="h pick"><span>Pick up to 2.</span><span class="pick-c"><span class="cnt">0</span> of 2</span></p>
+	  <div class="chips">
+		<button class="chip-o">North America</button><button class="chip-o">Europe</button>
+		<button class="chip-o">Latin America</button><button class="chip-o">Africa</button>
+		<button class="chip-o">Middle East</button><button class="chip-o">South Asia</button>
+		<button class="chip-o">Southeast Asia</button><button class="chip-o" data-solo>Global</button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="lps">
+	  <div class="step-l">05 / 06</div>
+	  <h3>How many potential LPs are in your network?</h3>
+	  <p class="h">People who might invest in your fund. A rough count is fine.</p>
+	  <div class="opts">
+		<button class="opt" data-v="Under 25"><b>Under 25</b></button>
+		<button class="opt" data-v="25–50"><b>25–50</b></button>
+		<button class="opt" data-v="50–100"><b>50–100</b></button>
+		<button class="opt" data-v="100+"><b>100+</b></button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="angel">
+	  <div class="step-l">06 / 06</div>
+	  <h3>How many angel investments have you made?</h3>
+	  <p class="h">No experience needed.</p>
+	  <div class="opts">
+		<button class="opt" data-v="None yet"><b>None yet</b></button>
+		<button class="opt" data-v="1–5"><b>1–5</b></button>
+		<button class="opt" data-v="6–20"><b>6–20</b></button>
+		<button class="opt" data-v="20+"><b>20+</b></button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="save">
+	  <div id="sendForm">
+		<div class="step-l">Last step</div>
+		<h3>Where should we reach you?</h3>
+		<p class="h">We’ll email you a copy of your plan and share it with VC Lab admissions.</p>
+		<form id="mailForm" novalidate>
+		  <div class="mail">
+			<input type="email" id="mail" placeholder="you@yourfund.com" autocomplete="email" required>
+		  </div>
+		  <div class="mail-err hidden" id="mailErr">Please enter a valid email address.</div>
+		</form>
+	  </div>
+	  <div id="sent" class="hidden">
+		<div class="step-l sum-ok">Submitted</div>
+		<h3>Your answers</h3>
+		<dl class="sum" id="sumRows"></dl>
+	  </div>
+	</div>
+
+	<div class="pl-foot"><button class="back gone" id="back" type="button">← Back</button><button class="go next hidden" data-for="sectors" type="button" disabled>Continue <span>→</span></button><button class="go next hidden" data-for="where" type="button" disabled>Continue <span>→</span></button><button class="go next hidden" data-for="save" id="applyBtn" type="submit" form="mailForm">Apply</button><div class="sent-note hidden" id="sentNote"><span class="sent-ic">✓</span><span><b>Your application is in.</b> We sent a copy to <b id="sentTo"></b>. Admissions will email you there, and if it’s a good fit, invite you to a call.</span></div></div>
+  </div>
+</section>
+
+<section class="block wrap" id="lab">
+  <div class="lab-head">
+	<div>
+	  <span class="eyebrow">VC Lab · Cohort 23 now open</span>
+	  <h2>Fourteen weeks from thesis <em>to first close.</em></h2>
+	  <p class="lede">Weekly mentoring from the team that’s launched 1,000+ firms, with hundreds of managers raising beside you. Free, with no fees and no equity.</p>
+	</div>
+	<div class="lab-go">
+	  <button class="cta" id="labApply" type="button">Apply</button>
+	  <small>Closes Dec 14 · By invitation only</small>
+	</div>
+  </div>
+
+  <ol class="curr">
+	<li class="pre" style="flex:3"><i></i><small>Now – Dec 14</small><b>Apply</b><span>Submit your Start Fund application to be considered for Cohort 23.</span></li>
+	<li style="flex:3"><i></i><small>Jan 14 · Weeks 1–3</small><b>Thesis and team</b><span>Sharpen your focus and the story of why you.</span></li>
+	<li style="flex:3"><i></i><small>Weeks 4–6</small><b>Deck and economics</b><span>Build the deck and fund model LPs expect.</span></li>
+	<li style="flex:5"><i></i><small>Weeks 7–11</small><b>LP outreach</b><span>Pitch your network, with feedback every week.</span></li>
+	<li style="flex:3"><i></i><small>Weeks 12–14</small><b>Close</b><span>Get commitments signed and your fund live.</span></li>
+  </ol>
+</section>
+
+<section class="block wrap" id="stories">
+  <div class="res-h">
+	<div>
+	  <span class="eyebrow">From the VC Lab community</span>
+	  <h2>Real firms. <em>Real results.</em></h2>
+	</div>
+	<div class="big">
+	  <div><b>1,000+</b><small>firms launched</small></div>
+	  <div><b>88</b><small>countries</small></div>
+	  <div><b>$1.5B</b><small>in LP commitments</small></div>
+	  <div><b>12+</b><small>unicorns backed</small></div>
+	</div>
+  </div>
+  <div class="quotes">
+	<figure>
+	  <blockquote>“I started from zero. VC Lab turned my network into a real fund.”</blockquote>
+	  <figcaption><span class="av">RM</span><div><b>Rafael Mendes</b>General Partner, Ponte Capital<small>Cohort 11 · 2023</small></div></figcaption>
+	</figure>
+	<figure>
+	  <blockquote>“I’d spent fifteen years in energy and knew exactly which companies I wanted to back. What I didn’t know was how to run a fund. VC Lab filled that gap.”</blockquote>
+	  <figcaption><span class="av">TV</span><div><b>Tomás Varga</b>General Partner, Northgate Climate<small>Cohort 15 · 2024</small></div></figcaption>
+	</figure>
+	<figure>
+	  <blockquote>“The hardest part was asking for that first check. VC Lab made it feel natural.”</blockquote>
+	  <figcaption><span class="av">ML</span><div><b>Mei Lin</b>Solo GP, Lattice Seed Fund<small>Cohort 17 · 2025</small></div></figcaption>
+	</figure>
+  </div>
+</section>
+
+<section class="block wrap" id="ops">
+  <div class="ops-head">
+	<div>
+	  <span class="eyebrow">Back office</span>
+	  <h2>We run the back office. <em>You run the fund.</em></h2>
+	</div>
+	<p class="lede">Start Fund’s operations team handles the paperwork, compliance and money movement, so your fund runs like an institution from day one.</p>
+  </div>
+  <ol class="ledger">
+	<li><b>Fund formation and bank account</b><small>Your fund formed and ready for wires, in a day.</small></li>
+	<li><b>KYC and AML on every LP</b><small>Every investor verified before they wire.</small></li>
+	<li><b>Secure LP onboarding</b><small>A polished portal that makes your fund look established.</small></li>
+	<li><b>Capital calls</b><small>From commitment to cash, reconciled for you.</small></li>
+	<li><b>Tax forms and filings</b><small>Prepared and sent to every LP.</small></li>
+  </ol>
+</section>
+
+<section class="block wrap faq" id="faq">
+  <div class="faq-in">
+	<div class="faq-side">
+	  <span class="eyebrow">Questions</span>
+	  <h2>The fine print, <em>in plain English.</em></h2>
+	  <p class="lede">Still have questions? Book a free call with a Start Fund specialist and we’ll walk through your idea for a fund.</p>
+	  <button class="link book">Book a time →</button>
+	</div>
 	<div class="faq-list">
-	  <details>
-		<summary>Is Start Fund really free?</summary>
-		<p>Yes. Setting up your fund is free. Decile earns revenue when you choose to run your fund’s operations with us.</p>
+	  <details open>
+		<summary>Is this my VC Lab application?</summary>
+		<p>Yes. The questions at the top of this page are your application to VC Lab Cohort 23. When you hit Apply, your answers go to our admissions team.</p>
 	  </details>
 	  <details>
-		<summary>What is the $10K, exactly?</summary>
-		<p>It’s a catalytic investment: Decile commits $10K to your fund as one of your first LPs. To claim it, set up your fund in Hub, add your first potential LPs, and send us a PACT, Decile’s short letter of intent. Terms apply.</p>
+		<summary>What happens after I apply?</summary>
+		<p>Admissions reviews your plan. If it’s a good fit, we’ll invite you to book a call and find the cohort that suits your timeline. Apply by Dec 14 for Cohort 23, which starts Jan 14.</p>
+	  </details>
+	  <details id="ten-k">
+		<summary>Why is Decile my first LP?</summary>
+		<p>It’s a catalytic investment: Decile commits $10K to your fund as your first LP. We do it because a first commitment gets funds to their first close faster, and that’s what we’re here for. Terms apply.</p>
+	  </details>
+	  <details>
+		<summary>Is Start Fund really free?</summary>
+		<p>Applying, VC Lab and setting up your fund are all free, with no fees and no equity. You only pay when you choose to run your fund’s operations with us.</p>
 	  </details>
 	  <details>
 		<summary>Do I need venture capital experience?</summary>
 		<p>No. Half of the managers who launch through VC Lab have no prior VC experience. What matters is a clear focus and a network of people who trust you.</p>
 	  </details>
 	  <details>
-		<summary>Can I start a fund on the side?</summary>
-		<p>Yes. You set the pace. Hub keeps your plan, your LPs, and your documents in one place, so you can pick up where you left off between meetings.</p>
-	  </details>
-	  <details>
 		<summary>How fast can I launch?</summary>
-		<p>You can plan your fund in minutes. With Start Fund, you can launch an institutional-grade fund in under a day. Raising from LPs takes longer, and Hub helps you at every step.</p>
+		<p>You can plan your fund in minutes, and launch an institutional-grade fund in under a day. Raising from LPs takes longer, and our team helps you at every step.</p>
 	  </details>
 	  <details>
 		<summary>Who is Decile?</summary>
-		<p>Decile Group helps people start, run, and grow venture firms. More than 1,000 firms have launched through VC Lab, our free training program, since 2020.</p>
+		<p>Decile Group helps people start, run and grow venture firms. More than 1,000 firms have launched through VC Lab, our free training program, since 2020.</p>
 	  </details>
 	</div>
-	</div>
-
-	<!-- Help banner from shared/footer.js. Second column. -->
-	<div id="pageHelp"></div>
-  </section>
-
-  <div id="pageFoot"
-	data-help="Still have questions?"
-	data-help-sub="Book a free call with a Start Fund specialist. We’ll walk through your idea for a fund and how to get started."
-	data-book-sub="Pick a time that works. We’ll talk through your fund idea, your network and how to launch."
-	data-book-note="We’ll send a calendar invite with a video link."
-	data-book-back="Back to Start Fund">
   </div>
+</section>
 
-	<!-- The Mensarius Oath -->
-	<section class="oath" id="standard" aria-labelledby="oathTitle">
-		<div class="oath-head">
-			<p class="eyebrow">Venture for good</p>
-			<h2 id="oathTitle">Committed to a higher ethical standard.</h2>
-		</div>
-		<div class="oath-body">
-			<p class="story">We created the <b>Mensarius Oath</b> so venture treats founders fairly, deals honestly with LPs, and does right by people and the planet.</p>
-			<div class="oath-foot">
-				<a class="oath-link" href="#" target="_blank" rel="noopener">Read the Mensarius Oath →</a>
-				<span class="oath-stats">Shared by 8,500+ people in 100+ countries</span>
-			</div>
-		</div>
-		<ol class="oath-values" aria-label="The eight values of the Mensarius Oath">
-			<li>Integrity</li>
-			<li>Excellence</li>
-			<li>Fairness</li>
-			<li>Equality</li>
-			<li>Respect</li>
-			<li>Transparency</li>
-			<li>Confidentiality</li>
-			<li>Growth</li>
-		</ol>
-	</section>
-</main>
-
-<!-- Closing band: send-off and footer -->
 <div class="site-end">
-  <section class="finale">
-	<p class="sendoff-line">Back the future you believe in.</p>
-  </section>
+  <div class="oath">
+	<div class="seal">M</div>
+	<p><b>The Mensarius Oath.</b> Our commitment that venture treats founders fairly, deals honestly with LPs, and does right by people and the planet. Shared by 8,500+ people in 100+ countries.</p>
+	<button class="oath-link">Read the Oath →</button>
+  </div>
   <footer class="site-foot">
-	<span>© 2026 Decile Group</span>
-	<a href="#" class="dead">VC Lab</a>
-	<a href="#" class="dead">Mensarius Oath</a>
-	<a href="#" class="dead">Terms</a>
-	<a href="#" class="dead">Privacy</a>
+	<span>© 2026 Decile Group · <span class="foot-tag">Back the future you believe in.</span></span>
+	<nav><a>VC Lab</a><a>Mensarius Oath</a><a>Terms</a><a>Privacy</a></nav>
   </footer>
 </div>
 
-<!-- How the $10K works. Uses the shared panel styles from demo.css. -->
-<div class="book" id="howTen" hidden>
-  <div class="book-panel ten-panel" role="dialog" aria-modal="true" aria-labelledby="howTenTitle">
-	<button class="book-x" id="howTenClose" aria-label="Close">×</button>
-	<p class="eyebrow">Catalytic investment</p>
-	<h2 id="howTenTitle">How the $10K works</h2>
-	<p class="book-sub">Decile commits $10K to your fund as one of your first LPs. It’s a real check, and a signal to every LP who comes after.</p>
-	<ol class="ten-steps">
-	  <li><b>Set up your fund</b><span>Pick your size and focus in Hub. It takes minutes.</span></li>
-	  <li><b>Add your first 10 LPs</b><span>The people most likely to back you. Each one unlocks $1K.</span></li>
-	  <li><b>Sign your PACT</b><span>A short letter of intent with Decile. Your $10K is then reserved for your fund.</span></li>
-	</ol>
-	<p class="ten-terms">Terms apply ⋅ <a href="#" class="dead">Read the PACT terms</a></p>
-	<button type="button" class="cta book-go" data-start>Start your fund<span class="arrow">→</span></button>
-  </div>
-</div>
-
-<script src="shared/store.js"></script>
-<script src="shared/demo.js"></script>
-<script src="shared/footer.js"></script>
-<script src="start.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
