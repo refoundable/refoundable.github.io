@@ -148,6 +148,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 
 /* Sections */
 section.block{margin-top:120px}
+.hero + section.block{margin-top:80px}
 
 /* VC Lab: a header with the benefits as its lede and Apply on the right, then one timeline that starts with applying */
 .lab-head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px}
@@ -251,6 +252,7 @@ section.block{margin-top:120px}
 }
 @media (max-width:560px){
   section.block,.site-end{margin-top:84px}
+  .hero + section.block{margin-top:64px}
   .nav-links{display:none}
   .offer{gap:16px}
   .offer-amt{width:76px;height:76px;font-size:25px}
