@@ -167,9 +167,12 @@ section.block{margin-top:120px}
 .curr b{display:block;margin:4px 0;font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.015em}
 .curr span{display:block;padding-right:12px;font-size:14.5px;color:var(--ink-2);text-wrap:pretty}
 
-/* Back office: heading across the top with the lede beside it, then the five jobs as steps in one row, split by vertical hairlines */
-.ops-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:72px;align-items:end}
-.ops-head .lede{margin-top:0}
+/* Heading on two set lines, one sentence each; the lede sits beside it in the leftover width, aligned to the bottom line */
+.ops-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:56px;align-items:end}
+.ops-head .lede{justify-self:end;margin:0 0 6px;font-size:17px;max-width:30ch}
+#ops h2{max-width:none}
+#ops h2 em{display:block}
+@media (min-width:921px){#ops h2,#ops h2 em{white-space:nowrap}}
 .ledger{list-style:none;counter-reset:job;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:56px;border-top:1px solid var(--line);text-wrap:pretty}
 .ledger li{counter-increment:job;display:flex;flex-direction:column;gap:6px;padding:28px 24px 8px}
 .ledger li:first-child{padding-left:0}
@@ -198,7 +201,7 @@ section.block{margin-top:120px}
 /* FAQ: heading and the call-booking link on the left, accordion on the right */
 .faq-in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px;align-items:start}
 .faq-side{position:sticky;top:110px}
-.faq-side .lede{font-size:18px;max-width:34ch}
+.faq-side .lede{max-width:34ch}
 .book{margin-top:18px;font-size:16px}
 .faq-list{border-top:1px solid var(--line);text-wrap:pretty}
 .faq details{border-bottom:1px solid var(--line)}
@@ -238,12 +241,15 @@ section.block{margin-top:120px}
 @media (max-width:920px){
   .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding-top:48px}
   #planner{width:100%;min-height:0}
-  .faq-in,.ops-head{grid-template-columns:minmax(0,1fr);gap:24px}
+  .faq-in{grid-template-columns:minmax(0,1fr);gap:24px}
+  .ops-head{grid-template-columns:minmax(0,1fr);gap:0}
+  .ops-head .lede{justify-self:start;margin:16px 0 0;font-size:18px;max-width:46ch}
   .ledger{grid-template-columns:minmax(0,1fr);border-top:0}
   .ledger li,.ledger li:first-child,.ledger li:last-child{display:grid;grid-template-columns:64px minmax(0,1fr);gap:4px 0;padding:20px 0;border-bottom:1px solid var(--line)}
   .ledger li + li{border-left:0}
   .ledger li::before{grid-row:span 2;margin:0;font-size:28px}
   .faq-side{position:static}
+  .faq-side .lede{max-width:46ch}
   .quotes{grid-template-columns:minmax(0,1fr)}
   .lab-head{flex-direction:column;align-items:flex-start;gap:24px}
   .lab-go{align-items:flex-start}
