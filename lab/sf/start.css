@@ -81,7 +81,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .offer-how:hover{text-decoration-color:var(--plum)}
 
 /* Application: no container. A label and thin progress rule, the question, answers as raised white rows, and a footer with Back and Continue / Apply */
-#planner{justify-self:end;width:calc(100% - 60px);min-height:560px;display:flex;flex-direction:column;animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both}
+#planner{justify-self:end;width:calc(100% - 50px);min-height:560px;display:flex;flex-direction:column;animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both}
 .pl-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .pl-head .eyebrow{font-size:12px}
 /* Footer controls: Back is a quiet outlined pill, Continue the solid violet one; both share the same height so the footer never jumps */
