@@ -101,7 +101,6 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .opts{display:grid;gap:8px}
 .opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;border-radius:14px;padding:15px 18px;transition:border-color .15s,box-shadow .15s,transform .15s,background .15s}
 .opt b{font-size:16px;font-weight:600;color:var(--ink)}
-.opt small{margin-left:auto;font-size:13px;color:var(--ink-3)}
 /* Radio dot on the right fills violet when picked */
 .opt::after{content:"";flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--lilac);transition:border-color .15s,box-shadow .15s}
 .opt b:only-child{margin-right:auto}
