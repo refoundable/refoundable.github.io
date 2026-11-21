@@ -219,14 +219,13 @@ section.block{margin-top:120px}
 .sendoff-line{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,96px);letter-spacing:-.04em;line-height:1;max-width:13ch;margin:0 auto;
   background:linear-gradient(180deg,#fff 35%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
 /* Oath */
-.oath{position:relative;max-width:1120px;margin:0 auto;padding:30px 28px;display:flex;align-items:center;gap:18px;border-bottom:1px solid rgba(255,255,255,.12)}
-.seal{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:15px;color:var(--lilac);border:1.5px dashed rgba(217,209,238,.6)}
+.oath{position:relative;max-width:1120px;margin:0 auto;padding:30px 28px;display:flex;align-items:center;gap:18px}
 .oath p{flex:1;font-size:14.5px;color:rgba(255,255,255,.72)}
 .oath p b{color:#fff}
 .oath-link{border:0;background:none;padding:0;font:inherit;font-size:14.5px;font-weight:600;white-space:nowrap;color:#fff;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(255,255,255,.4)}
 .oath-link:hover{text-decoration-color:#fff}
 /* footer */
-.site-foot{position:relative;max-width:1120px;margin:0 auto;padding:28px 28px 72px;display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.6)}
+.site-foot{position:relative;max-width:1120px;margin:0 auto;padding:28px 28px 72px;display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.6);border-top:1px solid rgba(255,255,255,.12)}
 .site-foot nav{display:flex;gap:22px}
 .site-foot a{text-decoration:none;color:rgba(255,255,255,.75)}
 .site-foot a:hover{color:#fff}
