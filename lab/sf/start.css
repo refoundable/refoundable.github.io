@@ -66,7 +66,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .cta:disabled{background:var(--lilac);box-shadow:none;cursor:default}
 
 /* Hero */
-.hero{max-width:1120px;margin:0 auto;padding:56px 28px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:80px;align-items:start}
+.hero{max-width:1120px;margin:0 auto;padding:88px 28px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:80px;align-items:start}
 /* Left column keeps its natural spacing and sits centered against the planner */
 .pitch{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
 
@@ -235,7 +235,7 @@ section.block{margin-top:120px}
 .site-foot a:hover{color:#fff}
 
 @media (max-width:920px){
-  .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding-top:36px}
+  .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding-top:48px}
   #planner{width:100%;min-height:0}
   .faq-in,.ops-head{grid-template-columns:minmax(0,1fr);gap:24px}
   .ledger{grid-template-columns:minmax(0,1fr);border-top:0}
