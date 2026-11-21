@@ -219,7 +219,7 @@ section.block{margin-top:120px}
 .site-end::before{content:"";position:absolute;width:620px;height:620px;left:-200px;bottom:-460px;border-radius:50%;background:radial-gradient(circle,rgba(169,155,211,.3),transparent 65%);pointer-events:none}
 /* tagline */
 .finale{max-width:1120px;margin:0 auto;padding:120px 28px 104px;text-align:center}
-.sendoff-line{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,96px);letter-spacing:-.04em;line-height:1;max-width:13ch;margin:0 auto;
+.sendoff-line{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,76px);letter-spacing:-.04em;line-height:1;max-width:13ch;margin:0 auto;
   background:linear-gradient(180deg,#fff 35%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
 /* Oath: three columns */
 .oath{position:relative;max-width:1120px;margin:0 auto;padding:30px 28px 36px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) auto;gap:56px;align-items:end}
