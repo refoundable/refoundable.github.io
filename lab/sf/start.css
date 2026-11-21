@@ -190,7 +190,7 @@ section.block{margin-top:120px}
 .big div:first-child{padding-left:0;border-left:0}
 .big div:last-child{padding-right:0}
 .big b{display:block;font-family:var(--num);font-size:36px;font-weight:600;letter-spacing:-.035em;line-height:1;color:var(--plum);font-variant-numeric:tabular-nums}
-.big small{display:block;margin-top:8px;max-width:11ch;font-size:13px;line-height:1.35;color:var(--ink-3)}
+.big small{display:block;margin-top:8px;max-width:15ch;font-size:13px;line-height:1.35;color:var(--ink-3)}
 /* Testimonials: open columns under a violet rule, no cards */
 .quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;margin-top:52px}
 .quotes figure{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding-top:28px}
