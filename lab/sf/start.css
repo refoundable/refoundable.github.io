@@ -42,7 +42,7 @@ nav.top{position:sticky;top:0;z-index:40;padding:14px max(28px,calc((100% - 1064
   background:rgba(246,244,250,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em}
 .mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;background:var(--grad)}
-.nav-links{display:flex;align-items:center;gap:22px;font-size:14.5px;font-weight:600;color:var(--ink-2)}
+.nav-links{display:flex;align-items:center;gap:36px;font-size:14.5px;font-weight:600;color:var(--ink-2)}
 .nav-links a{text-decoration:none}
 .nav-links a:hover{color:var(--plum)}
 .nav-r{display:flex;align-items:center;min-height:38px}
