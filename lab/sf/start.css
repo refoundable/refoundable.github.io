@@ -184,9 +184,13 @@ section.block{margin-top:120px}
 
 /* Results */
 .res-h{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
-.big{display:flex;gap:36px}
-.big b{display:block;font-family:var(--num);font-size:40px;font-weight:600;letter-spacing:-.035em;line-height:1.05;color:var(--plum)}
-.big small{font-size:13px;color:var(--ink-3)}
+/* Stats: five figures in a row split by hairlines */
+.big{display:flex;align-items:flex-start}
+.big div{padding:2px 22px 0;border-left:1px solid var(--line)}
+.big div:first-child{padding-left:0;border-left:0}
+.big div:last-child{padding-right:0}
+.big b{display:block;font-family:var(--num);font-size:36px;font-weight:600;letter-spacing:-.035em;line-height:1;color:var(--plum);font-variant-numeric:tabular-nums}
+.big small{display:block;margin-top:8px;max-width:11ch;font-size:13px;line-height:1.35;color:var(--ink-3)}
 /* Testimonials: open columns under a violet rule, no cards */
 .quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;margin-top:52px}
 .quotes figure{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding-top:28px}
@@ -254,7 +258,10 @@ section.block{margin-top:120px}
   .lab-head{flex-direction:column;align-items:flex-start;gap:24px}
   .lab-go{align-items:flex-start}
   .curr{flex-direction:column;gap:20px}
-  .big{flex-wrap:wrap;gap:24px}
+  .big{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px;width:100%}
+  .big div:nth-child(3n+1){padding-left:0;border-left:0}
+  .big div:nth-child(3n){padding-right:0}
+  .big div:last-child{padding-right:22px}
 }
 @media (max-width:560px){
   section.block,.site-end{margin-top:84px}
