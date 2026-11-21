@@ -223,7 +223,7 @@ section.block{margin-top:120px}
 /* Adoption: two figures in the same numerals */
 .oath-n{display:flex;gap:28px}
 .oath-n div + div{padding-left:28px;border-left:1px solid rgba(255,255,255,.14)}
-.oath-n b{display:block;font-family:var(--num);font-size:34px;font-weight:600;letter-spacing:-.035em;line-height:1;color:#fff}
+.oath-n b{display:block;font-family:var(--num);font-size:34px;font-weight:600;letter-spacing:-.035em;line-height:1;color:rgba(255,255,255,.72)}
 .oath-n small{display:block;margin-top:6px;font-size:13px;color:var(--lilac)}
 .oath-link{border:0;background:none;padding:0 0 2px;font:inherit;font-size:15px;font-weight:600;white-space:nowrap;color:#fff;text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,255,255,.4);text-decoration-thickness:1.5px;transition:text-decoration-color .15s}
 .oath-link:hover{text-decoration-color:#fff}
