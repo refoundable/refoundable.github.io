@@ -84,7 +84,7 @@ const syncNav = () => {
   $('navCta').classList.toggle('show', !plannerVisible && !applied);
 };
 $('labApply').onclick = () => $('navCta').onclick();
-new IntersectionObserver(([e]) => { plannerVisible = e.isIntersecting; syncNav(); }, {rootMargin: '-50px 0px 0px 0px'}).observe($('planner'));
+new IntersectionObserver(([e]) => { plannerVisible = e.isIntersecting; syncNav(); }, {rootMargin: '-120px 0px 0px 0px'}).observe($('planner'));
 
 $('howTenK').onclick = () => {
   const d = $('ten-k');
