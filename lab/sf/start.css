@@ -186,7 +186,9 @@ section.block{margin-top:120px}
 .big small{font-size:13px;color:var(--ink-3)}
 /* Testimonials: open columns under a violet rule, no cards */
 .quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;margin-top:52px}
-.quotes figure{display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding-top:26px;border-top:2px solid var(--violet)}
+.quotes figure{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding-top:28px}
+.quotes figure::before{content:"";position:absolute;top:0;left:28px;right:0;height:2px;background:var(--violet)}
+.quotes figure::after{content:"\201C";position:absolute;top:-12px;left:-1px;font-family:Georgia,"Times New Roman",serif;font-size:46px;line-height:1;color:var(--lavender);pointer-events:none}
 .quotes blockquote{font-family:var(--display);font-size:21px;font-weight:500;line-height:1.38;letter-spacing:-.018em;color:var(--ink);text-wrap:pretty}
 .quotes figcaption{display:flex;align-items:center;gap:12px;font-size:13.5px;line-height:1.4;color:var(--ink-2)}
 .quotes figcaption b{display:block;font-size:15px;color:var(--ink)}
