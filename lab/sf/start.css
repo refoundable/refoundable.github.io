@@ -172,7 +172,7 @@ section.block{margin-top:120px}
 /* Back office: heading across the top with the lede beside it, then the five jobs as steps in one row, split by vertical hairlines */
 .ops-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:72px;align-items:end}
 .ops-head .lede{margin-top:0}
-.ledger{list-style:none;counter-reset:job;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:56px;border-top:1px solid var(--line)}
+.ledger{list-style:none;counter-reset:job;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:56px;border-top:1px solid var(--line);text-wrap:pretty}
 .ledger li{counter-increment:job;display:flex;flex-direction:column;gap:6px;padding:28px 24px 8px}
 .ledger li:first-child{padding-left:0}
 .ledger li:last-child{padding-right:0}
@@ -200,7 +200,7 @@ section.block{margin-top:120px}
 .faq-side{position:sticky;top:110px}
 .faq-side .lede{font-size:18px;max-width:34ch}
 .book{margin-top:18px;font-size:16px}
-.faq-list{border-top:1px solid var(--line)}
+.faq-list{border-top:1px solid var(--line);text-wrap:pretty}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 4px;cursor:pointer;font-family:var(--display);font-size:18px;font-weight:600}
 .faq summary::-webkit-details-marker{display:none}
