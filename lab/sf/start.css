@@ -66,7 +66,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .cta:disabled{background:var(--lilac);box-shadow:none;cursor:default}
 
 /* Hero */
-.hero{max-width:1120px;margin:0 auto;padding:56px 28px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:80px}
+.hero{max-width:1120px;margin:0 auto;padding:56px 28px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:80px;align-items:start}
 /* Left column keeps its natural spacing and sits centered against the planner */
 .pitch{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
 
@@ -81,7 +81,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .offer-how:hover{text-decoration-color:var(--plum)}
 
 /* Application: no container. A label and thin progress rule, the question, answers as raised white rows, and a footer with Back and Continue / Apply */
-#planner{min-height:560px;display:flex;flex-direction:column;animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both}
+#planner{justify-self:end;width:calc(100% - 20px);min-height:560px;display:flex;flex-direction:column;animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both}
 .pl-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .pl-head .eyebrow{font-size:12px}
 /* Footer controls: Back is a quiet outlined pill, Continue the solid violet one; both share the same height so the footer never jumps */
@@ -236,7 +236,7 @@ section.block{margin-top:120px}
 
 @media (max-width:920px){
   .hero{grid-template-columns:minmax(0,1fr);gap:32px;padding-top:36px}
-  #planner{min-height:0}
+  #planner{width:100%;min-height:0}
   .faq-in,.ops-head{grid-template-columns:minmax(0,1fr);gap:24px}
   .ledger{grid-template-columns:minmax(0,1fr);border-top:0}
   .ledger li,.ledger li:first-child,.ledger li:last-child{display:grid;grid-template-columns:64px minmax(0,1fr);gap:4px 0;padding:20px 0;border-bottom:1px solid var(--line)}
