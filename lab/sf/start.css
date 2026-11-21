@@ -211,17 +211,22 @@ section.block{margin-top:120px}
 .faq details.flash{animation:flash 1.4s ease}
 @keyframes flash{0%{background:var(--mist)}100%{background:transparent}}
 
-/* Footer band: the Oath as a slim row, then the copyright row */
+/* Footer band */
 .site-end{position:relative;overflow:hidden;margin-top:120px;color:#fff;background:radial-gradient(90% 120% at 100% 0%,#6E5DAA 0%,#3F3168 48%,#2A2048 100%)}
 .site-end::before{content:"";position:absolute;width:620px;height:620px;left:-200px;bottom:-460px;border-radius:50%;background:radial-gradient(circle,rgba(169,155,211,.3),transparent 65%);pointer-events:none}
+/* tagline */
+.finale{max-width:1120px;margin:0 auto;padding:120px 28px 104px;text-align:center}
+.sendoff-line{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,96px);letter-spacing:-.04em;line-height:1;max-width:13ch;margin:0 auto;
+  background:linear-gradient(180deg,#fff 35%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+/* Oath */
 .oath{position:relative;max-width:1120px;margin:0 auto;padding:30px 28px;display:flex;align-items:center;gap:18px;border-bottom:1px solid rgba(255,255,255,.12)}
 .seal{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:15px;color:var(--lilac);border:1.5px dashed rgba(217,209,238,.6)}
 .oath p{flex:1;font-size:14.5px;color:rgba(255,255,255,.72)}
 .oath p b{color:#fff}
 .oath-link{border:0;background:none;padding:0;font:inherit;font-size:14.5px;font-weight:600;white-space:nowrap;color:#fff;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(255,255,255,.4)}
 .oath-link:hover{text-decoration-color:#fff}
+/* footer */
 .site-foot{position:relative;max-width:1120px;margin:0 auto;padding:28px 28px 72px;display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.6)}
-.foot-tag{color:var(--lilac)}
 .site-foot nav{display:flex;gap:22px}
 .site-foot a{text-decoration:none;color:rgba(255,255,255,.75)}
 .site-foot a:hover{color:#fff}
