@@ -86,6 +86,16 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .offer-t{margin-top:5px;font-size:15px;line-height:1.45;color:var(--ink-2)}
 .offer-how{border:0;background:none;padding:0;font:inherit;font-weight:600;white-space:nowrap;color:var(--plum);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--lilac);text-decoration-thickness:1.5px}
 .offer-how:hover{text-decoration-color:var(--plum)}
+/* $10K "How it works": the short answer opens in place under the offer */
+.offer-how span{display:inline-block;transition:transform .2s}
+.offer-how[aria-expanded="true"] span{transform:rotate(90deg)}
+.peek{display:grid;grid-template-rows:0fr;max-width:520px;padding-left:114px;transition:grid-template-rows .3s cubic-bezier(.2,.7,.2,1)}
+.peek.open{grid-template-rows:1fr}
+.peek-in{overflow:hidden;min-height:0}
+.peek p{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:14.5px;line-height:1.55;color:var(--ink-2);opacity:0;transition:opacity .2s}
+.peek.open p{opacity:1;transition-delay:.08s}
+.peek .link{display:inline-block;margin-top:10px;font-size:14px}
+@media (max-width:560px){.peek{padding-left:92px}}
 
 /* Application: no container. A label and thin progress rule, the question, answers as raised white rows, and a footer with Back and Continue / Apply */
 #planner{justify-self:end;width:calc(100% - 50px);min-height:560px;display:flex;flex-direction:column;animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both}
@@ -228,8 +238,6 @@ section.block{margin-top:120px}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq summary:hover{color:var(--plum)}
 .faq details p{padding:0 48px 22px 4px;font-size:15.5px;color:var(--ink-2)}
-.faq details.flash{animation:flash 1.4s ease}
-@keyframes flash{0%{background:var(--mist)}100%{background:transparent}}
 
 /* Book a call: a pop-up on the page colour with a hairline edge, holding the same head, rule, steps and footer as the application */
 #booker{margin:auto;width:min(520px,calc(100vw - 32px));max-height:calc(100vh - 32px);min-height:540px;padding:28px 32px 22px;border:1px solid var(--line);border-radius:24px;

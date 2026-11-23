@@ -86,11 +86,12 @@ const syncNav = () => {
 $('labApply').onclick = () => $('navCta').onclick();
 new IntersectionObserver(([e]) => { plannerVisible = e.isIntersecting; syncNav(); }, {rootMargin: '-120px 0px 0px 0px'}).observe($('planner'));
 
+// $10K "How it works" opens the short answer in place
 $('howTenK').onclick = () => {
-  const d = $('ten-k');
-  d.open = true;
-  d.scrollIntoView({behavior:'smooth', block:'center'});
-  d.classList.remove('flash'); void d.offsetWidth; d.classList.add('flash');
+  const b = $('howTenK'), p = $('tenKPeek'), open = !p.classList.contains('open');
+  p.classList.toggle('open', open);
+  b.setAttribute('aria-expanded', open);
+  p.inert = !open;
 };
 
 // Book a call: region, then contact details, then a short confirmation
