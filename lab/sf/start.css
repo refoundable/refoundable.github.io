@@ -76,7 +76,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .wins li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:var(--mist) center/12px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.6l4.5-5' fill='none' stroke='%236E5DAA' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");box-shadow:inset 0 0 0 1px rgba(110,93,170,.14)}
 
 /* The $10K offer: a quiet row under the lede, the amount does the talking */
-.offer{margin-top:36px;display:flex;align-items:center;gap:22px;max-width:520px;padding:20px 0 0;border-top:1px solid var(--line)}
+.offer{margin-top:32px;display:flex;align-items:center;gap:22px;max-width:520px;padding:20px 0 0;border-top:1px solid var(--line)}
 .offer-amt{flex:none;display:grid;place-items:center;align-content:center;width:92px;height:92px;border-radius:22px;background:var(--mist);border:1px solid var(--line);
   font-family:var(--num);font-size:30px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--plum)}
 .offer-amt small{display:block;margin-bottom:5px;font-family:var(--text);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--violet)}
