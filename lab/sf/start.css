@@ -271,7 +271,7 @@ section.block{margin-top:120px}
 /* tagline */
 .finale{max-width:1120px;margin:0 auto;padding:80px 28px;text-align:center}
 .sendoff-line{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,56px);letter-spacing:-.04em;line-height:1;max-width:13ch;margin:0 auto;
-  background:linear-gradient(180deg,#fff 35%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+  background:linear-gradient(180deg,#fff 35%,var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em;text-wrap:balance}
 /* Oath: three columns */
 .oath{position:relative;max-width:1120px;margin:0 auto;padding:30px 28px 36px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) auto;gap:56px;align-items:end}
 .oath-d{max-width:44ch;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.72)}
