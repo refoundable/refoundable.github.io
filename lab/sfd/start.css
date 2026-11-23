@@ -238,7 +238,7 @@ section.block{margin-top:120px}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 4px;cursor:pointer;font-family:var(--display);font-size:18px;font-weight:600}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:500;color:var(--violet);background:var(--mist);transition:transform .2s}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:500;color:var(--violet);background:var(--mist);transition:transform .2s}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq summary:hover{color:var(--plum)}
 .faq details p{padding:0 48px 22px 4px;font-size:15.5px;color:var(--ink-2)}
