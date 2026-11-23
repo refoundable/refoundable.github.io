@@ -173,6 +173,9 @@ section.block{margin-top:120px}
 .curr small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .curr b{display:block;margin:4px 0;font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.015em}
 .curr span{display:block;padding-right:12px;font-size:14.5px;color:var(--ink-2);text-wrap:pretty}
+/* Cohort terms beside the Apply button: the facts, then the action */
+.lab-go{flex:none;display:flex;flex-direction:row-reverse;align-items:center;gap:36px}
+.lab-go .terms{margin-top:0}
 
 /* Heading on two set lines, one sentence each; the lede sits beside it in the leftover width, aligned to the bottom line */
 .ops-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:56px;align-items:end}
@@ -263,7 +266,7 @@ section.block{margin-top:120px}
   .faq-side .lede{max-width:46ch}
   .quotes{grid-template-columns:minmax(0,1fr)}
   .lab-head{flex-direction:column;align-items:flex-start;gap:24px}
-  .lab-go{align-items:flex-start}
+  .lab-go{flex-direction:column-reverse;align-items:flex-start;gap:24px}
   .curr{flex-direction:column;gap:20px}
   .big{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:28px;width:100%}
   .big div:nth-child(3n+1){padding-left:0;border-left:0}
