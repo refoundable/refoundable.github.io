@@ -25,6 +25,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 html,body{background:var(--bg);color:var(--ink);font-family:var(--text);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+/* Inter runs large next to Avenir/SF at the same px size; this scales the type down a touch everywhere, without touching any layout */
+html{font-size-adjust:.5}
 body{
   min-height:100vh;
   background:
