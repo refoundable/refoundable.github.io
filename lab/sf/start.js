@@ -157,3 +157,18 @@ $('bkForm').onsubmit = e => {
   $('bkTo').textContent = mail;
   bkGo(2);
 };
+
+// Theme toggle: remembers the choice; defaults to system setting
+const root = document.documentElement;
+const setTheme = dark => {
+  root.classList.toggle('dark', dark);
+  $('themeBtn').setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+};
+const saved = () => { try { return localStorage.getItem('theme'); } catch (e) { return null; } };
+setTheme(root.classList.contains('dark'));
+$('themeBtn').onclick = () => {
+  const dark = !root.classList.contains('dark');
+  setTheme(dark);
+  try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+};
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { if (!saved()) setTheme(e.matches); });

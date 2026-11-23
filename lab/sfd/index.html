@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Start Fund</title>
+<script>(function(){var t;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.classList.toggle("dark",(t||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"))==="dark")})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="start.css">
+</head>
+<body>
+
+<nav class="top">
+  <div class="brand"><span class="mark">S</span>Start Fund</div>
+  <div class="nav-links">
+	  <a href="#ops">Back Office</a>
+	  <a href="#lab">VC Lab</a>
+	  <a href="#results">Results</a>
+	  <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-r"><button class="nav-start" id="navCta">Apply</button><button class="theme" id="themeBtn" type="button" aria-label="Switch to dark mode"><svg class="i-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M16.5 12.4A7 7 0 0 1 7.6 3.5a7 7 0 1 0 8.9 8.9Z"/></svg><svg class="i-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.4"/><path d="M10 1.8v2.1M10 16.1v2.1M1.8 10h2.1M16.1 10h2.1M4.2 4.2l1.5 1.5M14.3 14.3l1.5 1.5M4.2 15.8l1.5-1.5M14.3 5.7l1.5-1.5"/></svg></button></div>
+</nav>
+
+<section class="hero" id="proposed">
+  <div class="pitch">
+	<span class="eyebrow">Built for new fund managers</span>
+	<h1>Start with <em>a thousand firms behind you.</em></h1>
+	<p class="lede">The VC Lab playbook and a team that runs your back office, so you can spend your time with LPs and founders.</p>
+	<dl class="terms">
+	  <div><dt>Fund formation</dt><dd>Included</dd></div>
+	  <div><dt>Smaller LPs</dt><dd>Welcome</dd></div>
+	  <div><dt>Compliance</dt><dd>Handled</dd></div>
+	</dl>
+	<div class="offer">
+	  <div class="offer-amt"><small>First</small>$10K</div>
+	  <div>
+		<div class="offer-k">We’ll be your first backer</div>
+		<div class="offer-t">Select funds get a $10,000 first check, so you don’t start your raise from zero. <button class="offer-how" id="howTenK" type="button" aria-expanded="false" aria-controls="tenKPeek">How it works <span>→</span></button></div>
+	  </div>
+	</div>
+	<div class="peek" id="tenKPeek" inert>
+	  <div class="peek-in">
+		<p>It’s a catalytic investment we make into select Start Funds that counts towards your first close. Not every fund receives one, so ask our team about yours.</p>
+		<a class="link" href="#faq">More questions in the FAQ →</a>
+	  </div>
+	</div>
+  </div>
+
+  <div id="planner">
+	<div class="pl-head"><span class="eyebrow">Your Start Fund Application</span></div>
+	<div class="pl-bar"><i id="bar"></i></div>
+
+	<div class="q" data-k="size">
+	  <div class="step-l">01 / 06</div>
+	  <h3>What size is your fund?</h3>
+	  <p class="h">A rough guess is fine.</p>
+	  <div class="opts">
+		<button class="opt" data-v="Under $5M"><b>Under $5M</b></button>
+		<button class="opt" data-v="$5–10M"><b>$5–10M</b></button>
+		<button class="opt" data-v="$10–25M"><b>$10–25M</b></button>
+		<button class="opt" data-v="$25M+"><b>$25M+</b></button>
+		<button class="opt" data-v="Not sure yet"><b>Not sure yet</b></button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="stage">
+	  <div class="step-l">02 / 06</div>
+	  <h3>What stage will you back?</h3>
+	  <p class="h">Pick the one that fits best.</p>
+	  <div class="opts">
+		<button class="opt" data-v="Pre-seed"><b>Pre-seed</b></button>
+		<button class="opt" data-v="Seed"><b>Seed</b></button>
+		<button class="opt" data-v="Pre-seed and seed"><b>Pre-seed and seed</b></button>
+		<button class="opt" data-v="Series A"><b>Series A</b></button>
+		<button class="opt" data-v="Series B and later"><b>Series B and later</b></button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="sectors" data-max="3">
+	  <div class="step-l">03 / 06</div>
+	  <h3>Which sectors?</h3>
+	  <p class="h pick"><span>Pick up to 3.</span><span class="pick-c"><span class="cnt">0</span> of 3</span></p>
+	  <div class="chips">
+		<button class="chip-o">AI</button><button class="chip-o">Fintech</button>
+		<button class="chip-o">Climate</button><button class="chip-o">Health</button>
+		<button class="chip-o">Consumer</button>
+		<button class="chip-o">Deep tech</button><button class="chip-o wide">Other</button>
+	  </div>
+	  <input class="other-in hidden" placeholder="Your sector, e.g. Robotics" maxlength="40">
+	</div>
+
+	<div class="q hidden" data-k="where" data-max="2">
+	  <div class="step-l">04 / 06</div>
+	  <h3>Where will you invest?</h3>
+	  <p class="h pick"><span>Pick up to 2.</span><span class="pick-c"><span class="cnt">0</span> of 2</span></p>
+	  <div class="chips">
+		<button class="chip-o">North America</button><button class="chip-o">Europe</button>
+		<button class="chip-o">Latin America</button><button class="chip-o">Africa</button>
+		<button class="chip-o">Middle East</button><button class="chip-o">India</button>
+		<button class="chip-o">Asia-Pacific</button><button class="chip-o" data-solo>Global</button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="lps">
+	  <div class="step-l">05 / 06</div>
+	  <h3>How many potential LPs are in your network?</h3>
+	  <p class="h">People who might back your fund. A rough count is fine.</p>
+	  <div class="opts">
+		<button class="opt" data-v="Under 25"><b>Under 25</b></button>
+		<button class="opt" data-v="25–50"><b>25–50</b></button>
+		<button class="opt" data-v="50–100"><b>50–100</b></button>
+		<button class="opt" data-v="100+"><b>100+</b></button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="angel">
+	  <div class="step-l">06 / 06</div>
+	  <h3>How many angel checks have you written?</h3>
+	  <p class="h">No experience needed.</p>
+	  <div class="opts">
+		<button class="opt" data-v="None yet"><b>None yet</b></button>
+		<button class="opt" data-v="1–5"><b>1–5</b></button>
+		<button class="opt" data-v="6–20"><b>6–20</b></button>
+		<button class="opt" data-v="20+"><b>20+</b></button>
+	  </div>
+	</div>
+
+	<div class="q hidden" data-k="save">
+	  <div id="sendForm">
+		<div class="step-l">Last step</div>
+		<h3>Where can we reach you?</h3>
+		<p class="h">Our team will review and reach out within a business day.</p>
+		<form id="mailForm" novalidate>
+		  <div class="mail">
+			<input type="email" id="mail" placeholder="you@yourfund.com" autocomplete="email" required>
+		  </div>
+		  <div class="mail-err hidden" id="mailErr">Please enter a valid email address.</div>
+		</form>
+	  </div>
+	  <div id="sent" class="hidden">
+		<div class="step-l sum-ok">Submitted</div>
+		<h3>Your application</h3>
+		<dl class="sum" id="sumRows"></dl>
+	  </div>
+	</div>
+
+	<div class="pl-foot"><button class="back gone" id="back" type="button">← Back</button><button class="go next hidden" data-for="sectors" type="button" disabled>Continue <span>→</span></button><button class="go next hidden" data-for="where" type="button" disabled>Continue <span>→</span></button><button class="go next hidden" data-for="save" id="applyBtn" type="submit" form="mailForm">Apply</button><div class="sent-note hidden" id="sentNote"><span class="sent-ic">✓</span><span><b>Your application is in.</b> Our team will review and reach out to you at <b id="sentTo"></b> within a business day.</span></div></div>
+  </div>
+</section>
+
+<section class="block wrap" id="ops">
+  <div class="ops-head">
+	<div>
+	  <span class="eyebrow">Included with Start Fund</span>
+	  <h2>We run the back office. <em>You run the fund.</em></h2>
+	</div>
+	<p class="lede">Our operations team handles the paperwork, compliance, and money movement from day one.</p>
+  </div>
+  <ol class="ledger">
+	<li><b>Fund formation and bank account</b><small>Your fund formed and ready for wires, in a day.</small></li>
+	<li><b>KYC and AML on every LP</b><small>Every investor verified before they wire.</small></li>
+	<li><b>Secure LP onboarding</b><small>A polished portal that makes your fund look established.</small></li>
+	<li><b>Capital calls</b><small>From commitment to cash, reconciled for you.</small></li>
+	<li><b>Tax forms and filings</b><small>Prepared and sent to every LP.</small></li>
+  </ol>
+</section>
+
+<section class="block wrap" id="lab">
+  <div class="lab-head">
+	<div>
+	  <span class="eyebrow">The VC Lab Playbook</span>
+	  <h2>Fourteen weeks from thesis <em>to first close.</em></h2>
+	  <p class="lede">Weekly mentoring and real deadlines. Launch your fund with hundreds of managers raising beside you. No fees. No equity.</p>
+	</div>
+	<div class="lab-go">
+	  <button class="cta" id="labApply" type="button">Apply</button>
+	  <dl class="terms">
+		<div><dt>Cohort</dt><dd>23</dd></div>
+		<div><dt>Deadline</dt><dd>Dec 14</dd></div>
+		<div><dt>Starts</dt><dd>Jan 21</dd></div>
+	  </dl>
+	</div>
+  </div>
+
+  <ol class="curr">
+	<li class="pre"><i></i><small>Now</small><b>Apply</b><span>Submit your Start Fund application to be considered for the next cohort.</span></li>
+	<li><i></i><small>Phase 1</small><b>Thesis and team</b><span>Validate your thesis, build your team, and line up your first LP commitments.</span></li>
+	<li><i></i><small>Phase 2</small><b>Deck and economics</b><span>Build your deck, model your fund economics, and start your deal pipeline.</span></li>
+	<li><i></i><small>Phase 3</small><b>LP outreach</b><span>Grow your connector network, run LP meetings, and secure commitments.</span></li>
+	<li><i></i><small>Phase 4</small><b>Close and launch</b><span>Finish your data room, form your fund, and turn commitments into capital.</span></li>
+  </ol>
+</section>
+
+<section class="block wrap" id="results">
+  <div class="res-h">
+	<div>
+	  <span class="eyebrow">From the VC Lab community</span>
+	  <h2>Real firms. <em>Real results.</em></h2>
+	</div>
+	<div class="big">
+	  <div><b>1K+</b><small>firms launched</small></div>
+	  <div><b>88</b><small>countries</small></div>
+	  <div><b>$1.5B</b><small>in LP commitments</small></div>
+	  <div><b>12+</b><small>unicorns backed</small></div>
+	  <div><b>87</b><small>program NPS</small></div>
+	</div>
+  </div>
+  <div class="quotes">
+	<figure>
+	  <blockquote>Honestly, I didn’t think that was even remotely possible when I started, but the system works if you fully commit.</blockquote>
+	  <figcaption><span class="av">A</span><div><b>u/Al_MightyIAM</b><a class="src" href="https://www.reddit.com/r/venturecapital/comments/1kl58k0/comment/mv62hrf/" target="_blank" rel="noopener">on r/venturecapital</a><small>Cohort 16</small></div></figcaption>
+	</figure>
+	<figure>
+	  <blockquote>I’m well over $1m in commitments and don’t think I’d be anywhere near this without going through VC Lab.</blockquote>
+	  <figcaption><span class="av">S</span><div><b>u/staffordvc</b><a class="src" href="https://www.reddit.com/r/venturecapital/comments/1kl58k0/comment/ms481hb/" target="_blank" rel="noopener">on r/venturecapital</a><small>Cohort 16</small></div></figcaption>
+	</figure>
+	<figure>
+	  <blockquote>The VC Lab program isn’t just a teaching accelerator; it forces you to get LP commitments or else you get the boot.</blockquote>
+	  <figcaption><span class="av">M</span><div><b>u/mikewchan</b><a class="src" href="https://www.reddit.com/r/venturecapital/comments/1kl58k0/comment/ms3716c/" target="_blank" rel="noopener">on r/venturecapital</a><small>Cohort 13</small></div></figcaption>
+	</figure>
+  </div>
+</section> 
+
+<section class="block wrap faq" id="faq">
+  <div class="faq-in">
+	<div class="faq-side">
+	  <span class="eyebrow">Questions</span>
+	  <h2>The fine print, <em>in plain English.</em></h2>
+	  <p class="lede">Still have questions? Book a free call with a Start Fund specialist and we’ll walk through your idea for a fund.</p>
+	  <button class="link book" id="bookBtn" type="button">Book a time →</button>
+	</div>
+	<div class="faq-list">
+	  <details>
+			<summary>How do Start Fund and VC Lab fit together?</summary>
+			<p>One application covers both. Start Fund is the fund itself: an institutional-grade venture fund you can launch in under a day. VC Lab is our free 14-week accelerator, with real deadlines and weekly feedback to get you to a first close fast. You can launch a Start Fund even if you don’t join VC Lab.</p>
+		</details>
+		<details>
+			<summary>What happens after I apply?</summary>
+			<p>We review your answers and reach out. To launch your Start Fund, you pass KYC and AML checks, and your fund and bank account are ready in under a business day. If you’re a fit for VC Lab, admissions invites you to a 15-minute call about your fundraising plan.</p>
+		</details>
+		<details>
+			<summary>What does it cost?</summary>
+			<p>Nothing upfront, and VC Lab is free with no equity. Start Fund follows the classic 2 and 20 model: you earn a 1% management fee and 18% carried interest. We receive a 1% operations fee and 2% carried interest, which cover fund formation, administration, compliance and tax preparation.</p>
+		</details>
+		<details>
+			<summary>What’s my role in a Start Fund?</summary>
+			<p>As the Investment Lead, you close LPs, source deals, track the portfolio, and handle LP communications. Because Decile Group acts as the official General Partner handling legal, compliance, and back-office ops, you won’t use the General Partner or Managing Partner title. There is no minimum time commitment required, and the agreement allows you to maintain full-time employment elsewhere.</p>
+		</details>
+		<details>
+			<summary>Who decides on investments?</summary>
+			<p>Start Fund includes a virtual Investment Committee that makes the final call on every deal, giving you built-in compliance oversight and a clear audit trail. Simply submit your deal memo to get a decision in three days or less. Most deals go through unless there are extreme terms, unusual legal or compliance risks, or conflicts of interest.</p>
+		</details>
+		<details>
+			<summary>Does a Start Fund count as real track record?</summary>
+			<p>Yes. It’s a real venture fund with institutional-grade operations, and it’s fully portable. When you’re ready, you can set up your own general partner and management company and move the fund over, or launch a Fund II at any time.</p>
+		</details>
+		<details>
+			<summary>Where can I launch a Start Fund?</summary>
+			<p>All Start Funds are domiciled in Delaware, and a few limits apply. A Start Fund can’t accept LPs from Europe, the UK, India, or Japan. Investment Leads can’t live in India or Singapore. And Start Funds can’t invest in Indian startups or in crypto.</p>
+		</details>
+	</div>
+  </div>
+</section>
+
+<div class="site-end">
+  <div class="finale">
+	<p class="sendoff-line">Back the future you believe in.</p>
+  </div>
+  <div class="oath">
+	<p class="oath-d"><b>The Mensarius Oath.</b> Our commitment that venture treats founders fairly, deals honestly with LPs, and does right by people and the planet.</p>
+	<div class="oath-n">
+      <div><b>8,500+</b><small>people</small></div>
+	  <div><b>100+</b><small>countries</small></div>
+	</div>
+	<button class="oath-link">Read the Oath →</button>
+  </div>
+  <footer class="site-foot">
+	<nav><a>VC Lab</a><a>Mensarius Oath</a><a>Terms</a><a>Privacy</a></nav>
+	<span>© 2026 Decile Group</span>
+  </footer>
+</div>
+
+<!-- Book a call: a two-step pop-up built from the same parts as the application -->
+<dialog id="booker" aria-labelledby="bkTitle">
+  <div class="pl-head"><span class="eyebrow">Book a call</span><button class="bk-x" id="bkClose" type="button" aria-label="Close">×</button></div>
+  <div class="pl-bar"><i id="bkBar"></i></div>
+
+  <div class="q" data-k="where" data-max="2">
+	<div class="step-l">01 / 02</div>
+	<h3 id="bkTitle">Where will you invest?</h3>
+	<p class="h pick"><span>Pick up to 2.</span><span class="pick-c"><span class="cnt">0</span> of 2</span></p>
+	<div class="chips">
+	  <button class="chip-o" type="button">North America</button><button class="chip-o" type="button">Europe</button>
+	  <button class="chip-o" type="button">Latin America</button><button class="chip-o" type="button">Africa</button>
+	  <button class="chip-o" type="button">Middle East</button><button class="chip-o" type="button">India</button>
+	  <button class="chip-o" type="button">Asia-Pacific</button><button class="chip-o" type="button" data-solo>Global</button>
+	</div>
+  </div>
+
+  <div class="q hidden" data-k="you">
+	<div class="step-l">02 / 02</div>
+	<h3>Who should we reach?</h3>
+	<p class="h">We’ll use this to set up your call with a Start Fund specialist.</p>
+	<form id="bkForm" class="fields" novalidate>
+	  <label><span>Full name</span><input id="bkName" autocomplete="name" placeholder="Ada Okafor" required></label>
+	  <label><span>LinkedIn <em>Optional</em></span><input id="bkIn" type="url" inputmode="url" autocomplete="url" placeholder="linkedin.com/in/yourname"></label>
+	  <label><span>Email</span><input id="bkMail" type="email" autocomplete="email" placeholder="you@yourfund.com" required></label>
+	  <div class="mail-err hidden" id="bkErr"></div>
+	</form>
+  </div>
+
+  <div class="q hidden" data-k="done">
+	<div class="step-l sum-ok">Requested</div>
+	<h3>Talk soon, <span id="bkFirst"></span>.</h3>
+	<p class="h">We’ll email <b id="bkTo"></b> with a few times to choose from.</p>
+  </div>
+
+  <div class="pl-foot">
+	<button class="back gone" id="bkBack" type="button">← Back</button>
+	<button class="go next" id="bkNext" type="button" disabled>Continue <span>→</span></button>
+	<button class="go next hidden" id="bkSend" type="submit" form="bkForm">Request a call</button>
+	<button class="go next hidden" id="bkDone" type="button">Done</button>
+  </div>
+</dialog>
+
+<script src="start.js"></script>
+</body>
+</html>

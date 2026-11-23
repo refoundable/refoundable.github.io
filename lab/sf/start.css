@@ -332,3 +332,55 @@ section.block{margin-top:120px}
 @media print{
   nav.top{position:static}
 }
+
+/* Theme toggle: a bare icon in the nav, moon in light mode and sun in dark */
+.nav-r{gap:10px}
+.theme{flex:none;width:36px;height:36px;border:0;border-radius:50%;display:grid;place-items:center;background:none;color:var(--ink-2);transition:color .15s,background .15s}
+.theme:hover{color:var(--plum);background:var(--mist)}
+.theme svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.theme .i-sun,.dark .theme .i-moon{display:none}
+.dark .theme .i-sun{display:block}
+
+/* Dark mode: the same blue-violet family taken down to a deep ink. Surfaces step up in small, even increments, text is a soft off-white, and the purples move up a step so they read on dark */
+.dark{
+  color-scheme:dark;
+  --bg:#14111A;
+  --surface:#1D1926;
+  --ink:#F1EEF7;
+  --ink-2:#BDB6CC;
+  --ink-3:#8A8399;
+  --line:#2D2839;
+  --plum:#CFC5EE;
+  --violet:#A99BD3;
+  --lavender:#7E6FB8;
+  --lilac:#4A4166;
+  --mist:#241F33;
+  --sage-tint:#17291F;
+  --sage-ink:#8FD1AE;
+  --error:#F07A8C;
+  /* Buttons, the logo mark and avatars keep white text, so they use mid violets rather than the light accents */
+  --grad:linear-gradient(140deg,#8676C4,#5A4A93);
+}
+.dark body{background:radial-gradient(1200px 520px at 85% -10%,rgba(110,93,170,.2),transparent 60%),radial-gradient(900px 480px at -10% 40%,rgba(63,49,104,.22),transparent 60%),var(--bg)}
+.dark nav.top{background:rgba(20,17,26,.8)}
+.dark .go{background:#7A69B8}
+.dark .go:hover:not(:disabled){background:#8877C4}
+/* Raised rows: a soft shadow disappears on dark, so a hairline edge and a flat drop line do the lifting */
+.dark .opt,.dark .chip-o,.dark #planner input,.dark #booker input,.dark .sum{border-color:var(--line);box-shadow:0 2px 0 rgba(0,0,0,.3)}
+.dark .opt:hover,.dark .chip-o:hover,.dark #planner input:hover,.dark #booker input:hover{border-color:var(--lavender)}
+.dark .opt.sel,.dark .chip-o.sel,.dark #planner input:focus,.dark #booker input:focus{background:#231E31;border-color:var(--violet)}
+.dark .opt.sel::after{box-shadow:inset 0 0 0 4px var(--surface),inset 0 0 0 9px var(--violet)}
+.dark .chip-o.sel::after{background-color:#7A69B8;border-color:#7A69B8}
+.dark #booker input.bad{border-color:var(--error)}
+/* Hero offer and timeline: the fixed light tints get dark equivalents */
+.dark .offer-amt{border-color:#342D47}
+.dark .curr li:nth-child(2) i{background:#3A3254}
+.dark .curr li:nth-child(4) i{background:#8676C4}
+.dark .curr li:nth-child(5) i{background:var(--plum)}
+/* Book a call */
+.dark #booker{box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.dark #booker::backdrop{background:rgba(8,6,12,.6)}
+/* Footer band: already dark, so it goes a shade deeper and gets a hairline to keep it apart from the page. Its lilac text is fixed so it stays light */
+.dark .site-end{border-top:1px solid var(--line);background:radial-gradient(90% 120% at 100% 0%,#5A4A93 0%,#33285A 48%,#1C1630 100%)}
+.dark .sendoff-line{background-image:linear-gradient(180deg,#fff 35%,#D9D1EE)}
+.dark .oath-n small{color:#D9D1EE}
