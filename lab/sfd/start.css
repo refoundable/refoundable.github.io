@@ -380,3 +380,6 @@ section.block{margin-top:120px}
 .dark #booker::backdrop{background:rgba(0,0,0,.55)}
 /* The footer band is already dark, so a hairline keeps it apart from the page */
 .dark .site-end{border-top:1px solid var(--line)}
+/* Time estimate: a quiet note opposite the eyebrow, gone once the application is in */
+.pl-time{font-size:13px;font-weight:500;color:var(--ink-3);white-space:nowrap}
+#planner:has(#sentNote:not(.hidden)) .pl-time{display:none}

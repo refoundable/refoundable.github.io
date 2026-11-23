@@ -384,3 +384,6 @@ section.block{margin-top:120px}
 .dark .site-end{border-top:1px solid var(--line);background:radial-gradient(90% 120% at 100% 0%,#5A4A93 0%,#33285A 48%,#1C1630 100%)}
 .dark .sendoff-line{background-image:linear-gradient(180deg,#fff 35%,#D9D1EE)}
 .dark .oath-n small{color:#D9D1EE}
+/* Time estimate: a quiet note opposite the eyebrow, gone once the application is in */
+.pl-time{font-size:13px;font-weight:500;color:var(--ink-3);white-space:nowrap}
+#planner:has(#sentNote:not(.hidden)) .pl-time{display:none}
