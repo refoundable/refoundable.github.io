@@ -92,3 +92,67 @@ $('howTenK').onclick = () => {
   d.scrollIntoView({behavior:'smooth', block:'center'});
   d.classList.remove('flash'); void d.offsetWidth; d.classList.add('flash');
 };
+
+// Book a call: region, then contact details, then a short confirmation
+const bk = $('booker');
+const bkSteps = [...bk.querySelectorAll('.q')];
+const bkChips = [...bkSteps[0].querySelectorAll('.chip-o')];
+
+function bkGo(i){
+  bkSteps.forEach((q, n) => show(q, n === i));
+  bkSteps[i].classList.remove('fade'); void bkSteps[i].offsetWidth; bkSteps[i].classList.add('fade');
+  $('bkBar').style.width = ((i + 1) / bkSteps.length * 100) + '%';
+  $('bkBack').classList.toggle('gone', i !== 1);
+  show($('bkNext'), i === 0); show($('bkSend'), i === 1); show($('bkDone'), i === 2);
+  if (i === 1) $('bkName').focus();
+}
+
+function bkSync(){
+  const now = bkChips.filter(x => x.classList.contains('sel'));
+  bkSteps[0].querySelector('.cnt').textContent = now.length;
+  $('bkNext').disabled = !now.length;
+  bkChips.forEach(x => x.classList.toggle('off', now.length >= 2 && !x.classList.contains('sel')));
+}
+
+bkChips.forEach(c => c.onclick = () => {
+  if (!c.classList.contains('sel')) {
+    // "Global" can't be combined with specific regions
+    if ('solo' in c.dataset) bkChips.forEach(x => x.classList.remove('sel'));
+    else bkChips.filter(x => 'solo' in x.dataset).forEach(x => x.classList.remove('sel'));
+    if (bkChips.filter(x => x.classList.contains('sel')).length >= 2) return;
+  }
+  c.classList.toggle('sel');
+  bkSync();
+});
+
+$('bookBtn').onclick = () => {
+  // Carry over the regions from the application if they've already answered it
+  if (answers.where && !bkChips.some(x => x.classList.contains('sel')))
+    bkChips.forEach(x => x.classList.toggle('sel', answers.where.includes(x.textContent)));
+  bkSync(); bkGo(0); bk.showModal();
+};
+$('bkNext').onclick = () => bkGo(1);
+$('bkBack').onclick = () => bkGo(0);
+$('bkClose').onclick = $('bkDone').onclick = () => bk.close();
+// Clicking the dimmed page around the pop-up closes it; clicks on its own padding do not
+bk.onclick = e => {
+  const r = bk.getBoundingClientRect();
+  if (e.target === bk && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) bk.close();
+};
+
+$('bkForm').onsubmit = e => {
+  e.preventDefault();
+  const name = $('bkName').value.trim(), mail = $('bkMail').value.trim(), li = $('bkIn').value.trim();
+  const bad = [
+    [!name, $('bkName'), 'Please enter your name.'],
+    [li && !/linkedin\.com\//i.test(li), $('bkIn'), 'That doesn’t look like a LinkedIn profile link.'],
+    [!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail), $('bkMail'), 'Please enter a valid email address.']
+  ];
+  bad.forEach(([b, el]) => el.classList.toggle('bad', !!b));
+  const first = bad.find(([b]) => b);
+  show($('bkErr'), !!first);
+  if (first) { $('bkErr').textContent = first[2]; return first[1].focus(); }
+  $('bkFirst').textContent = name.split(/\s+/)[0];
+  $('bkTo').textContent = mail;
+  bkGo(2);
+};

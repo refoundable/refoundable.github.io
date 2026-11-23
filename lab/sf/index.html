@@ -220,7 +220,7 @@
 	  <span class="eyebrow">Questions</span>
 	  <h2>The fine print, <em>in plain English.</em></h2>
 	  <p class="lede">Still have questions? Book a free call with a Start Fund specialist and we’ll walk through your idea for a fund.</p>
-	  <button class="link book">Book a time →</button>
+	  <button class="link book" id="bookBtn" type="button">Book a time →</button>
 	</div>
 	<div class="faq-list">
 	  <details>
@@ -276,6 +276,49 @@
 	<span>© 2026 Decile Group</span>
   </footer>
 </div>
+
+<!-- Book a call: a two-step pop-up built from the same parts as the application -->
+<dialog id="booker" aria-labelledby="bkTitle">
+  <div class="pl-head"><span class="eyebrow">Book a call</span><button class="bk-x" id="bkClose" type="button" aria-label="Close">×</button></div>
+  <div class="pl-bar"><i id="bkBar"></i></div>
+
+  <div class="q" data-k="where" data-max="2">
+	<div class="step-l">01 / 02</div>
+	<h3 id="bkTitle">Where will you invest?</h3>
+	<p class="h pick"><span>Pick up to 2.</span><span class="pick-c"><span class="cnt">0</span> of 2</span></p>
+	<div class="chips">
+	  <button class="chip-o" type="button">North America</button><button class="chip-o" type="button">Europe</button>
+	  <button class="chip-o" type="button">Latin America</button><button class="chip-o" type="button">Africa</button>
+	  <button class="chip-o" type="button">Middle East</button><button class="chip-o" type="button">South Asia</button>
+	  <button class="chip-o" type="button">Southeast Asia</button><button class="chip-o" type="button" data-solo>Global</button>
+	</div>
+  </div>
+
+  <div class="q hidden" data-k="you">
+	<div class="step-l">02 / 02</div>
+	<h3>Who should we reach?</h3>
+	<p class="h">We’ll use this to set up your call with a Start Fund specialist.</p>
+	<form id="bkForm" class="fields" novalidate>
+	  <label><span>Full name</span><input id="bkName" autocomplete="name" placeholder="Ada Okafor" required></label>
+	  <label><span>LinkedIn <em>Optional</em></span><input id="bkIn" type="url" inputmode="url" autocomplete="url" placeholder="linkedin.com/in/yourname"></label>
+	  <label><span>Email</span><input id="bkMail" type="email" autocomplete="email" placeholder="you@yourfund.com" required></label>
+	  <div class="mail-err hidden" id="bkErr"></div>
+	</form>
+  </div>
+
+  <div class="q hidden" data-k="done">
+	<div class="step-l sum-ok">Requested</div>
+	<h3>Talk soon, <span id="bkFirst"></span>.</h3>
+	<p class="h">We’ll email <b id="bkTo"></b> with a few times to choose from.</p>
+  </div>
+
+  <div class="pl-foot">
+	<button class="back gone" id="bkBack" type="button">← Back</button>
+	<button class="go next" id="bkNext" type="button" disabled>Continue <span>→</span></button>
+	<button class="go next hidden" id="bkSend" type="submit" form="bkForm">Request a call</button>
+	<button class="go next hidden" id="bkDone" type="button">Done</button>
+  </div>
+</dialog>
 
 <script src="start.js"></script>
 </body>

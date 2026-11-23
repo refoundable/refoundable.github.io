@@ -231,6 +231,32 @@ section.block{margin-top:120px}
 .faq details.flash{animation:flash 1.4s ease}
 @keyframes flash{0%{background:var(--mist)}100%{background:transparent}}
 
+/* Book a call: a pop-up on the page colour with a hairline edge, holding the same head, rule, steps and footer as the application */
+#booker{margin:auto;width:min(520px,calc(100vw - 32px));max-height:calc(100vh - 32px);min-height:540px;padding:28px 32px 22px;border:1px solid var(--line);border-radius:24px;
+  color:var(--ink);background:var(--bg);box-shadow:0 40px 80px -40px rgba(42,32,72,.45);flex-direction:column;overflow:auto}
+#booker[open]{display:flex;animation:rise .3s cubic-bezier(.2,.7,.2,1)}
+#booker::backdrop{background:rgba(33,27,46,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#booker .pl-head{align-items:center}
+#booker .pl-head .eyebrow{font-size:12px}
+.bk-x{width:32px;height:32px;margin:-6px -8px -6px 0;border:0;border-radius:50%;background:none;font-size:22px;line-height:1;color:var(--ink-3);transition:color .15s,background .15s}
+.bk-x:hover{color:var(--plum);background:var(--mist)}
+#booker h3{font-size:28px;line-height:1.1;margin:6px 0 8px;text-wrap:balance}
+#booker .h{font-size:15px;color:var(--ink-2);margin-bottom:22px}
+#booker .h b{font-weight:600;color:var(--ink)}
+#booker .q{flex:1;display:flex;flex-direction:column;padding-bottom:24px}
+/* Fields: a small label over each white row, styled like the application's email field */
+.fields{display:grid;gap:14px}
+.fields label{display:grid;gap:6px}
+.fields label span{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--ink-2)}
+.fields label em{font-style:normal;font-weight:500;color:var(--ink-3)}
+#booker input{width:100%;border-radius:14px;padding:14px 18px;font-size:16px;font-weight:600;color:var(--ink);outline:none;background:var(--surface);border:1px solid rgba(63,49,104,.09);
+  box-shadow:0 1px 2px rgba(42,32,72,.05),0 10px 22px -16px rgba(63,49,104,.45);transition:border-color .15s,background .15s}
+#booker input:hover{border-color:var(--lavender)}
+#booker input:focus{border-color:var(--violet);background:#FBFAFE}
+#booker input::placeholder{font-weight:500;color:var(--ink-3)}
+#booker input.bad{border-color:var(--error)}
+#booker .mail-err{margin-top:0}
+
 /* Footer band */
 .site-end{position:relative;overflow:hidden;margin-top:120px;color:#fff;background:radial-gradient(90% 120% at 100% 0%,#6E5DAA 0%,#3F3168 48%,#2A2048 100%)}
 .site-end::before{content:"";position:absolute;width:620px;height:620px;left:-200px;bottom:-460px;border-radius:50%;background:radial-gradient(circle,rgba(169,155,211,.3),transparent 65%);pointer-events:none}
@@ -288,6 +314,9 @@ section.block{margin-top:120px}
   .oath{grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
   .oath-link{justify-self:start}
   #planner h3{font-size:26px}
+  #booker{min-height:0;padding:24px 20px 18px}
+  #booker h3{font-size:24px}
+  #booker .chips{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:reduce){
   .pitch,#planner,.fade{animation:none}
