@@ -45,7 +45,6 @@ a{color:inherit}
 nav.top{position:sticky;top:0;z-index:40;padding:14px max(28px,calc((100% - 1064px) / 2));display:flex;justify-content:space-between;align-items:center;
   background:rgba(247,244,249,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em}
-.mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;background:var(--grad)}
 .nav-links{display:flex;align-items:center;gap:36px;font-size:14.5px;font-weight:600;color:var(--ink-2)}
 .nav-links a{text-decoration:none}
 .nav-links a:hover{color:var(--plum)}
@@ -54,22 +53,8 @@ nav.top{position:sticky;top:0;z-index:40;padding:14px max(28px,calc((100% - 1064
   opacity:0;transform:translateY(-4px);pointer-events:none;transition:opacity .2s,transform .2s,filter .15s}
 .nav-start.show{opacity:1;transform:none;pointer-events:auto}
 .nav-start:hover{filter:brightness(1.08)}
-
-/* Logo mark in the nav */
-.brand{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-}
-.brand-mark{
-  width:1.5em;           /* scales with the "Start Fund" text size */
-  height:1.5em;
-  flex:none;
-  color:var(--sf-mark, #4A2766);   /* plum */
-}
-
-/* Dark mode: lavender, so the mark stays visible on a dark nav */
-[data-theme="dark"] .brand-mark{ --sf-mark:#B39AD2; }
+/* Logo mark in the nav. --plum lightens automatically in dark mode */
+.brand-mark{width:1.5em;height:1.5em;flex:none;color:var(--plum)}
 
 /* Shared type */
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}

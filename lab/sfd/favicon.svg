@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 108 108">
+  <style>.m{fill:#4A2766;stroke:#4A2766}@media (prefers-color-scheme:dark){.m{fill:#DACBEA;stroke:#DACBEA}}</style>
+  <mask id="c" maskUnits="userSpaceOnUse" x="-20" y="-20" width="140" height="140">
+	<rect x="-20" y="-20" width="140" height="140" fill="#fff"/>
+	<polygon points="-3,-13 60,50 -3,113" stroke="#000" stroke-width="8" stroke-linejoin="round"/>
+  </mask>
+  <polygon class="m" points="50,9 91,50 50,91 9,50" mask="url(#c)" stroke-width="16" stroke-linejoin="round"/>
+</svg>
