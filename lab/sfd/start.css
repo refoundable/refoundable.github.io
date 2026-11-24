@@ -1,11 +1,11 @@
 /* Brand tokens taken from the live Decile Group and VC Lab stylesheets: Decile's brand-purple scale, cool grey text, brand green, Inter type. The page and hairlines carry a faint tint of the brand purple */
 :root{
-  --bg:#F7F4F9;
+  --bg:#F5F4F9;
   --surface:#FFFFFF;
   --ink:#181D27;
   --ink-2:#414651;
   --ink-3:#717680;
-  --line:#E8E3EC;
+  --line:#E6E4EC;
   --plum:#4A2766;
   --violet:#6B3F91;
   --lavender:#B39AD2;
