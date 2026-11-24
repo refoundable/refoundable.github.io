@@ -6,11 +6,11 @@
   --ink-2:#414651;
   --ink-3:#717680;
   --line:#E8E3EC;
-  --plum:#4A2766; // was #541F6F
-  --violet:#6B3F91; // was #752E9B
-  --lavender:#B39AD2; // was #B187D8
-  --lilac:#DACBEA; // was #DACBEA
-  --mist:#F4EFF9; // was #F5EDFA  
+  --plum:#4A2766;
+  --violet:#6B3F91;
+  --lavender:#B39AD2;
+  --lilac:#DACBEA;
+  --mist:#F4EFF9;
   --sage:#8EC94F;
   --sage-tint:#E8F5D9;
   --sage-ink:#447225;
@@ -32,6 +32,7 @@ body{
   background:
     radial-gradient(1200px 520px at 85% -10%, rgba(179,154,210,.16), transparent 60%),
     radial-gradient(900px 480px at -10% 40%, rgba(232,222,242,.45), transparent 60%),
+    var(--bg);
 }
 button,input{font-family:inherit;color:inherit}
 button{cursor:pointer}
