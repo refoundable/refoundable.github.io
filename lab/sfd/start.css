@@ -178,7 +178,7 @@ section.block{margin-top:120px}
 .curr li{flex:1;min-width:0}
 .curr i{display:block;height:10px;border-radius:5px;margin-bottom:16px}
 /* Applying happens before the cohort; the four phases deepen from lavender to plum */
-.curr .pre i{box-sizing:border-box;background:var(--line)}
+.curr .pre i{box-sizing:border-box;background:#E6DAF2}
 .curr .pre small,.curr .pre b{color:var(--violet)}
 .curr li:nth-child(2) i{background:#CDB8E4}
 .curr li:nth-child(3) i{background:var(--lavender)}
@@ -238,7 +238,7 @@ section.block{margin-top:120px}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 4px;cursor:pointer;font-family:var(--display);font-size:18px;font-weight:600}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:500;color:var(--violet);background:var(--mist);transition:transform .2s}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:500;color:var(--violet);background:#ECE4F5;transition:transform .2s}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq summary:hover{color:var(--plum)}
 .faq details p{padding:0 48px 22px 4px;font-size:15.5px;color:var(--ink-2)}
@@ -376,6 +376,8 @@ section.block{margin-top:120px}
 .dark #booker input.bad{border-color:var(--error)}
 .dark .offer-amt{border-color:#3A2B4C}
 .dark .curr li:nth-child(2) i{background:#3B2D4E}
+.dark .curr .pre i{background:#2C2238}
+.dark .faq summary::after{background:#30243F}
 .dark #booker{box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
 .dark #booker::backdrop{background:rgba(0,0,0,.55)}
 /* The footer band is already dark, so a hairline keeps it apart from the page */
