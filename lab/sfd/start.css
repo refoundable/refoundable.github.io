@@ -6,18 +6,18 @@
   --ink-2:#414651;
   --ink-3:#717680;
   --line:#E8E3EC;
-  --plum:#541F6F;
-  --violet:#752E9B;
-  --lavender:#B187D8;
-  --lilac:#D5B6EB;
-  --mist:#F5EDFA;
+  --plum:#4A2766; // was #541F6F
+  --violet:#6B3F91; // was #752E9B
+  --lavender:#B39AD2; // was #B187D8
+  --lilac:#DACBEA; // was #DACBEA
+  --mist:#F4EFF9; // was #F5EDFA  
   --sage:#8EC94F;
   --sage-tint:#E8F5D9;
   --sage-ink:#447225;
   --error:#D92D20;
   --grad:linear-gradient(140deg,var(--violet),var(--plum));
-  /* Decile's signature gradient, kept to thin details: the progress line and the rule over each quote */
-  --brand-grad:linear-gradient(90deg,#564AE7,#815DE6,#C964E5 50%,#FD17F6 91.5%,#B763E6);
+  /* A softer take on Decile's signature gradient */
+  --brand-grad:linear-gradient(90deg,#5B3A8C,#8A5DB8 55%,#C39BD8);
   --display:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
   --text:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
   --num:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
@@ -30,9 +30,8 @@ html{font-size-adjust:.52}
 body{
   min-height:100vh;
   background:
-    radial-gradient(1200px 520px at 85% -10%, rgba(177,135,216,.18), transparent 60%),
-    radial-gradient(900px 480px at -10% 40%, rgba(235,219,245,.45), transparent 60%),
-    var(--bg);
+    radial-gradient(1200px 520px at 85% -10%, rgba(179,154,210,.16), transparent 60%),
+    radial-gradient(900px 480px at -10% 40%, rgba(232,222,242,.45), transparent 60%),
 }
 button,input{font-family:inherit;color:inherit}
 button{cursor:pointer}
@@ -65,7 +64,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .lede{margin-top:16px;font-size:18px;color:var(--ink-2);max-width:46ch}
 .link{border:0;background:none;padding:0;font:inherit;font-weight:600;color:var(--plum);text-decoration:underline;text-decoration-color:var(--lilac);text-underline-offset:4px;text-decoration-thickness:1.5px;transition:text-decoration-color .2s}
 .link:hover{text-decoration-color:var(--plum)}
-.cta{border:0;border-radius:999px;padding:15px 26px;font-size:16px;font-weight:600;color:#fff;background:var(--grad);box-shadow:0 14px 30px -14px rgba(84,31,111,.7);transition:transform .15s,filter .15s}
+.cta{border:0;border-radius:999px;padding:15px 26px;font-size:16px;font-weight:600;color:#fff;background:var(--grad);box-shadow:0 14px 30px -14px rgba(74,39,102,.7);transition:transform .15s,filter .15s}
 .cta:hover:not(:disabled){transform:translateY(-1px)}
 .cta:disabled{background:var(--lilac);box-shadow:none;cursor:default}
 
@@ -118,7 +117,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .h.pick{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .pick-c{font-size:13px;font-weight:600;color:var(--violet);white-space:nowrap}
 /* Shared raised surface for answers and the email field: white, a faint edge and a soft purple shadow so they lift off the page */
-.opt,.chip-o,#planner input{background:var(--surface);border:1px solid rgba(84,31,111,.09);box-shadow:0 1px 2px rgba(24,29,39,.05),0 10px 22px -16px rgba(84,31,111,.45)}
+.opt,.chip-o,#planner input{background:var(--surface);border:1px solid rgba(74,39,102,.09);box-shadow:0 1px 2px rgba(24,29,39,.05),0 10px 22px -16px rgba(74,39,102,.45)}
 .opts{display:grid;gap:8px}
 .opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;border-radius:14px;padding:15px 18px;transition:border-color .15s,box-shadow .15s,transform .15s,background .15s}
 .opt b{font-size:16px;font-weight:600;color:var(--ink)}
@@ -145,18 +144,18 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 #planner input::placeholder{font-weight:500;color:var(--ink-3)}
 .other-in{margin-top:12px}
 /* Continue / Apply: solid violet pill */
-.go{border:0;border-radius:999px;padding:13px 26px;font-size:15.5px;font-weight:600;color:#fff;background:var(--violet);box-shadow:0 12px 24px -14px rgba(84,31,111,.8);transition:background .15s,transform .15s,opacity .2s}
-.go:hover:not(:disabled){background:#652886;transform:translateY(-1px)}
+.go{border:0;border-radius:999px;padding:13px 26px;font-size:15.5px;font-weight:600;color:#fff;background:var(--violet);box-shadow:0 12px 24px -14px rgba(74,39,102,.8);transition:background .15s,transform .15s,opacity .2s}
+.go:hover:not(:disabled){background:#5C3480;transform:translateY(-1px)}
 .go:disabled{opacity:.32;box-shadow:none;cursor:default}
 .mail-err{margin-top:10px;font-size:13px;color:var(--error)}
 #planner .q{flex:1;display:flex;flex-direction:column;padding-bottom:28px}
 /* Footer pinned to the bottom of the application: Back on the left, Continue / Apply on the right */
 .pl-foot{margin-top:auto;min-height:57px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;color:var(--ink-3)}
-.pl-foot .next{margin:0 0 0 auto;padding:0 20px;box-shadow:0 10px 20px -12px rgba(84,31,111,.8)}
+.pl-foot .next{margin:0 0 0 auto;padding:0 20px;box-shadow:0 10px 20px -12px rgba(74,39,102,.8)}
 .pl-foot .next span{transition:transform .15s}
 .pl-foot .next:hover:not(:disabled) span{transform:translateX(2px)}
 /* Submitted: the answers sit in one raised panel built from the same white surface as the answer rows, a hairline between each */
-.sum{margin-top:14px;border-radius:16px;padding:4px 20px;background:var(--surface);border:1px solid rgba(84,31,111,.09);box-shadow:0 1px 2px rgba(24,29,39,.05),0 16px 30px -20px rgba(84,31,111,.45)}
+.sum{margin-top:14px;border-radius:16px;padding:4px 20px;background:var(--surface);border:1px solid rgba(74,39,102,.09);box-shadow:0 1px 2px rgba(24,29,39,.05),0 16px 30px -20px rgba(74,39,102,.45)}
 .sum div{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:14px 0;border-top:1px solid var(--line)}
 .sum div:first-child{border-top:0}
 .sum dt{font-size:13.5px;color:var(--ink-3)}
@@ -180,7 +179,7 @@ section.block{margin-top:120px}
 /* Applying happens before the cohort; the four phases deepen from lavender to plum */
 .curr .pre i{box-sizing:border-box;background:var(--line)}
 .curr .pre small,.curr .pre b{color:var(--violet)}
-.curr li:nth-child(2) i{background:#C49FE1}
+.curr li:nth-child(2) i{background:#CDB8E4}
 .curr li:nth-child(3) i{background:var(--lavender)}
 .curr li:nth-child(4) i{background:var(--violet)}
 .curr li:nth-child(5) i{background:var(--plum)}
@@ -261,8 +260,8 @@ section.block{margin-top:120px}
 .fields label{display:grid;gap:6px}
 .fields label span{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--ink-2)}
 .fields label em{font-style:normal;font-weight:500;color:var(--ink-3)}
-#booker input{width:100%;border-radius:14px;padding:14px 18px;font-size:16px;font-weight:600;color:var(--ink);outline:none;background:var(--surface);border:1px solid rgba(84,31,111,.09);
-  box-shadow:0 1px 2px rgba(24,29,39,.05),0 10px 22px -16px rgba(84,31,111,.45);transition:border-color .15s,background .15s}
+#booker input{width:100%;border-radius:14px;padding:14px 18px;font-size:16px;font-weight:600;color:var(--ink);outline:none;background:var(--surface);border:1px solid rgba(74,39,102,.09);
+  box-shadow:0 1px 2px rgba(24,29,39,.05),0 10px 22px -16px rgba(74,39,102,.45);transition:border-color .15s,background .15s}
 #booker input:hover{border-color:var(--lavender)}
 #booker input:focus{border-color:var(--violet);background:#FBF8FD}
 #booker input::placeholder{font-weight:500;color:var(--ink-3)}
@@ -270,12 +269,12 @@ section.block{margin-top:120px}
 #booker .mail-err{margin-top:0}
 
 /* Footer band */
-.site-end{position:relative;overflow:hidden;margin-top:120px;color:#fff;background:radial-gradient(90% 120% at 100% 0%,#752E9B 0%,#541F6F 48%,#2B103B 100%)}
-.site-end::before{content:"";position:absolute;width:620px;height:620px;left:-200px;bottom:-460px;border-radius:50%;background:radial-gradient(circle,rgba(177,135,216,.3),transparent 65%);pointer-events:none}
+.site-end{position:relative;overflow:hidden;margin-top:120px;color:#fff;background:radial-gradient(90% 120% at 100% 0%,#6B3F91 0%,#452662 50%,#27163A 100%)}
+.site-end::before{content:"";position:absolute;width:620px;height:620px;left:-200px;bottom:-460px;border-radius:50%;background:radial-gradient(circle,rgba(179,154,210,.22),transparent 65%);pointer-events:none}
 /* tagline */
 .finale{max-width:1120px;margin:0 auto;padding:80px 28px;text-align:center}
 .sendoff-line{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,56px);letter-spacing:-.04em;line-height:1;max-width:13ch;margin:0 auto;
-  background:linear-gradient(180deg,#fff 35%,#D5B6EB);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em;text-wrap:balance}
+  background:linear-gradient(180deg,#fff 35%,#DACBEA);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em;text-wrap:balance}
 /* Oath: three columns */
 .oath{position:relative;max-width:1120px;margin:0 auto;padding:30px 28px 36px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) auto;gap:56px;align-items:end}
 .oath-d{max-width:44ch;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.72)}
@@ -284,7 +283,7 @@ section.block{margin-top:120px}
 .oath-n{display:flex;gap:28px}
 .oath-n div + div{padding-left:28px;border-left:1px solid rgba(255,255,255,.14)}
 .oath-n b{display:block;font-family:var(--num);font-size:34px;font-weight:600;letter-spacing:-.035em;line-height:1;color:rgba(255,255,255,.72)}
-.oath-n small{display:block;margin-top:6px;font-size:13px;color:#D5B6EB}
+.oath-n small{display:block;margin-top:6px;font-size:13px;color:#DACBEA}
 .oath-link{border:0;background:none;padding:0 0 2px;font:inherit;font-size:15px;font-weight:600;white-space:nowrap;color:rgba(255,255,255,.72);text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,255,255,.4);text-decoration-thickness:1.5px;transition:text-decoration-color .15s}
 .oath-link:hover{color:#fff;text-decoration-color:#fff}
 /* footer */
@@ -353,29 +352,29 @@ section.block{margin-top:120px}
   --ink-2:#D5D7DA;
   --ink-3:#A4A7AE;
   --line:#2E3137;
-  --plum:#D5B6EB;
-  --violet:#B187D8;
-  --lavender:#9151BF;
-  --lilac:#4E3166;
-  --mist:#2B103B;
+  --plum:#DACBEA;
+  --violet:#B79FD6;
+  --lavender:#8A6BB0;
+  --lilac:#46375A;
+  --mist:#271C33;
   --sage-tint:#1B2F0E;
   --sage-ink:#B2DA88;
   --error:#F97066;
   /* Buttons keep white text, so they use a mid purple rather than the light accent */
-  --grad:linear-gradient(140deg,#9151BF,#752E9B);
+  --grad:linear-gradient(140deg,#8459AE,#6B3F91);
 }
-.dark body{background:radial-gradient(1200px 520px at 85% -10%,rgba(117,46,155,.22),transparent 60%),radial-gradient(900px 480px at -10% 40%,rgba(84,31,111,.16),transparent 60%),var(--bg)}
+.dark body{background:radial-gradient(1200px 520px at 85% -10%,rgba(107,63,145,.2),transparent 60%),radial-gradient(900px 480px at -10% 40%,rgba(74,39,102,.16),transparent 60%),var(--bg)}
 .dark nav.top{background:rgba(17,21,28,.8)}
-.dark .go{background:#9151BF}
-.dark .go:hover:not(:disabled){background:#A066CC}
+.dark .go{background:#8459AE}
+.dark .go:hover:not(:disabled){background:#9267BA}
 /* Raised rows lose their soft shadow on black; a hairline edge and a flat drop line do the lifting, as on VC Lab */
 .dark .opt,.dark .chip-o,.dark #planner input,.dark #booker input,.dark .sum{border-color:var(--line);box-shadow:0 2px 0 rgba(0,0,0,.35)}
-.dark .opt.sel,.dark .chip-o.sel{background:#221A2C;border-color:var(--violet)}
+.dark .opt.sel,.dark .chip-o.sel{background:#221C2B;border-color:var(--violet)}
 .dark .opt.sel::after{box-shadow:inset 0 0 0 4px var(--surface),inset 0 0 0 9px var(--violet)}
-.dark #planner input:focus,.dark #booker input:focus{background:#221A2C;border-color:var(--violet)}
+.dark #planner input:focus,.dark #booker input:focus{background:#221C2B;border-color:var(--violet)}
 .dark #booker input.bad{border-color:var(--error)}
-.dark .offer-amt{border-color:#3D1A52}
-.dark .curr li:nth-child(2) i{background:#3D2652}
+.dark .offer-amt{border-color:#3A2B4C}
+.dark .curr li:nth-child(2) i{background:#3B2D4E}
 .dark #booker{box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
 .dark #booker::backdrop{background:rgba(0,0,0,.55)}
 /* The footer band is already dark, so a hairline keeps it apart from the page */
