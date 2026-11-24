@@ -55,6 +55,22 @@ nav.top{position:sticky;top:0;z-index:40;padding:14px max(28px,calc((100% - 1064
 .nav-start.show{opacity:1;transform:none;pointer-events:auto}
 .nav-start:hover{filter:brightness(1.08)}
 
+/* Logo mark in the nav */
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.brand-mark{
+  width:1.5em;           /* scales with the "Start Fund" text size */
+  height:1.5em;
+  flex:none;
+  color:var(--sf-mark, #4A2766);   /* plum */
+}
+
+/* Dark mode: lavender, so the mark stays visible on a dark nav */
+[data-theme="dark"] .brand-mark{ --sf-mark:#B39AD2; }
+
 /* Shared type */
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 .eyebrow{display:block;font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--violet)}
