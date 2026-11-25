@@ -71,8 +71,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .hero{max-width:1120px;margin:0 auto;padding:88px 28px 0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:80px;align-items:start}
 /* Both columns start at the top, so the two eyebrows line up */
 .pitch{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
-
-/* Three quick benefits set like a term sheet: small label over a short answer, split by hairlines like the stats row */
+/* Three quick benefits: small label over a short answer, split by hairlines */
 .terms{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;margin-top:30px}
 .terms div{padding:0 26px;border-left:1px solid var(--line)}
 .terms div:first-child{padding-left:0;border-left:0}
@@ -91,6 +90,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 
 /* Application: no container. A label and thin progress rule, the question, answers as raised white rows, and a footer with Back and Continue / Apply */
 #planner{justify-self:end;width:calc(100% - 40px);min-height:560px;min-width:380px;display:flex;flex-direction:column;animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both}
+.mail label span{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--ink-2)}
 .pl-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .pl-head .eyebrow{font-size:12px}
 /* Footer controls: Back is a quiet outlined pill, Continue the solid violet one; both share the same height so the footer never jumps */
