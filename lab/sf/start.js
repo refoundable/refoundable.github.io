@@ -52,12 +52,38 @@ qs.forEach((q, i) => {
   };
 });
 
-$('mailForm').onsubmit = e => {
+const mailErrText = $('mailErr').textContent;
+$('mailForm').onsubmit = async e => {
   e.preventDefault();
+  const name = $('mailName').value.trim();
   const v = $('mail').value.trim();
   const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  show($('mailErr'), !ok);
+  $('mailErr').textContent = !name ? 'Please enter your name.' : mailErrText;
+  show($('mailErr'), !name || !ok);
+  if (!name) return $('mailName').focus();
   if (!ok) return $('mail').focus();
+
+  const btn = e.submitter;
+  if (btn) btn.disabled = true;
+  try {
+    await submitLead({
+      form_type: 'application',
+      name,
+      email: v,
+      regions: answers.where,
+      fund_size: answers.size,
+      stage: answers.stage,
+      sectors: answers.sectors,
+      lp_network: answers.lps,
+      angel_checks: answers.angel,
+    }, 'mailHp');
+  } catch (err) {
+    if (btn) btn.disabled = false;
+    $('mailErr').textContent = 'Something went wrong. Please try again, or email john@refoundable.com.';
+    show($('mailErr'), true);
+    return;
+  }
+
   $('sentTo').textContent = v;
   show($('sendForm'), false); show($('sent'), true); show($('applyBtn'), false); show($('labApply'), false);
   applied = true; syncNav();
@@ -133,7 +159,7 @@ bk.onclick = e => {
   if (e.target === bk && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) bk.close();
 };
 
-$('bkForm').onsubmit = e => {
+$('bkForm').onsubmit = async e => {
   e.preventDefault();
   const name = $('bkName').value.trim(), mail = $('bkMail').value.trim(), li = $('bkIn').value.trim();
   const bad = [
@@ -145,6 +171,24 @@ $('bkForm').onsubmit = e => {
   const first = bad.find(([b]) => b);
   show($('bkErr'), !!first);
   if (first) { $('bkErr').textContent = first[2]; return first[1].focus(); }
+
+  $('bkSend').disabled = true;
+  try {
+    await submitLead({
+      form_type: 'call',
+      name,
+      email: mail,
+      linkedin: li,
+      regions: bkChips.filter(x => x.classList.contains('sel')).map(x => x.textContent.trim()),
+    }, 'bkHp');
+  } catch (err) {
+    $('bkErr').textContent = 'Something went wrong. Please try again, or email john@refoundable.com.';
+    show($('bkErr'), true);
+    return;
+  } finally {
+    $('bkSend').disabled = false;
+  }
+
   $('bkFirst').textContent = name.split(/\s+/)[0];
   $('bkTo').textContent = mail;
   bkGo(2);
@@ -164,3 +208,18 @@ $('themeBtn').onclick = () => {
   try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
 };
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { if (!saved()) setTheme(e.matches); });
+
+// honeypot check for form submission
+async function submitLead(payload, honeypotId) {
+  const res = await fetch("/api/intake", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      ...payload,
+      website: document.getElementById(honeypotId)?.value || "",
+      test: new URLSearchParams(location.search).get("test") === "1",
+    }),
+  });
+  const out = await res.json().catch(() => ({ ok: false }));
+  if (!out.ok) throw new Error(out.error || "submit_failed");
+}
