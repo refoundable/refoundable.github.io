@@ -41,7 +41,7 @@ a{color:inherit}
 /* Nav: pinned to the top with a hairline underneath, content on the 1120px column */
 nav.top{position:sticky;top:0;z-index:40;padding:14px max(28px,calc((100% - 1064px) / 2));display:flex;justify-content:space-between;align-items:center;
   background:rgba(247,244,249,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--plum)}
+.brand{display:flex;align-items:center;gap:6px;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--plum)}
 .nav-links{display:flex;align-items:center;gap:36px;font-size:14.5px;font-weight:600;color:var(--ink-2)}
 .nav-links a{text-decoration:none}
 .nav-links a:hover{color:var(--plum)}
