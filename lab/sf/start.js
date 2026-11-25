@@ -79,7 +79,7 @@ $('mailForm').onsubmit = async e => {
     }, 'mailHp');
   } catch (err) {
     if (btn) btn.disabled = false;
-    $('mailErr').textContent = 'Something went wrong. Please try again, or email john@refoundable.com.';
+    $('mailErr').textContent = 'Something went wrong. Please try again.';
     show($('mailErr'), true);
     return;
   }
@@ -182,7 +182,7 @@ $('bkForm').onsubmit = async e => {
       regions: bkChips.filter(x => x.classList.contains('sel')).map(x => x.textContent.trim()),
     }, 'bkHp');
   } catch (err) {
-    $('bkErr').textContent = 'Something went wrong. Please try again, or email john@refoundable.com.';
+    $('bkErr').textContent = 'Something went wrong. Please try again.';
     show($('bkErr'), true);
     return;
   } finally {
