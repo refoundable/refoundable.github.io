@@ -174,7 +174,7 @@ section.block{margin-top:120px}
 
 /* VC Lab: a header with the benefits as its lede and Apply on the right, then one timeline that starts with applying */
 .lab-head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px}
-.lab-head .lede{max-width:52ch}
+.lab-head .lede{max-width:52ch;text-wrap:balance}
 .curr{list-style:none;display:flex;gap:10px;margin-top:56px;padding-top:36px;border-top:1px solid var(--line)}
 .curr li{flex:1;min-width:0}
 .curr i{display:block;height:10px;border-radius:5px;margin-bottom:16px}
