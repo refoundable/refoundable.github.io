@@ -11,9 +11,6 @@
   --lavender:#B39AD2;
   --lilac:#DACBEA;
   --mist:#F4EFF9;
-  --sage:#86BFA2;
-  --sage-tint:#E2F0E8;
-  --sage-ink:#2E6A50;
   --error:#A8336B;
   --grad:linear-gradient(140deg,var(--violet),var(--plum));
   /* A softer take on Decile's signature gradient */
@@ -349,8 +346,6 @@ section.block{margin-top:120px}
   --lavender:#8A6BB0;
   --lilac:#46375A;
   --mist:#271C33;
-  --sage-tint:#16271E;
-  --sage-ink:#9ED3B6;
   --error:#F08AB8;
   /* Buttons keep white text, so they use a mid purple rather than the light accent */
   --grad:linear-gradient(140deg,#8459AE,#6B3F91);
