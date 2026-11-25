@@ -83,7 +83,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .terms dd{margin:5px 0 0;font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:-.015em;line-height:1.15;color:var(--plum)}
 
 /* The $10K offer: a quiet row under the lede, the amount does the talking */
-.offer{margin-top:32px;display:flex;align-items:center;gap:22px;max-width:520px;padding:20px 0 0;border-top:1px solid var(--line)}
+.offer{margin-top:32px;display:flex;align-items:center;gap:22px;max-width:520px;padding:20px 0 0;border-top:1px solid var(--line);text-wrap:balance}
 .offer-amt{flex:none;display:grid;place-items:center;align-content:center;width:92px;height:92px;border-radius:22px;background:var(--mist);border:1px solid var(--line);
   font-family:var(--num);font-size:30px;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--plum)}
 .offer-amt small{display:block;margin-bottom:5px;font-family:var(--text);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--violet)}
