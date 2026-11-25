@@ -14,7 +14,7 @@
   --sage:#86BFA2;
   --sage-tint:#E2F0E8;
   --sage-ink:#2E6A50;
-  --error:#B83A52;
+  --error:#A8336B;
   --grad:linear-gradient(140deg,var(--violet),var(--plum));
   /* A softer take on Decile's signature gradient */
   --brand-grad:linear-gradient(90deg,#5B3A8C,#8A5DB8 55%,#C39BD8);
@@ -152,11 +152,11 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .sum div:first-child{border-top:0}
 .sum dt{font-size:13.5px;color:var(--ink-3)}
 .sum dd{margin:0;text-align:right;font-size:15px;font-weight:600;color:var(--ink)}
-.sum-ok{color:var(--sage-ink)}
+.sum-ok{color:var(--violet)}
 /* Confirmation line moves into the footer once the summary takes the main space */
 .sent-note{display:flex;align-items:center;gap:12px;line-height:1.45;color:var(--ink-2)}
 .sent-note b{font-weight:600;color:var(--ink)}
-.sent-ic{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:700;color:var(--sage-ink);background:var(--sage-tint)}
+.sent-ic{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:700;color:var(--plum);background:var(--lilac)}
 
 /* Sections */
 section.block{margin-top:120px}
@@ -351,7 +351,7 @@ section.block{margin-top:120px}
   --mist:#271C33;
   --sage-tint:#16271E;
   --sage-ink:#9ED3B6;
-  --error:#F08A99;
+  --error:#F08AB8;
   /* Buttons keep white text, so they use a mid purple rather than the light accent */
   --grad:linear-gradient(140deg,#8459AE,#6B3F91);
 }
