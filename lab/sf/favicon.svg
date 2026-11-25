@@ -1,13 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 108 108" class="brand-mark" viewBox="0 1 67.33 98" aria-hidden="true" focusable="false">
-  <style>.m{fill:#4A2766;stroke:#4A2766}@media (prefers-color-scheme:dark){.m{fill:#DACBEA;stroke:#DACBEA}}</style>
-  <path fill="currentColor" d="
-  M0 16.01 L12.67 3.34
-  A8 8 0 0 1 23.99 3.34
-  L64.99 44.34
-  A8 8 0 0 1 64.99 55.66
-  L23.99 96.66
-  A8 8 0 0 1 12.67 96.66
-  L0 83.99
-  L31.16 52.83
-  A4 4 0 0 0 31.16 47.17 Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15.33 1 98 98">
+  <style>.m{fill:#4A2766}@media (prefers-color-scheme:dark){.m{fill:#DACBEA}}</style>
+  <path class="m" d="M0 16.01 L12.67 3.34 A8 8 0 0 1 23.99 3.34 L64.99 44.34 A8 8 0 0 1 64.99 55.66 L23.99 96.66 A8 8 0 0 1 12.67 96.66 L0 83.99 L31.16 52.83 A4 4 0 0 0 31.16 47.17 Z"/>
 </svg>
