@@ -90,7 +90,6 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 
 /* Application: no container. A label and thin progress rule, the question, answers as raised white rows, and a footer with Back and Continue / Apply */
 #planner{justify-self:end;width:calc(100% - 40px);min-height:560px;min-width:380px;display:flex;flex-direction:column;animation:rise .55s .08s cubic-bezier(.2,.7,.2,1) both}
-.mail label span{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--ink-2);margin-top:10px}
 .pl-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .pl-head .eyebrow{font-size:12px}
 /* Footer controls: Back is a quiet outlined pill, Continue the solid violet one; both share the same height so the footer never jumps */
@@ -127,7 +126,7 @@ h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
 .chip-o.off{opacity:.4;cursor:default;transform:none}
 .chip-o.wide{grid-column:1/-1}
 /* Email field reads like an answer row: same white surface, label weight and violet edge when active */
-#planner input{width:100%;border-radius:14px;padding:15px 18px;font-size:16px;font-weight:600;color:var(--ink);outline:none;transition:border-color .15s,background .15s}
+#planner input{width:100%;border-radius:14px;padding:14px 18px;font-size:16px;font-weight:600;color:var(--ink);outline:none;transition:border-color .15s,background .15s}
 #planner input:hover{border-color:var(--lavender)}
 #planner input:focus{border-color:var(--violet);background:#FBF8FD}
 #planner input::placeholder{font-weight:500;color:var(--ink-3)}
