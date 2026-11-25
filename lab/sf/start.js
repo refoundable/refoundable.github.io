@@ -58,7 +58,7 @@ $('mailForm').onsubmit = async e => {
   const name = $('mailName').value.trim();
   const v = $('mail').value.trim();
   const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  $('mailErr').textContent = !name ? 'Please enter your name.' : mailErrText;
+  $('mailErr').textContent = !name ? 'Please enter your name' : mailErrText;
   show($('mailErr'), !name || !ok);
   if (!name) return $('mailName').focus();
   if (!ok) return $('mail').focus();
@@ -163,9 +163,9 @@ $('bkForm').onsubmit = async e => {
   e.preventDefault();
   const name = $('bkName').value.trim(), mail = $('bkMail').value.trim(), li = $('bkIn').value.trim();
   const bad = [
-    [!name, $('bkName'), 'Please enter your name.'],
-    [li && !/linkedin\.com\//i.test(li), $('bkIn'), 'That doesn’t look like a LinkedIn profile link.'],
-    [!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail), $('bkMail'), 'Please enter a valid email address.']
+    [!name, $('bkName'), 'Please enter your name'],
+    [li && !/linkedin\.com\//i.test(li), $('bkIn'), 'That doesn’t look like a LinkedIn profile link'],
+    [!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail), $('bkMail'), 'Please enter a valid email address']
   ];
   bad.forEach(([b, el]) => el.classList.toggle('bad', !!b));
   const first = bad.find(([b]) => b);
