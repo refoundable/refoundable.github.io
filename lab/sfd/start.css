@@ -59,7 +59,7 @@ nav.top{position:sticky;top:0;z-index:40;padding:14px max(28px,calc((100% - 1064
 /* Shared type */
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 .eyebrow{display:block;font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--violet)}
-h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,5.2vw,56px);letter-spacing:-.03em;line-height:1.02;margin-top:12px;text-wrap:balance}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,5.2vw,56px);letter-spacing:-.03em;line-height:1.02;margin-top:12px;text-wrap:pretty}
 h2{font-family:var(--display);font-weight:600;font-size:clamp(34px,4.6vw,56px);letter-spacing:-.035em;line-height:1.04;margin-top:10px;max-width:20ch;text-wrap:balance}
 h1 em,h2 em{font-style:normal;color:var(--violet)}
 h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
