@@ -300,6 +300,8 @@ section.block{margin-top:120px}
   .big div:nth-child(3n+1){padding-left:0;border-left:0}
   .big div:nth-child(3n){padding-right:0}
   .big div:last-child{padding-right:22px}
+  .oath{grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
+  .oath-link{justify-self:start}
 }
 @media (max-width:560px){
   section.block,.site-end{margin-top:84px}
@@ -310,8 +312,6 @@ section.block{margin-top:120px}
   .terms div{padding:0 16px}
   .terms div:first-child{padding-left:0}
   .terms dd{font-size:18px}
-  .oath{grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
-  .oath-link{justify-self:start}
   #planner h3{font-size:26px}
   #booker{min-height:0;padding:24px 20px 18px}
   #booker h3{font-size:24px}
