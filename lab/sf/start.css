@@ -360,8 +360,8 @@ section.block{margin-top:120px}
 .dark #planner input:focus,.dark #booker input:focus{background:#221C2B;border-color:var(--violet)}
 .dark #booker input.bad{border-color:var(--error)}
 .dark .offer-amt{border-color:#3A2B4C}
-.dark .curr li:nth-child(2) i{background:#3B2D4E}
-.dark .curr .pre i{background:#2C2238}
+.dark .curr li:nth-child(2) i{background:#6A52A0}
+.dark .curr .pre i{background:#4A3A66}
 .dark .faq summary::after{background:#30243F}
 .dark #booker{box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
 .dark #booker::backdrop{background:rgba(0,0,0,.55)}
