@@ -355,6 +355,7 @@ section.block{margin-top:120px}
 .dark .go:hover:not(:disabled){background:#9267BA}
 /* Raised rows lose their soft shadow on black; a hairline edge and a flat drop line do the lifting, as on VC Lab */
 .dark .opt,.dark .chip-o,.dark #planner input,.dark #booker input,.dark .sum{border-color:var(--line);box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.dark .opt:hover,.dark .chip-o:hover,.dark #planner input:hover,.dark #booker input:hover{border-color:var(--lavender)}
 .dark .opt.sel,.dark .chip-o.sel{background:#221C2B;border-color:var(--violet)}
 .dark .opt.sel::after{box-shadow:inset 0 0 0 4px var(--surface),inset 0 0 0 9px var(--violet)}
 .dark #planner input:focus,.dark #booker input:focus{background:#221C2B;border-color:var(--violet)}
